@@ -1,0 +1,238 @@
+/* ===== Reset y tipografía ===== */
+* {
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+html, body { height: 100%; }
+body {
+  font-family: "Poppins", Bold;
+  background: #f2f5f7;
+  color: #fff;
+}
+
+/* ===== Estilo para el select Departamento ===== */
+.register-form select {
+  width: 260px;
+  height: 40px;
+  padding: 9px 12px;
+  border-radius: 18px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: #fff;
+  color: #222;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.register-form select:focus {
+  box-shadow: 0 0 5px rgba(0, 200, 120, 0.6);
+  border: 1px solid #00b870;
+}
+
+.register-form select option {
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* ===== Topbar ===== */
+.topbar{
+  background: linear-gradient(90deg, #1a5d8f 0%, #1a5d8f 50%, #10c36a 100%);
+  color: #e6f5ff;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  height: 52px;
+  padding:0 20px;
+  font-size:14px;
+}
+.topbar .contacto span { 
+    margin-right:16px;
+    align-items: center;    
+}
+.topbar .redes a {
+  margin-left:10px;
+  color:inherit;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* ===== Brandbar (navbar con logo) ===== */
+.brandbar {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 28px;
+  background: #215F88;
+  color: #fff;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.15);
+}
+.brand {
+  display:flex;
+  flex-direction: row-reverse;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  color:inherit;
+}
+.brand-logo {
+  width:46px;
+  height:46px;
+  object-fit:contain;
+  border-radius:6px;
+  background: rgba(255,255,255,0.05);
+  padding:4px;
+}
+.brand-text {
+  font-size:24px;
+  font-weight:700;
+  letter-spacing:1px;
+}
+.brand-actions { font-size:14px; }
+
+/* ===== Contenedor principal ===== */
+.contenedor {
+  display:flex;
+  min-height:calc(100vh - 140px); /* restar topbar+brandbar+footer */
+}
+
+/* Imagen (lado izquierdo) */
+.imagen {
+  flex: 2;
+  background: linear-gradient(to right, rgba(30, 74, 97, 0)70%, #1e4a61 100%),
+    url("/frontend/public/img/5.png") center/cover no-repeat;
+  position:relative;
+  display:flex;
+  align-items:flex-end;
+  justify-content: left;
+  padding: 5px;
+}
+
+.imagen::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0; 
+  width: 100px;
+  height: 100%;
+}
+
+.imagen-overlay {
+  max-width: 300px;
+  padding: 45px 5px;
+  border-radius: 6px;
+  justify-content: left;
+}
+
+.nombre { 
+    font-size:24px; 
+    letter-spacing:2px; 
+    margin-bottom:6px; 
+    font-weight:800; 
+}
+.rol { 
+    font-size:20px; 
+    margin-bottom:14px; 
+    font-weight:600; 
+    color:#e6f7ff; 
+}
+.testimonio { 
+    font-size:16px; 
+    line-height:1.5; 
+    text-align: left;
+    color:rgba(255,255,255,0.9); }
+
+/* Formulario (lado derecho) */
+.formulario {
+  flex: 1;
+  background: #1e5f86;
+  padding:48px 65px;
+  /* display:flex;
+  flex-direction:column;
+  justify-content:center;
+  justify-items: center; */
+  border-left: 4px solid rgba(255,255,255,0.05);
+  box-shadow: inset 0 0 0 3px rgba(255,255,255,0.03);
+}
+.form-title {
+  text-align:center;
+  margin-bottom:28px;
+  font-size:24px;
+  letter-spacing:6px;
+  font-weight:700;
+}
+.register-form {
+  display:flex;
+  flex-direction:column;
+  gap:12px; 
+  /* align-items: center; */
+}
+.register-form input {
+  width: 260px;
+  height:28px;
+  padding:9px 12px;
+  border-radius:18px;
+  border: none;
+  outline: none;
+  font-size:14px;
+  background:#fff;
+  color:#222;
+  text-align: left;
+}
+.register-form input::placeholder { color:#777; }
+.btn-crear {
+  margin-top:8px;
+  align-self:center;
+  padding:10px 26px;
+  border:none;
+  background:#06c167;
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+}
+.btn-crear:hover {
+    transform:translateY(-2px); 
+}
+
+/* Footer */
+.site-footer {
+  background: #004b7a;
+  text-align:center;
+  padding:10px 0;
+  color:#dcebff;
+  font-size:13px;
+}
+
+.contact-info, 
+.social-icons {
+  display: flex;
+  align-items: center;   /* centra verticalmente cada grupo */
+  gap: 15px;             /* espacio entre íconos/texto */
+}
+
+
+/* ===== Responsive ===== */
+@media (max-width: 765px) {
+  .contenedor { 
+    flex-direction:column; 
+}
+  .imagen { 
+    flex: 0 0 auto; 
+    min-height: 40vh; 
+    padding:10px; 
+    align-items:center; }
+  .imagen-overlay { 
+    max-width:100%; 
+}
+  .formulario { 
+    flex: 0 0 auto; 
+    padding:28px; }
+  .brand-text { 
+    display:none; 
+} /* compacta el logo */
+  .brand-logo {
+     width:40px; 
+     height:40px; }
+}
