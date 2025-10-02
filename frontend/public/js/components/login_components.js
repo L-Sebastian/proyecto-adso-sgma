@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function(){
-    const headerElement = document.querySelector(".cuerpo");
+    const login_componentElement = document.querySelector(".cuerpo");
 
     if(headerElement){
-        fetch("/frontend/public/views/components/login_components.html")
+        fetch("/frontend/public/views/components/login_component.html")
         .then(response => response.text())
         .then(data => {
-            headerElement.innerHTML = data;
+            login_componentElement.innerHTML = data;
         })
 
-    .catch(error => console.log("Error cargando el hero", error));
+    .catch(error => console.log("Error cargando el login", error));
     }   
 });

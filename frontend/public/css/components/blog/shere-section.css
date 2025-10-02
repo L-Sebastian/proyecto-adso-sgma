@@ -1,0 +1,150 @@
+/* Parte 1*/ 
+.intro-community {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #ffffff;
+    padding-left: 30rem;
+    
+}
+
+.intro-community__title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #00b44a; /* Verde */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.intro-community__description {
+    font-size: 1rem;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Parte 2 */ 
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Tarjetas de contenido */
+.card {
+    background-color: #a8fcd1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+    color: #00804b;
+    margin-top: 0;
+}
+
+.card p {
+    margin-bottom: 10px;
+}
+
+.fecha {
+    font-size: 0.9em;
+    color: #333;
+}
+
+/* Imagenes */
+.image img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* Testimonios */
+.testimonial blockquote {
+    font-style: italic;
+    background-color: #c2fff0;
+    padding: 15px;
+    border-left: 5px solid #00a47c;
+    border-radius: 8px;
+    margin: 0;
+}
+
+.testimonial cite {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+/* */
+/* Parte 3 */ 
+/* Share */
+
+.share-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #fff;
+    flex-wrap: wrap;
+    
+    
+}
+
+.share-section__text {
+    max-width: 70%;
+}
+
+.share-section__title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #1a5276;
+    margin: 0 0 10px;
+}
+
+.share-section__description {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+}
+
+.share-section__action {
+    margin-top: 20px;
+}
+
+.share-section__button {
+    background-color: #00c853;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.share-section__button:hover {
+    background-color: #00b44a;
+}
+
+/* Responsive para móvil */
+@media (max-width: 768px) {
+    .share-section {
+        flex-direction: column;
+        align-items: flex-start;
+  }
+
+    .share-section__text {
+        max-width: 100%;
+  }
+
+    .share-section__action {
+        align-self: center;
+  }
+}

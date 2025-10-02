@@ -1,0 +1,106 @@
+.agriculture {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 80px;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 70%;
+    
+}
+
+.agriculture__text {
+    flex: 1;
+    min-width: 400px;
+}
+
+.agriculture__category {
+    color: var(--primary-600);
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.agriculture__title {
+    font-size: 28px;
+    color: #0f3b82;
+    margin-top: 10px;
+}
+
+.agriculture__description {
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 20px 0;
+    color: #333;
+}
+
+.agriculture__practices {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.practices {
+    flex: 1;
+    min-width: 240px;
+}
+
+.practices h3 {
+    color: var(--primary-secundary-800);
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.practices p {
+    font-size: 14px;
+
+}
+
+.agriculture__button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-600);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 20rem;
+}
+
+.agriculture__button a{
+    text-decoration: none;
+    color: var(--white);
+}
+.agriculture__button:hover {
+    background-color: var(--primary-700); /* Actualizar variables */
+}
+
+.agriculture__img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-left: 830px;
+    margin-top: -400px;
+}
+
+@media screen and (max-width: 768px) {
+    .agricultural {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+}
+
+    .agricultural__content,
+    .agricultural__image {
+        max-width: 100%;
+}
+
+    .agricultural__features {
+        flex-direction: column;
+        gap: 1.5rem;
+  }
+}

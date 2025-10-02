@@ -1,0 +1,131 @@
+.card {
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: #e0ffe5;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    max-width: 23.5%;
+    text-align: center;
+    
+}
+.card__tittle {
+    font-size: 2rem;
+    color: var(--primary-secundary-600);
+    text-align: center;
+   
+    
+}
+
+.card img {
+    height: auto;
+    width: 350px;
+}
+
+.card__button {
+    display: inline-block;
+    background-color: #00a86b;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+    max-width: 7rem;
+    justify-content: ;
+    margin: 7rem;
+    margin-top: -0.2rem;
+}
+
+
+.products__discount {
+    font-family: Arial, sans-serif;
+    background-color: #e5fdf3;
+    margin: 0;
+    padding: 0;
+}
+
+.products-discount {
+    padding: 2rem;
+    text-align: center;
+}
+
+.products-discount__title {
+    color: #0077a3;
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
+    text-align: center;
+}
+
+.products-discount__subtitle {
+    color: #4CAF50;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.products-discount__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.product__card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 200px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.product-card__image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.product-card__name {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+.product-card__price {
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+.product-card__old-price {
+    text-decoration: line-through;
+    color: #999;
+    margin-right: 0.3rem;
+}
+
+.product-card__new-price {
+    color: #1e9449;
+    font-weight: bold;
+}
+
+.product-card__vendor {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.8rem;
+}
+
+.product-card__button {
+    background-color: #1e9449;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    
+}
+
+.product-card__button:hover {
+    background-color: #147836;
+}

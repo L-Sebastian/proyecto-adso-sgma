@@ -1,0 +1,135 @@
+.hero__content__index {
+    background-image: url(/frontend/img/index_.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* ===== Navbar ===== */
+.navbar__hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 4rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    background: transparent
+
+}
+
+.navbar__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navbar__brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--white);
+}
+
+.navbar__icon {
+    width: 24px;
+    height: 24px;
+}
+
+.navbar__menu {
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar__link {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+    transition: color 0.3s;
+
+}
+
+.navbar__link:hover,
+.navbar__link--profile:hover {
+    color: #3ca75b;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem;
+
+}
+
+/* .hero__content {
+    max-width: 50%;
+} */
+
+.hero__title {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.hero__highlight {
+    color: #3ca75b;
+}
+
+.hero__description,
+.hero__text {
+    margin-top: 1rem;
+    font-size: 1rem;
+  
+}
+
+.hero__buttons {
+    margin-top: 2rem;
+}
+
+.hero__button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    margin-right: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #28a745;
+
+
+}
+.hero {
+    color: var(--white);
+    padding: 4rem;
+    color: var(--white);
+    background-color: rgb(91, 109, 81, 0.5);  /* opcional: para dar contraste */
+    border-radius: 10px;
+    text-align: left;
+    max-width: 30%;
+    margin-top: ;
+
+    
+    
+}
+
+
+.hero__title {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+
+.hero__buttons {
+    margin-top: 2rem;
+    display: flex;
+    
+}
+
+.hero__button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    margin-right: 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+
+

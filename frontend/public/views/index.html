@@ -3,32 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/frontend/public/css/">
-    <title>Titulo de proyecto</title>
-    <link rel="stylesheet" href="/frontend/public/css/variables.css">
-    <script src="/frontend/public/js/components/footer.js" defer></script>
-    <script src="/frontend/public/js/components/login_components.js" defer></script>
     
+    <title>SGMA</title>
+    
+    <link rel="stylesheet" href="/frontend/public/css/main.css">
+    
+    <script src="/frontend/public/js/components/header-index.js" defer></script>
+    <script src="/frontend/public/js/components/hero-index.js" defer></script>
+    <script src="/frontend/public/js/components/agriculture.js" defer></script>
+    <script src="/frontend/public/js/components/products.index.js" defer></script>
+    <section src="/frontend/public/js/components/card.js" defer></section>
+    <script src="/frontend/public/js/components/hero-tree.js" defer></script>
+    <script src="/frontend/public/js/components/form.js" defer></script>
+    <script src="/frontend/public/js/components/footer.js" defer></script>
+    <script type="module">
+        import {loadCards} from "/frontend/public/js/components/card.js";
+        loadCards(".services__cards-container");//Clase para cargar todas las cards
+    </script>
 </head>
 <body>
+    <!-- Encabezado -->
+    <header class="header__index">
+       
+    </header>   
 
-    <header>
-        <div class="lol">
-            <ul>
-                <p>atencionalcliente@sgma.com.co</p>
-                <p>(606)-7877674</p>
-                <!-- Logos -->
+    <!-- Hero -->
+    <section class="hero__content__index"> 
 
-            </ul>
+    </section>
+
+    <!-- Agricultura -->
+    <section class="agriculture">
+        <div class="agricultura-box">
+
         </div>
-    </header>
+    </section>
 
-    <a href="profile.html">profile</a>
+    <!-- Productos mas comercializados-->
+    <section class="marketed_products">
+
+    </section>
+
+    <main class="services">
+        <!-- Cards section -->
+        <div class="services__cards-container"> </div>
+
+    <!-- Productos en descuento -->
+    <section class="products__discount">
+
+    </section>
+
+    <!-- Hero Tree -->
+    <section class="community-hero">
+        <div class="community-hero__overlay">
+        
+        </div>
+    </section>
+
+    <!-- Form -->
+    <section class="form">
+        <div class="form__contact">
+            
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
 
         </div>
     </footer>
+
 </body>
 </html>

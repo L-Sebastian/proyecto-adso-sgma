@@ -1,0 +1,25 @@
+.hero__content {
+    background-image: url(/frontend/img/Captura\ de\ pantalla\ 2025-09-15\ 215545.png);
+    background-position: center;
+    background-size: cover;
+    
+}
+
+.hero__title {
+    text-align: center;
+    font-size: var(--fs-md);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Aplicarla en variable */
+    color: var(--white);
+    background-color: rgba(0 0 0 / 25%); /* Aplicar los 2 colores */
+    padding: 10rem;
+    
+}
+
+@media (width > 768px) {
+    .hero__title {
+        width: auto;
+        text-align: center;
+    }
+    
+}
+

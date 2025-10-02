@@ -1,10 +1,17 @@
 /* El archivo main.css solo debe importar los demás para evitar múltiples solicitudes HTTP en producción: */
 
-@import url('reset.css');
 @import url('variables.css');
-@import url('layout.css');
+@import url('layout.css'); 
 @import url('components/navbar.css');
 @import url('components/footer.css');
-@import url('components/forms.css');
-@import url('pages/home.css');
-@import url('themes/dark-mode.css');
+@import url('/css/components/header_index.css');
+/* Import Index */
+@import url('components/header-index.css');
+@import url('components/hero-index.css');
+@import url('components/agriculture.css');
+@import url('components/products-index.css');
+@import url('components/card.css');
+@import url('components/hero-tree.css');
+@import url('components/form.css');
+/* Import BLOG */
+@import url('components/blog/hero.css')
