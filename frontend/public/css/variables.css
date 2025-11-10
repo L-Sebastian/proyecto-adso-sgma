@@ -79,7 +79,7 @@
     --spacing-card-padding-x: 30px; /* Padding horizontal para tarjetas */
 
     /* Fuentes base */
-    --font-family-base: 'Poppins', sans-serif;
+    --font-family-base: 'Poppins', bold;
 
     /* Tamaños de fuente generales */
     --font-size-hero-title: 48px;

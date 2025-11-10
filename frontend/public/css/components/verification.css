@@ -5,64 +5,10 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--font-family-base);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-}
-
-/* Header Styles */
-.header {
-    background: linear-gradient(90deg, #00d084 0%, #00b870 100%);
-    color: white;
-    padding: 12px 40px;
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.contact-info {
-    display: flex;
-    gap: 35px;
-}
-
-.contact-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 14px;
-}
-
-.icon {
-    font-size: 16px;
-}
-
-.social-icons {
-    display: flex;
-    gap: 12px;
-}
-
-.social-icon {
-    width: 32px;
-    height: 32px;
-    background-color: white;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #00d084;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 14px;
-    transition: all 0.3s;
-}
-
-.social-icon:hover {
-    background-color: #f0f0f0;
-    transform: translateY(-2px);
 }
 
 /* Main Content */
@@ -84,7 +30,7 @@ body {
     justify-content: flex-start;
     text-align: left;
     padding: 5px;
-    color: white;
+    color: var(--white);
     position: relative;
 }
 
@@ -141,11 +87,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-top: 10rem;
 }
 
 .verification-title {
-    color: white;
-    font-size: 24px;
+    color: var(--white);
+    font-size: 36px;
     font-weight: bold;
     letter-spacing: 2px;
     margin-bottom: 60px;
@@ -158,7 +105,7 @@ body {
 }
 
 .instruction-text {
-    color: white;
+    color: var(--white);
     font-size: 20px;
     text-align: center;
     margin-bottom: 40px;
@@ -178,30 +125,30 @@ body {
 }
 
 .code-input {
-    width: 50px;
-    height:50px;
+    width: 20px;
+    height:20px;
     text-align: center;
     font-size: 28px;
     font-weight: bold;
     border: none;
-    border-bottom: 3px solid white;
+    border-bottom: 3px solid var(--white);
     border-radius: 0;
     background: transparent;
-    color: #2c5f7f;
+    color: var(--secundary-700);
     outline: none;
     transition: all 0.3s;
-    caret-color: #00d084;
+    caret-color: var(--secundary-600);
 }
 
 .code-input:focus {
-    border-color: #00d084;
+    border-color: var(--secundary-600);
     box-shadow: 0 0 0 3px rgba(0, 208, 132, 0.3);
     transform: scale(1.05);
 }
 
 .code-input.filled {
-    background-color: #e8f8f3;
-    border-color: #00d084;
+    background-color: var(--white);
+    border-color: var(--secundary-600);
 }
 
 .code-input.error {
@@ -217,11 +164,11 @@ body {
 
 /* Submit Button */
 .submit-btn {
-    padding: 14px 50px;
-    background-color: #00d084;
-    color: white;
+    padding: 12px 16px;
+    background-color: var(--secundary-600);
+    color: var(--white);
     border: none;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s;
@@ -230,7 +177,7 @@ body {
 }
 
 .submit-btn:hover {
-    background-color: #00b870;
+    background-color: var(--secundary-700);
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 208, 132, 0.3);
 }
@@ -240,7 +187,7 @@ body {
 }
 
 .submit-btn:disabled {
-    background-color: #7fccae;
+    background-color: var(--secundary-700);
     cursor: not-allowed;
     transform: none;
 }
@@ -252,7 +199,7 @@ body {
     right: 30px;
     padding: 16px 28px;
     border-radius: 8px;
-    color: white;
+    color: var(--white);
     font-weight: 600;
     z-index: 1000;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
@@ -260,7 +207,7 @@ body {
 }
 
 .message.success {
-    background-color: #00d084;
+    background-color: var(--secundary-600);
 }
 
 .message.error {
@@ -268,7 +215,7 @@ body {
 }
 
 .message.info {
-    background-color: #3498db;
+    background-color: var(--primary-500);
 }
 
 @keyframes slideInRight {

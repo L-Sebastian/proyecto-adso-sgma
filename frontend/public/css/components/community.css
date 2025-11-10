@@ -1,0 +1,67 @@
+.community {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
+              url('/frontend/public/img/familia_agricola.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 100px 20px;
+  text-align: center;
+  color: white;
+}
+
+.community__content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.community__title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.community__description {
+  font-size: 14px;
+  margin-bottom: 40px;
+  line-height: 1.8;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.community__buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.community__btn {
+  padding: 9px 14px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.community__btn--register {
+  background-color: #00d084;
+  color: white;
+}
+
+.community__btn--producer {
+  background-color: #00d084;
+  color: white;
+}
+
+.community__btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.community__btn--register:hover {
+  background-color: #00b870;
+}
+
+.community__btn--producer:hover {
+  background-color: #f0f0f0;
+}

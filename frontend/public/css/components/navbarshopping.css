@@ -1,0 +1,151 @@
+/* --- Navbar general --- */
+.navbar {
+  width: 100%;
+  background-color: var(--primary-700); /* Azul principal */
+  color: white;
+  padding: 10px 40px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-family: var(--font-family-base, sans-serif);
+}
+
+.navbar__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Permite que los elementos bajen si no caben */
+}
+
+/* --- Logo a la izquierda --- */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar__logo-img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.navbar__icon {
+  color: #4ce173;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* --- Título centrado --- */
+.navbar__title {
+  flex: 1;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+  color: #fff;
+}
+
+/* --- Menú a la derecha --- */
+.navbar__menu {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+.navbar__link:hover {
+  color: #4ce173;
+}
+
+/* --- Imagen del usuario --- */
+.navbar__avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.navbar__avatar:hover {
+  transform: scale(1.1);
+}
+
+/* --- RESPONSIVIDAD --- */
+
+/* Para pantallas medianas (tablets) */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 10px 20px;
+  }
+
+  .navbar__menu {
+    gap: 15px;
+  }
+
+  .navbar__title {
+    font-size: 1rem;
+  }
+}
+
+/* Para pantallas pequeñas (celulares) */
+@media (max-width: 768px) {
+  .navbar__content {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .navbar__title {
+    order: -1; /* El título se muestra arriba del todo */
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .navbar__menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .navbar__logo {
+    justify-content: center;
+  }
+
+  .navbar__link {
+    font-size: 0.9rem;
+  }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .navbar__logo-img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .navbar__icon {
+    font-size: 1rem;
+  }
+
+  .navbar__title {
+    font-size: 0.9rem;
+  }
+
+  .navbar__link {
+    font-size: 0.85rem;
+  }
+
+  .navbar__avatar {
+    width: 30px;
+    height: 30px;
+  }
+}

@@ -1,194 +1,95 @@
-// Recovery Form Handler
-document.getElementById('recoveryForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get form values
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    
-    // Validate form
-    if (!validateRecoveryForm(email, phone)) {
-        return;
-    }
-    
-    // Create recovery request object
-    const recoveryData = {
-        email,
-        phone,
-        requestedAt: new Date().toISOString()
-    };
-    
-    // Simulate sending recovery code
-    console.log('Solicitud de recuperación:', recoveryData);
-    
-    // Show success message
-    showMessage('Código de recuperación enviado exitosamente. Revisa tu correo electrónico.', 'success');
-    
-    // Reset form after successful submission
-    setTimeout(() => {
-        this.reset();
-    }, 2000);
-});
-
-// Validation function
-function validateRecoveryForm(email, phone) {
-    // Validate email
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        showMessage('Por favor ingresa un correo electrónico válido', 'error');
-        return false;
-    }
-    
-    // Validate phone number
-    const phoneRegex = /^[0-9]{7,10}$/;
-    if (!phoneRegex.test(phone)) {
-        showMessage('Por favor ingresa un número de teléfono válido (7-10 dígitos)', 'error');
-        return false;
-    }
-    
-    return true;
-}
-
-// Show message function
-function showMessage(text, type) {
-    // Remove existing messages
-    const existingMessage = document.querySelector('.message');
-    if (existingMessage) {
-        existingMessage.remove();
-    }
-    
-    // Create message element
-    const messageDiv = document.createElement('div');
-    messageDiv.className = `message ${type}`;
-    messageDiv.textContent = text;
-    
-    document.body.appendChild(messageDiv);
-    
-    // Remove message after 4 seconds
-    setTimeout(() => {
-        messageDiv.style.animation = 'slideOutRight 0.4s ease-out';
-        setTimeout(() => messageDiv.remove(), 400);
-    }, 4000);
-}
-
-// Input animations and effects
-const inputs = document.querySelectorAll('.form-group input');
-
-inputs.forEach(input => {
-    // Focus effect
-    input.addEventListener('focus', function() {
-        this.parentElement.style.transform = 'translateX(8px)';
-        this.parentElement.style.transition = 'transform 0.3s ease';
-    });
-    
-    // Blur effect
-    input.addEventListener('blur', function() {
-        this.parentElement.style.transform = 'translateX(0)';
-    });
-    
-    // Real-time validation indicators
-    input.addEventListener('input', function() {
-        if (this.value.length > 0) {
-            if (this.type === 'email') {
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (emailRegex.test(this.value)) {
-                    this.style.borderColor = '#00d084';
-                } else {
-                    this.style.borderColor = '#e74c3c';
-                }
-            } else if (this.type === 'tel') {
-                const phoneRegex = /^[0-9]{7,10}$/;
-                if (phoneRegex.test(this.value)) {
-                    this.style.borderColor = '#00d084';
-                } else {
-                    this.style.borderColor = '#e74c3c';
-                }
-            }
-        } else {
-            this.style.borderColor = '';
+/**
+ * Carga un archivo HTML y lo inyecta en un elemento placeholder en el DOM.
+ * @param {string} url - La ruta relativa al archivo HTML
+ * @param {string} elementId - El ID del elemento donde se inyectará el contenido
+ */
+async function loadComponent(url, elementId) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`Error al cargar ${url}: ${response.status}`);
         }
-    });
-});
+        const htmlContent = await response.text();
 
-// Phone input - only allow numbers
-document.getElementById('phone').addEventListener('keypress', function(e) {
-    if (!/[0-9]/.test(e.key)) {
-        e.preventDefault();
+        const placeholder = document.getElementById(elementId);
+        if (placeholder) {
+            placeholder.innerHTML = htmlContent;
+        } else {
+            console.error(`No se encontró el elemento con ID: ${elementId}`);
+        }
+    } catch (error) {
+        console.error('Fallo en la carga del componente:', error);
     }
-});
-
-// Prevent paste of non-numeric characters in phone field
-document.getElementById('phone').addEventListener('paste', function(e) {
-    e.preventDefault();
-    const pastedText = (e.clipboardData || window.clipboardData).getData('text');
-    const numericText = pastedText.replace(/\D/g, '');
-    this.value = numericText;
-});
-
-// Social media link configuration
-const socialLinks = document.querySelectorAll('.social-icon');
-if (socialLinks.length >= 4) {
-    socialLinks[0].href = 'https://facebook.com/sgma'; // Facebook
-    socialLinks[1].href = 'https://youtube.com/sgma'; // YouTube
-    socialLinks[2].href = 'https://tiktok.com/@sgma'; // TikTok
-    socialLinks[3].href = 'https://instagram.com/sgma'; // Instagram
 }
 
-// Add loading state to submit button
-const submitBtn = document.querySelector('.submit-btn');
-const originalBtnText = submitBtn.textContent;
+/**
+ * Inicializa el formulario de recuperación
+ */
+function initializeForm() {
+    const form = document.getElementById('recoveryForm');
+    
+    if (form) {
+        console.log('✅ Formulario de recuperación encontrado');
+        
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
 
-function setLoadingState(isLoading) {
-    if (isLoading) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Enviando...';
-        submitBtn.style.opacity = '0.7';
-        submitBtn.style.cursor = 'not-allowed';
+            // Obtener valores del formulario
+            const email = document.getElementById('email').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+
+            // Validaciones
+            if (!email || !telefono) {
+                alert('Por favor completa todos los campos.');
+                return;
+            }
+
+            // Validar email
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Por favor ingresa un correo electrónico válido.');
+                return;
+            }
+
+            // Validar teléfono (7-10 dígitos)
+            const telefonoRegex = /^[0-9]{7,10}$/;
+            if (!telefonoRegex.test(telefono)) {
+                alert('El número de teléfono debe contener entre 7 y 10 dígitos.');
+                return;
+            }
+
+            // Si todo es válido
+            const recoveryData = {
+                email,
+                telefono
+            };
+
+            console.log('Datos de recuperación:', recoveryData);
+
+            // Aquí puedes agregar la lógica para enviar los datos al backend
+            // Por ahora, redirigimos a la página de verificación
+            alert('Código enviado exitosamente. Revisa tu correo.');
+            window.location.href = '/frontend/public/views/views_verification.html';
+        });
     } else {
-        submitBtn.disabled = false;
-        submitBtn.textContent = originalBtnText;
-        submitBtn.style.opacity = '1';
-        submitBtn.style.cursor = 'pointer';
+        console.error('❌ Formulario no encontrado');
     }
 }
 
-// Update form submission to show loading state
-document.getElementById('recoveryForm').addEventListener('submit', function(e) {
-    e.preventDefault();
+/**
+ * Carga los componentes al iniciar la página
+ */
+document.addEventListener('DOMContentLoaded', async () => {
+    console.log('🔄 Cargando componentes...');
     
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
+    const headerPath = '/frontend/public/views/components/header_2.html';
+    const bodyPath = '/frontend/public/views/components/recover.html';
+
+    await loadComponent(headerPath, 'header-placeholder');
+    await loadComponent(bodyPath, 'body-placeholder');
     
-    if (!validateRecoveryForm(email, phone)) {
-        return;
-    }
+    console.log('✅ Componentes cargados');
     
-    // Show loading state
-    setLoadingState(true);
-    
-    // Simulate API call delay
-    setTimeout(() => {
-        const recoveryData = {
-            email,
-            phone,
-            requestedAt: new Date().toISOString()
-        };
-        
-        console.log('Solicitud de recuperación:', recoveryData);
-        
-        // Remove loading state
-        setLoadingState(false);
-        
-        // Show success message
-        showMessage('Código de recuperación enviado exitosamente. Revisa tu correo electrónico.', 'success');
-        
-        // Reset form
-        setTimeout(() => {
-            this.reset();
-            // Reset border colors
-            inputs.forEach(input => {
-                input.style.borderColor = '';
-            });
-        }, 2000);
-    }, 1500);
+    // Inicializar formulario después de cargar componentes
+    setTimeout(initializeForm, 150);
 });

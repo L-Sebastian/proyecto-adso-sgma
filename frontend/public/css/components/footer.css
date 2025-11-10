@@ -1,0 +1,14 @@
+/* === BLOQUE FOOTER === */
+.footer {
+  background-color: var(--primary-700);
+  color: var(--white);
+  text-align: center;
+  padding: 1rem 2rem;
+  font-family: var(--font-family-base);
+  font-size: 0.9rem;
+}
+
+/* Elemento */
+.footer__copy {
+  margin: 0; 
+}

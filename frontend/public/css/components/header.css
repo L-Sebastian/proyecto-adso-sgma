@@ -1,0 +1,138 @@
+.header__index {
+  background: linear-gradient(90deg, var(--primary-700) 70%, var(--secundary-600) 100%);
+  color: var(--white);
+  padding: 0.7rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* --- Contenedor de los correos y teléfono --- */
+.header__info {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Ícono + texto juntos */
+.header__item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.header__item img {
+  width: 22px;
+  height: 22px;
+  margin: 0;
+}
+
+.header__item p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--white);
+  white-space: nowrap;
+}
+
+/* --- Redes sociales --- */
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.header__logo svg {
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.header__logo svg:hover {
+  transform: scale(1.1);
+  opacity: 0.85;
+}
+
+/* -------------------------------------------------- */
+/* ----------- 🔹 RESPONSIVE DESIGN 🔹 ------------- */
+/* -------------------------------------------------- */
+
+/* --- Tablets (pantallas medianas) --- */
+@media (max-width: 1024px) {
+  .header__index {
+    padding: 1rem;
+  }
+
+  .header__content {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .header__info {
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .header__logo {
+    justify-content: center;
+  }
+}
+
+/* --- Móviles (pantallas pequeñas) --- */
+@media (max-width: 768px) {
+  .header__index {
+    padding: 0.8rem 1rem;
+  }
+
+  .header__content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.8rem;
+  }
+
+  .header__info {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .header__item p {
+    font-size: 13px;
+  }
+
+  .header__item img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .header__logo {
+    gap: 10px;
+  }
+
+  .header__logo svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* --- Extra pequeño (muy pequeños móviles) --- */
+@media (max-width: 480px) {
+  .header__item p {
+    font-size: 12px;
+  }
+
+  .header__logo svg {
+    width: 22px;
+    height: 22px;
+  }
+}
