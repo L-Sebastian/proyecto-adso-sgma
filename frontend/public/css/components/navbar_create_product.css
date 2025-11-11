@@ -1,0 +1,62 @@
+.navbar-bottom {
+  background-color: #000;
+  color: white;
+  padding: 6px 40px;
+  font-family: var(--font-family-base);
+  font-size: 0.95rem;
+  position: relative;
+}
+
+.navbar-bottom__content {
+  display: flex;
+  justify-content: flex-end; /* Alinea el usuario a la derecha */
+  align-items: center;
+  position: relative;
+}
+
+/* --- Sección central (antes izquierda): ícono + texto --- */
+.navbar-bottom__left {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* --- Sección derecha: usuario + imagen --- */
+.navbar-bottom__right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar__avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid white;
+  object-fit: cover;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .navbar-top, .navbar-bottom {
+    padding: 8px 20px;
+  }
+
+  .navbar-bottom__content {
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .navbar-bottom__left {
+    position: static;
+    transform: none;
+  }
+
+  .navbar-bottom__right span {
+    font-size: 0.9rem;
+  }
+}

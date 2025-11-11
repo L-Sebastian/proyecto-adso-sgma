@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGMA - Información de Finca</title>
+    <link rel="stylesheet" href="/frontend/public/css/components/create_product_2.css">
+</head>
+<body>
+    <div class="main-content">
+        <div class="content-wrapper">
+            <!-- Image Section -->
+            <div class="image-section">
+                <div class="image-container">
+                    <img src="/frontend/public/img/Imagen de WhatsApp 2025-11-10 a las 14.47.11_ae0405ec.jpg" alt="Guanabana" class="product-image" id="productImage">
+                    <p class="image-text">Seleccione una imagen</p>
+                </div>
+            </div>
+
+            <!-- Form Section -->
+            <div class="form-section">
+                <form id="fincaForm">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label class="form-label">Nombre Finca</label>
+                            <input type="text" class="form-input" value="Finca el Porvenir" id="nombreFinca">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Stock</label>
+                            <input type="number" class="form-input" value="10" id="stock">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Dirección Finca</label>
+                            <input type="text" class="form-input" value="Mas arriba de la cruz" id="direccionFinca">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Tipo de Envío</label>
+                            <select class="form-select" id="tipoEnvio">
+                                <option value="domicilio" selected>Domicilio</option>
+                                <option value="recogida">Recogida en Finca</option>
+                                <option value="transporte">Transporte Propio</option>
+                                <option value="mensajeria">Mensajería</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group description-section">
+                            <label class="form-label">Descripción</label>
+                            <textarea class="description-textarea" id="descripcion">La guanábana es una fruta tropical grande y ovalada con cáscara verde espinosa y pulpa blanca, jugosa y aromática</textarea>
+                        </div>
+                    </div>
+
+                    <div class="button-container">
+                        <button type="button" class="btn btn-secondary" onclick="volver()">Volver</button>
+                        <button type="submit" class="btn btn-primary">Publicar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

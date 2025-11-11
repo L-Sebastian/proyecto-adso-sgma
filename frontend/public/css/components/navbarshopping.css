@@ -20,6 +20,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-direction: row-reverse;
 }
 
 .navbar__logo-img {
