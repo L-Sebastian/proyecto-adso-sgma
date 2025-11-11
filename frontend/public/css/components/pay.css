@@ -5,7 +5,7 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: var(--font-family-base);
             overflow-x: hidden;
         }
 
@@ -25,6 +25,7 @@
             left: 0;
             right: 0;
             bottom: 0;
+            z-index: 0;
 
 
         }
@@ -32,19 +33,18 @@
         .checkout-container {
             background: rgba(255, 255, 255, 0.3);
             backdrop-filter: blur(2px);
-            padding: 60px;
+            padding: 40px;
             position: relative;
-            max-width: 1400px;
+            max-width: 100%;
             margin: 0 auto;
             display: flex;
-            gap: 40px;
+            gap: 24px;
             align-items: flex-start;
         }
 
         /* Payment Methods */
         .payment-methods {
             padding: 20px;
-
             margin-bottom: 30px;
             text-align: center;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -121,6 +121,9 @@
         }
 
         .user-info {
+            display: block;           /* Necesario para que funcione el centrado */
+            margin: 1px auto 0;
+            width: 381px;
             padding: 0 20px;
             margin-bottom: 20px;
         }
@@ -227,7 +230,6 @@
         .summary-card {
             background: white;
             padding: 25px;
-            border-radius: 10px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
 
@@ -236,7 +238,6 @@
             color: white;
             padding: 15px;
             margin: -25px -25px 20px -25px;
-            border-radius: 10px 10px 0 0;
             text-align: center;
             font-size: 16px;
             font-weight: 600;
@@ -244,7 +245,6 @@
 
         .summary-item {
             display: flex;
-            justify-content: space-between;
             align-items: center;
             margin-bottom: 15px;
             
@@ -307,8 +307,10 @@
         /* Credit Card Display */
         .credit-card {
             background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+            width: 316px;
+            height: 237px;
             border-radius: 15px;
-            padding: 25px;
+            padding: 10px;
             color: white;
             margin-top: 20px;
             position: relative;
@@ -384,18 +386,463 @@
             box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
         }
 
-        /* Responsive */
-        @media (max-width: 1024px) {
+        /* ---------- 🌐 RESPONSIVE DESIGN ---------- */
+
+@media (max-width: 1024px) {
+            .top-bar {
+                padding: 8px 20px;
+                font-size: 12px;
+            }
+
+            .contact-info {
+                gap: 15px;
+            }
+
+            .main-header {
+                padding: 15px 20px;
+            }
+
+            .logo {
+                font-size: 26px;
+            }
+
+            .cart-title {
+                font-size: 20px;
+            }
+
+            .nav-menu {
+                gap: 20px;
+            }
+
+            .nav-menu a {
+                font-size: 14px;
+            }
+
+            .main-content {
+                padding: 30px 20px;
+            }
+
             .checkout-container {
                 flex-direction: column;
+                padding: 40px 40px;
+                gap: 30px;
+            }
+
+            .payment-methods {
+                padding: 15px;
+            }
+
+            .payment-logos {
+                gap: 10px;
+            }
+
+            .form-section {
+                padding: 25px;
             }
 
             .summary-section {
                 flex: none;
                 width: 100%;
+                max-width: 600px;
+                margin: 0 auto;
             }
 
             .form-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .credit-card {
+                max-width: 400px;
+                margin: 20px auto 0;
+            }
+        }
+
+        /* Móviles grandes (hasta 768px) */
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px;
+                text-align: center;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .social-icons {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .main-header {
+                flex-wrap: wrap;
+                gap: 15px;
+                padding: 15px;
+                justify-content: center;
+            }
+
+            .logo {
+                font-size: 24px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .cart-title {
+                font-size: 18px;
+                width: 100%;
+                text-align: center;
+                order: 3;
+            }
+
+            .nav-menu {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+                width: 100%;
+            }
+
+            .nav-menu a {
+                font-size: 13px;
+            }
+
+            .main-content {
+                padding: 20px 10px;
+            }
+
+            .checkout-container {
+                padding: 20px 10px;
+            }
+
+            .payment-methods {
+                padding: 15px 10px;
+            }
+
+            .payment-methods h3 {
+                font-size: 16px;
+            }
+
+            .payment-logos {
+                gap: 8px;
+            }
+
+            .payment-logos svg {
+                width: 45px;
+                height: 30px;
+            }
+
+            .form-section {
+                padding: 20px 15px;
+            }
+
+            .step-header {
+                padding: 10px;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .step-title {
+                font-size: 13px;
+            }
+
+            .modify-link {
+                font-size: 12px;
+                padding: 4px 12px;
+            }
+
+            .payment-options {
+                flex-wrap: wrap;
+                justify-content: center;
+                padding: 0 10px;
+                gap: 10px;
+            }
+
+            .payment-option {
+                padding: 8px;
+            }
+
+            .payment-option svg {
+                width: 45px;
+                height: 30px;
+            }
+
+            .form-grid {
+                padding: 0 10px;
+                gap: 15px;
+            }
+
+            .form-label {
+                font-size: 13px;
+            }
+
+            .form-input, .form-select {
+                font-size: 13px;
+                padding: 8px 12px;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .form-row select {
+                width: 100%;
+            }
+
+            .summary-card {
+                padding: 20px;
+            }
+
+            .summary-header {
+                font-size: 16px;
+                margin: -20px -20px 15px -20px;
+            }
+
+            .summary-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            .summary-item label {
+                font-size: 13px;
+            }
+
+            .summary-item .value {
+                font-size: 14px;
+                width: 100%;
+            }
+
+            .summary-total .amount {
+                font-size: 20px;
+            }
+
+            .credit-card {
+                padding: 20px;
+            }
+
+            .card-number {
+                font-size: 18px;
+                letter-spacing: 2px;
+            }
+
+            .card-info {
+                font-size: 11px;
+            }
+
+            .pay-button {
+                width: 100%;
+                font-size: 15px;
+            }
+        }
+
+        /* Móviles pequeños (hasta 480px) */
+        @media (max-width: 480px) {
+            .top-bar {
+                font-size: 11px;
+            }
+
+            .social-icons a {
+                font-size: 16px;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .logo-icon {
+                font-size: 22px;
+            }
+
+            .cart-title {
+                font-size: 16px;
+            }
+
+            .nav-menu {
+                font-size: 12px;
+            }
+
+            .user-avatar {
+                width: 35px;
+                height: 35px;
+            }
+
+            .checkout-container {
+                padding: 15px 5px;
+            }
+
+            .payment-methods {
+                padding: 10px;
+            }
+
+            .payment-methods h3 {
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+
+            .payment-logos {
+                gap: 5px;
+            }
+
+            .payment-logos svg {
+                width: 40px;
+                height: 28px;
+            }
+
+            .form-section {
+                padding: 15px 10px;
+            }
+
+            .step-header {
+                padding: 8px;
+            }
+
+            .step-number {
+                width: 25px;
+                height: 25px;
+                font-size: 12px;
+            }
+
+            .step-title {
+                font-size: 12px;
+            }
+
+            .modify-link {
+                font-size: 11px;
+                padding: 3px 10px;
+            }
+
+            .user-info {
+                padding: 0 10px;
+                font-size: 13px;
+            }
+
+            .payment-options {
+                gap: 8px;
+                padding: 0 5px;
+            }
+
+            .payment-option {
+                padding: 6px;
+            }
+
+            .payment-option svg {
+                width: 40px;
+                height: 28px;
+            }
+
+            .form-grid {
+                padding: 0 5px;
+                gap: 12px;
+            }
+
+            .form-label {
+                font-size: 12px;
+            }
+
+            .form-input, .form-select {
+                font-size: 12px;
+                padding: 7px 10px;
+            }
+
+            .summary-card {
+                padding: 15px;
+            }
+
+            .summary-header {
+                font-size: 15px;
+                padding: 12px;
+                margin: -15px -15px 15px -15px;
+            }
+
+            .summary-item {
+                margin-bottom: 12px;
+            }
+
+            .summary-item label {
+                font-size: 12px;
+            }
+
+            .summary-item .value {
+                font-size: 13px;
+            }
+
+            .summary-total .amount {
+                font-size: 18px;
+            }
+
+            .summary-note {
+                font-size: 11px;
+            }
+
+            .credit-card {
+                padding: 18px;
+            }
+
+            .card-logo svg {
+                width: 50px;
+                height: 35px;
+            }
+
+            .card-chip {
+                width: 45px;
+                height: 35px;
+            }
+
+            .card-number {
+                font-size: 16px;
+                letter-spacing: 1px;
+            }
+
+            .card-info {
+                font-size: 10px;
+            }
+
+            .pay-button {
+                padding: 12px;
+                font-size: 14px;
+            }
+        }
+
+        /* Extra pequeños (hasta 360px) */
+        @media (max-width: 360px) {
+            .logo {
+                font-size: 18px;
+            }
+
+            .cart-title {
+                font-size: 14px;
+            }
+
+            .nav-menu a {
+                font-size: 11px;
+            }
+
+            .payment-logos svg,
+            .payment-option svg {
+                width: 35px;
+                height: 25px;
+            }
+
+            .form-label {
+                font-size: 11px;
+            }
+
+            .form-input, .form-select {
+                font-size: 11px;
+                padding: 6px 8px;
+            }
+
+            .card-number {
+                font-size: 14px;
+            }
+
+            .summary-header {
+                font-size: 14px;
+            }
+
+            .summary-total .amount {
+                font-size: 16px;
             }
         }
