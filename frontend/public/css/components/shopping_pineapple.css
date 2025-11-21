@@ -1,228 +1,228 @@
-       * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* -------------------------------------------------------
+   RESET
+------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(180deg, #c8e6c9 0%, #a5d6a7 100%);
-            min-height: 100vh;
-        }
+body {
+    font-family: var(--font-family-base);
+    background: linear-gradient(180deg, #c8e6c9 0%, #a5d6a7 100%);
+    min-height: 100vh;
+}
 
-        /* Main Content */
-        .main-content-shopping-pineapple {
-            padding: 60px 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
+/* -------------------------------------------------------
+   CONTENEDOR GENERAL
+------------------------------------------------------- */
+.main-content-shopping-pineapple {
+    padding: 60px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
 
-        .product-card-shopping-pineapple {
-            background: white;
-            border-radius: 20px;
-            padding: 50px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            display: flex;
-            gap: 60px;
-            position: relative;
-        }
+.product-card-shopping-pineapple {
+    background: white;
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: flex-start;
+    gap: 35px;
+}
 
+/* -------------------------------------------------------
+   IMAGEN DEL PRODUCTO
+------------------------------------------------------- */
+.product-image-section-shopping-pineapple {
+    width: 420px;
+    display: flex;
+    justify-content: center;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* -------------------------------------------------------
+   INFORMACIÓN DEL PRODUCTO
+------------------------------------------------------- */
 .product-info-section-shopping-pineapple {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 25px; /* Espacio entre el título y el siguiente bloque */
+    gap: 25px;
 }
 
-/* Product Info */
-.product-info-section-shopping-pineapple {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 25px; /* Espacio entre el título y el siguiente bloque */
+.product-title-shopping-pineapple {
+    color: #10b981;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.3;
 }
 
-/* NUEVO: Contenedor principal para la información del producto (precio, vendedor, entrega y acciones) */
-.product-main-details-shopping-pineapple {
-    display: flex;
-    justify-content: space-between; /* Empuja los dos bloques principales a los extremos */
-    align-items: flex-start; /* Alinea los elementos al inicio */
-    gap: 30px; /* Espacio entre la columna de precio/vendedor y la columna de entrega/acciones */
-}
-
-/* Contenedor para Precio y Vendedor (se mantiene en columna) */
+/* -------------------------------------------------------
+   PRECIOS
+------------------------------------------------------- */
 .price-and-seller-shopping-pineapple {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    flex-shrink: 0; /* Asegura que no se encoja para dejar espacio */
 }
 
-.price-section-shopping-pineapple {
+.price-stack {
     display: flex;
-    align-items: baseline;
-    gap: 15px;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.price-line {
+    
 }
 
 .old-price-shopping-pineapple {
     color: #999;
-    font-size: 16px;
+    font-size: 18px;
     text-decoration: line-through;
+}
+
+.current-price-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .current-price-shopping-pineapple {
     color: #333;
-    font-size: 36px; /* Aumentado para mayor prominencia, como en la imagen */
-    font-weight: bold;
+    font-size: 38px;
+    font-weight: 700;
 }
 
 .discount-badge-shopping-pineapple {
     color: green;
+    background: #e8fbe8;
     padding: 4px 12px;
     border-radius: 15px;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
 }
 
-.seller-info-shopping-pineapple {
-    color: #666;
-    font-size: 16px;
+/* -------------------------------------------------------
+   CONDICIONES DE ENTREGA + ACCIONES
+------------------------------------------------------- */
+.product-main-details-shopping-pineapple {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 24px;
 }
 
-.seller-info-shopping-pineapple strong {
-    color: #333;
-}
-
-/* NUEVO: Contenedor para la caja de entrega y la sección de acciones, apilados verticalmente */
 .delivery-and-actions-shopping-pineapple {
     display: flex;
-    flex-direction: column;
-    gap: 20px; /* Espacio entre la caja de entrega y la sección de acciones */
-    flex-shrink: 0; /* Asegura que no se encoja */
+    gap: 24px;
 }
 
-/* Delivery Info Box */
+/* Caja de entrega */
 .delivery-box-shopping-pineapple {
     border: 2px solid #e5e7eb;
     border-radius: 15px;
     padding: 20px;
-    width: 280px; /* Ancho fijo para la caja de entrega como en la imagen */
-    flex-shrink: 0; /* Importante para que no se encoja */
+    width: 300px;
 }
 
 .delivery-title-shopping-pineapple {
     font-weight: 700;
-    color: #333;
     margin-bottom: 15px;
-    font-size: 16px;
+    color: #333;
 }
 
 .delivery-item-shopping-pineapple {
     display: flex;
-    align-items: flex-start;
     gap: 10px;
-    margin-bottom: 10px;
-    font-size: 14px;
+    margin-bottom: 12px;
+    font-size: 15px;
     color: #666;
 }
 
-.delivery-item-shopping-pineapple svg {
-    flex-shrink: 0;
-    margin-top: 2px;
-}
-
-.delivery-item-shopping-pineapple strong {
-    color: #333;
-}
-
-/* Quantity and Add Button */
+/* -------------------------------------------------------
+   CANTIDAD + BOTÓN AGREGAR
+------------------------------------------------------- */
 .action-section-shopping-pineapple {
     display: flex;
-    flex-direction: column; /* Apila el control de cantidad y el botón */
-    align-items: flex-start; /* Alinea los elementos a la izquierda dentro de su contenedor */
-    gap: 15px; /* Espacio entre el control de cantidad y el botón */
-    margin-top: 0; /* Elimina cualquier margin-top anterior si interfiere */
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
 }
 
 .quantity-control-shopping-pineapple {
     display: flex;
-    align-items: center;
-    border: 1px solid #ccc; /* Borde más sutil como en la imagen */
+    border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
 }
 
 .quantity-btn-shopping-pineapple {
-    width: 35px; /* Botones más pequeños */
-    height: 35px;
+    width: 40px;
+    height: 40px;
+    background: #f3f4f6;
     border: none;
-    background: #f0f0f0;
-    color: #555;
-    font-size: 18px;
     cursor: pointer;
-    transition: background 0.3s;
-}
-
-.quantity-btn-shopping-pineapple:hover {
-    background: #e0e0e0;
+    font-size: 20px;
 }
 
 .quantity-input-shopping-pineapple {
-    width: 50px; /* Ancho ajustado para el input */
-    height: 35px;
+    width: 60px;
+    height: 40px;
+    text-align: center;
     border: none;
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
-    text-align: center;
     font-size: 16px;
-    font-weight: 600;
 }
 
 .add-to-cart-btn-shopping-pineapple {
     background: #10b981;
     color: white;
     border: none;
-    padding: 10px 25px; /* Padding ajustado */
+    padding: 12px 40px;
     border-radius: 8px;
     font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
+    font-weight: 700;
     display: flex;
     align-items: center;
-    justify-content: center; /* Centra el texto y el ícono */
-    gap: 8px;
-    transition: all 0.3s;
-    width: 100%; /* El botón ocupa todo el ancho disponible */
-    max-width: 150px; /* Limita el ancho máximo del botón */
+    gap: 10px;
+    cursor: pointer;
+    transition: .3s;
 }
 
 .add-to-cart-btn-shopping-pineapple:hover {
     background: #059669;
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
 }
 
-/* Product Details Section - Mantiene los estilos existentes */
+/* -------------------------------------------------------
+   DETALLES DEL PRODUCTO
+------------------------------------------------------- */
 .product-details-shopping-pineapple {
-    margin-top: 40px; /* Separación del bloque superior */
-    background: #f0fdf4; /* Fondo del encabezado de detalles */
-    padding: 15px 25px;
-    border-radius: 10px;
+    margin-top: 40px;
+    padding: 25px;
+    background: #f0fdf4;
+    border-radius: 12px;
 }
 
 .details-header-shopping-pineapple {
-    background: none; /* Elimina el fondo del header si ya está en el padre */
-    padding: 0; /* Elimina el padding si el fondo ya está en el padre */
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 700;
-    color: #333;
     margin-bottom: 25px;
 }
 
 .details-grid-shopping-pineapple {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: 24px;
 }
 
 .detail-item-shopping-pineapple {
@@ -231,386 +231,56 @@
     border-radius: 10px;
 }
 
-     /* Product Image */
-        .product-image-section-shopping-pineapple {
-            flex: 0 0 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+.detail-label-shopping-pineapple {
+    font-size: 14px;
+    color: #666;
+    font-weight: 600;
+}
 
-        .product-image-shopping-pineapple {
-            width: 342px;
-            height: 430px;
-            height: auto;
-            object-fit: contain;
-        }
+.detail-value-shopping-pineapple {
+    font-size: 16px;
+    font-weight: 700;
+}
 
-.container-entrega-shopping-pineapple {
+/* -------------------------------------------------------
+   BOTÓN REGRESAR
+------------------------------------------------------- */
+.back-button-shopping-pineapple {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background: #10b981;
+    border-radius: 50%;
+    color: white;
+    font-size: 28px;
     display: flex;
-    justify-content: space-between; /* Empuja los dos bloques (precio y delivery) a los extremos */
-    align-items: flex-start; /* Alinea los elementos al inicio (arriba) */
-    gap: 30px;
-    margin-bottom: 25px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
 }
 
-.price-and-seller-shopping-pineapple {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Espacio entre el precio y el vendedor */
-}
-        /* Product Info */
-        .product-info-section-shopping-pineapple {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-        }
+/* -------------------------------------------------------
+   RESPONSIVE
+------------------------------------------------------- */
 
-        .product-title-shopping-pineapple {
-            color: #10b981;
-            font-size: 24px;
-            font-weight: 700;
-            line-height: 1.3;
-        }
+@media (max-width: 1024px) {
+    .product-card-shopping-pineapple {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-        .price-section-shopping-pineapple {
-            display: flex;
-            align-items: baseline;
-            gap: 15px;
-        }
-
-        .price-and-seller-shopping-pineapple {
-            display: flex;
-            flex-direction: column;
-            gap: 10px; /* Espacio vertical entre el precio y el vendedor */
-        }
-
-        .old-price-shopping-pineapple {
-            color: #999;
-            font-size: 16px;
-            text-decoration: line-through;
-        }
-
-        .current-price-shopping-pineapple {
-            color: #333;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .discount-badge-shopping-pineapple {
-            color: green;
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .seller-info-shopping-pineapple {
-            color: #666;
-            font-size: 14px;
-        }
-
-        .seller-info-shopping-pineapple strong {
-            color: #333;
-        }
-
-        /* Delivery Info Box */
-.delivery-box-shopping-pineapple {
-    border: 2px solid #e5e7eb;
-    border-radius: 15px;
-    padding: 20px;
-    /* max-width: 400px; /* Ya está definido, asegúrate de que sea razonable */
-    flex-shrink: 0; /* Evita que la caja de entrega se encoja si no hay espacio */
-    width: 250px; /* Un ancho fijo para imitar el diseño de la imagen */
+    .product-main-details-shopping-pineapple {
+        flex-direction: column;
+    }
 }
 
-.current-price-shopping-pineapple {
-    /* ... otros estilos */
-    font-size: 36px; /* Ajusta este tamaño para que coincida con la imagen */
-    font-weight: bold;
+@media (max-width: 768px) {
+    .details-grid-shopping-pineapple {
+        grid-template-columns: 1fr;
+    }
 }
 
-        .delivery-title-shopping-pineapple {
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 15px;
-            font-size: 16px;
-        }
-
-        .delivery-item-shopping-pineapple {
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-            margin-bottom: 10px;
-            font-size: 14px;
-            color: #666;
-        }
-
-        .delivery-item-shopping-pineapple svg {
-            flex-shrink: 0;
-            margin-top: 2px;
-        }
-
-        .delivery-item-shopping-pineapple strong {
-            color: #333;
-        }
-
-        /* Quantity and Add Button */
-        .action-section-shopping-pineapple {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-top: 10px;
-        }
-
-        .quantity-control-shopping-pineapple {
-            display: flex;
-            align-items: center;
-            gap: 0;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .quantity-btn-shopping-pineapple {
-            width: 40px;
-            height: 40px;
-            border: none;
-            background: #f3f4f6;
-            color: #666;
-            font-size: 20px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .quantity-btn-shopping-pineapple:hover {
-            background: #e5e7eb;
-        }
-
-        .quantity-input-shopping-pineapple {
-            width: 60px;
-            height: 40px;
-            border: none;
-            border-left: 2px solid #e5e7eb;
-            border-right: 2px solid #e5e7eb;
-            text-align: center;
-            font-size: 16px;
-            font-weight: 600;
-        }
-
-        .add-to-cart-btn-shopping-pineapple {
-            background: #10b981;
-            color: white;
-            border: none;
-            padding: 12px 40px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.3s;
-        }
-
-        .add-to-cart-btn-shopping-pineapple:hover {
-            background: #059669;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-        }
-
-        /* Product Details Section */
-        .product-details-shopping-pineapple {
-            margin-top: 40px;
-        }
-
-        .details-header-shopping-pineapple {
-            background: #f0fdf4;
-            padding: 15px 25px;
-            border-radius: 10px;
-            font-size: 18px;
-            font-weight: 700;
-            color: #333;
-            margin-bottom: 25px;
-        }
-
-        .details-grid-shopping-pineapple {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
-
-        .detail-item-shopping-pineapple {
-            background: #f9fafb;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        .detail-label-shopping-pineapple {
-            font-size: 13px;
-            color: #666;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-
-        .detail-value-shopping-pineapple {
-            font-size: 15px;
-            color: #333;
-            font-weight: 700;
-        }
-
-        /* Back Button */
-        .back-button-shopping-pineapple {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            width: 60px;
-            height: 60px;
-            background: #10b981;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 28px;
-            cursor: pointer;
-            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
-            transition: all 0.3s;
-            border: none;
-        }
-
-        .back-button-shopping-pineapple:hover {
-            transform: scale(1.1);
-            background: #059669;
-        }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .product-card-shopping-pineapple {
-                flex-direction: column;
-                padding: 40px 30px;
-                gap: 40px;
-            }
-
-            .product-image-section-shopping-pineapple {
-                flex: none;
-                width: 100%;
-                max-width: 400px;
-                margin: 0 auto;
-            }
-
-            .details-grid-shopping-pineapple {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .top-bar-shopping-pineapple {
-                flex-direction: column;
-                gap: 10px;
-                padding: 15px;
-            }
-
-            .contact-info-shopping-pineapple {
-                flex-direction: column;
-                gap: 8px;
-                text-align: center;
-            }
-
-            .main-header-shopping-pineapple {
-                flex-wrap: wrap;
-                gap: 15px;
-                padding: 15px 20px;
-            }
-
-            .logo-shopping-pineapple {
-                font-size: 24px;
-            }
-
-            .search-container-shopping-pineapple {
-                order: 3;
-                width: 100%;
-                max-width: 100%;
-                margin: 0;
-            }
-
-            .nav-menu-shopping-pineapple {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 15px;
-                width: 100%;
-            }
-
-            .main-content-shopping-pineapple {
-                padding: 40px 20px;
-            }
-
-            .product-card-shopping-pineapple {
-                padding: 30px 20px;
-            }
-
-            .product-title-shopping-pineapple {
-                font-size: 24px;
-            }
-
-            .current-price-shopping-pineapple {
-                font-size: 28px;
-            }
-
-            .details-grid-shopping-pineapple {
-                grid-template-columns: 1fr;
-            }
-
-            .action-section-shopping-pineapple {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .quantity-control-shopping-pineapple {
-                justify-content: center;
-            }
-
-            .add-to-cart-btn-shopping-pineapple {
-                justify-content: center;
-            }
-
-            .back-button-shopping-pineapple {
-                width: 50px;
-                height: 50px;
-                bottom: 20px;
-                right: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo-shopping-pineapple {
-                font-size: 20px;
-            }
-
-            .social-icons-shopping-pineapple {
-                gap: 10px;
-            }
-
-            .social-icon-shopping-pineapple {
-                width: 30px;
-                height: 30px;
-                font-size: 14px;
-            }
-
-            .product-card-shopping-pineapple {
-                padding: 20px 15px;
-            }
-
-            .product-title-shopping-pineapple {
-                font-size: 20px;
-            }
-
-            .current-price-shopping-pineapple {
-                font-size: 24px;
-            }
-
-            .delivery-box-shopping-pineapple {
-                padding: 15px;
-            }
-        }
