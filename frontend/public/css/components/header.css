@@ -1,4 +1,4 @@
-.header__index {
+.header__index-register {
   background: linear-gradient(90deg, var(--primary-700) 70%, var(--secundary-600) 100%);
   color: var(--white);
   padding: 0.7rem 2rem;
@@ -9,7 +9,7 @@
   box-sizing: border-box;
 }
 
-.header__content {
+.header__content-register {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -18,26 +18,26 @@
 }
 
 /* --- Contenedor de los correos y teléfono --- */
-.header__info {
+.header__info-register {
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
 }
 
 /* Ícono + texto juntos */
-.header__item {
+.header__item-register {
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.header__item img {
+.header__item-register img {
   width: 22px;
   height: 22px;
   margin: 0;
 }
 
-.header__item p {
+.header__item-register p {
   margin: 0;
   font-size: 14px;
   color: var(--white);
@@ -45,18 +45,18 @@
 }
 
 /* --- Redes sociales --- */
-.header__logo {
+.header__logo-register {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 24px;
 }
 
-.header__logo svg {
+.header__logo-register svg {
   cursor: pointer;
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
-.header__logo svg:hover {
+.header__logo-register svg:hover {
   transform: scale(1.1);
   opacity: 0.85;
 }
@@ -67,59 +67,59 @@
 
 /* --- Tablets (pantallas medianas) --- */
 @media (max-width: 1024px) {
-  .header__index {
+  .header__index-register {
     padding: 1rem;
   }
 
-  .header__content {
+  .header__content-register {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
   }
 
-  .header__info {
+  .header__info-register {
     justify-content: center;
     gap: 20px;
   }
 
-  .header__logo {
+  .header__logo-register {
     justify-content: center;
   }
 }
 
 /* --- Móviles (pantallas pequeñas) --- */
 @media (max-width: 768px) {
-  .header__index {
+  .header__index-register {
     padding: 0.8rem 1rem;
   }
 
-  .header__content {
+  .header__content-register {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 0.8rem;
   }
 
-  .header__info {
+  .header__info-register {
     flex-direction: column;
     align-items: center;
     gap: 8px;
   }
 
-  .header__item p {
+  .header__item-register p {
     font-size: 13px;
   }
 
-  .header__item img {
+  .header__item-register img {
     width: 20px;
     height: 20px;
   }
 
-  .header__logo {
+  .header__logo-register {
     gap: 10px;
   }
 
-  .header__logo svg {
+  .header__logo-register svg {
     width: 26px;
     height: 26px;
   }
@@ -127,11 +127,11 @@
 
 /* --- Extra pequeño (muy pequeños móviles) --- */
 @media (max-width: 480px) {
-  .header__item p {
+  .header__item-register p {
     font-size: 12px;
   }
 
-  .header__logo svg {
+  .header__logo-register svg {
     width: 22px;
     height: 22px;
   }

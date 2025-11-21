@@ -12,14 +12,14 @@ body {
 }
 
 /* Main Content */
-.main-content {
+.main-content-recover {
     flex: 1;
     display: flex;
     min-height: calc(100vh - 56px);
 }
 
 /* Testimonial Section (Left) */
-.testimonial-section {
+.testimonial-section-recover {
     flex: 2;
     background: linear-gradient(to right, rgba(30, 74, 97, 0)70%, var(--primary-900) 100%),
                 url('/frontend/public/img/4.png');
@@ -33,7 +33,7 @@ body {
 }
 
 /* Add a subtle overlay pattern */
-.testimonial-section::before {
+.testimonial-section-recover::before {
     content: '';
     position: absolute;
     top: 0;
@@ -43,7 +43,7 @@ body {
     background: radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
 }
 
-.testimonial-content {
+.testimonial-content-recover {
     max-width: 300px;
     position: relative;
     z-index: 1;
@@ -53,7 +53,7 @@ body {
 }
 
 
-.client-name {
+.client-name-recover {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 8px;
@@ -61,14 +61,14 @@ body {
     letter-spacing: 2px;
 }
 
-.client-status {
+.client-status-recover {
     font-size: 20px;
     margin-bottom: 25px;
     font-weight: 300;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.testimonial-text {
+.testimonial-text-recover {
     font-size: 16px;
     line-height: 1.7;
     font-style: italic;
@@ -82,7 +82,7 @@ body {
 
 
 /* Recovery Section (Right) */
-.recovery-section {
+.recovery-section-recover {
     flex: 1;
     background: linear-gradient(135deg, #2c5f7f 0%, #1e4a61 100%);
     padding: 60px 40px;
@@ -93,7 +93,7 @@ body {
     padding-top: 8rem;
 }
 
-.recovery-title {
+.recovery-title-recover {
     color: var(--white);
     font-size: var(--font-size-h2);
     font-weight: bold;
@@ -102,25 +102,25 @@ body {
     text-align: center;
 }
 
-.recovery-form {
+.recovery-form-recover {
     width: 100%;
     max-width: 350px;
     margin: 0 auto;
 }
 
-.form-group {
-    margin-bottom: 12px;
+.form-group-recover {
+    margin-bottom: 24px;
 }
 
-.form-group label {
+.form-group-recover label {
     display: flex;
     color: var(--white);
     font-size: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     font-weight: 500;
 }
 
-.form-group input {
+.form-group-recover input {
     width: 100%;
     padding: 12px 10px;
     border: none;
@@ -133,16 +133,16 @@ body {
     justify-items: center;
 }
 
-.form-group input:focus {
+.form-group-recover input:focus {
     box-shadow: 0 0 0 3px rgba(0, 208, 132, 0.4);
     transform: translateY(-2px);
 }
 
-.form-group input::placeholder {
+.form-group-recover input::placeholder {
     color: var(--gray-400);
 }
 
-.submit-btn {
+.submit-btn-recover {
     padding: 10px 16px;
     background-color: var(--secundary-600);
     color: var(--white);
@@ -156,18 +156,18 @@ body {
     text-transform: none;
 }
 
-.submit-btn:hover {
+.submit-btn-recover:hover {
     background-color: var(--secundary-600);
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 208, 132, 0.3);
 }
 
-.submit-btn:active {
+.submit-btn-recover:active {
     transform: translateY(-1px);
 }
 
 /* Success/Error Messages */
-.message {
+.message-recover {
     position: fixed;
     top: 80px;
     right: 30px;
@@ -212,57 +212,49 @@ body {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .main-content {
+    .main-content-recover {
         flex-direction: column;
     }
 
-    .testimonial-section {
+    .testimonial-section-recover {
         min-height: 400px;
     }
 
-    .recovery-section {
+    .recovery-section-recover {
         padding: 60px 40px;
     }
 }
 
 @media (max-width: 768px) {
-    .header {
-        padding: 12px 20px;
-    }
 
-    .header-content {
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .contact-info {
+    .contact-info-recover {
         flex-direction: column;
         gap: 8px;
         text-align: center;
     }
 
-    .testimonial-section {
+    .testimonial-section-recover {
         padding: 40px 25px;
         min-height: 350px;
     }
 
-    .client-name {
+    .client-name-recover {
         font-size: 40px;
     }
 
-    .client-status {
+    .client-status-recover {
         font-size: 18px;
     }
 
-    .testimonial-text {
+    .testimonial-text-recover {
         font-size: 14px;
     }
 
-    .recovery-section {
+    .recovery-section-recover {
         padding: 50px 25px;
     }
 
-    .recovery-title {
+    .recovery-title-recover {
         font-size: 28px;
         margin-bottom: 40px;
     }
@@ -275,15 +267,15 @@ body {
 }
 
 @media (max-width: 480px) {
-    .client-name {
+    .client-name-recover {
         font-size: 32px;
     }
 
-    .recovery-title {
+    .recovery-title-recover {
         font-size: 24px;
     }
 
-    .submit-btn {
+    .submit-btn-recover {
         padding: 12px 35px;
         font-size: 15px;
     }

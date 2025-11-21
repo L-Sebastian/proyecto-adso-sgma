@@ -9,7 +9,7 @@ body {
     background: #1a1a1a;
 }
 
-.main-container {
+.main-container-shopping {
     background-image: url('/frontend/public/img/shopping.jpg');
     background-size: cover;
     background-position: center;
@@ -22,7 +22,7 @@ body {
     overflow: hidden;
 }
 
-.main-container::before {
+.main-container-shopping::before {
     content: '';
     position: absolute;
     top: 0;
@@ -32,7 +32,7 @@ body {
     background: rgba(0, 0, 0, 0.3);
 }
 
-.content-wrapper {
+.content-wrapper-shopping {
     position: relative;
     z-index: 1;
     display: flex;
@@ -42,16 +42,16 @@ body {
     align-items: flex-start;
 }
 
-.product-container {
+.product-container-shopping {
     background: rgba(255, 255, 255, 0.45);
-    border: 2px solid rgba(0, 123, 255, 0.3);
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.3);
     padding: 40px 40px 300px;
     flex: 1;
+    list-style: none;
 }
 
-.product-card {
+.product-card-shopping {
     position: relative;
     background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
@@ -62,16 +62,16 @@ body {
     gap: 25px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     transition: transform 0.3s ease;
-    height: 170 px;
+    height: 170px;
     max-height: 100%;
     margin: 0 auto;
 }
 
-.product-card:hover {
+.product-card-shopping:hover {
     transform: translateY(-4px);
 }
 
-.product-image {
+.product-image-shopping {
     width: 140px;
     height: 140px;
     object-fit: contain;
@@ -79,11 +79,11 @@ body {
     flex-shrink: 0;
 }
 
-.product-info {
+.product-info-shopping {
     flex: 1;
 }
 
-.product-name {
+.product-name-shopping {
     font-size: 22px;
     font-weight: 600;
     color: var(--terciario-600);
@@ -111,33 +111,33 @@ body {
     margin-bottom: 15px;
 }
 
-.price-row {
+.price-row-shopping {
     display: flex;
     align-items: baseline;
     gap: 8px;
 }
 
-.contador {
+.counter-group {
     display: flex;
     align-items: baseline;
     gap: 30px;
 }
 
-.contenedor-precio {
+.price-container {
     display: flex;
     align-items: baseline;
     gap: 8px;
 }
 
-.description-tex  {
+.description-text  {
     font-size: 14px;
 }
 
-.button-revome {
+.button-remove {
     justify-content: flex-end;
 }
 
-.quantity-controls {
+.quantity-controls-shopping {
     display: flex;
     align-items: center;
     gap: 15px;
@@ -147,7 +147,7 @@ body {
     width: fit-content;
 }
 
-.qty-btn {
+.qty-btn-shopping {
     background: white;
     border: none;
     width: 28px;
@@ -160,13 +160,13 @@ body {
     transition: all 0.3s;
 }
 
-.qty-btn:hover {
+.qty-btn-shopping:hover {
     background: #2563a8;
     color: white;
     transform: scale(1.1);
 }
 
-.qty-value {
+.qty-value-shopping {
     font-size: 18px;
     font-weight: 600;
     color: #1f2937;
@@ -174,14 +174,14 @@ body {
     text-align: center;
 }
 
-.product-actions {
+.product-actions-shopping {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 10px;
 }
 
-.product-price {
+.product-price-shopping {
     display: flex;
     align-items: baseline;
     gap: 8px;
@@ -193,12 +193,12 @@ body {
     color: #2563a8;
 }
 
-.price-currency {
+.price-currency-shopping {
     font-size: 16px;
     color: #6b7280;
 }
 
-.delete-btn {
+.delete-btn-shopping {
     position: absolute;
     top: 10px;
     right: 10px;
@@ -215,14 +215,13 @@ body {
     transition: all 0.3s ease;
 }
 
-.delete-btn:hover {
+.delete-btn-shopping:hover {
     background: #ef4444;
     color: white;
     transform: rotate(90deg);
 }
-.checkout-card {
+.checkout-card-shopping {
     background: rgba(255, 255, 255, 0.45);
-    border: 2px solid rgba(0, 123, 255, 0.3);
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.3);
     padding: 35px;
@@ -230,7 +229,7 @@ body {
     flex-shrink: 0;
 }
 
-.valor-container {
+.valor-container-shopping {
     background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
     border-radius: 12px;
@@ -238,7 +237,7 @@ body {
     margin-bottom: 25px;
 }
 
-.checkout-title {
+.checkout-title-shopping {
     font-size: 20px;
     font-weight: 600;
     color: #059669;
@@ -246,23 +245,23 @@ body {
     margin-bottom: 20px;
 }
 
-.checkout-total {
+.checkout-total-shopping {
     text-align: center;
 }
 
-.total-amount {
+.total-amount-shopping {
     font-size: 42px;
     font-weight: 700;
     color: #2563a8;
 }
 
-.total-currency {
+.total-currency-shopping {
     font-size: 18px;
     color: #6b7280;
     margin-left: 8px;
 }
 
-.payment-methods {
+.payment-methods-shopping {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -271,7 +270,7 @@ body {
     flex-wrap: wrap;
 }
 
-.payment-icon {
+.payment-icon-shopping {
     width: 50px;
     height: 40px;
     border-radius: 6px;
@@ -282,34 +281,44 @@ body {
     padding: 5px;
 }
 
-.payment-icon svg {
+.payment-icon-shopping svg {
     width: 100%;
     height: 100%;
 }
 
-.payment-icon.visa {
+.payment-icon-visa-shopping {
     color: #1434cb;
 }
 
-.payment-icon.paypal {
+.payment-icon-paypal-shopping {
     color: #003087;
     width: auto;
     padding: 5px 10px;
     gap: 5px;
 }
 
-.payment-icon.paypal svg {
+/* .payment-icon-americanExpress-shopping {
+
+} */
+
+.payment-icon-paypal-shopping svg {
     width: 24px;
     height: 24px;
 }
 
-.payment-icon img {
+.payment-icon-mastercard-shopping img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.payment-icon-shopping img {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
 
-.pay-button {
+.pay-button-shopping {
     background: linear-gradient(135deg, #16a34a 0%, #059669 100%);
     color: white;
     border: none;
@@ -325,12 +334,12 @@ body {
     letter-spacing: 1px;
 }
 
-.pay-button:hover {
+.pay-button-shopping:hover {
     transform: translateY(-3px);
     box-shadow: 0 15px 35px rgba(22, 163, 74, 0.5);
 }
 
-.pay-button:active {
+.pay-button-shopping:active {
     transform: translateY(0);
 }
 
@@ -339,88 +348,89 @@ body {
 
 /* Tablets (hasta 1024px) */
 @media (max-width: 1024px) {
-    .content-wrapper {
+    .content-wrapper-shopping {
         flex-direction: column;
         align-items: center;
         gap: 30px;
     }
 
-    .checkout-card {
+    .checkout-card-shopping {
         width: 100%;
         padding: 35px;
     }
 
-    .product-container {
+    .product-container-shopping {
         width: 100%;
         padding: 45px;
     }
 
-    .product-card {
+    .product-card-shopping {
         flex-direction: column;
         text-align: center;
         gap: 20px;
     }
 
-    .product-image {
+    .product-image-shopping {
         width: 120px;
         height: 120px;
     }
 
-    .product-price .price-amount {
+    .product-price-shopping 
+    .price-amount-shopping {
         font-size: 28px;
     }
 
-    .payment-methods {
+    .payment-methods-shopping {
         gap: 10px;
     }
 }
 
 /* Celulares (hasta 600px) */
 @media (max-width: 600px) {
-    .main-container {
+    .main-container-shopping {
         padding: 20px;
     }
 
-    .product-card {
+    .product-card-shopping {
         width: 100%;
         padding: 20px;
     }
 
-    .product-image {
+    .product-image-shopping {
         width: 100px;
         height: 100px;
     }
 
-    .product-name {
+    .product-name-shopping {
         font-size: 18px;
     }
 
-    .quantity-controls {
+    .quantity-controls-shopping {
         gap: 10px;
         padding: 6px 10px;
     }
 
-    .checkout-card {
+    .checkout-card-shopping {
         width: 100%;
         padding: 20px;
     }
 
-    .total-amount {
+    .total-amount-shopping {
         font-size: 32px;
     }
 
-    .pay-button {
+    .pay-button-shopping {
         font-size: 14px;
         padding: 12px;
     }
 
-    .payment-icon {
+    .payment-icon-shopping {
         width: 40px;
         height: 30px;
     }
 
-    .payment-icon img,
-    .payment-icon svg {
+    .payment-icon-shopping img,
+    .payment-icon-shopping svg {
         width: 24px;
     }
 }

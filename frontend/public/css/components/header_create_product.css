@@ -36,7 +36,7 @@
 .header__logo {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 24px;
 }
 
 .header__logo svg {
