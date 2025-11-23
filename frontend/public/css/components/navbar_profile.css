@@ -1,4 +1,4 @@
-.navbar-bottom-product {
+.navbar-bottom-profile {
   background-color: #000;
   color: white;
   padding: 6px 40px;
@@ -7,7 +7,7 @@
   position: relative;
 }
 
-.navbar-bottom__content-product {
+.navbar-bottom__content-profile {
   display: flex;
   justify-content: flex-end; /* Alinea el usuario a la derecha */
   align-items: center;
@@ -15,7 +15,7 @@
 }
 
 /* --- Sección central (antes izquierda): ícono + texto --- */
-.navbar-bottom__left-product {
+.navbar-bottom__left-profile {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -25,13 +25,13 @@
 }
 
 /* --- Sección derecha: usuario + imagen --- */
-.navbar-bottom__right-product {
+.navbar-bottom__right-profile {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.navbar__avatar-product {
+.navbar__avatar-profile {
   width: 28px;
   height: 28px;
   border-radius: 50%;
@@ -41,22 +41,22 @@
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-  .navbar-top-product, .navbar-bottom-product {
+  .navbar-top-profile, .navbar-bottom-profile {
     padding: 8px 20px;
   }
 
-  .navbar-bottom__content-product {
+  .navbar-bottom__content-profile {
     flex-direction: column;
     justify-content: center;
     gap: 6px;
   }
 
-  .navbar-bottom__left-product {
+  .navbar-bottom__left-profile {
     position: static;
     transform: none;
   }
 
-  .navbar-bottom__right-product span {
+  .navbar-bottom__right-profile span {
     font-size: 0.9rem;
   }
 }
