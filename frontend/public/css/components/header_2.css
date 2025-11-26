@@ -2,7 +2,7 @@
 /* ===== HEADER BASE ===== */
 /* ---------------------------- */
 .header__index__welcome {
-  background-color: var(--secundary-500);
+  background-color: var(--primary-500);
   color: var(--white);
   padding: 0.7rem 2rem;
   display: flex;

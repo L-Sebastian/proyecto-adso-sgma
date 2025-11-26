@@ -31,7 +31,7 @@
         /* Fondo azul completo a la derecha */
         .hero__welcome-welcome {
             flex: 1;
-            background-color: var(--primary-700);
+            background-color: var(--primary-secundary-700);
             display: flex;
             align-items: center;
             justify-content: center;

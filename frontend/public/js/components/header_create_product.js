@@ -1,14 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // 1. Seleccionar el contenedor de la barra de navegación (NAVBAR)
-    // CAMBIO CLAVE 1: Usar la clase del contenedor de la barra de navegación.
-    const headerContainer = document.querySelector('.main-content-shopping-pineapple');
+    // 1. Seleccionar el contenedor del header
+    const headerContainer = document.querySelector('.header__index__producto"'); // CORREGIDO
 
     // 2. Verificar si existe en el DOM
     if (headerContainer) {
 
         // Ruta del archivo HTML del header
-        const headerURL = '/frontend/public/views/components/shopping_pineapple.html';
+        const headerURL = '/frontend/public/views/components/header_create_product.html';
 
         // 3. Cargar el contenido del header
         fetch(headerURL)
@@ -20,17 +19,17 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .then(data => {
 
-                // Insertar el contenido en el contenedor
+                // Insertar el contenido en el <header>
                 headerContainer.innerHTML = data;
+
 
                 // ================ LÓGICA PARA RESALTAR ENLACE ACTIVO ================
 
                 // Obtener el nombre de la página actual
                 const currentPage = window.location.pathname.split("/").pop() || "index.html";
 
-                // Seleccionar los enlaces dentro del header 
-                // CAMBIO CLAVE 2: Usar la clase correcta de tus enlaces.
-                const headerLinks = headerContainer.querySelectorAll(".navbar__link-shopping");
+                // Seleccionar los enlaces dentro del header (ajusta la clase según tu HTML)
+                const headerLinks = headerContainer.querySelectorAll(".header__link");
 
                 // Recorrer cada enlace
                 headerLinks.forEach(link => {

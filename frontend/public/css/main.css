@@ -9,10 +9,14 @@
 @import url('components/header.css');
 @import url('components/welcome.css');
 @import url('components/shopping.css');
+@import url('components/shopping_pineapple.css');
+@import url('components/edit_profile2.css');
+/* @import url('components/edit_profile.css'); */
+@import url('components/navbar_profile.css');
 @import url('components/verification.css');
 @import url('components/register.css');
 @import url('components/recovery.css');
-@import url('components/pay.css');
+/* @import url('components/pay.css'); */
 @import url('components/login.css');
 @import url('components/header_2.css');
 @import url('components/footer.css');

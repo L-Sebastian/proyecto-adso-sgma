@@ -1,21 +1,27 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SGMA - Crear cuenta</title>
-    <!-- Sin ../ porque ya estás dentro de public -->
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenido</title>
+    <!-- Carga de estilos globales y de componentes -->
+    <link rel="stylesheet" href="/frontend/public/css/main.css">
 </head>
 <body>
+    <!-- 1. Contenedor para el Header (será llenado por header.js) -->
+    <header class="header__index-register"></header>
+    
+    <!-- 2. Contenedor para el Cuerpo (será llenado por welcome.js) -->
+    <nav class="navbar"></nav>
 
-    <!-- === PLACEHOLDERS === -->
-    <section id="header-placeholder"></section>
-    <section id="navbar-placeholder"></section>
-    <section id="body-placeholder"></section>
-    <section id="footer-placeholder"></section>
+    <main class="main-content-shopping-pineapple"></main>
 
-    <script src="/frontend/public/js/pages/shopping_pineapple.js"></script> 
+    <footer class="footer"></footer>
 
+    <!-- Carga de scripts al final del body para mejor rendimiento -->
+    <script src="/frontend/public/js/components/header.js"></script>
+    <script src="/frontend/public/js/components/navbar_shopping.js"></script>
+    <script src="/frontend/public/js/components/shopping_pineapple.js"></script>
+    <script src="/frontend/public/js/components/footer.js"></script>
 </body>
-</html>
+</html> 

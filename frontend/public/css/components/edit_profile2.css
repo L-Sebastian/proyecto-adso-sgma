@@ -18,14 +18,14 @@ body {
 }
 
 /* ==================== CONTENEDOR PRINCIPAL ==================== */
-.container-main {
+.container-main-profile {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
 /* ==================== MAIN CONTENT ==================== */
-.main-content {
+.main-content-profile {
     flex: 1;
     display: flex;
     align-items: center;
@@ -38,7 +38,7 @@ body {
     background-attachment: fixed;
 }
 
-.background-overlay {
+.background-overlay-profile {
     position: absolute;
     top: 0;
     left: 0;
@@ -48,14 +48,14 @@ body {
     z-index: 0;
 }
 
-.profile-container {
+.profile-container-profile {
     width: 100%;
     max-width: 1200px;
     position: relative;
     z-index: 1;
 }
 
-.profile-grid {
+.profile-grid-profile {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 2rem;
@@ -67,7 +67,7 @@ body {
 }
 
 /* ==================== PROFILE LEFT ==================== */
-.profile-left {
+.profile-left-profile {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -76,7 +76,7 @@ body {
     padding: 12px;
 }
 
-.avatar {
+.avatar-profile {
     width: 140px;
     height: 140px;
     background-color: rgba(255, 255, 255, 0.9);
@@ -88,14 +88,14 @@ body {
     margin-bottom: 1.5rem;
 }
 
-.avatar-icon {
+.avatar-icon-profile {
     width: 70px;
     height: 70px;
     color: #0d9488;
     stroke-width: 1.5;
 }
 
-.profile-name {
+.profile-name-profile {
     color: white;
     text-align: center;
     font-size: 1.125rem;
@@ -105,7 +105,7 @@ body {
 }
 
 /* ==================== BOTONES ==================== */
-.btn {
+.btn-profile {
     border: none;
     cursor: pointer;
     font-size: 16px;
@@ -118,38 +118,38 @@ body {
     border-radius: 0.35rem;
 }
 
-.btn-back {
+.btn-back-profile {
     background-color: #0d9488;
     color: white;
     padding: 12px 16px;
     width: 100%;
 }
 
-.btn-back:hover {
+.btn-back-profile:hover {
     background-color: #059669;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
 }
 
-.btn-save {
+.btn-save-profile {
     background-color: #0d9488;
     color: white;
     padding: 0.75rem 2rem;
     /* margin-top: 1rem; */
 }
 
-.btn-save:hover {
+.btn-save-profile:hover {
     background-color: #059669;
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(13, 148, 136, 0.3);
 }
 
-.btn-text {
+.btn-text-profile {
     font-weight: 600;
 }
 
 /* ==================== PROFILE RIGHT - FORM ==================== */
-.profile-right {
+.profile-right-profile {
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -157,23 +157,24 @@ body {
     padding: 12px;
 }
 
-.form-row {
+.form-row-profile {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 24px;
 }
 
-.form-row.full-width {
+.form-row-profile
+.full-width-profile {
     grid-template-columns: 1fr;
 }
 
-.form-group {
+.form-group-profile {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.form-group label {
+.form-group-profile label {
     color: rgba(255, 255, 255, 0.8);
     font-size: 14px;
     font-weight: 600;
@@ -181,7 +182,7 @@ body {
     letter-spacing: 0.05em;
 }
 
-.form-input {
+.form-input-profile {
     background-color: rgba(255, 255, 255, 0.95);
     border: none;
     border-radius: 9999px;
@@ -192,27 +193,27 @@ body {
     transition: all 0.3s ease;
 }
 
-.form-input::placeholder {
+.form-input-profile::placeholder {
     color: #999;
 }
 
-.form-input:focus {
+.form-input-profile:focus {
     outline: none;
     box-shadow: 0 0 0 2px #0d9488;
     background-color: white;
 }
 
-.input-wrapper {
+.input-wrapper-profile {
     display: flex;
     gap: 0.5rem;
     align-items: center;
 }
 
-.input-wrapper .form-input {
+.input-wrapper-profile.form-input-profile {
     flex: 1;
 }
 
-.input-btn {
+.input-btn-profile {
     background-color: rgba(255, 255, 255, 0.95);
     border: none;
     border-radius: 9999px;
@@ -226,12 +227,12 @@ body {
     transition: all 0.3s ease;
 }
 
-.input-btn:hover {
+.input-btn-profile:hover {
     background-color: white;
     transform: scale(1.05);
 }
 
-.form-actions {
+.form-actions-profile {
     display: flex;
     justify-content: center;
     margin-top: 1rem;
@@ -239,111 +240,111 @@ body {
 
 /* ==================== RESPONSIVE ==================== */
 @media (max-width: 1024px) {
-    .profile-grid {
+    .profile-grid-profile {
         grid-template-columns: 1fr;
         gap: 1.5rem;
         padding: 1.5rem;
     }
 
-    .header-secondary-content {
+    .header-secondary-content-profile {
         flex-direction: column;
         gap: 0.75rem;
     }
 
-    .social-icons {
+    .social-icons-profile {
         gap: 0.75rem;
     }
 }
 
 @media (max-width: 768px) {
-    .profile-grid {
+    .profile-grid-profile {
         grid-template-columns: 1fr;
         gap: 1.25rem;
         padding: 1rem;
     }
 
-    .header-top-content {
+    .header-top-content-profile {
         flex-direction: column;
         gap: 0.75rem;
     }
 
-    .form-row {
+    .form-row-profile {
         grid-template-columns: 1fr;
     }
 
-    .avatar {
+    .avatar-profile {
         width: 120px;
         height: 120px;
     }
 
-    .avatar-icon {
+    .avatar-icon-profile {
         width: 60px;
         height: 60px;
     }
 
-    .profile-name {
+    .profile-name-profile {
         font-size: 1rem;
     }
 
-    .main-content {
+    .main-content-profile {
         padding: 1rem;
     }
 
-    .form-input {
+    .form-input-profile {
         font-size: 0.875rem;
     }
 
-    .header-text {
+    .header-text-profile {
         display: none;
     }
 }
 
 @media (max-width: 480px) {
-    .header-top-content {
+    .header-top-content-profile {
         padding: 0;
     }
 
-    .social-icons {
+    .social-icons-profile {
         gap: 0.5rem;
     }
 
-    .social-icon {
+    .social-icon-profile {
         font-size: 0.875rem;
     }
 
-    .profile-grid {
+    .profile-grid-profile {
         padding: 0.75rem;
         gap: 1rem;
     }
 
-    .form-input {
+    .form-input-profile {
         font-size: 16px;
         padding: 0.5rem 0.75rem;
     }
 
-    .btn {
+    .btn-profile {
         font-size: 0.75rem;
     }
 
-    .avatar {
+    .avatar-profile {
         width: 100px;
         height: 100px;
     }
 
-    .avatar-icon {
+    .avatar-icon-profile {
         width: 50px;
         height: 50px;
     }
 
-    .profile-name {
+    .profile-name-profile {
         font-size: 0.9rem;
     }
 
-    .form-group label {
+    .form-group-profile label {
         font-size: 0.7rem;
     }
 
-    .input-btn {
+    .input-btn-profile {
         width: 36px;
         height: 36px;
         font-size: 1rem;
@@ -362,7 +363,7 @@ body {
     }
 }
 
-.profile-container {
+.profile-container-profile {
     animation: slideIn 0.5s ease-out;
 }
 

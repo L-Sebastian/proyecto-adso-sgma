@@ -7,19 +7,20 @@
     box-sizing: border-box;
 }
 
-body {
+/* body {
     font-family: var(--font-family-base);
     background: linear-gradient(180deg, #c8e6c9 0%, #a5d6a7 100%);
     min-height: 100vh;
-}
+} */
 
 /* -------------------------------------------------------
    CONTENEDOR GENERAL
 ------------------------------------------------------- */
 .main-content-shopping-pineapple {
+    font-family: var(--font-family-base);
+    background: linear-gradient(180deg, #c8e6c9 0%, #a5d6a7 100%);
     padding: 60px 40px;
     max-width: 1400px;
-    margin: 0 auto;
 }
 
 .product-card-shopping-pineapple {

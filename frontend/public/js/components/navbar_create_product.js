@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     // 1. Seleccionar el contenedor del cuerpo
-    const bodyContainer = document.querySelector('.container-main-profile');
+    const bodyContainer = document.querySelector('.navbar-bottom-product');
 
     // 2. Verificar si existe en el DOM
     if (bodyContainer) {
 
         // Ruta del archivo HTML del cuerpo
-        const bodyURL = '/frontend/public/views/components/edit_profile2.html'; // **VERIFICA ESTA RUTA**
+        const bodyURL = '/frontend/public/views/components/navbar_create_product.html'; // **VERIFICA ESTA RUTA**
 
         // 3. Cargar el contenido del cuerpo
         fetch(bodyURL)

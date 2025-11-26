@@ -3,15 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bienvenido</title>
+    <!-- Carga de estilos globales y de componentes -->
+    <link rel="stylesheet" href="/frontend/public/css/main.css">
 </head>
 <body>
-        <!-- === PLACEHOLDERS === -->
-    <section id="header-placeholder"></section>
-    <section id="navbar-placeholder"></section>
-    <section id="body-placeholder"></section>
-    <section id="footer-placeholder"></section>
+    <!-- 1. Contenedor para el Header (será llenado por header.js) -->
+    <header class="header__index-register"></header>
+    
+    <!-- 2. Contenedor para el Cuerpo (será llenado por welcome.js) -->
+    <nav class="navbar-bottom-profile"></nav>
 
-    <script src="/frontend/public/js/pages/edit_profile.js"></script> 
+    <main class="main-content"></main>
+
+    <footer class="footer"></footer>
+
+    <!-- Carga de scripts al final del body para mejor rendimiento -->
+    <script src="/frontend/public/js/components/header.js"></script>
+    <script src="/frontend/public/js/components/navbar_profile2.js"></script>
+    <script src="/frontend/public/js/components/edit_profile.js"></script>
+    <script src="/frontend/public/js/components/footer.js"></script>
 </body>
-</html>
+</html> 
