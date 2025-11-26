@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SGMA - Recuperación de Cuenta</title>
-    <link rel="stylesheet" href="/frontend/public/css/components/verification.css">
+    <title>Bienvenido</title>
+    <!-- Carga de estilos globales y de componentes -->
+    <link rel="stylesheet" href="/frontend/public/css/main.css">
 </head>
-
 <body>
+    <!-- 1. Contenedor para el Header (será llenado por header2.js) -->
+    <header class="header__index__welcome"></header>
+    
+    <!-- 2. Contenedor para el Cuerpo (será llenado por welcome.js) -->
+    <main class="main-content-verification">
 
-    <!-- === PLACEHOLDERS === -->
-    <section id="header-placeholder"></section>
-    <section id="body-placeholder"></section>
-
-
-
-
-    <script src="/frontend/public/js/pages/verification.js"></script> 
-
+    <!-- Carga de scripts al final del body para mejor rendimiento -->
+    <script src="/frontend/public/js/components/header2.js"></script>
+    <script src="/frontend/public/js/components/verification.js"></script>
 </body>
 </html>

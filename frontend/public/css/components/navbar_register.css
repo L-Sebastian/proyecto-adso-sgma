@@ -10,14 +10,14 @@ body {
 }
 
 /* === NAVBAR GENERAL === */
-.navbar {
+.navbar-register {
     background: var(--primary-700);
     color: var(--white);
     padding: 0.5rem 2rem;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-.navbar__content {
+.navbar__content-register {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -26,12 +26,12 @@ body {
 }
 
 /* === LOGO + TEXTO === */
-.navbar__logo {
+.navbar__logo-register {
     display: flex;
     align-items: center;
 }
 
-.navbar__logo-link {
+.navbar__logo-link-register {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
@@ -41,11 +41,11 @@ body {
     transition: opacity 0.3s ease;
 }
 
-.navbar__logo-link:hover {
+.navbar__logo-link-register:hover {
     opacity: 0.9;
 }
 
-.navbar__logo-img {
+.navbar__logo-img-register {
     height: 45px;
     width: auto;
     display: block;
@@ -53,7 +53,7 @@ body {
     padding: 2px;
 }
 
-.navbar__logo-text {
+.navbar__logo-text-register {
     font-size: 1.5rem;
     font-weight: bold;
     letter-spacing: 1px;
@@ -62,38 +62,20 @@ body {
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
-    .navbar {
+    .navbar-register {
         padding: 0.8rem 1rem;
     }
 
-    .navbar__content {
+    .navbar__content-register {
         flex-direction: column;
         gap: 1rem;
     }
 
-    .navbar__logo-text {
+    .navbar__logo-text-register {
         font-size: 1.3rem;
     }
 
-    .navbar__logo-img {
+    .navbar__logo-img-register {
         height: 40px;
     }
 }
-
-        /* === DEMO CONTENT === */
-        /* .demo-content {
-            padding: 3rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .demo-content h1 {
-            color: #2c5f7f;
-            margin-bottom: 1rem;
-        }
-
-        .demo-content p {
-            color: #666;
-            line-height: 1.6;
-        } */

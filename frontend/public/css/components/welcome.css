@@ -1,5 +1,4 @@
-
-        /* ---------------------------- */
+  /* ---------------------------- */
         /* ===== 1. RESET GLOBAL ====== */
         /* ---------------------------- */
         * {
@@ -54,7 +53,7 @@
         /* ===== 3. RESPONSIVE ======== */
         /* ---------------------------- */
         @media (max-width: 768px) {
-            .hero-welome {
+            .hero-welcome { /* CORREGIDO: antes era .hero-welome */
                 flex-direction: column;
             }
 

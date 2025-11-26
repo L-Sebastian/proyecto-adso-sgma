@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>SGMA - Crear cuenta</title>
-    <!-- Sin ../ porque ya estás dentro de public -->
-    <link rel="stylesheet" href="/frontend/public/css/components/register.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+
+    <link rel="stylesheet" href="/frontend/public/css/main.css">
 </head>
 <body>
 
-    <!-- === PLACEHOLDERS === -->
-    <section id="header-placeholder"></section>
-    <section id="navbar-placeholder"></section>
-    <section id="body-placeholder"></section>
-    <section id="footer-placeholder"></section>
+    <!-- Header -->
+    <header class="header__index-register"></header>
 
-    <script src="/frontend/public/js/pages/register.js"></script> 
+    <!-- Navbar -->
+    <nav class="navbar-register"></nav>
+
+    <!-- AQUÍ el formulario será cargado dinámicamente -->
+    <main class="register"></main>
+
+    <!-- Footer -->
+    <footer class="footer"></footer>
+
+    <!-- JS -->
+    <script src="/frontend/public/js/components/header.js"></script>
+    <script src="/frontend/public/js/components/navbar_register.js"></script>
+    <script src="/frontend/public/js/components/register.js"></script>
+    <script src="/frontend/public/js/components/footer.js"></script>
 
 </body>
 </html>

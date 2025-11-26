@@ -10,7 +10,7 @@
         }
 
         /* Main Content */
-        .main-content {
+        .pay-content {
             background: url('/frontend/public/img/pay.jpg');
             min-height: calc(100vh - 120px);
             padding: 40px;
@@ -18,7 +18,7 @@
             background-size: cover;
         }
 
-        .main-content::before {
+        .pay-content::before {
             content: '';
             position: absolute;
             top: 0;
@@ -35,11 +35,12 @@
             backdrop-filter: blur(2px);
             padding: 40px;
             position: relative;
-            max-width: 100%;
+            max-width: 1100px;
             margin: 0 auto;
             display: flex;
             gap: 24px;
             align-items: flex-start;
+            border-radius: 12px;
         }
 
         /* Payment Methods */

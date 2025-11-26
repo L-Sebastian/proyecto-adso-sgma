@@ -46,7 +46,7 @@ body {
     background: rgba(255, 255, 255, 0.45);
     border-radius: 20px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.3);
-    padding: 40px 40px 300px;
+    padding: 40px;
     flex: 1;
     list-style: none;
 }
@@ -56,7 +56,7 @@ body {
     background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
     border-radius: 15px;
-    padding: 5px 50px 0 2px;
+    padding: 14px 30px;
     display: flex;
     align-items: center;
     gap: 25px;
@@ -80,7 +80,8 @@ body {
 }
 
 .product-info-shopping {
-    flex: 1;
+    flex: none;
+    margin-right: auto;
 }
 
 .product-name-shopping {
@@ -346,91 +347,103 @@ body {
 
 /* ---------- RESPONSIVIDAD ---------- */
 
-/* Tablets (hasta 1024px) */
+/* --- Tablets y Escritorios Pequeños (max-width: 1024px) --- */
 @media (max-width: 1024px) {
+    /* El contenedor principal pasa a ser columna */
     .content-wrapper-shopping {
         flex-direction: column;
         align-items: center;
-        gap: 30px;
+        gap: 30px; /* Aumenta el gap para mejor separación visual */
+    }
+    
+    /* Ambos contenedores ocupan el 100% del ancho del wrapper */
+    .product-container-shopping {
+        width: 100%;
+        padding: 30px; /* Ajuste de padding */
     }
 
     .checkout-card-shopping {
-        width: 100%;
-        padding: 35px;
+        width: 100%; /* El checkout toma todo el ancho */
+        padding: 30px;
     }
-
-    .product-container-shopping {
-        width: 100%;
-        padding: 45px;
-    }
-
+    
+    /* Tarjeta de Producto (Pasa a diseño vertical) */
     .product-card-shopping {
         flex-direction: column;
         text-align: center;
-        gap: 20px;
-    }
-
-    .product-image-shopping {
-        width: 120px;
-        height: 120px;
-    }
-
-    .product-price-shopping 
-    .price-amount-shopping {
-        font-size: 28px;
-    }
-
-    .payment-methods-shopping {
-        gap: 10px;
-    }
-}
-
-/* Celulares (hasta 600px) */
-@media (max-width: 600px) {
-    .main-container-shopping {
+        gap: 15px; /* Reducir el espacio entre elementos */
+        height: auto; /* Permitir que la altura se ajuste al contenido */
         padding: 20px;
     }
 
-    .product-card-shopping {
-        width: 100%;
-        padding: 20px;
-    }
-
+    /* Imagen y controles */
     .product-image-shopping {
         width: 100px;
         height: 100px;
     }
 
-    .product-name-shopping {
-        font-size: 18px;
+    /* Info del producto */
+    .product-info-shopping {
+        /* CORRECCIÓN: Quitar el margen auto para centrar en la columna */
+        margin: 0 auto; 
     }
 
-    .quantity-controls-shopping {
-        gap: 10px;
-        padding: 6px 10px;
-    }
-
-    .checkout-card-shopping {
+    /* Controles de cantidad */
+    .counter-group {
+        justify-content: center;
         width: 100%;
+    }
+
+    /* Precio y botón eliminar */
+    .product-price-shopping {
+        order: -1; /* Mueve el precio al inicio para mejor visibilidad */
+    }
+    
+    .delete-btn-shopping {
+        /* Mantiene el botón de eliminar en la esquina */
+        top: 15px;
+        right: 15px;
+    }
+
+    .payment-methods-shopping {
+        gap: 8px;
+    }
+}
+
+/* --- Celulares (max-width: 600px) --- */
+@media (max-width: 600px) {
+    /* Ajustes generales de padding */
+    .main-container-shopping {
+        padding: 15px;
+    }
+    
+    /* Contenedores de contenido */
+    .product-container-shopping,
+    .checkout-card-shopping {
         padding: 20px;
+    }
+
+    /* Tipografía */
+    .product-name-shopping {
+        font-size: 1.1rem; /* 18px -> 17.6px */
+    }
+    
+    .price-amount {
+        font-size: 28px;
     }
 
     .total-amount-shopping {
         font-size: 32px;
     }
 
+    /* Botones y controles */
+    .quantity-controls-shopping {
+        gap: 8px;
+        padding: 6px 10px;
+    }
+
     .pay-button-shopping {
-        font-size: 14px;
-        padding: 12px;
-    }
-
-    .payment-icon-shopping {
-        width: 40px;
-        height: 30px;
-    }
-
-    .payment-icon-shopping img,
-    .payment-icon-shopping svg {
-        width: 24px;
+    font-size: 14px;
+    padding: 12px;
     }
 }

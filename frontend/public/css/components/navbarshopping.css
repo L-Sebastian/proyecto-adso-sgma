@@ -1,5 +1,5 @@
 /* --- Navbar general --- */
-.navbar {
+.navbar__container-shopping {
   width: 100%;
   background-color: var(--primary-700); /* Azul principal */
   color: white;
@@ -8,66 +8,76 @@
   font-family: var(--font-family-base, sans-serif);
 }
 
-.navbar__content {
+.navbar__content-shopping {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap; /* Permite que los elementos bajen si no caben */
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 /* --- Logo a la izquierda --- */
-.navbar__logo {
+.navbar__logo-shopping {
   display: flex;
   align-items: center;
   gap: 8px;
   flex-direction: row-reverse;
+  font-size: 24px;
 }
 
-.navbar__logo-img {
+/* CLASE CORREGIDA: Se usa la clase correcta */
+.navbar__logo-img-shopping {
   width: 40px;
   height: 40px;
   object-fit: contain;
 }
 
-.navbar__icon {
+.navbar__icon-shopping {
   color: #4ce173;
   font-size: 1.2rem;
   font-weight: bold;
 }
 
-/* --- Título centrado --- */
-.navbar__title {
-  flex: 1;
+/* --- Título centrado (CORRECCIÓN DE ESPACIADO) --- */
+.navbar__title-shopping {
+  /* CAMBIO CLAVE 1: No toma todo el espacio, solo lo que necesita. */
+  flex: none;
+  /* CAMBIO CLAVE 2: Centra el título en el espacio entre el logo y el menú. */
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 14px;
   font-weight: 500;
-  margin: 0;
   color: #fff;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /* --- Menú a la derecha --- */
-.navbar__menu {
+.navbar__menu-shopping {
   display: flex;
   align-items: center;
   gap: 25px;
   list-style: none;
   margin: 0;
   padding: 0;
+  font-size: 16px;
 }
 
-.navbar__link {
+/* CLASE CORREGIDA: Se usa la clase correcta */
+.navbar__link-shopping {
   color: #fff;
   text-decoration: none;
   font-size: 0.95rem;
   transition: color 0.3s ease;
+  font-size: 12px;
 }
 
-.navbar__link:hover {
+.navbar__link-shopping:hover {
   color: #4ce173;
 }
 
 /* --- Imagen del usuario --- */
-.navbar__avatar {
+.navbar__avatar-shopping {
   width: 35px;
   height: 35px;
   border-radius: 50%;
@@ -76,7 +86,7 @@
   transition: transform 0.3s ease;
 }
 
-.navbar__avatar:hover {
+.navbar__avatar-shopping:hover {
   transform: scale(1.1);
 }
 
@@ -84,68 +94,73 @@
 
 /* Para pantallas medianas (tablets) */
 @media (max-width: 1024px) {
-  .navbar {
+  /* SELECTOR CORREGIDO: navbar-shopping -> navbar__container-shopping */
+  .navbar__container-shopping {
     padding: 10px 20px;
   }
 
-  .navbar__menu {
+  .navbar__menu-shopping {
     gap: 15px;
   }
 
-  .navbar__title {
-    font-size: 1rem;
+.navbar__title-shopping {
+  font-size: 1rem;
   }
 }
 
 /* Para pantallas pequeñas (celulares) */
 @media (max-width: 768px) {
-  .navbar__content {
+  /* SELECTOR CORREGIDO: navbar__contentv -> navbar__content-shopping */
+  .navbar__content-shopping {
     flex-direction: column;
     align-items: center;
     gap: 10px;
   }
-
-  .navbar__title {
+    
+  .navbar__title-shopping {
+    /* Desactivar auto-margin en móvil para que quede centrado en la columna */
+    margin-left: 0;
+    margin-right: 0;
     order: -1; /* El título se muestra arriba del todo */
     text-align: center;
     font-size: 1rem;
   }
 
-  .navbar__menu {
+  .navbar__menu-shopping {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
   }
 
-  .navbar__logo {
+  .navbar__logo-shopping {
     justify-content: center;
   }
 
-  .navbar__link {
+  .navbar__link-shopping {
     font-size: 0.9rem;
   }
 }
 
-/* Para pantallas muy pequeñas */
+/* Para pantallas muy pequeñas */ 
 @media (max-width: 480px) {
-  .navbar__logo-img {
+  .navbar__logo-img-shopping {
     width: 30px;
     height: 30px;
   }
 
-  .navbar__icon {
+  .navbar__icon-shopping {
     font-size: 1rem;
   }
 
-  .navbar__title {
+  .navbar__title-shopping {
     font-size: 0.9rem;
   }
 
-  .navbar__link {
+  .navbar__link-shopping {
     font-size: 0.85rem;
   }
 
-  .navbar__avatar {
+  .navbar__avatar-shopping {
     width: 30px;
     height: 30px;
   }

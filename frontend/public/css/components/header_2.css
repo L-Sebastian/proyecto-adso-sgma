@@ -1,7 +1,7 @@
 /* ---------------------------- */
 /* ===== HEADER BASE ===== */
 /* ---------------------------- */
-.header__index {
+.header__index__welcome {
   background-color: var(--secundary-500);
   color: var(--white);
   padding: 0.7rem 2rem;
@@ -9,35 +9,35 @@
   justify-content: center;
 }
 
-.header__content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1200px;
+.header__content__welcome {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
 }
 
 /* ---------------------------- */
 /* ===== INFO DE CONTACTO ===== */
 /* ---------------------------- */
-.header__info {
+.header__info__welcome {
   display: flex;
   align-items: center;
   gap: 40px;
 }
 
-.header__item {
+.header__item__welcome {
   display: flex;
   align-items: center;
   gap: 6px;
 }
 
-.header__item img {
+.header__item__welcome img {
   width: 22px;
   height: 22px;
 }
 
-.header__item p {
+.header__item__welcome p {
   margin: 0;
   font-size: 14px;
   color: var(--white);
@@ -46,18 +46,18 @@
 /* ---------------------------- */
 /* ===== REDES SOCIALES ===== */
 /* ---------------------------- */
-.header__logo {
+.header__logo__welcome {
   display: flex;
   align-items: center;
   gap: 24px;
 }
 
-.header__logo svg {
+.header__logo__welcome svg {
   cursor: pointer;
   transition: transform 0.2s ease;
 }
 
-.header__logo svg:hover {
+.header__logo__welcome svg:hover {
   transform: scale(1.1);
   opacity: 0.85;
 }
@@ -68,24 +68,24 @@
 
 /* === TABLETS (max-width: 1024px) === */
 @media (max-width: 1024px) {
-  .header__content {
+  .header__content__welcome {
     padding: 0 1rem;
     gap: 1.5rem;
   }
 
-  .header__info {
+  .header__info__welcome {
     gap: 25px;
   }
 
-  .header__item p {
+  .header__item__welcome p {
     font-size: 13px;
   }
 
-  .header__logo {
+  .header__logo__welcome {
     gap: 10px;
   }
 
-  .header__logo svg {
+  .header__logo__welcome svg {
     width: 26px;
     height: 26px;
   }
@@ -93,53 +93,53 @@
 
 /* === MÓVILES GRANDES (max-width: 768px) === */
 @media (max-width: 768px) {
-  .header__content {
+  .header__content__welcome {
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 1rem;
   }
 
-  .header__info {
+  .header__info__welcome {
     flex-direction: column;
     gap: 10px;
   }
 
-  .header__item {
+  .header__item__welcome {
     justify-content: center;
   }
 
-  .header__logo {
+  .header__logo__welcome {
     justify-content: center;
     gap: 12px;
   }
 
-  .header__item img {
+  .header__item__welcome img {
     width: 20px;
     height: 20px;
   }
 
-  .header__item p {
+  .header__item__welcome p {
     font-size: 13px;
   }
 }
 
 /* === MÓVILES PEQUEÑOS (max-width: 480px) === */
 @media (max-width: 480px) {
-  .header__index {
+  .header__index__welcome {
     padding: 1rem;
   }
 
-  .header__item p {
+  .header__item__welcome p {
     font-size: 12px;
   }
 
-  .header__logo svg {
+  .header__logo__welcome svg {
     width: 24px;
     height: 24px;
   }
 
-  .header__info {
+  .header__info__welcome {
     gap: 8px;
   }
 }

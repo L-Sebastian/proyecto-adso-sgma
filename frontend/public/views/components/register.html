@@ -1,43 +1,45 @@
+<link rel="stylesheet" href="/frontend/public/css/main.css">
 <!-- === CONTENIDO PRINCIPAL === -->
-<main class="register">
-  <section class="register__image"></section>
 
-  <section class="register__form">
-    <h2 class="register__title">CREAR UNA CUENTA</h2>
-    <form id="formRegistro" class="register__form-container">
-      
-      <div class="register__form-group">
-        <label for="nombre">Nombre completo</label>
-        <input id="nombre" class="register__form-input" type="text" required />
-      </div>
+  <!-- <main class="register"> -->
+    <section class="register__image"></section>
 
-      <div class="register__form-group">
-        <label for="telefono">Número de teléfono</label>
-        <input id="telefono" class="register__form-input" type="tel" pattern="[0-9]{7,10}" title="Debe contener entre 7 y 10 números" required/>
-      </div>
+    <section class="register__form">
+      <h2 class="register__title">CREAR UNA CUENTA</h2>
+      <form id="formRegistro" class="register__form-container">
+        
+        <div class="register__form-group">
+          <label for="nombre">Nombre completo</label>
+          <input id="nombre" class="register__form-input" type="text" required />
+        </div>
 
-      <div class="register__form-group">
-        <label for="departamento">Departamento</label>
-        <select name="departamento" class="register__form-select" required>
-          <option value="">-Selecciona tu departamento-</option>
-          <option value="Risaralda">Risaralda</option>
-          <option value="Quindío">Quindío</option>
-          <option value="Caldas">Caldas</option>
-        </select>
-      </div>
+        <div class="register__form-group">
+          <label for="telefono">Número de teléfono</label>
+          <input id="telefono" class="register__form-input" type="tel" pattern="[0-9]{7,10}" title="Debe contener entre 7 y 10 números" required/>
+        </div>
 
-      <div class="register__form-group">
-        <label for="email">Correo electrónico</label>
-        <input id="email" class="register__form-input" type="email" required />
-      </div>
+        <div class="register__form-group">
+          <label for="departamento">Departamento</label>
+          <select name="departamento" class="register__form-select" required>
+            <option value="">-Selecciona tu departamento-</option>
+            <option value="Risaralda">Risaralda</option>
+            <option value="Quindío">Quindío</option>
+            <option value="Caldas">Caldas</option>
+          </select>
+        </div>
 
-      <div class="register__form-group">
-        <label for="password">Contraseña</label>
-        <input id="password" class="register__form-input" type="password" required />
-      </div>
+        <div class="register__form-group">
+          <label for="email">Correo electrónico</label>
+          <input id="email" class="register__form-input" type="email" required />
+        </div>
 
-      <!-- ⚠️ REMOVIDO el onclick, ahora lo maneja JavaScript -->
-      <button type="submit" class="register__form-button">Crear Cuenta</button>
-    </form>
-  </section>
-</main>
+        <div class="register__form-group">
+          <label for="password">Contraseña</label>
+          <input id="password" class="register__form-input" type="password" required />
+        </div>
+
+        <!-- ⚠️ REMOVIDO el onclick, ahora lo maneja JavaScript -->
+        <button type="submit" class="register__form-button">Crear Cuenta</button>
+      </form>
+    </section>
+  </main>
