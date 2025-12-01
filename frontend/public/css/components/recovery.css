@@ -21,7 +21,7 @@ body {
 /* Testimonial Section (Left) */
 .testimonial-section-recover {
     flex: 2;
-    background: linear-gradient(to right, rgba(30, 74, 97, 0)70%, var(--primary-900) 100%),
+    background: linear-gradient(to right, rgba(30, 74, 97, 0)70%, var(--primary-secundary-900) 100%),
                 url('/frontend/public/img/4.png');
     background-size: cover;
     background-position: center;
@@ -95,7 +95,7 @@ body {
 
 .recovery-title-recover {
     color: var(--white);
-    font-size: var(--font-size-h2);
+    font-size: 24px;
     font-weight: bold;
     letter-spacing: 2px;
     margin-bottom: 60px;
@@ -145,7 +145,7 @@ body {
 
 .submit-btn-recover {
     padding: 10px 16px;
-    background-color: var(--secundary-600);
+    background-color: var(--primary-600);
     color: var(--white);
     border: none;   
     font-size: 14px;
@@ -158,7 +158,7 @@ body {
 }
 
 .submit-btn-recover:hover {
-    background-color: var(--secundary-600);
+    background-color: var(--primary-600);
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 208, 132, 0.3);
 }
@@ -182,7 +182,7 @@ body {
 }
 
 .message.success {
-    background-color: var(--secundary-600);
+    background-color: var(--primary-600);
 }
 
 .message.error {

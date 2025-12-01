@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenido</title>
-    <!-- Carga de estilos globales y de componentes -->
-    <link rel="stylesheet" href="/frontend/public/css/main.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bienvenido</title>
+
+  <!-- Estilos globales -->
+  <link rel="stylesheet" href="/frontend/public/css/main.css">
+
+  <!-- Estilo del componente shopping (puedes mover el import dentro de main.css si prefieres) -->
+  <link rel="stylesheet" href="/frontend/public/css/components/shopping.css">
 </head>
 <body>
-    <!-- 1. Contenedor para el Header (será llenado por header.js) -->
-    <header class="header__index-register"></header>
-    
-    <!-- 2. Contenedor para el Cuerpo (será llenado por welcome.js) -->
-    <nav class="navbar"></nav>
+  <header class="header__index-register"></header>
 
-    <nav class="navbar-placeholder"></nav>
+  <nav class="navbar"></nav>
 
-    <footer class="footer"></footer>
+  <!-- Placeholder donde inyectaremos shopping.html -->
+  <section class="shopping" aria-labelledby="shoppingTitle">
 
-    <!-- Carga de scripts al final del body para mejor rendimiento -->
-    <script src="/frontend/public/js/components/header.js"></script>
-    <script src="/frontend/public/js/components/navbar_shopping.js"></script>
-    <script src="/frontend/public/js/components/shopping.js"></script>
-    <script src="/frontend/public/js/components/footer.js"></script>
+  <footer class="footer"></footer>
+
+  <!-- Scripts: loaders primero, lógica después -->
+  <script src="/frontend/public/js/components/header.js"></script>
+
+  <!-- Loader (inserta el HTML del componente dentro de <section class="shopping">) -->
+  <script src="/frontend/public/js/components/loader.js"></script>
+
+  <!-- Lógica del componente (depende de que el HTML ya esté inyectado) -->
+  <script src="/frontend/public/js/components/shopping.js"></script>
+
+  <script src="/frontend/public/js/components/footer.js"></script>
 </body>
 </html>

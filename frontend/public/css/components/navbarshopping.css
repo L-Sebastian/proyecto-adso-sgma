@@ -1,7 +1,7 @@
 /* --- Navbar general --- */
 .navbar__container-shopping {
   width: 100%;
-  background-color: var(--primary-700); /* Azul principal */
+  background-color: var(--primary-secundary-700); /* Azul principal */
   color: white;
   padding: 10px 40px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);

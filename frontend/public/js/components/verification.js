@@ -1,26 +1,95 @@
-document.addEventListener("DOMContentLoaded", function () {
+// verification.js - Cargar componente y activar lógica
 
-    // 1. Seleccionar el contenedor del cuerpo
-    const bodyContainer = document.querySelector('.main-content-verification');
+document.addEventListener("DOMContentLoaded", () => {
 
-    // 2. Verificar si existe en el DOM
-    if (bodyContainer) {
+    // 1. Contenedor donde se debe cargar el componente
+    const container = document.querySelector(".main-content-verification");
 
-        // Ruta del archivo HTML del cuerpo
-        const bodyURL = '/frontend/public/views/components/verification.html';
+    if (container) {
 
-        // 3. Cargar el contenido del cuerpo
-        fetch(bodyURL)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.text();
+        // 2. Ruta del componente
+        const url = "/frontend/public/views/components/verification.html";
+
+        // 3. Cargar HTML
+        fetch(url)
+            .then(res => {
+                if (!res.ok) throw new Error("No se pudo cargar verification.html");
+                return res.text();
             })
-            .then(data => {
-                // Insertar el contenido en la sección
-                bodyContainer.innerHTML = data;
+            .then(html => {
+                // Insertamos el componente dentro del contenedor
+                container.innerHTML = html;
+
+                // Inicializamos la lógica del formulario
+                initVerification();
             })
-            .catch(error => console.error('Error cargando el cuerpo de la página:', error));
+            .catch(err => console.error("Error cargando el componente de verificación:", err));
     }
 });
+
+
+// -----------------------------------------------------------
+//  FUNCIÓN PRINCIPAL DEL FORMULARIO
+// -----------------------------------------------------------
+function initVerification() {
+
+    const form = document.getElementById("verificationForm");
+    if (!form) return; // No existe → aún no cargó el HTML
+
+    const inputs = Array.from(form.querySelectorAll(".code-input"));
+    const help = document.getElementById("codeHelp");
+
+    // Seleccionar primer input
+    inputs[0].focus();
+
+
+    // --------------------------
+    // Eventos de inputs
+    // --------------------------
+    inputs.forEach((input, idx) => {
+
+        input.addEventListener("input", e => {
+            const digit = e.target.value.replace(/[^0-9]/g, "").slice(0, 1);
+            e.target.value = digit;
+
+            if (digit && idx < inputs.length - 1) {
+                inputs[idx + 1].focus();
+            }
+        });
+
+        input.addEventListener("keydown", e => {
+            if (e.key === "Backspace" && !input.value && idx > 0) {
+                inputs[idx - 1].focus();
+            }
+        });
+
+    });
+
+
+    // --------------------------
+    // ENVÍO DEL FORMULARIO
+    // --------------------------
+    form.addEventListener("submit", e => {
+        e.preventDefault();
+
+        const code = inputs.map(i => i.value).join("");
+
+        if (code.length !== 6) {
+            help.textContent = "Debe ingresar los 6 dígitos.";
+            help.classList.add("error");
+            return;
+        }
+
+        help.textContent = "";
+        help.classList.remove("error");
+
+        // Simulación (solo aceptará 123456)
+        if (code === "123456") {
+            alert("Código correcto");
+        } else {
+            help.textContent = "Código incorrecto. Intente otra vez.";
+            help.classList.add("error");
+        }
+    });
+
+}

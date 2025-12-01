@@ -1,5 +1,5 @@
 .header__index {
-    background: linear-gradient(90deg, var(--primary-700) 10%, var(--secundary-600) 100%);
+    background: linear-gradient(90deg, var(--primary-secundary-700) 70%, var(--primary-600) 100%);
     color: var(--white);
     padding: 0.7rem 2rem;
     display: flex;

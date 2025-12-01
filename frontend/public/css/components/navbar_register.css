@@ -11,9 +11,10 @@ body {
 
 /* === NAVBAR GENERAL === */
 .navbar-register {
-    background: var(--primary-700);
+    background: var(--primary-secundary-700);
     color: var(--white);
     padding: 0.5rem 2rem;
+    width: 100%;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 

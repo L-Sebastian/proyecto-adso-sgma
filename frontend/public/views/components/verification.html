@@ -1,37 +1,51 @@
+<main class="verification-main" aria-labelledby="verificationTitle" role="main">
+  <!-- LEFT: testimonial / imagen -->
+  <section class="verification-hero" aria-hidden="false">
+    <div class="verification-hero-inner">
 
-<body>
-    
+    </div>
+  </section>
 
-    <!-- Main Content -->
-    <main class="main-content-verification">
-        <!-- Left Section - Testimonial -->
-        <section class="testimonial-section-verification">
-            <div class="testimonial-content-verification">
+  <!-- RIGHT: verification form -->
+  <section class="verification-panel" aria-labelledby="verificationTitlePanel">
+    <div class="verification-panel-inner">
+      <h1 id="verificationTitlePanel" class="verification-title">Recuperación de Cuenta</h1>
 
-        </section>
+      <div class="verification-box" role="form" aria-describedby="verificationInstruction">
+        <p id="verificationInstruction" class="verification-instruction">Ingresa el código de 6 dígitos que enviamos a tu correo</p>
 
-        <!-- Right Section - Verification Form -->
-        <section class="verification-section-verification">
-            <h1 class="verification-title-verification">Recuperación de Cuenta</h1>
-            
-            <div class="verification-container-verification">
-                <p class="instruction-text-verification">Ingresa el codigo</p>
-                
-                <form class="verification-form-verification" name="verificationForm">
-                    <div class="code_inputs-verification">
-                        <input type="text" maxlength="1" class="code_input-verification" name="code-digit-1" required>
-                        <input type="text" maxlength="1" class="code_input-verification" name="code-digit-2" required>
-                        <input type="text" maxlength="1" class="code_input-verification" name="code-digit-3" required>
-                        <input type="text" maxlength="1" class="code_input-verification" name="code-digit-4" required>
-                        <input type="text" maxlength="1" class="code_input-verification" name="code-digit-5" required>
-                        <input type="text" maxlength="1" class="code_input-verification" name="code-digit-6" required>
-                    </div>
+        <form id="verificationForm" class="verification-form" novalidate>
+          <fieldset class="verification-fieldset" aria-label="Código de verificación">
+            <legend class="sr-only">Código de verificación</legend>
 
-
-                    <button type="submit" class="submit-btn-verification" >Enviar codigo</button>
-                </form>
+            <div class="code-row" role="group" aria-label="Seis dígitos del código">
+              <input inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code"
+                class="code-input" id="code-1" name="code-1" type="text" maxlength="1" aria-label="Dígito 1" required>
+              <input inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code"
+                class="code-input" id="code-2" name="code-2" type="text" maxlength="1" aria-label="Dígito 2" required>
+              <input inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code"
+                class="code-input" id="code-3" name="code-3" type="text" maxlength="1" aria-label="Dígito 3" required>
+              <input inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code"
+                class="code-input" id="code-4" name="code-4" type="text" maxlength="1" aria-label="Dígito 4" required>
+              <input inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code"
+                class="code-input" id="code-5" name="code-5" type="text" maxlength="1" aria-label="Dígito 5" required>
+              <input inputmode="numeric" pattern="[0-9]*" autocomplete="one-time-code"
+                class="code-input" id="code-6" name="code-6" type="text" maxlength="1" aria-label="Dígito 6" required>
             </div>
-        </section>
-    </main>
 
-</body>
+            <div id="codeHelp" class="field-help" aria-live="polite"></div>
+          </fieldset>
+
+          <button type="submit" class="btn btn-primary verification-submit" aria-label="Enviar código">
+            Enviar código
+          </button>
+        </form>
+
+        <div class="verification-actions">
+          <button type="button" class="btn btn-link btn-resend" id="resendCodeBtn">Reenviar código</button>
+          <button type="button" class="btn btn-link btn-back" id="backBtn">Volver</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

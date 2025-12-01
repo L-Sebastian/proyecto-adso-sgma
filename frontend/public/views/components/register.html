@@ -1,45 +1,44 @@
 <link rel="stylesheet" href="/frontend/public/css/main.css">
-<!-- === CONTENIDO PRINCIPAL === -->
 
-  <!-- <main class="register"> -->
+<main class="register"> 
     <section class="register__image"></section>
 
     <section class="register__form">
-      <h2 class="register__title">CREAR UNA CUENTA</h2>
-      <form id="formRegistro" class="register__form-container">
+        <h2 class="register__title">CREAR UNA CUENTA</h2>
         
-        <div class="register__form-group">
-          <label for="nombre">Nombre completo</label>
-          <input id="nombre" class="register__form-input" type="text" required />
-        </div>
+        <form id="formRegistro" class="register__form-container" novalidate> 
+            
+            <div class="register__form-group">
+                <label for="nombre">Nombre completo</label>
+                <input id="nombre" class="register__form-input" type="text" required autocomplete="name" />
+            </div>
 
-        <div class="register__form-group">
-          <label for="telefono">Número de teléfono</label>
-          <input id="telefono" class="register__form-input" type="tel" pattern="[0-9]{7,10}" title="Debe contener entre 7 y 10 números" required/>
-        </div>
+            <div class="register__form-group">
+                <label for="telefono">Número de teléfono</label>
+                <input id="telefono" class="register__form-input" type="tel" pattern="[0-9]{7,10}" title="Debe contener entre 7 y 10 números" required autocomplete="tel" />
+            </div>
 
-        <div class="register__form-group">
-          <label for="departamento">Departamento</label>
-          <select name="departamento" class="register__form-select" required>
-            <option value="">-Selecciona tu departamento-</option>
-            <option value="Risaralda">Risaralda</option>
-            <option value="Quindío">Quindío</option>
-            <option value="Caldas">Caldas</option>
-          </select>
-        </div>
+            <div class="register__form-group">
+                <label for="departamento">Departamento</label>
+                <select id="departamento" name="departamento" class="register__form-select" required autocomplete="address-level1">
+                    <option value="">-Selecciona tu departamento-</option>
+                    <option value="Risaralda">Risaralda</option>
+                    <option value="Quindío">Quindío</option>
+                    <option value="Caldas">Caldas</option>
+                </select>
+            </div>
 
-        <div class="register__form-group">
-          <label for="email">Correo electrónico</label>
-          <input id="email" class="register__form-input" type="email" required />
-        </div>
+            <div class="register__form-group">
+                <label for="email">Correo electrónico</label>
+                <input id="email" class="register__form-input" type="email" required autocomplete="email" />
+            </div>
 
-        <div class="register__form-group">
-          <label for="password">Contraseña</label>
-          <input id="password" class="register__form-input" type="password" required />
-        </div>
+            <div class="register__form-group">
+                <label for="password">Contraseña</label>
+                <input id="password" class="register__form-input" type="password" required autocomplete="new-password" />
+            </div>
 
-        <!-- ⚠️ REMOVIDO el onclick, ahora lo maneja JavaScript -->
-        <button type="submit" class="register__form-button">Crear Cuenta</button>
-      </form>
+            <button type="submit" class="register__form-button">Crear Cuenta</button>
+        </form>
     </section>
-  </main>
+</main>

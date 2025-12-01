@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenido</title>
-    <!-- Carga de estilos globales y de componentes -->
-    <link rel="stylesheet" href="/frontend/public/css/main.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bienvenido</title>
+  <!-- Estilos globales -->
+  <link rel="stylesheet" href="/frontend/public/css/main.css">
 </head>
 <body>
-    <!-- 1. Contenedor para el Header (será llenado por header2.js) -->
-    <header class="header__index__welcome"></header>
-    
-    <!-- 2. Contenedor para el Cuerpo (será llenado por welcome.js) -->
-    <main class="main-content">
+  <!-- Header será llenado por header2.js -->
+  <header class="header__index__welcome" role="banner" aria-label="Encabezado"></header>
 
-    <!-- Carga de scripts al final del body para mejor rendimiento -->
-    <script src="/frontend/public/js/components/header2.js"></script>
-    <script src="/frontend/public/js/components/login.js"></script>
+  <!-- Contenedor donde se inyecta el body/login -->
+  <main class="main-content" role="main"></main>
+
+  <!-- Scripts -->
+  <script src="/frontend/public/js/components/header2.js"></script>
+  <script src="/frontend/public/js/components/login.js"></script>
 </body>
 </html>
