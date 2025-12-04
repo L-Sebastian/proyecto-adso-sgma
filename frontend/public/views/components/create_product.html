@@ -1,45 +1,36 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SGMA - Crear Producto</title>
 
-    <!-- Enlace a tu CSS -->
-    <link rel="stylesheet" href="/frontend/public/css/components/create_product.css">
-</head>
 <body>
 
     <!-- Contenedor principal -->
-    <div class="main-content">
-        <div class="content-wrapper">
+    <main class="main-content-create">
+        <div class="content-wrapper-create">
 
             <!-- Imagen del producto -->
-            <div class="image-section">
-                <div class="image-container">
-                    <img src="/frontend/public/img/Imagen de WhatsApp 2025-11-10 a las 14.47.11_ae0405ec.jpg" alt="Guanabana" class="product-image">
-                    <p class="image-text">Seleccione una imagen.</p>
+            <div class="image-section-create">
+                <div class="image-container-create">
+                    <img src="/frontend/public/img/Imagen de WhatsApp 2025-11-10 a las 14.47.11_ae0405ec.jpg" alt="Guanabana" class="product-image-create">
+                    <p class="image-text-create">Seleccione una imagen.</p>
                 </div>
 
-                <div class="button-group">
-                    <button class="btn btn-primary" onclick="editarFoto()">Editar Foto</button>
-                    <button class="btn btn-primary" onclick="editarPerfil()">Editar Perfil</button>
+                <div class="button-group-create">
+                    <button class="btn-create btn-primary-create" onclick="editarFoto()">Editar Foto</button>
+                    <button class="btn-create btn-primary-create" onclick="editarPerfil()">Editar Perfil</button>
                 </div>
             </div>
 
             <!-- Formulario de producto -->
-            <div class="form-section">
-                <form id="productForm">
-                    <div class="form-grid">
+            <div class="form-section-create">
+                <form id="productForm-create">
+                    <div class="form-grid-create">
                         
-                        <div class="form-group">
-                            <label class="form-label">Nombre Producto</label>
-                            <input type="text" class="form-input" value="Guanabana" id="nombreProducto">
+                        <div class="form-group-create">
+                            <label class="form-label-create">Nombre Producto</label>
+                            <input type="text" class="form-input-create" value="Guanabana" id="nombreProducto">
                         </div>
 
-                        <div class="form-group">
-                            <label class="form-label">Tipo de producto</label>
-                            <select class="form-select" id="tipoProducto">
+                        <div class="form-group-create">
+                            <label class="form-label-create">Tipo de producto</label>
+                            <select class="form-select-create" id="tipoProducto">
                                 <option value="fruta" selected>Fruta</option>
                                 <option value="verdura">Verdura</option>
                                 <option value="carnes">Carne</option>
@@ -47,14 +38,14 @@
                             </select>
                         </div>
 
-                        <div class="form-group">
-                            <label class="form-label">Peso producto</label>
-                            <input type="number" class="form-input" value="2" id="pesoProducto">
+                        <div class="form-group-create">
+                            <label class="form-label-create">Peso producto</label>
+                            <input type="number" class="form-input-create" value="2" id="pesoProducto">
                         </div>
 
-                        <div class="form-group">
-                            <label class="form-label">Tipo de peso</label>
-                            <select class="form-select" id="tipoPeso">
+                        <div class="form-group-create">
+                            <label class="form-label-create">Tipo de peso</label>
+                            <select class="form-select-create" id="tipoPeso">
                                 <option value="kilos" selected>Kilos</option>
                                 <option value="gramos">Gramos</option>
                                 <option value="libras">Libras</option>
@@ -62,14 +53,14 @@
                             </select>
                         </div>
 
-                        <div class="form-group">
-                            <label class="form-label">Precio producto</label>
-                            <input type="text" class="form-input" value="10.000$" id="precioProducto">
+                        <div class="form-group-create">
+                            <label class="form-label-create">Precio producto</label>
+                            <input type="text" class="form-input-create" value="10.000$" id="precioProducto">
                         </div>
 
-                        <div class="form-group">
-                            <label class="form-label">Descuento</label>
-                            <select class="form-select" id="descuento">
+                        <div class="form-group-create">
+                            <label class="form-label-create">Descuento</label>
+                            <select class="form-select-create" id="descuento">
                                 <option value="no" selected>No aplica.</option>
                                 <option value="10">10%</option>
                                 <option value="15">15%</option>
@@ -77,8 +68,8 @@
                             </select>
                         </div>
 
-                        <div class="submit-container">
-                            <button type="submit" class="btn-submit">Siguiente</button>
+                        <div class="submit-container-create">
+                            <button type="submit" class="btn-submit-create">Siguiente</button>
                         </div>
 
                     </div>
@@ -86,7 +77,6 @@
             </div>
 
         </div>
-    </div>
+    </main>
 
 </body>
-</html>

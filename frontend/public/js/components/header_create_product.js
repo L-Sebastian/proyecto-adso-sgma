@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     // 1. Seleccionar el contenedor del header
-    const headerContainer = document.querySelector('.header__index__producto"'); // CORREGIDO
+    const headerContainer = document.querySelector('.header__index__producto');
 
     // 2. Verificar si existe en el DOM
     if (headerContainer) {

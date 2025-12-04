@@ -1,124 +1,159 @@
-/* Events Section */
-/* .events-section {
-    padding: 60px 20px;
-    background: #c8fcd2;     
-    border: 3px solid #004080;
-    border-radius: 15px;
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-base);
+    background-color: var(--white); /* Fondo negro para el contraste */
+}
+
+/* Contenedor principal que envuelve todo */
+.main-container {
     max-width: 1200px;
-    margin: 40px auto;
-    height: auto;           
-    overflow: visible;      
-} */
+    margin: 50px auto;
+    padding: 30px;
+    background-color: var(--primary-200);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
 
-
-.events-grid {
-    display: grid;
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    overflow: visible;
-    height: auto;
 }
 
-.container-cards {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    overflow: visible; /* importante */
-    height: auto;      /* que crezca según el contenido */
-}
-
-/* .section-title {
-    text-align: center;
-    font-size: 24px;
+.services__title {
+    color: var(--primary-secundary-700);
+    font-size: var(--spacing-lg);
     font-weight: bold;
-    color: #2c5f7f;
-    margin-bottom: 50px;
-} */
-
-.event-card {
-    background: white;
-    border-radius: 15px;
-    padding: 20px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    border-bottom: 3px solid var(--color-primary-dark);
+    padding-bottom: 5px;
 }
 
-.event-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+.services__cards-container {
+    display: grid;
+    gap: 24px; 
+    justify-content: center;
 }
 
-.event-header {
+@media (width > 640px) {
+    .services__cards-container{
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 90%;
+        margin: 100px auto 0;
+
+    }
+}
+
+@media (width > 1024px) {
+    .services__cards-container{
+        grid-template-columns: repeat(3, 1fr); /* Ajustado a 3 columnas para el diseño de la imagen */
+        max-width: 1200px;
+    }
+}
+
+/* Estilos de la tarjeta */
+.card {
+    border: 2px solid var(--primary-secundary-700);
+    border-radius: 12px;
+    height: 318px;
+    text-align: center;
+    min-width: 320px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra más sutil */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Para que las esquinas redondeadas se apliquen a todo el contenido */
+    background-color: var(--gray-200);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el ratón */
+}
+
+/* Encabezado de la tarjeta (Usuario y Avatar) */
+.card__header {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 15px;
-    background: #2c5f7f;
+    padding: 10px 15px;
+    background-color: var(--primary-secundary-700);
+    color: var(--white);
+    text-align: left;
 }
 
-.user-avatar {
-    width: 40px;
-    height: 40px;
+.card__avatar {
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    object-fit: cover;
+    margin-right: 10px;
+    border: 2px solid var(--color-text-light);
 }
 
-.user-name {
+.card__title{
+    font-size: var(--fs-xs); /* Ajustado el tamaño de fuente para el nombre de usuario */
     font-weight: 600;
-    color: white;
+    margin: 0; /* Eliminado el margen inferior */
+    text-align: left;
+    flex-grow: 1;
 }
 
-.event-image {
-    position: relative;
+/* Contenedor de la imagen principal */
+.card__image-container {
     width: 100%;
-    height: 200px;
+    height: 200px; /* Altura fija para las imágenes */
     overflow: hidden;
 }
 
-.event-image img {
+.card__image {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* Asegura que la imagen cubra el contenedor sin distorsionarse */
 }
 
-.event-overlay {
-    position: absolute;
-    bottom: 15px;
-    left: 15px;
+/* Pie de la tarjeta (Likes y Descripción) */
+.card__footer {
+    display: flex;
+    font-size: 16px;
+    align-items: center;
+    /* justify-content: space-between; */
+    gap: 24px;
+    padding: 10px 15px;
+    background-color: var(--gray-200);
+    border-top: 1px solid var(--tertiary-500);
 }
 
-.event-date {
-    background: rgba(44, 95, 127, 0.9);
-    color: white;
-    padding: 8px 15px;
-    border-radius: 8px;
+.card__likes {
+    display: flex;
+    align-items: center;
+    gap: 5px;
     font-weight: bold;
+    color: var(--color-card-header);
 }
 
-.date-number {
-    font-size: 20px;
+.card__like-icon {
+    width: 20px;
+    height: 20px;
 }
 
-.event-info {
-    padding: 15px;
-    background: var(--gray-200);
-}
-
-.likes {
-    color: #2c5f7f;
-    font-weight: 600;
-    margin-bottom: 8px;
-    font-size: 14px;
-}
-
-.event-description {
-    color: #555;
-    font-size: 14px;
+.card__description{
+    font-size: var(--spacing-md);
+    font-weight: bold;
     line-height: 1.5;
+    margin: 0;
+    text-align: left;
+    color: var(--color-text-dark);
+}
+
+/* Estilos del código original que no se usan en la tarjeta final pero se mantienen por si acaso */
+.card__icons {
+    display: none; /* Ocultamos este bloque ya que no se ajusta al diseño de la imagen */
+}
+
+.card__icon {
+    display: none;
+}
+
+.card__like {
+    color: var(--primary-secundary-500);
+    font-size: 32px;
+    font-weight: bold;
 }

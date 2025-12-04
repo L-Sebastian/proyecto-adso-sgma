@@ -64,6 +64,7 @@ html, body {
   background:
     linear-gradient(to right, rgba(30, 74, 97, 0) 70%, var(--primary-secundary-900) 100%),
     url("/frontend/public/img/5.png") center/cover no-repeat;
+    background-position: center;
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -108,7 +109,7 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px;
+  gap: 4px;
   width: 100%;
 }
 
@@ -116,7 +117,7 @@ html, body {
   color: var(--white);
   text-align: left;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 14px;
   margin-bottom: 0;
   font-family: poppins bold;
 }

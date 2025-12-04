@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Últimos Eventos - Tarjetas Dinámicas</title>
+    <link rel="stylesheet" href="/frontend/public/css/main.css">
+</head>
+<body>    <div class="main-container">
+    <div class="services">
+        <h1 class="services__title">ÚLTIMOS EVENTOS</h1>
+        <div class="services__cards-container" id="cards-container">
+            <!-- Las tarjetas se cargarán aquí dinámicamente -->
+        </div    
+    </div>    </div>    <script type="module">
+        import { loadCards } from '/frontend/public/js/pages/load_cards.js';
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Cargar todas las tarjetas en el contenedor con ID 'cards-container'
+            loadCards('#cards-container');
+        });
+    </script>
+</body>
+</html>

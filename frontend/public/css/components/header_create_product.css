@@ -1,12 +1,17 @@
-.header__index {
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header__index__producto {
     background: linear-gradient(90deg, var(--primary-secundary-700) 70%, var(--primary-600) 100%);
     color: var(--white);
-    padding: 0.7rem 2rem;
-    display: flex;
+    padding: 0.7rem;
+    /* display: flex;   */
     justify-content: center;
 }
 
-.header__content {
+.header__content-product {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -15,82 +20,82 @@
 }
 
 /* CONTENEDOR DE SGMA + LOGO */
-.navbar__logo-container {
+.navbar__logo-container-product {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.navbar__logo {
+.navbar__logo-product {
     font-size: 1.8rem;
     font-weight: bold;
     color: var(--white);
 }
 
-.navbar__logo-img {
+.navbar__logo-img-product {
     width: 30px;
     height: auto;
 }
 
 /* REDES SOCIALES */
-.header__logo {
+.header__logo-product {
     display: flex;
     align-items: center;
     gap: 24px;
 }
 
-.header__logo svg {
+.header__logo-product svg {
     cursor: pointer;
     transition: transform 0.2s ease;
 }
 
-.header__logo svg:hover {
+.header__logo-product svg:hover {
     transform: scale(1.1);
     opacity: 0.85;
 }
 
 /* ======== RESPONSIVE ======== */
 @media (max-width: 768px) {
-    .header__content {
+    .header__content-product {
         flex-direction: column;
         align-items: center;
         text-align: center;
         gap: 0.8rem;
     }
 
-    .navbar__logo-container {
+    .navbar__logo-container-product {
         justify-content: center;
     }
 
-    .navbar__logo-img {
+    .navbar__logo-img-product {
         width: 40px;
     }
 
-    .navbar__logo {
+    .navbar__logo-product {
         font-size: 1.5rem;
     } 
 
-    .header__logo {
+    .header__logo-product {
         justify-content: center;
         gap: 12px;
     }
 
-    .header__logo svg {
+    .header__logo-product svg {
         width: 25px;
         height: 25px;
     }
 }
 
 @media (max-width: 480px) {
-    .navbar__logo-img {
+    .navbar__logo-img-product {
         width: 35px;
     }
 
-    .navbar__logo {
+    .navbar__logo-product {
         font-size: 1.3rem;
     }
 
-    .header__logo svg {
+    .header__logo-product svg {
         width: 22px;
         height: 22px;
     }

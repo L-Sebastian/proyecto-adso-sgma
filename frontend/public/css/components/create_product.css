@@ -9,63 +9,8 @@
             overflow-x: hidden;
         }
 
-        /* Header */
-        .header {
-            background: linear-gradient(90deg, #1e3a8a 0%, #059669 100%);
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-        }
-
-        .logo {
-            font-size: 28px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-icons i {
-            font-size: 20px;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .social-icons i:hover {
-            transform: scale(1.2);
-        }
-
-        /* Sub Header */
-        .sub-header {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 10px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-        }
-
-        .sub-header-left {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .user-info {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
         /* Main Content */
-        .main-content {
+        .main-content-create {
             background-image: url('/frontend/public/img/create_producto.jpg');
             background-size: cover;
             background-position: center;
@@ -74,7 +19,7 @@
             position: relative;
         }
 
-        .main-content::before {
+        .main-content-create::before {
             content: '';
             position: absolute;
             top: 0;
@@ -84,7 +29,7 @@
             background: linear-gradient(135deg, rgba(16, 185, 129, 0.3) 0%, rgba(5, 150, 105, 0.4) 100%);
         }
 
-        .content-wrapper {
+        .content-wrapper-create {
             position: relative;
             z-index: 1;
             display: flex;
@@ -95,7 +40,7 @@
         }
 
         /* Image Section */
-        .image-section {
+        .image-section-create {
             background: var(--gray-600);
             flex: 0 0 350px;
             display: flex;
@@ -105,7 +50,7 @@
             padding-bottom: 0;
         }
 
-        .image-container {
+        .image-container-create {
             /* background: var(--gray-600); */
             padding: 20px 0 10px;
             /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); */
@@ -114,7 +59,7 @@
             padding-bottom: 0;
         }
 
-        .product-image {
+        .product-image-create {
             width: 192px;
             height: 192px;
             object-fit: cover;
@@ -122,19 +67,19 @@
             margin-bottom: 15px;
         }
 
-        .image-text {
+        .image-text-create {
             color: #333;
             font-size: 16px;
         }
 
-        .button-group {
+        .button-group-create {
             display: flex;
             gap: 24px;
             margin-bottom: 0;
             padding-bottom: 0;
         }
 
-        .btn {
+        .btn-create {
             padding: 12px 25px;
             border: none;
             font-size: 14px;
@@ -143,39 +88,39 @@
             transition: all 0.3s;
         }
 
-        .btn-primary {
+        .btn-primary-create {
             padding: 10px 23px;
             background: #10b981;
             color: white;
         }
 
-        .btn-primary:hover {
+        .btn-primary-create:hover {
             background: #059669;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
         }
 
         /* Form Section */
-        .form-section {
+        .form-section-create {
             flex: 1;
             background: var(--gray-600);
             padding: 20px;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
         }
 
-        .form-grid {
+        .form-grid-create {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 24px;
         }
 
-        .form-group {
+        .form-group-create {
             display: flex;
             flex-direction: column;
             gap: 8px;
         }
 
-        .form-label {
+        .form-label-create {
             font-weight: 600;
             color: var(--white);
             font-size: 16px;
@@ -183,7 +128,7 @@
             letter-spacing: 0.5px;
         }
 
-        .form-input {
+        .form-input-create {
             padding: 12px 16px;
             border: 2px solid #e5e7eb;
             border-radius: 50px;
@@ -192,13 +137,13 @@
             background: white;
         }
 
-        .form-input:focus {
+        .form-input-create:focus {
             outline: none;
             border-color: #10b981;
             box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
         }
 
-        .form-select {
+        .form-select-create {
             padding: 12px 16px;
             border: 2px solid #e5e7eb;
             border-radius: 50px;
@@ -210,20 +155,20 @@
             transition: all 0.3s;
         }
 
-        .form-select:focus {
+        .form-select-create:focus {
             outline: none;
             border-color: #10b981;
             box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
         }
 
-        .submit-container {
+        .submit-container-create {
             grid-column: 1 / -1;
             display: flex;
             justify-content: center;
             margin-top: 20px;
         }
 
-        .btn-submit {
+        .btn-submit-create {
             padding: 10px 31px;
             background: #10b981;
             color: white;
@@ -235,7 +180,7 @@
             box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
         }
 
-        .btn-submit:hover {
+        .btn-submit-create:hover {
             background: #059669;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
@@ -244,7 +189,7 @@
 /* ====== AJUSTES DE LA SECCIÓN PRINCIPAL ====== */
 
 /* Fondo translúcido sobre la imagen */
-.content-wrapper {
+.content-wrapper-create {
     background: rgba(171, 171, 171, 0.64);
     padding: 60px;
     display: flex;
@@ -254,7 +199,7 @@
 }
 
 /* Lado izquierdo (imagen y botones) */
-.image-section {
+.image-section-create {
     background: rgba(103, 103, 103, 1);
     border-radius: 15px;
     padding: 30px 20px;
@@ -265,7 +210,7 @@
     gap: 24px;
 }
 
-.image-container img {
+.image-container-create img {
     width: 180px;
     height: 180px;
     border-radius: 10px;
@@ -273,13 +218,13 @@
     margin-bottom: 15px;
 }
 
-.image-text {
+.image-text-create {
     color: var(--black);
     margin-bottom: 10px;
 }
 
 /* Botones de editar */
-.button-group .btn {
+.button-group-create  .btn-create  {
     border-radius: 8px;
     background: #10b981;
     color: white;
@@ -287,19 +232,19 @@
     padding: 8px 20px;
 }
 
-.button-group .btn:hover {
+.button-group-create  .btn-create:hover {
     background: #059669;
 }
 
 /* ====== LADO DERECHO (formulario) ====== */
-.form-section {
+.form-section-create  {
     background: rgba(103, 103, 103, 1);
     border-radius: 15px;
     color: white;
     padding: 40px;
 }
 
-.form-label {
+.form-label-create {
     color: white;
     font-weight: bold;
     letter-spacing: 1px;
@@ -311,35 +256,35 @@
 
 /* ----------- 1200px (pantallas grandes) ----------- */
 @media (max-width: 1020px) {
-    .content-wrapper {
+    .content-wrapper-create {
         padding: 40px;
         gap: 30px;
     }
 
-    .image-section {
+    .image-section-create  {
         flex: 0 0 300px;
     }
 }
 
 /* ----------- 992px (tablets horizontales) ----------- */
 @media (max-width: 992px) {
-    .content-wrapper {
+    .content-wrapper-create  {
         flex-direction: column;
         padding: 30px;
         text-align: center;
     }
 
-    .image-section {
+    .image-section-create {
         width: 100%;
         max-width: 400px;
         margin: 0 auto;
     }
 
-    .form-section {
+    .form-section-create {
         width: 100%;
     }
 
-    .form-grid {
+    .form-grid-create {
         grid-template-columns: 1fr;
     }
 }
@@ -347,38 +292,38 @@
 /* ----------- 768px (tablets verticales / móviles grandes) ----------- */
 @media (max-width: 768px) {
 
-    .header,
-    .sub-header {
+    .header-create,
+    .sub-header-create {
         flex-direction: column;
         gap: 12px;
         text-align: center;
         padding: 15px;
     }
 
-    .logo {
+    .logo-create {
         font-size: 22px;
     }
 
-    .main-content {
+    .main-content-create {
         padding: 20px;
     }
 
-    .content-wrapper {
+    .content-wrapper-create {
         padding: 25px;
     }
 
-    .image-section {
+    .image-section-create {
         padding: 20px;
     }
 
-    .product-image {
+    .product-image-create {
         width: 150px;
         height: 150px;
     }
 
-    .btn,
-    .btn-primary,
-    .btn-submit {
+    .btn-create,
+    .btn-primary-create,
+    .btn-submit-create {
         width: 100%;
         text-align: center;
     }
@@ -387,47 +332,47 @@
 /* ----------- 480px (celulares pequeños) ----------- */
 @media (max-width: 480px) {
 
-    .header {
+    .header-create {
         padding: 10px 15px;
     }
 
-    .logo {
+    .logo-create {
         font-size: 18px;
     }
 
-    .social-icons i {
+    .social-icons-create i {
         font-size: 18px;
     }
 
-    .content-wrapper {
+    .content-wrapper-create {
         padding: 20px;
     }
 
-    .image-section {
+    .image-section-create {
         flex: 1;
         padding: 20px 15px;
     }
 
-    .form-section {
+    .form-section-create {
         padding: 25px 15px;
     }
 
-    .form-label {
+    .form-label-create {
         font-size: 14px;
     }
 
-    .form-input,
-    .form-select {
+    .form-input-create,
+    .form-select-create {
         padding: 10px 14px;
         font-size: 13px;
     }
 
-    .button-group {
+    .button-group-create {
         flex-direction: column;
         width: 100%;
     }
 
-    .button-group .btn {
+    .button-group-create .btn-create {
         width: 100%;
     }
 }

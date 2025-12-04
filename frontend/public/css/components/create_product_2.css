@@ -1,305 +1,302 @@
-    * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-            body {
-                font-family: var(--font-family-base);
-                overflow-x: hidden;
-            }
-
-
-            .sub-header-left {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-            }
-
-            .user-info {
-                display: flex;
-                align-items: center;
-                gap: 10px;
-            }
-
-            /* Main Content */
-
-        /* Main Content */
-        .main-content {
-            background-image: url('/frontend/public/img/create_producto.jpg');
-            background-size: cover;
-            background-position: center;
-            min-height: calc(100vh - 100px);
-            padding: 40px;
-            position: relative;
-        }
-
-        .main-content::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(16, 185, 129, 0.3) 0%, rgba(5, 150, 105, 0.4) 100%);
-        }
-
-            .content-wrapper {
-                position: relative;
-                z-index: 1;
-                display: flex;
-                gap: 40px;
-                max-width: 1400px;
-                margin: 0 auto;
-                padding: 100px ;
-            }
-
-            /* Image Section */
-            .image-section {
-                background: var(--gray-600);
-                flex: 0 0 350px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                gap: 20px;
-                padding-bottom: 0;
-            }
-
-            .image-container {
-                /* background: var(--gray-600); */
-                padding: 20px 0 10px;
-                /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); */
-                text-align: center;
-                margin-bottom: 0;
-                padding-bottom: 0;
-            }
-
-            .product-image {
-                width: 192px;
-                height: 192px;
-                object-fit: cover;
-                border-radius: 8px;
-                margin-bottom: 15px;
-            }
-
-            .image-text {
-                color: #333;
-                font-size: 16px;
-            }
-
-            /* Form Section */
-            .form-section {
-                flex: 1;
-                background: var(--gray-600);
-                padding: 20px;
-                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            }
-
-            .form-grid {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                gap: 24px;
-            }
-
-            .form-group {
-                display: flex;
-                flex-direction: column;
-                gap: 8px;
-            }
-
-            .form-label {
-                font-weight: 600;
-                color: var(--white);
-                font-size: 16px;
-                text-transform: uppercase;
-                letter-spacing: 0.5px;
-            }
-
-            .form-input {
-                padding: 10px;
-                border: 2px solid #e5e7eb;
-                border-radius: 50px;
-                font-size: 14px;
-                transition: all 0.3s;
-                background: white;
-            }
-
-            .form-input:focus {
-                outline: none;
-                border-color: #10b981;
-                box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
-            }
-
-            .form-select {
-                padding: 12px 16px;
-                border: 2px solid #e5e7eb;
-                border-radius: 50px;
-                font-size: 14px;
-                appearance: none;
-                background: white url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>') no-repeat right 15px center;
-                background-size: 20px;
-                cursor: pointer;
-                transition: all 0.3s;
-            }
-
-            .form-select:focus {
-                outline: none;
-                border-color: #10b981;
-                box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
-            }
+body {
+    font-family: var(--font-family-base);
+    overflow-x: hidden;
+}
 
 
-    /* ====== AJUSTES DE LA SECCIÓN PRINCIPAL ====== */
+.sub-header-left-product2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-    /* Fondo translúcido sobre la imagen */
-    .content-wrapper {
-        background: rgba(171, 171, 171, 0.64);
-        padding: 60px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+.user-info-product2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Main Content */
+.main-content-product2 {
+    background-image: url('/frontend/public/img/create_producto.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: calc(100vh - 100px);
+    padding: 40px;
+    position: relative;
+}
+
+.main-content-product2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.3) 0%, rgba(5, 150, 105, 0.4) 100%);
+}
+
+.content-wrapper-product2 {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 100px ;
+}
+
+/* Image Section */
+.image-section-product2 {
+    background: var(--gray-600);
+    flex: 0 0 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 0;
+}
+
+.image-container-product2 {
+    /* background: var(--gray-600); */
+    padding: 20px 0 10px;
+    /* box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); */
+    text-align: center;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.product-image-product2 {
+    width: 192px;
+    height: 192px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.image-text-product2 {
+    color: #333;
+    font-size: 16px;
+}
+
+/* Form Section */
+.form-section-product2 {
+    flex: 1;
+    background: var(--gray-600);
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+.form-grid-product2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.form-group-product2 {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label-product2 {
+    font-weight: 600;
+    color: var(--white);
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-input-product2 {
+    padding: 10px;
+    border: 2px solid #e5e7eb;
+    border-radius: 50px;
+    font-size: 14px;
+    transition: all 0.3s;
+    background: white;
+}
+
+.form-input-product2:focus {
+    outline: none;
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.form-select-product2 {
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 50px;
+    font-size: 14px;
+    appearance: none;
+    background: white url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>') no-repeat right 15px center;
+    background-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.form-select-product2:focus {
+    outline: none;
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+
+/* ====== AJUSTES DE LA SECCIÓN PRINCIPAL ====== */
+
+/* Fondo translúcido sobre la imagen */
+.content-wrapper-product2 {
+    background: rgba(171, 171, 171, 0.64);
+    padding: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Lado izquierdo (imagen y botones) */
+.image-section-product2 {
+    background: rgba(103, 103, 103, 1);
+    border-radius: 15px;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 350px;
+}
+
+.image-container-product2 img {
+    width: 180px;
+    height: 180px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 24px;
+}
+
+.image-text-product2 {
+    color: var(--black);
+    margin-bottom: 10px;
     }
 
-    /* Lado izquierdo (imagen y botones) */
-    .image-section {
-        background: rgba(103, 103, 103, 1);
-        border-radius: 15px;
-        padding: 30px 20px;
-        display: flex;
+/* Buttons */
+.button-container-product2 {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.btn-product2 {
+    padding: 10px 35px;
+    border: none;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: capitalize;
+}
+
+.btn-secondary-product2 {
+    background: #10b981;
+    color: white;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.btn-secondary-product2:hover {
+    background: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+.btn-primary-product2 {
+    background: #10b981;
+    color: white;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.btn-primary-product2:hover {
+    background: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+/* ====== LADO DERECHO (formulario) ====== */
+.form-section-product2 {
+    background: rgba(103, 103, 103, 1);
+    border-radius: 15px;
+    color: white;
+    padding: 40px;
+}
+
+.form-label-product2 {
+    color: white;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* ====== RESPONSIVIDAD ====== */
+@media (max-width: 1024px) {
+    .content-wrapper-product2 {
         flex-direction: column;
-        align-items: center;
-        flex: 0 0 350px;
+        padding: 40px 20px;
     }
 
-    .image-container img {
-        width: 180px;
-        height: 180px;
-        border-radius: 10px;
-        object-fit: cover;
-        margin-bottom: 24px;
+    .image-section-product2, 
+    .form-section-product2 {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
     }
 
-    .image-text {
-        color: var(--black);
-        margin-bottom: 10px;
+    .form-grid-product2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* @media (max-width: 1024px) {
+    .content-wrapper {
+        flex-direction: column;
     }
 
-    /* Buttons */
-            .button-container {
-                display: flex;
-                justify-content: center;
-                gap: 24px;
-                margin-top: 30px;
-            }
-
-            .btn {
-                padding: 10px 35px;
-                border: none;
-                border-radius: 50px;
-                font-size: 14px;
-                font-weight: 600;
-                cursor: pointer;
-                transition: all 0.3s;
-                text-transform: capitalize;
-            }
-
-            .btn-secondary {
-                background: #10b981;
-                color: white;
-                box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-            }
-
-            .btn-secondary:hover {
-                background: #059669;
-                transform: translateY(-2px);
-                box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
-            }
-
-            .btn-primary {
-                background: #10b981;
-                color: white;
-                box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-            }
-
-            .btn-primary:hover {
-                background: #059669;
-                transform: translateY(-2px);
-                box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
-            }
-
-    /* ====== LADO DERECHO (formulario) ====== */
-    .form-section {
-        background: rgba(103, 103, 103, 1);
-        border-radius: 15px;
-        color: white;
-        padding: 40px;
+    .image-section {
+        flex: none;
+        width: 100%;
     }
 
-    .form-label {
-        color: white;
-        font-weight: bold;
-        letter-spacing: 1px;
+    .form-grid {
+        grid-template-columns: 1fr;
     }
-
-    /* ====== RESPONSIVIDAD ====== */
-    @media (max-width: 1024px) {
-        .content-wrapper {
-            flex-direction: column;
-            padding: 40px 20px;
-        }
-
-        .image-section, 
-        .form-section {
-            width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-
-            /* @media (max-width: 1024px) {
-                .content-wrapper {
-                    flex-direction: column;
-                }
-
-                .image-section {
-                    flex: none;
-                    width: 100%;
-                }
-
-                .form-grid {
-                    grid-template-columns: 1fr;
-                }
-            } */
+} */
 
 
-            /* Description Section */
-            .description-section {
-                grid-column: 1 / -1;
-            }
+/* Description Section */
+.description-section-product2 {
+    grid-column: 1 / -1;
+}
 
-            .description-textarea {
-                width: 100%;
-                padding: 18px 20px;
-                border: 2px solid #e5e7eb;
-                border-radius: 25px;
-                font-size: 15px;
-                font-weight: 600;
-                min-height: 100px;
-                resize: vertical;
-                font-family: inherit;
-                transition: all 0.3s;
-                background: white;
-                color: #000;
-                line-height: 1.5;
-            }
+.description-textarea-product2 {
+    width: 100%;
+    padding: 18px 20px;
+    border: 2px solid #e5e7eb;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 600;
+    min-height: 100px;
+    resize: vertical;
+    font-family: inherit;
+    transition: all 0.3s;
+    background: white;
+    color: #000;
+    line-height: 1.5;
+}
 
-            .description-textarea:focus {
-                outline: none;
-                border-color: #10b981;
-                box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
-            }
+.description-textarea-product2:focus {
+    outline: none;
+    border-color: #10b981;
+    box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
         
