@@ -1,0 +1,167 @@
+/* =============================
+   GENERAL
+============================= */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-family-base);
+    background-color: #d9ffe8;
+    /* fondo igual al de tu captura */
+}
+
+/* =============================
+   CONTENEDOR PRINCIPAL
+============================= */
+.products-container-descuent {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+    background-color: #d9ffe8;
+    width: 100%;
+}
+
+/* =============================
+   HEADER
+============================= */
+
+.products-header-descuent {
+    text-align: center;
+    padding: 60px 20px 20px;
+}
+
+.products-header__title-descuent {
+    font-size: 2.4rem;
+    font-weight: var(--fw-bold);
+    color: #044a75;
+    /* azul del título */
+    margin-bottom: 10px;
+}
+
+.products-header__subtitle-descuent {
+    font-size: 1rem;
+    color: #1a7b58;
+    margin-bottom: 60px;
+}
+
+/* =============================
+   GRID
+============================= */
+.products-cards-container-descuent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* EXACTO como la imagen */
+    gap: 24px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* =============================
+   CARD
+============================= */
+.discount-card {
+    background-color: #d9ffe8;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    background: none;
+}
+
+/* =============================
+   IMAGEN
+============================= */
+.discount-card__image-container {
+    background-color: #d9ffe8;
+    padding: 0;
+    background: none;
+}
+
+.discount-card__image {
+    width: 100%;
+    height: 270px;
+    object-fit: contain;
+    background: #ffffff;
+}
+
+/* =============================
+   INFO
+============================= */
+.discount-card__info {
+    background-color: var(--white);
+    padding: 20px 10px 30px;
+    margin-top: 16px;
+    /* border-top: 18px solid #b9ffc7; */
+    /* línea verde claro como la captura */
+}
+
+.discount-card__name {
+    margin: 0 0 6px;
+    font-size: 1rem;
+    color: var(--terciary-600);
+    font-weight: var(--fw-medium);
+}
+
+.discount-card__discount-info {
+    margin-bottom: 4px;
+}
+
+.discount-card__percentage {
+    color: #1a7b58;
+    font-size: .85rem;
+    margin-right: 8px;
+}
+
+.discount-card__original-price {
+    font-size: .85rem;
+    color: #9a9a9a;
+    text-decoration: line-through;
+}
+
+/* PRECIO */
+.discount-card__final-price {
+    font-size: 1.8rem;
+    font-weight: var(--fw-bold);
+    color: #044a75;
+    margin-bottom: 6px;
+}
+
+.discount-card__unit {
+    font-size: .9rem;
+    margin-left: 2px;
+    color: #044a75;
+}
+
+/* Vendedor */
+.discount-card__vendor {
+    font-size: .85rem;
+    color: #1a7b58;
+    margin-bottom: 18px;
+}
+
+/* =============================
+   BOTÓN
+============================= */
+.discount-card__button {
+    background-color: #0bb162;
+    /* verde botón igual a la captura */
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: .9rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.discount-card__button:hover {
+    background-color: #088a4f;
+}
+
+.discount-card__cart-icon {
+    width: 18px;
+    filter: brightness(0) invert(1);
+}

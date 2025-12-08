@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de productos comercializados</title>
+
+    <link rel="stylesheet" href="/frontend/public/css/main.css">
+</head>
+
+<body>
+
+    <!-- Encabezado -->
+    <header class="products-header">
+        <h1 class="products-header__title">Tipos de productos comercializados</h1>
+        <p class="products-header__subtitle">Productos de y por el campesinado de nuestra región</p>
+    </header>
+
+    <!-- Contenedor dinámico -->
+    <div class="products-cards-container" id="cards-container"></div>
+
+    <script type="module">
+        import { loadProducts } from "/frontend/public/js/pages/load_cards_product.js";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            loadProducts("#cards-container");
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+[
+    {
+        "id": 1,
+        "name": "Piña Oro Miel",
+        "image": "/frontend/public/img/pina.jpg",
+        "discount": "-10%",
+        "originalPrice": "$4000",
+        "finalPrice": "$3600",
+        "unit": "und.",
+        "vendor": "Finca el Porvenir",
+        "link": "#"
+    },
+    {
+        "id": 2,
+        "name": "Zanahoria",
+        "image": "/frontend/public/img/zanahoria.jpg",
+        "discount": "-10%",
+        "originalPrice": "$4900",
+        "finalPrice": "$4410",
+        "unit": "lb.",
+        "vendor": "Finca el Indio",
+        "link": "#"
+    },
+    {
+        "id": 3,
+        "name": "Lomo de cerdo",
+        "image": "/frontend/public/img/carnes.jpg",
+        "discount": "-10%",
+        "originalPrice": "$13000",
+        "finalPrice": "$11700",
+        "unit": "lb.",
+        "vendor": "Finca la cristalina",
+        "link": "#"
+    },
+    {
+        "id": 4,
+        "name": "Papaya",
+        "image": "/frontend/public/img/papaya.jpg",
+        "discount": "-10%",
+        "originalPrice": "$1900",
+        "finalPrice": "$1710",
+        "unit": "lb.",
+        "vendor": "Finca el Porvenir",
+        "link": "#"
+    }
+]

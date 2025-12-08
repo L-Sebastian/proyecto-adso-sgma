@@ -1,0 +1,19 @@
+<!-- Plantilla para la tarjeta de producto en descuento -->
+<div class="discount-card">
+    <div class="discount-card__image-container">
+        <img src="{{image}}" alt="Imagen de {{name}}" class="discount-card__image">
+    </div>
+    <div class="discount-card__info">
+        <p class="discount-card__name">{{name}}</p>
+        <p class="discount-card__discount-info">
+            <span class="discount-card__percentage">{{discount}}</span>
+            <span class="discount-card__original-price">{{originalPrice}}</span>
+        </p>
+        <p class="discount-card__final-price">{{finalPrice}}<span class="discount-card__unit">{{unit}}</span></p>
+        <p class="discount-card__vendor">Vendido por: {{vendor}}</p>
+        <button class="discount-card__button">
+            Agregar <img src="/frontend/public/img/carrito.png" alt="Carrito de compras"
+                class="discount-card__cart-icon">
+        </button>
+    </div>
+</div>
