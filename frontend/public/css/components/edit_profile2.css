@@ -185,15 +185,14 @@ body {
     letter-spacing: 0.05em;
 }
 
-.form-input-profile {
-    background-color: rgba(255, 255, 255, 0.95);
+.form-input-profile {   
+    width: 100%;
+    padding: 8px 16px;
+    border-radius: 30px;
+    height: 48px;
     border: none;
-    border-radius: 9999px;
-    padding: 12px 16px;
-    color: #000;
-    font-size: 16px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    background: rgba(255,255,255,0.7);
+    font-size: var(--fs-body);
 }
 
 .form-input-profile::placeholder {

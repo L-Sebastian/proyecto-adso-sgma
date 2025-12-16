@@ -9,9 +9,15 @@
 
 .navbar-bottom__content-product {
   display: flex;
-  justify-content: flex-end; /* Alinea el usuario a la derecha */
+  justify-content: flex-end;
+  /* Alinea el usuario a la derecha */
   align-items: center;
   position: relative;
+}
+
+.profile-icon-img {
+  width: 26px;
+  height: 26px;
 }
 
 /* --- Sección central (antes izquierda): ícono + texto --- */
@@ -41,7 +47,9 @@
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
-  .navbar-top-product, .navbar-bottom-product {
+
+  .navbar-top-product,
+  .navbar-bottom-product {
     padding: 8px 20px;
   }
 

@@ -4,7 +4,6 @@
   padding: 6px 40px;
   font-family: var(--font-family-base);
   font-size: 0.95rem;
-  position: relative;
 }
 
 .navbar-bottom__content-profile {
@@ -14,7 +13,7 @@
   position: relative;
 }
 
-/* --- Sección central (antes izquierda): ícono + texto --- */
+/* Ícono + Texto */
 .navbar-bottom__left-profile {
   position: absolute;
   left: 50%;
@@ -24,7 +23,13 @@
   gap: 8px;
 }
 
-/* --- Sección derecha: usuario + imagen --- */
+/* Tamaño de la tuerca */
+.profile-icon-img {
+  width: 26px;
+  height: 26px;
+}
+
+/* Usuario derecho */
 .navbar-bottom__right-profile {
   display: flex;
   align-items: center;
@@ -38,6 +43,7 @@
   border: 2px solid white;
   object-fit: cover;
 }
+
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {

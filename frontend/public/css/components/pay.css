@@ -28,7 +28,7 @@ body {
 
 /* CONTAINER */
 .checkout-container-pay {
-    background: rgba(255,255,255,0.3);
+    background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(2px);
     padding: 40px;
     max-width: 1100px;
@@ -49,12 +49,13 @@ body {
     padding: 20px;
     margin-bottom: 30px;
     text-align: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     background: white;
 }
 
 .payment-methods-pay h3 {
     margin-bottom: 15px;
+    font-size: var(--fs-h4);
 }
 
 .payment-logos-pay {
@@ -74,7 +75,7 @@ body {
 .form-section-pay {
     background: white;
     padding: 30px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .form-step-pay {
@@ -105,15 +106,16 @@ body {
 
 .step-title-pay {
     flex: 1;
-    font-size: 14px;
+    font-size: var(--fs-body);
 }
 
 .modify-link-pay {
     color: yellow;
     padding: 4px 12px;
     border-radius: 10px;
-    font-size: 13px;
+    font-size: var(--fs-small);
     text-decoration: none;
+    text-align: right;
 }
 
 /* USER INFO */
@@ -157,7 +159,7 @@ body {
 .form-grid-pay {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 15px;
+    gap: 24px;
 }
 
 .full-width-pay {
@@ -171,13 +173,15 @@ body {
 
 .form-label-pay {
     font-weight: 600;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
+    min-width: 24px;
 }
 
 .form-input-pay,
 .form-select-pay {
-    padding: 10px;
+    padding: 8px 16px;
     border: 1px solid #ccc;
+    font-size: var(--fs-body);
 }
 
 .form-row-pay {
@@ -194,7 +198,7 @@ body {
     padding: 14px;
     border: none;
     width: 200px;
-    font-size: 18px;
+    font-size: var(--fs-body);
     cursor: pointer;
     border-radius: 8px;
 }
@@ -211,7 +215,7 @@ body {
 .summary-card-pay {
     background: white;
     padding: 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .summary-header-pay {
