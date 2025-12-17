@@ -1,3 +1,17 @@
+.marketed_products {
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: #e0ffe5;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 24px;
+    max-width: 50%;
+}    
+   
 
 
 .products-types {

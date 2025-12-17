@@ -2,6 +2,7 @@
     background-image: url(/frontend/img/index_.png);
     background-size: cover;
     background-repeat: no-repeat;
+    position: relative;
 }
 
 /* ===== Navbar ===== */

@@ -2,16 +2,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 60px 80px;
+    padding: 60px ;
     gap: 40px;
     flex-wrap: wrap;
     max-width: 70%;
     
+  
 }
 
 .agriculture__text {
-    flex: 1;
-    min-width: 400px;
+    /* flex: 1;
+    min-width: 400px; Borrar */
 }
 
 .agriculture__category {
@@ -46,6 +47,7 @@
     flex: 1;
     min-width: 240px;
 }
+
 
 .practices h3 {
     color: var(--primary-secundary-800);
@@ -87,8 +89,9 @@
     margin-top: -400px;
 }
 
-@media screen and (max-width: 768px) {
-    .agricultural {
+@media (max-width > 768px) {
+    .agricultural, .agricultura-box, .agriculture  {
+        grid-template-columns: repeat(3, 1fr);
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -96,11 +99,16 @@
 
     .agricultural__content,
     .agricultural__image {
-        max-width: 100%;
+        flex-direction: column;
 }
 
     .agricultural__features {
         flex-direction: column;
         gap: 1.5rem;
+  }
+  .agriculture__text, .agriculture, .agricultura-box, .practices, .agricultural__image, .agriculture__button{
+    flex-direction: column;
+    display: grid;
+    
   }
 }

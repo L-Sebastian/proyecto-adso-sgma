@@ -1,0 +1,39 @@
+.hero__blog {
+    background-image: url(/frontend/public/assets/img/blog_hero.png);
+    background-position: ;
+    background-size: cover;
+    text-align: center;
+    
+}
+
+.hero__content__blog {
+    text-align: center;
+    color: var(--white);
+    background-color: rgba(0 0 0 / 45%); /* Aplicar los 2 colores */
+    padding: 10rem;
+    
+}
+
+.hero__title__blog {
+    text-align: center;
+    font-size: var(--fs-md);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Aplicarla en variable */
+    color: var(--white);
+    
+}
+
+@media (width > 768px) {
+    .hero__title, .hero__text {
+        width: auto;
+        text-align: center;
+    }
+    
+}
+
+@media (width > 1080px){ 
+.hero__title, .hero__text {
+        width: auto;
+        text-align: center;
+    }
+    
+}

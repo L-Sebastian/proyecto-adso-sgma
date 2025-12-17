@@ -1,0 +1,83 @@
+
+<nav class="navbar-placeholder">
+    <div class="main-container-shopping">
+        <div class="content-wrapper-shopping">
+            
+            <ul class="product-container-shopping">
+                
+                <article class="product-card-shopping">
+                    <img src="/frontend/public/img/piña_g.jpg" alt="Piña Oro Miel" class="product-image-shopping">
+                    
+                    <div class="product-info-shopping">
+                        <h2 class="product-name-shopping">Piña Oro Miel</h2>
+                        
+                        <div class="price-row-shopping">
+                            <p class="product-discount">-30%</p>
+                            <p class="product-original-price">$4000</p>
+                        </div>
+                        
+                        <div class="counter-group">
+                            <p class="product-description">Descripción<br></p>
+                            <div class="quantity-controls-shopping">
+                                <button class="qty-btn-shopping" onclick="decreaseQty()">−</button>
+                                <span class="qty-value-shopping" id="quantity">1</span>
+                                <button class="qty-btn-shopping" onclick="increaseQty()">+</button>
+                            </div>
+                        </div>
+                        
+                        <div class="description-text">
+                            <p>Vendido por Finca el Porvenir</p>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="product-price-shopping">
+                            <div class="price-container">
+                                <span class="price-amount" id="productPrice-shopping">$3.600</span>
+                                <span class="price-currency-shopping">lb.</span>
+                            </div>
+                        </div>
+                        
+                        <div class="button-remove">
+                            <button class="delete-btn-shopping" onclick="removeProduct()">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 7l16 0" /><path d="M10 11l0 6" /><path d="M14 11l0 6" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>
+                                </button>
+                        </div>
+                    </div>
+                </article>
+                
+                </ul>
+            
+            <div class="checkout-card-shopping">
+                <div class="valor-container-shopping">
+                    <h3 class="checkout-title-shopping">Total a pagar</h3>
+                    <div class="checkout-total-shopping">
+                        <span class="total-amount-shopping" name="totalAmount">$3.600</span>
+                        <span class="total-currency-shopping">pesos</span>
+                    </div>
+                </div>
+                
+                <div class="payment-methods-shopping">
+                    <div class="payment-icon-visa-shopping">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-visa"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M21 15l-1 -6l-2.5 6" /><path d="M9 15l1 -6" /><path d="M3 9h1v6h.5l2.5 -6" /><path d="M16 9.5a.5 .5 0 0 0 -.5 -.5h-.75c-.721 0 -1.337 .521 -1.455 1.233l-.09 .534a1.059 1.059 0 0 0 1.045 1.233a1.059 1.059 0 0 1 1.045 1.233l-.09 .534a1.476 1.476 0 0 1 -1.455 1.233h-.75a.5 .5 0 0 1 -.5 -.5" /><path d="M18 14h2.7" /></svg>
+                    </div>
+                    
+                    <div class="payment-icon-mastercard-shopping">
+                        <img src="/frontend/public/img/mastercard.svg" alt="Mastercard">
+                    </div>
+                    
+                    <div class="payment-icon-shopping">
+                        <i class="fab fa-cc-mastercard" style="color: #eb001b; font-size: 20px;"></i>
+                        <div class="payment-icon-americanExpress-shopping">
+                            <img src="/frontend/public/img/american-express.svg" alt="American Express">
+                        </div>
+                    </div>
+                    
+                    <div class="payment-icon-paypal-shopping"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-brand-paypal"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12.5 2c3.113 0 5.309 1.785 5.863 4.565c1.725 1.185 2.637 3.152 2.637 5.435c0 2.933 -2.748 5.384 -5.783 5.496l-.217 .004h-1.754l-.466 2.8a1.998 1.998 0 0 1 -1.823 1.597l-.157 .003h-2.68a1.5 1.5 0 0 1 -1.182 -.54a1.495 1.495 0 0 1 -.348 -1.07l.042 -.29h-1.632c-1.004 0 -1.914 -.864 -1.994 -1.857l-.006 -.143l.01 -.141l1.993 -13.954l.003 -.048c.072 -.894 .815 -1.682 1.695 -1.832l.156 -.02l.143 -.005h5.5zm5.812 7.35l-.024 .087c-.706 2.403 -3.072 4.436 -5.555 4.557l-.233 .006h-2.503v.05l-.025 .183l-1.2 5a1.007 1.007 0 0 1 -.019 .07l-.088 .597h2.154l.595 -3.564a1 1 0 0 1 .865 -.829l.121 -.007h2.6c2.073 0 4 -1.67 4 -3.5c0 -1.022 -.236 -1.924 -.688 -2.65z" /></svg>PayPal</div>
+                </div>
+                
+                <button class="pay-button-shopping" onclick="processPayment()">Pagar</button>
+            </div>
+        </div>
+    </div>
+</nav>

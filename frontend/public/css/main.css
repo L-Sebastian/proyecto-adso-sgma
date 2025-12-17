@@ -4,7 +4,7 @@
 @import url('layout.css'); 
 @import url('components/navbar.css');
 @import url('components/footer.css');
-@import url('/css/components/header_index.css');
+/* @import url('/css/components/header_index.css'); */
 /* Import Index */
 @import url('components/header-index.css');
 @import url('components/hero-index.css');
@@ -13,5 +13,19 @@
 @import url('components/card.css');
 @import url('components/hero-tree.css');
 @import url('components/form.css');
+/* Import US */
+@import url('components/hero-us.css');
+@import url('components/box.css');
+/* Import BUY */
+/* @import url('components/header-buy.css'); Corregir este header, ya que desconfigura el header del index */
+@import url('components/filters-button-buy.css'); /* Problema con el header */
+@import url('components/products-filter-buy.css');
 /* Import BLOG */
-@import url('components/blog/hero.css')
+
+@import url('components/hero-blog.css');
+@import url('components/shere-section-blog.css');
+/* Import Events */
+
+/* Import Index User */
+@import url('components/hero__user__index.css');
+

@@ -1,0 +1,95 @@
+    <link rel="stylesheet" href="/frontend/public/css/components/shopping_pineapple.css">
+</head>
+<body>
+
+    <div class="main-content-shopping-pineapple">
+        <div class="product-card-shopping-pineapple">
+            <div class="product-image-section-shopping-pineapple">
+                <img src="/frontend/public/img/piña.jpg" alt="Piña Oro Miel" class="product-image">
+            </div>
+
+            <div class="product-info-section-shopping-pineapple">
+                <h1 class="product-title-shopping-pineapple">Piña Oro Miel<br>Unidad</h1>
+                
+                <div class="product-main-details-shopping-pineapple"> 
+                    <!-- CORRECCIÓN APLICADA AQUÍ: Se cambió 'price-and-seller' a 'price-and-seller-shopping-pineapple' -->
+                    <div class="price-and-seller-shopping-pineapple">
+                        <div class="price-section-shopping-pineapple">
+
+                            <div class="price-stack">
+                                <span class="old-price-shopping-pineapple">$4000</span>
+
+                                <div class="price-line">
+                                    <span class="current-price-shopping-pineapple">$3600</span>
+                                    <span class="discount-badge-shopping-pineapple">10%</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <p class="seller-info-shopping-pineapple">Vendido por: <strong>Finca el Porvenir</strong></p>
+                    </div>
+
+                    <div class="delivery-and-actions-shopping-pineapple"> 
+                        <div class="delivery-box-shopping-pineapple">
+                            <div class="delivery-title-shopping-pineapple">Condiciones de entrega</div>
+                            <div class="delivery-item-shopping-pineapple">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <circle cx="10" cy="10" r="9" stroke="#10b981" stroke-width="2"/>
+                                    <circle cx="10" cy="10" r="5" fill="#10b981"/>
+                                </svg>
+                                <div>
+                                    <strong>Enviado por:</strong> Finca el Porvenir
+                                </div>
+                            </div>
+                            <div class="delivery-item-shopping-pineapple">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <circle cx="10" cy="10" r="9" stroke="#999" stroke-width="2"/>
+                                    <circle cx="10" cy="10" r="5" fill="#999"/>
+                                </svg>
+                                <div>
+                                    <strong>Disponible para:</strong> Compra y recoge
+                                </div>
+                            </div>
+                        </div>    
+
+                        <div class="action-section-shopping-pineapple">
+                            <div class="quantity-control-shopping-pineapple">
+                                <button class="quantity-btn-shopping-pineapple" onclick="decreaseQuantity()">−</button>
+                                <input type="number" class="quantity-input-shopping-pineapple" value="1" min="1" id="quantity" readonly>
+                                <button class="quantity-btn-shopping-pineapple" onclick="increaseQuantity()">+</button>
+                            </div>
+                            <button class="add-to-cart-btn-shopping-pineapple" onclick="addToCart()">
+                                <span>Agregar</span>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-1.4 2.4M17 13l1.4 2.4M9 17a1 1 0 100 2 1 1 0 000-2zM15 17a1 1 0 100 2 1 1 0 000-2z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div class="product-details-shopping-pineapple">
+                    <div class="details-header-shopping-pineapple">Detalles del producto</div>
+                    <div class="details-grid-shopping-pineapple">
+                        <div class="detail-item-shopping-pineapple">
+                            <div class="detail-label-shopping-pineapple">Referencia</div>
+                            <div class="detail-value-shopping-pineapple">SIN REF.</div>
+                        </div>
+                        <div class="detail-item-shopping-pineapple">
+                            <div class="detail-label-shopping-pineapple">Tipo de producto</div>
+                            <div class="detail-value-shopping-pineapple">Fruta</div>
+                        </div>
+                        <div class="detail-item-shopping-pineapple">
+                            <div class="detail-label-shopping-pineapple">Número de piezas</div>
+                            <div class="detail-value-shopping-pineapple">1</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="back-button-shopping-pineapple" onclick="goBack()">↶</button>
+</body>
