@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos Nuevos - Frutas</title>
+    <link rel="stylesheet" href="/frontend/public/css/components/product_vevo.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="header-title">Productos Nuevos</h1>
+            <button class="btn-primary" id="btnCrearProducto" url="/frontend/public/views/views_create_product.htm">Crear Producto</button>
+        </div>
+    </header>
+
+    <!-- Sección de Frutas -->
+    <main class="main-content">
+        <div class="container">
+            <h2 class="section-title">Frutas</h2>
+            <div class="products-grid" id="productsGrid">
+                <!-- Los productos se cargarán dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Botón Flotante -->
+    <button class="floating-btn" id="btnVolver" aria-label="Volver">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 14L4 9l5-5"/>
+            <path d="M20 20v-7a4 4 0 0 0-4-4H4"/>
+        </svg>
+    </button>
+
+    <!-- Modal -->
+
+    <script src="/frontend/public/js/components/product_vevo.js"></script>
+</body>
+</html>

@@ -1,43 +1,50 @@
-<!-- shopping.html (component) -->
-<body>
-    
 
-    <section class="shopping" aria-labelledby="shoppingTitle">
-    <div class="shopping__hero" aria-hidden="true"></div>
+<section class="shopping" aria-labelledby="shoppingTitle">
 
-    <div class="container shopping__inner">
-        <main class="shopping__products" id="cartList" aria-live="polite">
-        <h2 id="shoppingTitle" class="shopping__title sr-only">Carrito de compras</h2>
+  <!-- Fondo -->
+  <div class="shopping__hero"></div>
 
-        <!-- Product list (injected by HTML file or server initially) -->
-        <ul class="shopping__list" id="shoppingItems" role="list"></ul>
+  <!-- CONTENEDOR SUPERIOR -->
+  <div class="shopping__overlay">
 
-        <!-- empty state -->
+    <div class="shopping__inner">
+
+      <!-- ================= CARRITO ================= -->
+      <main class="shopping__products">
+
+        <h2 class="shopping__heading">Carrito de compras</h2>
+
+        <ul class="shopping__list" id="shoppingItems"></ul>
+
         <div class="shopping__empty" id="shoppingEmpty" hidden>
-            <p>No hay productos en el carrito.</p>
-        </div>
-        </main>
-
-        <aside class="shopping__checkout" aria-labelledby="checkoutHeading">
-        <h3 id="checkoutHeading" class="shopping__checkout-title">Total a pagar</h3>
-
-        <div class="shopping__summary" aria-live="polite">
-            <div class="shopping__amount-row">
-            <span class="shopping__amount" id="checkoutTotal">$0</span>
-            <span class="shopping__currency">pesos</span>
-            </div>
+          <p>No hay productos en el carrito.</p>
         </div>
 
-        <div class="shopping__payments" aria-hidden="false">
-            <div class="payment-icons" aria-hidden="true">
-            <img src="/frontend/public/img/mastercard.svg" alt="Mastercard" class="payment-icons__img">
-            <img src="/frontend/public/img/american-express.svg" alt="American Express" class="payment-icons__img">
-            <img src="/frontend/public/img/paypal.svg" alt="PayPal" class="payment-icons__img">
-            </div>
+      </main>
+
+      <!-- ================= CHECKOUT ================= -->
+      <aside class="shopping__checkout">
+
+        <h3 class="shopping__checkout-title">Total a pagar</h3>
+
+        <div class="shopping__summary">
+          <span class="shopping__amount" id="checkoutTotal">$0</span>
+          <span class="shopping__currency">pesos</span>
         </div>
 
-        <button class="btn btn--primary shopping__pay" id="payBtn" type="button">Pagar</button>
-        </aside>
+        <div class="payment-icons">
+          <img src="/frontend/public/img/mastercard.svg" alt="Mastercard">
+          <img src="/frontend/public/img/american-express.svg" alt="Amex">
+          <img src="/frontend/public/img/pay.jpg" alt="PayPal">
+        </div>
+
+        <button class="btn btn--primary shopping__pay" id="payBtn">
+          Pagar
+        </button>
+
+      </aside>
+
     </div>
-    </section>
-</body>
+  </div>
+
+</section>

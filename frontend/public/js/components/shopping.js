@@ -60,7 +60,10 @@ function initShoppingLogic() {
             <img class="shopping__img" src="${item.img}" alt="${item.name}">
             <div class="shopping__meta">
                 <div class="shopping__title">${item.name}</div>
-                <div class="shopping__desc">${item.vendor}</div>
+                <a href="#" class="shopping__desc shopping__desc--link">Descripción</a>
+                <div class="shopping__desc shopping__desc--vendor">
+                  Vendido por: ${item.vendor}
+                </div>
                 <div class="shopping__prices">
                     <span class="shopping__original">${formatCurrency(item.originalPrice)}</span>
                 </div>
