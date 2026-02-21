@@ -5,7 +5,7 @@
   background-position: center;
   padding: 100px 20px;
   text-align: center;
-  color: white;
+  color: var(--white);
 }
 
 .community__content {
@@ -44,13 +44,13 @@
 }
 
 .community__btn--register {
-  background-color: #00d084;
-  color: white;
+  background-color: var(--primary-600);
+  color: var(--white);
 }
 
 .community__btn--producer {
-  background-color: #00d084;
-  color: white;
+  background-color: var(--primary-600);
+  color: var(--white);
 }
 
 .community__btn:hover {
@@ -59,7 +59,7 @@
 }
 
 .community__btn--register:hover {
-  background-color: #00b870;
+  background-color: var(--primary-600);
 }
 
 .community__btn--producer:hover {

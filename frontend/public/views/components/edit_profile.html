@@ -1,83 +1,92 @@
-
 <body class="container__profile">
-        <!-- Main Content -->
-        <main class="main-content-profile">
-            <div class="profile-container">
-                <div class="profile-grid">
-                    <!-- Left Column - Profile Picture -->
-                    <div class="profile-left">
-                        <div class="avatar">
-                            <svg class="avatar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="12" cy="7" r="4"></circle>
-                            </svg>
+    <!-- Main Content -->
+    <main class="main-content-profile">
+        <div class="profile-container">
+            <div class="profile-grid">
+
+                <!-- Left Column - Profile Picture -->
+                <div class="profile-left">
+                    <input type="file" id="photoInput" accept="image/*" style="display:none;">
+
+                    <div class="avatar" id="avatarContainer">
+                        <img id="avatarImg" src="" alt="Foto de perfil"
+                             style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:none;">
+                        <svg id="avatarSvg" class="avatar-icon" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+
+                    <h2 class="profile-name" id="profileName">Juan de la Cruz</h2>
+
+                    <div class="button-group">
+                        <button class="btn-profile btn-primary-profile" id="uploadBtn" type="button">
+                            Subir Foto
+                        </button>
+                        <button class="btn-profile btn-primary-profile" id="editBtn" type="button">
+                            Editar Perfil
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Column - Form (solo lectura) -->
+                <div class="profile-right">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">1mer Nombre</label>
+                            <input type="text" id="firstName" name="firstName"
+                                   value="Juan" class="form-input" readonly>
                         </div>
-                        <h2 class="profile-name" id="profileName">Juan de la Cruz</h2>
-                        <div class="button-group">
-                            <button class="btn-profile btn-primary-profile" id="uploadBtn">
-                                Subir Foto
-                            </button>
-                            <button class="btn-profile btn-primary-profile" id="editBtn">
-                                Editar Perfil
-                            </button>
+                        <div class="form-group">
+                            <label for="secondName">2do Nombre</label>
+                            <input type="text" id="secondName" name="secondName"
+                                   value="Antonio" class="form-input" readonly>
                         </div>
                     </div>
 
-                    <!-- Right Column - Form -->
-                    <div class="profile-right">
-                        <!-- Names Row -->
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstName">1mer Nombre</label>
-                                <input type="text" id="firstName" name="firstName" value="Juan" class="form-input">
-                            </div>
-                            <div class="form-group">
-                                <label for="secondName">2do Nombre</label>
-                                <input type="text" id="secondName" name="secondName" placeholder="Antonio" class="form-input">
-                            </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstLastName">1mer Apellido</label>
+                            <input type="text" id="firstLastName" name="firstLastName"
+                                   value="de la Cruz" class="form-input" readonly>
                         </div>
-
-                        <!-- Last Names Row -->
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstLastName">1mer Apellido</label>
-                                <input type="text" id="firstLastName" name="firstLastName" value="de la Cruz" class="form-input">
-                            </div>
-                            <div class="form-group">
-                                <label for="secondLastName">2do Apellido</label>
-                                <input type="text" id="secondLastName" name="secondLastName" class="form-input">
-                            </div>
+                        <div class="form-group">
+                            <label for="secondLastName">2do Apellido</label>
+                            <input type="text" id="secondLastName" name="secondLastName"
+                                   value="" class="form-input" readonly>
                         </div>
+                    </div>
 
-                        <!-- Email -->
-                        <div class="form-row full-width">
-                            <div class="form-group">
-                                <label for="email">Correo electrónico</label>
-                                <input type="email" id="email" name="email" value="juandelosantoscruz11@gmail.com" class="form-input">
-                            </div>
+                    <div class="form-row full-width">
+                        <div class="form-group">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" name="email"
+                                   value="juandelosantoscruz11@gmail.com" class="form-input" readonly>
                         </div>
+                    </div>
 
-                        <!-- Department and Address -->
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="departamento">Departamento</label>
-                                <select id="departamento" name="departamento" class="profile__form-select" required autocomplete="address-level1">
-                                    <option value="">-Selecciona tu departamento-</option>
-                                    <option value="Risaralda">Risaralda</option>
-                                    <option value="Quindío">Quindío</option>
-                                    <option value="Caldas">Caldas</option>
-                                </select>
-                            </div>
-                                
-                            <div class="form-group">
-                                <label for="address">Dirección</label>
-                                <input type="text" id="address" name="address" value="Calle 18 #3-60, Pereira" class="form-input">
-                            </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="departamento">Departamento</label>
+                            <select id="departamento" name="departamento"
+                                    class="profile__form-select" disabled
+                                    autocomplete="address-level1">
+                                <option value="">-Selecciona tu departamento-</option>
+                                <option value="Risaralda" selected>Risaralda</option>
+                                <option value="Quindío">Quindío</option>
+                                <option value="Caldas">Caldas</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Dirección</label>
+                            <input type="text" id="address" name="address"
+                                   value="Calle 18 #3-60, Pereira" class="form-input" readonly>
                         </div>
                     </div>
                 </div>
+
             </div>
-        </main>
-    </div>
+        </div>
+    </main>
 </body>
-</html>

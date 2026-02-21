@@ -78,11 +78,11 @@
   --fs-h1: 2rem;  /* 32px */
   --fs-hero: 3rem;   /* 48px */
   --fs-h2: 1.5rem;  /* 24px */
-  --fs-h3: 1.5rem;  /* 20px */
-  --fs-h4: 1.25rem;  /* 20px */
+  --fs-h3: 1.25rem;  /* 20px */
+  --fs-h4: 1rem;  /* 20px */
   --fs-body: 1rem;   /* 16px */
   --fs-h5: 0.875rem; /* 14px */
-  --fs-small: 12px; /* 12px */
+  --fs-small: 0.75rem; /* 12px */
 
   /* font weights */
   --fw-regular: 400;

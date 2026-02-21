@@ -66,9 +66,7 @@
 
     .verification-hero {
         flex: 2;
-        /* Vuelve a tomar 2 partes de la fila */
         min-height: calc(100vh - 3.5rem);
-        /* Ocupa el alto completo en escritorio */
     }
 }
 
@@ -122,6 +120,7 @@
     caret-color: var(--v-primary-600);
     outline: none;
     transition: transform 160ms ease, box-shadow 200ms ease, border-color 160ms ease, background 160ms ease;
+    /* error averiguar por que esta sucediendo  */
     -webkit-appearance: none;
 }
 

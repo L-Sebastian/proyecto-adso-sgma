@@ -24,9 +24,9 @@ body {
 
 .services__title {
     color: var(--primary-secundary-700);
-    font-size: var(--spacing-lg);
+    font-size: var(--fs-h1);
     font-weight: bold;
-    border-bottom: 3px solid var(--color-primary-dark);
+    border-bottom: 3px solid var(--primary-secundary-700);
     padding-bottom: 5px;
 }
 
@@ -85,11 +85,11 @@ body {
     height: 30px;
     border-radius: 50%;
     margin-right: 10px;
-    border: 2px solid var(--color-text-light);
+    border: 2px solid var(--white);
 }
 
 .card__title{
-    font-size: var(--fs-xs); /* Ajustado el tamaño de fuente para el nombre de usuario */
+    font-size: var(--fs-h5); /* Ajustado el tamaño de fuente para el nombre de usuario */
     font-weight: 600;
     margin: 0; /* Eliminado el margen inferior */
     text-align: left;
@@ -126,7 +126,7 @@ body {
     align-items: center;
     gap: 5px;
     font-weight: bold;
-    color: var(--color-card-header);
+    color: var(--primary-secundary-700);
 }
 
 .card__like-icon {
@@ -135,12 +135,12 @@ body {
 }
 
 .card__description{
-    font-size: var(--spacing-md);
+    font-size: var(--fs-h5);
     font-weight: bold;
     line-height: 1.5;
     margin: 0;
     text-align: left;
-    color: var(--color-text-dark);
+    color: var(--black);
 }
 
 /* Estilos del código original que no se usan en la tarjeta final pero se mantienen por si acaso */

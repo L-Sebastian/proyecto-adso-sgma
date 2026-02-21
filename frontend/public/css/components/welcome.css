@@ -5,7 +5,9 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
+        } 
+    
+
 
         html, body {
             height: 100%;
@@ -53,7 +55,7 @@
         /* ===== 3. RESPONSIVE ======== */
         /* ---------------------------- */
         @media (max-width: 768px) {
-            .hero-welcome { /* CORREGIDO: antes era .hero-welome */
+            .hero-welcome { 
                 flex-direction: column;
             }
 

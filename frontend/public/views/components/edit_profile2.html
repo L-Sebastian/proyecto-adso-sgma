@@ -1,88 +1,93 @@
+<div class="container-main-profile">
 
+    <main class="main-content-profile-2">
+        <div class="background-overlay-profile"></div>
 
-    <div class="container-main-profile">
+        <div class="profile-container-profile">
+            <div class="profile-grid-profile">
 
-        <main class="main-content-profile">
-            <div class="background-overlay-profile"></div>
-
-            <div class="profile-container-profile">
-                <div class="profile-grid-profile">
-
-                    <!-- LEFT SECTION -->
-                    <div class="profile-left-profile">
-                        <div class="avatar-profile">
-                            <svg class="avatar-icon-profile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                                <circle cx="12" cy="7" r="4"></circle>
-                            </svg>
-                        </div>
-
-                        <h2 class="profile-name-profile">Juan Antonio<br>de la Cruz</h2>
-
-                        <button class="btn btn-back-profile">Volver</button>
+                <!-- LEFT SECTION -->
+                <div class="profile-left-profile">
+                    <div class="avatar-profile">
+                        <img id="avatarImgProfile" src="" alt="Foto de perfil"
+                             style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:none;">
+                        <svg id="avatarSvgProfile" class="avatar-icon-profile" viewBox="0 0 24 24"
+                             fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
                     </div>
 
-                    <!-- RIGHT SECTION -->
+                    <h2 class="profile-name-profile" id="profileNameProfile">Juan Antonio<br>de la Cruz</h2>
 
-                        <div class="profile-right-profile">
-                            <!-- Names Row -->
-                            <div class="form-row-profile">
-                                <div class="form-group-profile">
-                                    <label for="firstName">1mer Nombre</label>
-                                    <input type="text" id="firstName" name="firstName" value="Juan" class="form-input-profile">
-                                </div>
-                                <div class="form-group-profile">
-                                    <label for="secondName">2do Nombre</label>
-                                    <input type="text" id="secondName" name="secondName" placeholder="Antonio" class="form-input-profile">
-                                </div>
-                            </div>
-
-                            <!-- Last Names Row -->
-                            <div class="form-row-profile">
-                                <div class="form-group-profile">
-                                    <label for="firstLastName">1mer Apellido</label>
-                                    <input type="text" id="firstLastName" name="firstLastName" value="de la Cruz" class="form-input">
-                                </div>
-                                <div class="form-group-profile">
-                                    <label for="secondLastName">2do Apellido</label>
-                                    <input type="text" id="secondLastName" name="secondLastName" class="form-input">
-                                </div>
-                            </div>
-
-                            <!-- Email -->
-                            <div class="form-row full-width-profile">
-                                <div class="form-group-profile">
-                                    <label for="email">Correo electrónico</label>
-                                    <input type="email" id="email" name="email" value="juandelosantoscruz11@gmail.com" class="form-input-profile">
-                                </div>
-                            </div>
-
-                            <!-- Department and Address -->
-                            <div class="form-row-profile">
-                                <div class="form-group-profile">
-                                    <label for="departamento">Departamento</label>
-                                    <select id="departamento" name="departamento" class="profile__form-select" required autocomplete="address-level1">
-                                        <option value="">-Selecciona tu departamento-</option>
-                                        <option value="Risaralda">Risaralda</option>
-                                        <option value="Quindío">Quindío</option>
-                                        <option value="Caldas">Caldas</option>
-                                    </select>
-                                </div>
-                                <div class="form-group-profile">
-                                    <label for="address">Dirección</label>
-                                    <input type="text" id="address" name="address" value="Calle 18 #3-60, Pereira" class="form-input-profile">
-                                </div>
-                            </div>
-                    </div>
-
-                    <div class="form-actions-profile">
-                        <button class="btn btn-save-profile">Guardar</button>
-                    </div>
-
-                    
+                    <button class="btn-profile2 btn-back-profile" type="button" id="btnVolver">Volver</button>
                 </div>
-            </div>
 
-        </main>
-    </div>
+                <!-- RIGHT SECTION — campos EDITABLES -->
+                <div class="profile-right-profile">
 
+                    <div class="form-row-profile">
+                        <div class="form-group-profile">
+                            <label for="firstName">1er Nombre</label>
+                            <input type="text" id="firstName" name="firstName"
+                                   value="Juan" class="form-input-profile">
+                        </div>
+                        <div class="form-group-profile">
+                            <label for="secondName">2do Nombre</label>
+                            <input type="text" id="secondName" name="secondName"
+                                   value="Antonio" class="form-input-profile">
+                        </div>
+                    </div>
+
+                    <div class="form-row-profile">
+                        <div class="form-group-profile">
+                            <label for="firstLastName">1er Apellido</label>
+                            <input type="text" id="firstLastName" name="firstLastName"
+                                   value="de la Cruz" class="form-input-profile">
+                        </div>
+                        <div class="form-group-profile">
+                            <label for="secondLastName">2do Apellido</label>
+                            <input type="text" id="secondLastName" name="secondLastName"
+                                   value="" class="form-input-profile">
+                        </div>
+                    </div>
+
+                    <div class="form-row-profile full-width-profile">
+                        <div class="form-group-profile">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" name="email"
+                                   value="juandelosantoscruz11@gmail.com" class="form-input-profile">
+                        </div>
+                    </div>
+
+                    <div class="form-row-profile">
+                        <div class="form-group-profile">
+                            <label for="departamento">Departamento</label>
+                            <select id="departamento" name="departamento"
+                                    class="profile__form-select"
+                                    autocomplete="address-level1">
+                                <option value="">— Selecciona tu departamento —</option>
+                                <option value="Risaralda" selected>Risaralda</option>
+                                <option value="Quindío">Quindío</option>
+                                <option value="Caldas">Caldas</option>
+                            </select>
+                        </div>
+                        <div class="form-group-profile">
+                            <label for="address">Dirección</label>
+                            <input type="text" id="address" name="address"
+                                   value="Calle 18 #3-60, Pereira" class="form-input-profile">
+                        </div>
+                    </div>
+
+                </div><!-- /profile-right-profile -->
+
+                <div class="form-actions-profile">
+                    <button class="btn-profile2 btn-save-profile" type="button" id="btnGuardar">Guardar</button>
+                </div>
+
+            </div><!-- /profile-grid-profile -->
+        </div><!-- /profile-container-profile -->
+
+    </main>
+
+</div><!-- /container-main-profile -->
