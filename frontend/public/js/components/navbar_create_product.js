@@ -1,26 +1,22 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // 1. Seleccionar el contenedor del cuerpo
-    const bodyContainer = document.querySelector('.navbar-bottom-product');
+    const navContainer = document.querySelector('.navbar-bottom-product');
+    if (!navContainer) return;
 
-    // 2. Verificar si existe en el DOM
-    if (bodyContainer) {
+    const bodyURL = '/frontend/public/views/components/navbar_create_product.html';
 
-        // Ruta del archivo HTML del cuerpo
-        const bodyURL = '/frontend/public/views/components/navbar_create_product.html'; // **VERIFICA ESTA RUTA**
+    fetch(bodyURL)
+        .then(function (response) {
+            if (!response.ok) throw new Error('HTTP error! status: ' + response.status);
+            return response.text();
+        })
+        .then(function (data) {
+            navContainer.innerHTML = data;
 
-        // 3. Cargar el contenido del cuerpo
-        fetch(bodyURL)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.text();
-            })
-            .then(data => {
-                // Insertar el contenido en la sección
-                bodyContainer.innerHTML = data;
-            })
-            .catch(error => console.error('Error cargando el cuerpo de la página:', error));
-    }
+            /* Aplicar nombre y foto desde localStorage */
+            window.aplicarDatosPerfil();
+        })
+        .catch(function (error) {
+            console.error('Error cargando el navbar:', error);
+        });
 });

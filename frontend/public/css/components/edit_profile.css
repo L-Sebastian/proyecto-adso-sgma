@@ -96,7 +96,7 @@ html, body {
     font-weight: var(--fw-bold);
     padding: var(--button-padding-y) var(--button-padding-x);
     border: none;
-    border-radius: var(--button-radius);
+    /* border-radius: var(--button-radius); */
     cursor: pointer;
     text-decoration: none;
     transition: all var(--transition-md) ease;
@@ -201,8 +201,7 @@ html, body {
     padding: var(--spacing-xs) var(--spacing-md);
     border-radius: var(--button-radius);
     height: 48px;
-    border: 2px solid var(--primary-secundary-300);
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.3);
     color: var(--black);
     font-family: var(--font-family-base);
     font-size: var(--fs-body);
@@ -212,14 +211,13 @@ html, body {
 /* Hover */
 .form-input:hover {
     border-color: var(--primary-secundary-400);
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.3);
 }
 
 /* Focus */
 .form-input:focus {
     outline: none;
-    background: var(--white);
-    border-color: var(--primary-600);
+    background: rgba(255, 255, 255, 0.3);
     box-shadow: var(--focus-ring);
 }
 
@@ -244,16 +242,14 @@ html, body {
 
 /* =============== SELECT — 6 estados ================= */
 .profile__form-select {
-    width: 100%;
+    width: 96%;
     padding: var(--spacing-sm) var(--spacing-md);
     border-radius: var(--button-radius);
     height: 48px;
-    border: 2px solid var(--primary-secundary-300);
     background: rgba(255, 255, 255, 0.7);
     color: var(--black);
     font-family: var(--font-family-base);
     font-size: var(--fs-body);
-    appearance: none;
     cursor: pointer;
     transition: all var(--transition-md) ease;
 }
@@ -276,7 +272,7 @@ html, body {
 
 .profile__form-select:disabled {
     background: rgba(255, 255, 255, 0.3);
-    color: var(--primary-secundary-400);
+    color: var(--black);
     cursor: not-allowed;
     opacity: 0.6;
 }

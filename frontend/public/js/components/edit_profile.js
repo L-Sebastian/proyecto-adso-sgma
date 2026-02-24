@@ -47,14 +47,22 @@ function initProfileView() {
         }
     });
 
-    /* ── Actualizar nombre mostrado en el avatar ── */
+    /* ── Actualizar nombre debajo del avatar ── */
     if (profileName) {
-        const first = localStorage.getItem('profile_firstName') || 'Juan';
-        const last  = localStorage.getItem('profile_firstLastName') || 'de la Cruz';
-        profileName.textContent = (first + ' ' + last).trim();
+        const first  = (localStorage.getItem('profile_firstName')      || '').trim();
+        const second = (localStorage.getItem('profile_secondName')     || '').trim();
+        const last1  = (localStorage.getItem('profile_firstLastName')  || '').trim();
+        const last2  = (localStorage.getItem('profile_secondLastName') || '').trim();
+        const full   = [first, second, last1, last2].filter(Boolean).join(' ');
+        if (full) profileName.textContent = full;
     }
 
-    /* ── Subir Foto: abre el selector de archivos ── */
+    /* ── Actualizar navbar con datos guardados ── */
+    if (typeof window.aplicarDatosPerfil === 'function') {
+        window.aplicarDatosPerfil();
+    }
+
+    /* ── Subir Foto ── */
     if (uploadBtn && photoInput) {
         uploadBtn.addEventListener('click', function () {
             photoInput.click();
@@ -73,12 +81,17 @@ function initProfileView() {
                     avatarSvg.style.display = 'none';
                 }
                 localStorage.setItem('profilePhoto', dataURL);
+
+                /* Actualizar foto en el navbar también */
+                if (typeof window.aplicarDatosPerfil === 'function') {
+                    window.aplicarDatosPerfil();
+                }
             };
             reader.readAsDataURL(file);
         });
     }
 
-    /* ── Editar Perfil: navega a la vista de edición ── */
+    /* ── Editar Perfil ── */
     if (editBtn) {
         editBtn.addEventListener('click', function () {
             window.location.href = '/frontend/public/views/views_edit_profile2.html';

@@ -4,24 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Perfil 2</title>
-    <!-- Carga de estilos globales y de componentes -->
     <link rel="stylesheet" href="/frontend/public/css/main.css">
 </head>
 <body>
-    <!-- 1. Contenedor para el Header (será llenado por header.js) -->
     <header class="header__index-register"></header>
-    
-    <!-- 2. Contenedor para el Cuerpo (será llenado por welcome.js) -->
     <nav class="navbar-bottom-profile"></nav>
-
     <div class="container-main-profile"></div>
-
     <footer class="footer"></footer>
 
-    <!-- Carga de scripts al final del body para mejor rendimiento -->
+    <!-- profile_data.js PRIMERO para que esté disponible cuando los demás scripts lo llamen -->
+    <script src="/frontend/public/js/components/profile_data.js"></script>
     <script src="/frontend/public/js/components/header.js"></script>
     <script src="/frontend/public/js/components/navbar_profile2.js"></script>
     <script src="/frontend/public/js/components/edit_profile2.js"></script>
     <script src="/frontend/public/js/components/footer.js"></script>
 </body>
-</html> 
+</html>

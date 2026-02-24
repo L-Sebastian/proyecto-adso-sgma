@@ -3,20 +3,37 @@ document.addEventListener('DOMContentLoaded', function () {
     const bodyContainer = document.querySelector('.container-main-profile');
     if (!bodyContainer) return;
 
-    const bodyURL = '/frontend/public/views/components/edit_profile2.html';
+    const profileURL = '/frontend/public/views/components/edit_profile2.html';
+    const modalURL   = '/frontend/public/views/components/modal_confirm.html';
 
-    fetch(bodyURL)
-        .then(function (response) {
-            if (!response.ok) throw new Error('HTTP error! status: ' + response.status);
-            return response.text();
+    /* Cargar los dos HTML en paralelo */
+    Promise.all([
+        fetch(profileURL).then(function (r) {
+            if (!r.ok) throw new Error('Error cargando edit_profile2.html');
+            return r.text();
+        }),
+        fetch(modalURL).then(function (r) {
+            if (!r.ok) throw new Error('Error cargando modal_confirm.html');
+            return r.text();
         })
-        .then(function (data) {
-            bodyContainer.innerHTML = data;
-            initProfileEdit();
-        })
-        .catch(function (error) {
-            console.error('Error cargando el cuerpo de la página:', error);
-        });
+    ])
+    .then(function (resultados) {
+        const profileHTML = resultados[0];
+        const modalHTML   = resultados[1];
+
+        /* Insertar el formulario en su contenedor */
+        bodyContainer.innerHTML = profileHTML;
+
+        /* Insertar el modal al final del body para que quede fuera del flujo */
+        const modalWrapper = document.createElement('div');
+        modalWrapper.innerHTML = modalHTML;
+        document.body.appendChild(modalWrapper);
+
+        initProfileEdit();
+    })
+    .catch(function (error) {
+        console.error('Error cargando componentes:', error);
+    });
 });
 
 function initProfileEdit() {
@@ -26,6 +43,9 @@ function initProfileEdit() {
     const nameDisplay = document.getElementById('profileNameProfile');
     const btnVolver   = document.getElementById('btnVolver');
     const btnGuardar  = document.getElementById('btnGuardar');
+    const modal       = document.getElementById('modalConfirmarSalida');
+    const modalSi     = document.getElementById('modalSi');
+    const modalNo     = document.getElementById('modalNo');
 
     const FIELDS = ['firstName', 'secondName', 'firstLastName', 'secondLastName', 'email', 'departamento', 'address'];
 
@@ -46,7 +66,22 @@ function initProfileEdit() {
         }
     });
 
-    /* ── Actualizar nombre mostrado en tiempo real ── */
+    /* ── Guardar valores originales para detectar cambios ── */
+    const valoresOriginales = {};
+    FIELDS.forEach(function (id) {
+        const el = document.getElementById(id);
+        valoresOriginales[id] = el ? el.value : '';
+    });
+
+    /* ── Detectar si hubo cambios ── */
+    function huboCambios() {
+        return FIELDS.some(function (id) {
+            const el = document.getElementById(id);
+            return el && el.value !== valoresOriginales[id];
+        });
+    }
+
+    /* ── Actualizar nombre en tiempo real ── */
     function updateName() {
         if (!nameDisplay) return;
         const first  = document.getElementById('firstName')?.value.trim()  || '';
@@ -54,7 +89,7 @@ function initProfileEdit() {
         const last1  = document.getElementById('firstLastName')?.value.trim()  || '';
         const last2  = document.getElementById('secondLastName')?.value.trim() || '';
         const line1  = [first, second].filter(Boolean).join(' ');
-        const line2  = [last1,  last2].filter(Boolean).join(' ');
+        const line2  = [last1, last2].filter(Boolean).join(' ');
         nameDisplay.innerHTML = line1 + (line2 ? '<br>' + line2 : '');
     }
 
@@ -65,21 +100,64 @@ function initProfileEdit() {
 
     updateName();
 
+    /* ── Mostrar / ocultar modal ── */
+    function mostrarModal() {
+        if (modal) modal.style.display = 'flex';
+    }
+
+    function ocultarModal() {
+        if (modal) modal.style.display = 'none';
+    }
+
+    /* ── Guardar datos y actualizar navbar ── */
+    function guardarDatos() {
+        FIELDS.forEach(function (id) {
+            const el = document.getElementById(id);
+            if (el) localStorage.setItem('profile_' + id, el.value);
+        });
+        if (typeof window.aplicarDatosPerfil === 'function') {
+            window.aplicarDatosPerfil();
+        }
+    }
+
     /* ── Botón Volver ── */
     if (btnVolver) {
         btnVolver.addEventListener('click', function () {
+            if (huboCambios()) {
+                mostrarModal();
+            } else {
+                window.location.href = '/frontend/public/views/views_edit_profile.html';
+            }
+        });
+    }
+
+    /* ── Modal: Sí → guardar y volver ── */
+    if (modalSi) {
+        modalSi.addEventListener('click', function () {
+            guardarDatos();
             window.location.href = '/frontend/public/views/views_edit_profile.html';
         });
     }
 
-    /* ── Botón Guardar ── */
+    /* ── Modal: No → descartar y volver ── */
+    if (modalNo) {
+        modalNo.addEventListener('click', function () {
+            window.location.href = '/frontend/public/views/views_edit_profile.html';
+        });
+    }
+
+    /* ── Cerrar modal al hacer clic en el fondo ── */
+    if (modal) {
+        modal.addEventListener('click', function (e) {
+            if (e.target === modal) ocultarModal();
+        });
+    }
+
+    /* ── Botón Guardar → guardar y ir al inicio ── */
     if (btnGuardar) {
         btnGuardar.addEventListener('click', function () {
-            FIELDS.forEach(function (id) {
-                const el = document.getElementById(id);
-                if (el) localStorage.setItem('profile_' + id, el.value);
-            });
-            window.location.href = '/frontend/public/views/views_welcome.html';
+            guardarDatos();
+            window.location.href = '/frontend/public/views/views_edit_profile.html';
         });
     }
 }

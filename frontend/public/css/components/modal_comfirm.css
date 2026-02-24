@@ -1,0 +1,69 @@
+/* ==================== MODAL OVERLAY ==================== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.45);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ==================== MODAL BOX ==================== */
+.modal-box {
+    background: #1a78c2;
+    width: 100%;
+    height: 55vh;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* 👈 BAJA TODO */
+    padding: 24px;
+}
+
+
+/* ==================== CONTENIDO INTERNO ==================== */
+.modal-content {
+    text-align: center;
+    padding-bottom: 4rem;
+}
+
+/* ==================== MODAL TITLE ==================== */
+.modal-title {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* ==================== MODAL ACTIONS ==================== */
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/* ==================== MODAL BUTTON ==================== */
+.modal-btn {
+    background: #00c16a;
+    color: #fff;
+    border: none;
+    padding: 0.7rem 2.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    min-width: 100px;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.modal-btn:hover {
+    background: #00a857;
+    transform: translateY(-2px);
+}
+
+.modal-btn:active {
+    transform: translateY(1px);
+}
