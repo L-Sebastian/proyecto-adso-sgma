@@ -21,11 +21,17 @@
 @import url('components/filters-button-buy.css'); /* Problema con el header */
 @import url('components/products-filter-buy.css');
 /* Import BLOG */
+@import url('components/navbar_blog_user.css');
 
 @import url('components/hero-blog.css');
 @import url('components/shere-section-blog.css');
 /* Import Events */
 
+/* Import Login */
+@import url('components/header-login.css');
+@import url('components/login-content.css');
 /* Import Index User */
 @import url('components/hero__user__index.css');
+/* Import Index Seller */
+@import url('components/hero-seller.css');
 

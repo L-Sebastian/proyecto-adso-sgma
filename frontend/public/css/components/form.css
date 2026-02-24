@@ -1,26 +1,26 @@
 .form {
     font-family: Arial, sans-serif;
-
     padding: 40px 20px;
     text-align: center;
 }
 
 
-.form h2 {
+.form__title {
     color: #0a2a4a;
-    font-size: 2rem;
+    font-size: 2.4rem;
 }
 
 .form__subtext {
     color: #00aa66;
     margin-bottom: 30px;
+    font-size: 1.6rem;
 }
 
 .form__container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 40px;
+    gap: 90px;
     max-width: 1000px;
     margin: 0 auto;
     
@@ -37,12 +37,14 @@
 
 .form__contact input,
 .form__contact textarea {
-    padding: 10px;
+    padding: 16px;
     border: 1px solid #ccc;
     background-color: #d7fceb;
     border-radius: 4px;
-    font-size: 14px;
+    font-size: 16px;
     border: solid var(--black) 0.1rem;
+    width: 400px;
+    height: 5.6rem;
 }
 
 .prueba {
@@ -52,6 +54,7 @@
 
 .prueba input {
     flex: 1;
+    width: 200px;
 }
 
 .form__contact button {
@@ -59,14 +62,22 @@
     color: white;
     border: none;
     padding: 10px;
-    font-size: 16px;
     cursor: pointer;
     border-radius: 4px;
-    width: 100px;
     margin: 0 auto;
 }
 
+.form__button{
+    height: 4rem;
+    width: 150px;
+    font-size: 16px;
+
+}
 .map__container {
     flex: 1 1 300px;
     max-width: 500px;
+}
+
+.form__table__phone {
+    width: 200px;
 }

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipos de productos comercializados</title>
+    <link rel="stylesheet" href="/frontend/public/css/main.css">
+</head>
+
+<body>
+    <div class="products-container-descuent">
+        <header class="products-header-descuent">
+            <h1 class="products-header__title-descuent">Tipos de productos comercializados</h1>
+            <p class="products-header__subtitle-descuent">Productos de y por el campesinado de nuestra región</p>
+        </header>
+        <div class="products-cards-container-descuent" id="products-cards-container">
+            <!-- Las tarjetas de productos se cargarán aquí dinámicamente -->
+        </div>
+    </div>
+
+    <script type="module">
+        import { loadDiscounts } from "/frontend/public/js/pages/load_cards_descuent.js";
+
+        document.addEventListener('DOMContentLoaded', () => {
+            loadDiscounts('#products-cards-container');
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+/* Para quitarle el espacio en blanco */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+.header__login{
+    background:  var(--primary-600);
+    /*alterar el padding aqui, tambien altera en el index*/
+    /* padding 25 en el componente */
+    /*padding: 15px;*/
+    color: white;
+            
+}
+
+.header__login__content {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+
+    margin-left: 3rem;
+    gap: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            
+    /* Comprobar medidas */
+}
+    
+.header__logo {
+    padding-right: 5rem;
+    gap: 24px;
+}
+
+.text {
+    padding-right: 5rem;
+    font-size: 16px;  
+}
+
+img {
+    /* Alineamiento de los iconos */
+    margin-top: 0.3rem;
+}
+
+@media (max-width: 768px) {
+    header, .header__login__content{
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+        gap: 0.8rem;
+    }
+
+    .text{
+        text-align: center;
+        padding-left: 3.7rem;
+    }
+
+    .text__2{
+        text-align: center;
+    }
+
+    .header__logo{
+        padding-left: 4rem;
+    }
+    .login__content__right {
+        display: none;
+    }
+}

@@ -1,8 +1,8 @@
-.hero__content__index {
-    background-image: url(/frontend/img/index_.png);
+.hero__content__seller {
+    background-image: url(/frontend/public/assets/img/VJ7DGLFDZRAULEQ4FUP3H2ISBM.jpg );
     background-size: cover;
     background-repeat: no-repeat;
-    position: relative;
+    
 }
 
 /* ===== Navbar ===== */
@@ -172,4 +172,40 @@
         max-width: 250px;
         margin-right: 0;
     }
+}
+
+
+
+.menu__inside {
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: ;
+    right: 70px;
+    background-color: var(--primary-secundary-700);
+    padding: 10px;
+
+}
+
+.navbar__list li:hover .menu__inside{
+    display: block;
+
+            
+}
+.menu__inside li:hover {
+    background-color: var(--primary-secundary-900);
+    }
+.menu__inside li a{
+    display: block;
+    color: white;
+    padding: 15px 15px 15px 20px;
+    list-style-type: none;
+    text-decoration: none;
+    height: 40px;
+    width: 15rem;
+}
+
+.navbar__link__seller {
+    margin: 0;
+    padding: 100px;
 }

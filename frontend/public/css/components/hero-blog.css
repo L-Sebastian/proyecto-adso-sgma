@@ -19,9 +19,13 @@
     font-size: var(--fs-md);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Aplicarla en variable */
     color: var(--white);
+    font-size: 2.4rem;
     
 }
 
+.hero__text__blog{
+    font-size: 1.6rem;
+}
 @media (width > 768px) {
     .hero__title, .hero__text {
         width: auto;

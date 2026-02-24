@@ -2,7 +2,7 @@
     text-align: center;
     color: var(--primary-600);
     text-align: center;
-    font-size: 2em;
+    font-size: 2.4rem;
     font-weight: bold;
     color: #1b5e20;
     margin-bottom: 10px;
@@ -21,6 +21,9 @@
 
 }
 
+.box__text{
+    font-size: 1.6rem;
+}
 .box__row {
     display: flex;
     flex-wrap: wrap;
@@ -33,7 +36,7 @@
     min-width: 300px;   
 }
 .section-title {
-    font-size: 1.8em;
+    font-size: 2.4rem;
     color: var(--primary-secundary-900);
     text-align: center;
     margin-bottom: 15px;

@@ -30,7 +30,7 @@
   background-image: url('/frontend/img/Hero_prueba.jpg');
   background-size: cover;
   background-position: center;
-  height: 35rem; /* Altura completa de pantalla */
+  height: 45rem; /* Altura completa de pantalla */
   color: white;
 }
 
@@ -53,18 +53,18 @@
 }
 
 .community-hero__title {
-  font-size: 2.5rem;
+  font-size: 2.4rem;
   font-weight: bold;
   margin-bottom: 20px;
 }
 
 .community-hero__description {
-  font-size: 1.1rem;
+  font-size: 1.6rem;
   margin-bottom: 20px;
 }
 
 .community-hero__question {
-  font-size: 1rem;
+  font-size: 1.6rem;
   margin-bottom: 25px;
 }
 
@@ -84,6 +84,9 @@
   transition: background-color 0.3s;
   background-color: var(--primary-600);
   color: var(--white);
+  height: 4rem;
+  width: 150px;
+  font-size: 16px;
 }
 
 

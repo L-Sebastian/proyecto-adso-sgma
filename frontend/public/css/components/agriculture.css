@@ -1,4 +1,121 @@
 .agriculture {
+    padding: 80px 20px;
+    background-color: #fff;
+}
+
+.agriculture__text {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.agriculture__category {
+    color: #00c853;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.agriculture__title {
+    font-size: 2.4rem;
+    color: #0b3c87;
+    margin: 10px 0 20px;
+}
+
+.agriculture__description {
+    color: #333;
+    line-height: 1.6;
+    max-width: 600px;
+    font-size: 1.6rem;
+}
+
+.agriculture__practices {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+.practices h3 {
+    color: #0b3c87;
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.practices p {
+    color: #444;
+    line-height: 1.5;
+    font-size: 1.6rem;
+}
+
+.agriculture__button {
+    width: fit-content;
+    cursor: pointer;
+    width: 150px;
+    height: 4rem;
+    font-size: 1.6rem;
+
+    
+    padding: 10px 20px;
+    background-color: var(--primary-600);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    margin-left: 20rem;
+}
+
+.agriculture__button a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+.agriculture__img {
+    display: flex;
+    justify-content: center;
+}
+
+.agriculture__img img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+@media (min-width: 768px) {
+    .agriculture__practices {
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+@media (min-width: 1024px) {
+    .agriculture__text {
+        grid-template-columns: 1.2fr 1fr;
+        align-items: center;
+  }
+
+  .agriculture__category,
+  .agriculture__title,
+  .agriculture__description,
+  .agriculture__practices,
+  .agriculture__button {
+        grid-column: 1;
+  }
+
+  
+  .agriculture__img {
+        grid-column: 2;
+        grid-row: 1 / span 6;
+        justify-content: flex-end;
+  }
+}
+
+/* */
+/* .agriculture {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -10,10 +127,6 @@
   
 }
 
-.agriculture__text {
-    /* flex: 1;
-    min-width: 400px; Borrar */
-}
 
 .agriculture__category {
     color: var(--primary-600);
@@ -78,7 +191,7 @@
     color: var(--white);
 }
 .agriculture__button:hover {
-    background-color: var(--primary-700); /* Actualizar variables */
+    background-color: var(--primary-700); 
 }
 
 .agriculture__img img {
@@ -112,3 +225,4 @@
     
   }
 }
+ */
