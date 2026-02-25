@@ -1,11 +1,7 @@
 /**
  * profile_data.js
- * Script global que actualiza nombre y foto de perfil en CUALQUIER navbar.
- * Incluirlo en todas las páginas que tengan navbar con estos selectores.
- *
- * Selectores que actualiza:
- *   - [data-profile-name]   → rellena con el nombre completo
- *   - [data-profile-photo]  → rellena src con la foto de perfil
+ * Función global que actualiza nombre y foto en CUALQUIER elemento
+ * del DOM que tenga los atributos data-profile-name / data-profile-photo / data-profile-svg
  */
 
 function aplicarDatosPerfil() {
@@ -18,20 +14,24 @@ function aplicarDatosPerfil() {
 
     const fullName = [first, second, last1, last2].filter(Boolean).join(' ');
 
-    /* Actualiza TODOS los elementos con data-profile-name */
+    /* ── Nombre completo ── */
     if (fullName) {
         document.querySelectorAll('[data-profile-name]').forEach(function (el) {
             el.textContent = fullName;
         });
     }
 
-    /* Actualiza TODOS los elementos con data-profile-photo */
-    if (foto) {
-        document.querySelectorAll('[data-profile-photo]').forEach(function (el) {
-            el.src = foto;
-        });
-    }
+    /* ── Foto de perfil: muestra img y oculta SVG si hay foto guardada ── */
+    document.querySelectorAll('[data-profile-photo]').forEach(function (img) {
+        if (foto) {
+            img.src = foto;
+            img.style.display = 'block';
+
+            /* Ocultar el SVG hermano si existe */
+            const svg = img.closest('.avatar-profile')?.querySelector('[data-profile-svg]');
+            if (svg) svg.style.display = 'none';
+        }
+    });
 }
 
-/* Se exporta para llamarla después de que el navbar se inserte en el DOM */
 window.aplicarDatosPerfil = aplicarDatosPerfil;

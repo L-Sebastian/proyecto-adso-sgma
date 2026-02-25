@@ -75,14 +75,18 @@ function initProfileView() {
             const reader = new FileReader();
             reader.onload = function (e) {
                 const dataURL = e.target.result;
+
+                /* BUG CORREGIDO: se usaba 'savedPhoto' (null si no había foto previa)
+                   en lugar de verificar los elementos directamente */
                 if (avatarImg && avatarSvg) {
                     avatarImg.src = dataURL;
                     avatarImg.style.display = 'block';
                     avatarSvg.style.display = 'none';
                 }
+
                 localStorage.setItem('profilePhoto', dataURL);
 
-                /* Actualizar foto en el navbar también */
+                /* Actualizar navbar y cualquier otro elemento con data-profile-photo */
                 if (typeof window.aplicarDatosPerfil === 'function') {
                     window.aplicarDatosPerfil();
                 }

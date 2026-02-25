@@ -14,7 +14,7 @@
 .modal-box {
     background: #1a78c2;
     width: 100%;
-    height: 55vh;
+    height: 35vh;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
 
     display: flex;
@@ -33,7 +33,7 @@
 /* ==================== MODAL TITLE ==================== */
 .modal-title {
     color: #fff;
-    font-size: 1.5rem;
+    font-size: var(--fs-h1);
     font-weight: 600;
     margin-bottom: 2rem;
     text-align: center;
@@ -51,11 +51,12 @@
     background: #00c16a;
     color: #fff;
     border: none;
-    padding: 0.7rem 2.5rem;
+    padding: var(--button-padding-x) var(--button-padding-y);
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     min-width: 100px;
+    width: 150px;
     transition: background 0.2s ease, transform 0.1s ease;
 }
 

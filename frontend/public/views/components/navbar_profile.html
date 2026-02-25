@@ -1,18 +1,28 @@
-<nav class="navbar-bottom-profile">
-  <div class="navbar-bottom__content-profile">
+<div class="navbar-bottom__content-profile">
 
     <!-- Ícono + Texto -->
     <div class="navbar-bottom__left-profile">
-      <img src="/frontend/public/img/tuerca.png" alt="Icono Perfil" class="profile-icon-img">
-      <span>Perfil</span>
+        <img src="/frontend/public/img/tuerca.png" alt="Icono Perfil" class="profile-icon-img">
+        <span>Perfil</span>
     </div>
 
-    <!-- Usuario -->
+    <!-- Usuario: nombre y foto se rellenan desde profile_data.js -->
     <div class="navbar-bottom__right-profile">
-      <span>Jose Antonio de la Cruz</span>
-      <img src="/frontend/public/img/foto_usuario_shopping.jpg" alt="Usuario" class="navbar__avatar-profile">
+        <span data-profile-name>Jose Antonio de la Cruz</span>
+        <div class="avatar-profile navbar-avatar-profile">
+            <img data-profile-photo
+                 src=""
+                 alt="Foto de perfil"
+                 class="navbar__avatar-profile"
+                 style="display:none;">
+            <svg data-profile-svg class="avatar-icon-profile" viewBox="0 0 24 24"
+                 fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+        </div>
     </div>
 
-  </div>
-</nav>
+</div>
+
 <link rel="stylesheet" href="/frontend/public/css/components/navbar_profile.css">

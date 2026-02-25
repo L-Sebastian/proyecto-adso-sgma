@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         /* Insertar el formulario en su contenedor */
         bodyContainer.innerHTML = profileHTML;
 
-        /* Insertar el modal al final del body para que quede fuera del flujo */
+        /* Insertar el modal al final del body */
         const modalWrapper = document.createElement('div');
         modalWrapper.innerHTML = modalHTML;
         document.body.appendChild(modalWrapper);
@@ -153,7 +153,7 @@ function initProfileEdit() {
         });
     }
 
-    /* ── Botón Guardar → guardar y ir al inicio ── */
+    /* ── Botón Guardar → guardar y volver al perfil ── */
     if (btnGuardar) {
         btnGuardar.addEventListener('click', function () {
             guardarDatos();

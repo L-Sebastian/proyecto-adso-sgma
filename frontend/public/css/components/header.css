@@ -40,7 +40,7 @@
 
 .header__item-register p {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--fs-body);
   color: var(--white);
   white-space: nowrap;
 }
