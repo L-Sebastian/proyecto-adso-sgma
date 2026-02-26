@@ -40,7 +40,7 @@
 
 .header__item-register p {
   margin: 0;
-  font-size: var(--fs-body);
+  font-size: 1.6rem;
   color: var(--white);
   white-space: nowrap;
 }
@@ -129,7 +129,7 @@
 /* --- Extra pequeño (muy pequeños móviles) --- */
 @media (max-width: 480px) {
   .header__item-register p {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .header__logo-register svg {

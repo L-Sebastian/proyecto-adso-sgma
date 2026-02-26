@@ -1,26 +1,4 @@
-/* ==================== RESET Y BASE ==================== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-html,
-body {
-    height: 100%;
-    width: 100%;
-    font-family: var(--font-family-base);
-    background-color: var(--white);
-    color: var(--black);
-    overflow-x: hidden;
-}
-
-/* ==================== CONTENEDOR PRINCIPAL ==================== */
-.container-main-profile {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
 
 /* ==================== MAIN CONTENT ==================== */
 .main-content-profile-2 {
@@ -100,7 +78,7 @@ body {
 .profile-name-profile {
     color: var(--white);
     text-align: center;
-    font-size: var(--fs-body);
+    font-size: 24px;
     font-weight: var(--fw-medium);
     line-height: 1.4;
 }
@@ -110,7 +88,7 @@ body {
     display: inline-flex;
     justify-content: center;
     font-family: var(--font-family-base);
-    font-size: var(--fs-body);
+    font-size: 1.6rem;
     font-weight: var(--fw-bold);
     padding: var(--button-padding-x) var(--button-padding-y);
     border: none;
@@ -240,7 +218,7 @@ body {
 
 .form-group-profile label {
     color: var(--white);
-    font-size: var(--fs-small);
+    font-size: 1.2rem;
     font-weight: var(--fw-bold);
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -255,7 +233,19 @@ body {
     background: rgba(255, 255, 255, 0.7);
     color: var(--black);
     font-family: var(--font-family-base);
-    font-size: var(--fs-body);
+    font-size: 1.6rem;
+    transition: all var(--transition-md) ease;
+}
+
+.form-input-profile-email{ 
+    width: 100%;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--button-radius);
+    height: 4.8rem;
+    background: rgba(255, 255, 255, 0.7);
+    color: var(--black);
+    font-family: var(--font-family-base);
+    font-size: 1.6rem;
     transition: all var(--transition-md) ease;
 }
 
@@ -272,7 +262,7 @@ body {
     outline: none;
     background: var(--white);
     border-color: var(--primary-600);
-     box-shadow: var(--focus-ring)
+    box-shadow: var(--focus-ring)
     }
 
 .form-input-profile:active {
@@ -349,7 +339,7 @@ body {
 /* Etiqueta visual opcional: muestra "Solo lectura" junto al label */
 .form-group-profile.is-readonly label::after {
     content: ' (solo lectura)';
-    font-size: var(--fs-small);
+    font-size: 1.2rem;
     font-weight: var(--fw-regular);
     color: var(--primary-300);
     text-transform: none;
@@ -373,7 +363,7 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    font-size: var(--fs-h2);
+    font-size: 24px;
     flex-shrink: 0;
     transition: all var(--transition-md) ease;
 }
@@ -405,6 +395,7 @@ body {
 @media (min-width: 640px) {
     .form-row-profile {
         grid-template-columns: 1fr 1fr;
+
     }
 
     .btn-save-profile {
@@ -433,6 +424,15 @@ body {
         width: 70px;
         height: 70px;
     }
+    .form-input-profile{
+        max-width: 100%;
+        width: 30rem;
+    }
+    .form-group-profile-email{
+        max-width: 100%;
+        width: 100%;
+    }
+
 }
 
 /* lg — 1024px: layout horizontal */
@@ -442,6 +442,7 @@ body {
         gap: var(--spacing-xl);
         padding: var(--spacing-xl);
     }
+    
 }
 
 /* xl — 1280px */
@@ -449,12 +450,21 @@ body {
     .main-content-profile-2 {
         padding: var(--spacing-xl);
     }
+    
 }
 
 /* 2xl — 1536px */
 @media (min-width: 1536px) {
     .profile-container-profile {
-        max-width: 1400px;
+        max-width: 14000px;
+    }
+    .form-input-profile{
+        max-width: 100%;
+        width: 100%;
+    }
+    .form-group-profile-email{
+        max-width: 100%;
+        width: 100%;
     }
 }
 

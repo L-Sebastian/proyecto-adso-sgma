@@ -1,7 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-}
+
 
 .header__index__producto {
     background: linear-gradient(90deg, var(--primary-secundary-700) 70%, var(--primary-600) 100%);
@@ -72,7 +69,7 @@
     }
 
     .navbar__logo-product {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
     } 
 
     .header__logo-product {
@@ -92,7 +89,7 @@
     }
 
     .navbar__logo-product {
-        font-size: 1.3rem;
+        font-size: 1.6rem;
     }
 
     .header__logo-product svg {

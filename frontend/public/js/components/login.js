@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Contenedor principal donde se inyecta el componente
-  const bodyContainer = document.querySelector('.main-content');
+  const bodyContainer = document.querySelector('.main-conten');
 
   if (bodyContainer) {
     const bodyURL = '/frontend/public/views/components/login.html';

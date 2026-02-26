@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const productURL = '/frontend/public/views/components/create_product.html';
     const modalURL   = '/frontend/public/views/components/modal_confirm.html';
 
-    /* Cargar los dos HTML en paralelo */
     Promise.all([
         fetch(productURL).then(function (r) {
             if (!r.ok) throw new Error('Error cargando create_product.html');
@@ -18,15 +17,10 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     ])
     .then(function (resultados) {
-        const productHTML = resultados[0];
-        const modalHTML   = resultados[1];
+        bodyContainer.innerHTML = resultados[0];
 
-        /* Insertar el formulario en su contenedor */
-        bodyContainer.innerHTML = productHTML;
-
-        /* BUG CORREGIDO: se usaba createElement('body') en vez de 'div' */
         const modalWrapper = document.createElement('div');
-        modalWrapper.innerHTML = modalHTML;
+        modalWrapper.innerHTML = resultados[1];
         document.body.appendChild(modalWrapper);
 
         initProductCreate();
@@ -38,9 +32,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function initProductCreate() {
 
-    /* ── Referencias a elementos del DOM ── */
     const photoInput       = document.getElementById('photoInput');
     const uploadBtn        = document.getElementById('uploadBtn');
+    const avatarContainer  = document.getElementById('avatarContainer');
     const avatarImgProduct = document.getElementById('avatarImgProduct');
     const avatarSvgProduct = document.getElementById('avatarSvgProduct');
     const btnSiguiente     = document.getElementById('btnSiguiente');
@@ -48,7 +42,6 @@ function initProductCreate() {
     const modalSi          = document.getElementById('modalSi');
     const modalNo          = document.getElementById('modalNo');
 
-    /* IDs alineados con los del HTML */
     const FIELDS = ['nombreProducto', 'tipoProducto', 'pesoProducto', 'tipoPeso', 'precioProducto', 'descuento'];
 
     /* ── Restaurar foto guardada ── */
@@ -89,9 +82,10 @@ function initProductCreate() {
             const el = document.getElementById(id);
             if (el) localStorage.setItem('product_' + id, el.value);
         });
-        if (savedPhoto) {
-            localStorage.setItem('productPhoto', savedPhoto);
-        }
+        /* BUG CORREGIDO: leer el valor actual del localStorage en vez
+           de usar la variable 'savedPhoto' que fue capturada al inicio */
+        const fotoActual = localStorage.getItem('productPhoto');
+        if (fotoActual) localStorage.setItem('productPhoto', fotoActual);
     }
 
     /* ── Mostrar / ocultar modal ── */
@@ -103,28 +97,41 @@ function initProductCreate() {
         if (modal) modal.style.display = 'none';
     }
 
-    /* ── Subir Foto ── */
-    /* faltaba declarar uploadBtn/photoInput y faltaba readAsDataURL */
+    /* ── Función central para aplicar una foto al avatar ── */
+    function aplicarFoto(dataURL) {
+        if (avatarImgProduct && avatarSvgProduct) {
+            avatarImgProduct.src = dataURL;
+            avatarImgProduct.style.display = 'block';
+            avatarSvgProduct.style.display = 'none';
+        }
+        localStorage.setItem('productPhoto', dataURL);
+    }
+
+    /* ── Subir Foto — botón ── */
     if (uploadBtn && photoInput) {
         uploadBtn.addEventListener('click', function () {
             photoInput.click();
         });
+    }
 
+    /* ── Subir Foto — clic directo en el avatar ── */
+    if (avatarContainer && photoInput) {
+        avatarContainer.style.cursor = 'pointer';
+        avatarContainer.addEventListener('click', function () {
+            photoInput.click();
+        });
+    }
+
+    /* ── Leer el archivo seleccionado ── */
+    if (photoInput) {
         photoInput.addEventListener('change', function () {
             const file = this.files[0];
             if (!file) return;
 
             const reader = new FileReader();
             reader.onload = function (e) {
-                const dataURL = e.target.result;
-                if (avatarImgProduct && avatarSvgProduct) {
-                    avatarImgProduct.src = dataURL;
-                    avatarImgProduct.style.display = 'block';
-                    avatarSvgProduct.style.display = 'none';
-                }
-                localStorage.setItem('productPhoto', dataURL);
+                aplicarFoto(e.target.result);
             };
-            /* faltaba esta línea — sin ella nunca se leía el archivo */
             reader.readAsDataURL(file);
         });
     }

@@ -5,9 +5,10 @@
         <div class="image-container-create">
             <input type="file" id="photoInput" accept="image/*" style="display:none;">
 
-            <div class="avatar" id="avatarContainer">
+            <!-- Área clickeable para cambiar la foto -->
+            <div class="product-avatar-create" id="avatarContainer">
                 <img id="avatarImgProduct" src="" alt="Foto de producto"
-                     style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:none;">
+                     style="width:100%;height:100%;object-fit:cover;display:none;">
                 <svg id="avatarSvgProduct" class="avatar-icon" viewBox="0 0 24 24" fill="none"
                      stroke="currentColor" stroke-width="2">
                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
@@ -71,7 +72,6 @@
             </div>
 
             <div class="submit-container-create">
-                <!-- BUG CORREGIDO: se quitó el <a> dentro del button y se agregó id -->
                 <button type="button" class="btn-submit-create" id="btnSiguiente">Siguiente</button>
             </div>
 

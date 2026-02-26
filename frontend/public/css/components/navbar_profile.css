@@ -4,7 +4,7 @@
     color: white;
     padding: 6px 40px;
     font-family: var(--font-family-base);
-    font-size: var(--fs-body);
+    font-size: 1.6rem;
     position: relative;
 }
 
@@ -80,6 +80,6 @@
     }
 
     .navbar-bottom__right-profile span {
-        font-size: 0.9rem;
+        font-size: 1.6rem;
     }
 }
