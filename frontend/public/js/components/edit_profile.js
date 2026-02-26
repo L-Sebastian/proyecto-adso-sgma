@@ -76,7 +76,7 @@ function initProfileView() {
             reader.onload = function (e) {
                 const dataURL = e.target.result;
 
-                /* BUG CORREGIDO: se usaba 'savedPhoto' (null si no había foto previa)
+                /*  se usaba 'savedPhoto' (null si no había foto previa)
                    en lugar de verificar los elementos directamente */
                 if (avatarImg && avatarSvg) {
                     avatarImg.src = dataURL;

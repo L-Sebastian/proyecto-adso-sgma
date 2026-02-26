@@ -1,58 +1,64 @@
+<div class="content-wrapper-product2">
 
-</head>
-<body>
-    <div class="main-content-product2">
-        <div class="content-wrapper-product2">
-            <!-- Image Section -->
-            <div class="image-section-product2">
-                <div class="image-container-product2">
-                    <img src="/frontend/public/img/Imagen de WhatsApp 2025-11-10 a las 14.47.11_ae0405ec.jpg" alt="Guanabana" class="product-image" id="productImage">
-                    <p class="image-text">Seleccione una imagen</p>
-                </div>
+    <!-- Image Section -->
+    <div class="image-section-product2">
+        <div class="image-container-product2">
+            <div class="product-image-wrapper">
+                <img src="/frontend/public/img/Imagen de WhatsApp 2025-11-10 a las 14.47.11_ae0405ec.jpg"
+                     alt="Foto del producto"
+                     class="product-image"
+                     id="productImage">
+                <svg id="productImageSvg" class="avatar-icon" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2"
+                     style="display:none;width:90px;height:90px;color:#00c16a;">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
             </div>
-
-            <!-- Form Section -->
-            <div class="form-section-product2">
-                <form id="fincaForm-product2">
-                    <div class="form-grid-product2">
-                        <div class="form-group-product2">
-                            <label class="form-label-product2">Nombre Finca</label>
-                            <input type="text" class="form-input-product2" value="Finca el Porvenir" id="nombreFinca">
-                        </div>
-
-                        <div class="form-group-product2">
-                            <label class="form-label-product2">Stock</label>
-                            <input type="number" class="form-input-product2" value="10" id="stock">
-                        </div>
-
-                        <div class="form-group-product2">
-                            <label class="form-label-product2">Dirección Finca</label>
-                            <input type="text" class="form-input-product2" value="Mas arriba de la cruz" id="direccionFinca">
-                        </div>
-
-                        <div class="form-group-product2">
-                            <label class="form-label-product2">Tipo de Envío</label>
-                            <select class="form-select-product2" id="tipoEnvio">
-                                <option value="domicilio" selected>Domicilio</option>
-                                <option value="recogida">Recogida en Finca</option>
-                                <option value="transporte">Transporte Propio</option>
-                                <option value="mensajeria">Mensajería</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group description-section-product2">
-                            <label class="form-label-product2">Descripción</label>
-                            <textarea class="description-textarea-product2" id="descripcion">La guanábana es una fruta tropical grande y ovalada con cáscara verde espinosa y pulpa blanca, jugosa y aromática</textarea>
-                        </div>
-                    </div>
-
-                    <div class="button-container-product2">
-                        <button type="button" class="btn-product2 btn-secondary-product2" onclick="volver()">Volver</button>
-                        <button type="submit" class="btn-product2 btn-primary-product2">Publicar</button>
-                    </div>
-                </form>
-            </div>
+            <p class="image-text">Imagen del producto</p>
         </div>
     </div>
-</body>
-</html>
+
+    <!-- Form Section -->
+    <div class="form-section-product2">
+        <div class="form-grid-product2">
+
+            <div class="form-group-product2">
+                <label class="form-label-product2">Nombre Finca</label>
+                <input type="text" class="form-input-product2" value="Finca el Porvenir" id="nombreFinca">
+            </div>
+
+            <div class="form-group-product2">
+                <label class="form-label-product2">Stock</label>
+                <input type="number" class="form-input-product2" value="10" id="stock">
+            </div>
+
+            <div class="form-group-product2">
+                <label class="form-label-product2">Dirección Finca</label>
+                <input type="text" class="form-input-product2" value="Mas arriba de la cruz" id="direccionFinca">
+            </div>
+
+            <div class="form-group-product2">
+                <label class="form-label-product2">Tipo de Envío</label>
+                <select class="form-select-product2" id="tipoEnvio">
+                    <option value="domicilio" selected>Domicilio</option>
+                    <option value="recogida">Recogida en Finca</option>
+                    <option value="transporte">Transporte Propio</option>
+                    <option value="mensajeria">Mensajería</option>
+                </select>
+            </div>
+
+            <div class="form-group-product2 description-section-product2">
+                <label class="form-label-product2">Descripción</label>
+                <textarea class="description-textarea-product2" id="descripcion">La guanábana es una fruta tropical grande y ovalada con cáscara verde espinosa y pulpa blanca, jugosa y aromática</textarea>
+            </div>
+
+        </div>
+
+        <div class="button-container-product2">
+            <button type="button" class="btn-product2 btn-secondary-product2" id="btnVolver">Volver</button>
+            <button type="button" class="btn-product2 btn-primary-product2" id="btnPublicar">Publicar</button>
+        </div>
+    </div>
+
+</div>

@@ -16,8 +16,8 @@
 }
 
 .profile-icon-img {
-  width: 26px;
-  height: 26px;
+  width: 30px;
+  height: 30px;
 }
 
 /* --- Sección central (antes izquierda): ícono + texto --- */
@@ -38,8 +38,8 @@
 }
 
 .navbar__avatar-product {
-  width: 28px;
-  height: 28px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 2px solid white;
   object-fit: cover;

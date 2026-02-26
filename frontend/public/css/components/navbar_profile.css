@@ -25,9 +25,9 @@
     gap: 8px;
 }
 
-.profile-icon-img {
-    width: 26px;
-    height: 26px;
+.profile-icon-img{
+    width: 30px;
+    height: 30px;
 }
 
 /* ==================== SECCIÓN DERECHA ==================== */
@@ -39,8 +39,8 @@
 
 /* ==================== AVATAR EN EL NAVBAR (26px) ==================== */
 .navbar-avatar-profile {
-    width: 26px !important;
-    height: 26px !important;
+    width: 40px !important;
+    height: 40px !important;
     min-width: 26px;
     min-height: 26px;
     border-radius: 50%;

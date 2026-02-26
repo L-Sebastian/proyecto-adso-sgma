@@ -1,30 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenido</title>
-    <!-- Carga de estilos globales y de componentes -->
+    <title>Crear Producto 2</title>
     <link rel="stylesheet" href="/frontend/public/css/main.css">
+    <link rel="stylesheet" href="/frontend/public/css/components/create_product_2.css">
+    <!-- Modal CSS cargado en el head para que esté disponible antes de que el JS inserte el HTML -->
+    <link rel="stylesheet" href="/frontend/public/css/components/modal_confirm.css">
 </head>
-
 <body>
-    <!-- 1. Contenedor para el Header (será llenado por header.js) -->
     <header class="header__index__producto"></header>
-
-    <!-- 2. Contenedor para el Cuerpo (será llenado por welcome.js) -->
     <nav class="navbar-bottom-product"></nav>
-
     <main class="main-content"></main>
-
     <footer class="footer"></footer>
 
-    <!-- Carga de scripts al final del body para mejor rendimiento -->
+    <script src="/frontend/public/js/components/profile_data.js"></script>
     <script src="/frontend/public/js/components/header_create_product.js"></script>
     <script src="/frontend/public/js/components/navbar_create_product.js"></script>
     <script src="/frontend/public/js/components/create_product_2.js"></script>
     <script src="/frontend/public/js/components/footer.js"></script>
 </body>
-
 </html>
