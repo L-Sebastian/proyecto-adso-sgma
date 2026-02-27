@@ -27,7 +27,7 @@
   transform: translateX(-50%);
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 /* --- Sección derecha: usuario + imagen --- */

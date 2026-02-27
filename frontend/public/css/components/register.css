@@ -1,270 +1,311 @@
-/* ---------------------------------- */
-/* ===== 1. RESET Y TIPOGRAFÍA ===== */
-/* ---------------------------------- */
+/* ==================== RESET ==================== */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-html,
-body {
-  height: 100%;
-  font-family: var(--font-family-base);
-  background: var(--white);
-  color: var(--gray-900);
+html, body {
+    height: 100%;
+    font-family: var(--font-family-base);
+    background: var(--white);
+    color: var(--gray-900);
 }
 
-/* ---------------------------------- */
-/* ===== 2. BLOQUE BRANDBAR ===== */
-/* ---------------------------------- */
+/* ==================== BRANDBAR ==================== */
 .brandbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 28px;
-  background: var(--primary-secundary-700);
-  color: var(--white);
-  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 28px;
+    background: var(--primary-secundary-700);
+    color: var(--white);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
 }
 
 .brandbar__brand {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: inherit;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
 }
 
 .brandbar__logo {
-  width: 46px;
-  height: 46px;
-  object-fit: contain;
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 4px;
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px;
 }
 
 .brandbar__text {
-  font-size: 24px;
-  font-weight: 700;
-  letter-spacing: 1px;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
-/* ---------------------------------- */
-/* ===== 3. BLOQUE REGISTER ===== */
-/* ---------------------------------- */
+/* ==================== REGISTER LAYOUT ==================== */
 .register {
-  display: flex;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 3.5rem);
+    width: 100%;
 }
 
+@media (min-width: 1024px) {
+    .register {
+        flex-direction: row;
+    }
+}
+
+/* ==================== IMAGEN IZQUIERDA ==================== */
 .register__image {
-  flex: 2;
-  background:
-    linear-gradient(to right, rgba(30, 74, 97, 0) 70%, var(--primary-secundary-900) 100%),
-    url("/frontend/public/img/5.png") center/cover no-repeat;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  height: 100%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: left;
-  padding: 5px;
-
+    background:
+        linear-gradient(to right, rgba(30, 74, 97, 0) 70%, var(--primary-secundary-900) 100%),
+        url('/frontend/public/img/5.png') center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 5px;
+    min-height: 220px;
 }
 
+@media (min-width: 1024px) {
+    .register__image {
+        flex: 2;
+        min-height: unset;
+    }
+}
+
+/* ==================== FORMULARIO DERECHO ==================== */
 .register__form {
-  flex: 1;
-  background: var(--primary-secundary-700);
-  padding: 48px 40px;
-  border-left: 4px solid rgba(255, 255, 255, 0.05);
-  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.03);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    background: var(--primary-secundary-700);
+    padding: 48px 40px;
+    border-left: 4px solid rgba(255, 255, 255, 0.05);
+    box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+@media (min-width: 1024px) {
+    .register__form {
+        flex: 1;
+    }
+}
+
+/* ==================== TÍTULO ==================== */
 .register__title {
-  text-align: center;
-  margin-bottom: 28px;
-  font-size: 24px;
-  letter-spacing: 2px;
-  font-weight: 700;
-  color: var(--white);
+    text-align: center;
+    margin-bottom: 28px;
+    font-size: 2.4rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: var(--white);
 }
 
-/* ---------------------------------- */
-/* ===== 4. FORMULARIO ===== */
-/* ---------------------------------- */
+/* ==================== CONTENEDOR DEL FORM ==================== */
 .register__form-container {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  width: 100%;
-  max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 320px;
 }
 
+/* ==================== GRUPOS DE CAMPO ==================== */
 .register__form-group {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    width: 100%;
 }
 
 .register__form label {
-  color: var(--white);
-  text-align: left;
-  font-weight: 500;
-  font-size: var(--fs-small);
-  margin-bottom: 0;
-  font-family: poppins bold;
+    color: var(--white);
+    text-align: left;
+    font-weight: 500;
+    font-size: 1.2rem;
+    font-family: var(--font-family-base);
 }
 
+/* ==================== INPUTS Y SELECTS — 6 estados ==================== */
 .register__form-input,
 .register__form-select {
-  width: 100%;
-  height: 48px;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 24px;
-  font-size: var(--fs-body);
-  color: var(--gray-900);
-  background-color: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    height: 48px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 24px;
+    font-size: 1.6rem;
+    color: var(--gray-900);
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: box-shadow var(--transition-md), background var(--transition-fast), border var(--transition-fast);
 }
 
+/* Hover */
+.register__form-input:hover,
+.register__form-select:hover {
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* Focus */
 .register__form-select:focus,
 .register__form-input:focus {
-  box-shadow: 0 0 5px rgba(6, 193, 103, 0.8);
-  outline: 2px solid var(--primary-500);
-  background-color: var(--white);
+    box-shadow: 0 0 5px rgba(6, 193, 103, 0.8);
+    outline: 2px solid var(--primary-500);
+    background-color: var(--white);
 }
 
-/* Botón */
+/* Active */
+.register__form-input:active,
+.register__form-select:active {
+    outline: 2px solid var(--primary-700);
+}
+
+/* Disabled */
+.register__form-input:disabled,
+.register__form-select:disabled {
+    background: rgba(255, 255, 255, 0.3);
+    color: var(--gray-600);
+    cursor: not-allowed;
+}
+
+/* Error */
+.register__form-group.has-error .register__form-input,
+.register__form-group.has-error .register__form-select {
+    outline: 2px solid #e74c3c;
+    box-shadow: 0 0 0 0.18rem rgba(231, 76, 60, 0.12);
+}
+
+/* ==================== MENSAJES DE ERROR POR CAMPO ==================== */
+.register__field-help {
+    color: #e74c3c;
+    font-size: 0.8rem;
+    margin-top: 2px;
+}
+
+/* ==================== MENSAJE GENERAL DEL FORM ==================== */
+.register__form-help {
+    font-size: 0.875rem;
+    min-height: 1.2rem;
+    text-align: center;
+    border-radius: 0.375rem;
+    padding: 0.4rem 0.75rem;
+}
+
+.register__form-help.error {
+    color: #e74c3c;
+    background: rgba(231, 76, 60, 0.1);
+}
+
+.register__form-help.success {
+    color: #fff;
+    background: rgba(0, 193, 106, 0.25);
+}
+
+/* ==================== BOTÓN ==================== */
+/* BUG CORREGIDO: faltaba border-radius */
 .register__form-button {
-  margin-top: 12px;
-  padding: 12px 16px;
-  border: none;
-  height: 40px;
-  background: var(--primary-600);
-  color: var(--white);
-  font-weight: 700;
-  font-size: var(--fs-body);
-  cursor: pointer;
-  transition: transform 0.2s, background 0.3s;
-  align-self: center;
+    margin-top: 12px;
+    padding: 0 16px;
+    border: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 7px;
+    background: var(--primary-600);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.6rem;
+    cursor: pointer;
+    align-self: center;
+    min-width: 150px;
+    transition: transform 0.2s ease, background 0.3s ease;
 }
 
 .register__form-button:hover {
-  transform: translateY(-2px);
-  background: var(--primary-700);
+    transform: translateY(-2px);
+    background: var(--primary-700);
 }
 
-
-/* ---------------------------------- */
-/* ===== 6. RESPONSIVE DESIGN ===== */
-/* ---------------------------------- */
-
-/* === Tablets (pantallas medianas) === */
-@media (max-width: 1024px) {
-  .register {
-    flex-direction: column;
-    min-height: auto;
-  }
-
-  .register__image {
-    flex: 0 0 auto;
-    min-height: 45vh;
-    background-position: center;
-  }
-
-  .register__form {
-    padding: 40px 30px;
-  }
-
-  .brandbar {
-    flex-direction: column;
-    text-align: center;
-    gap: 8px;
-  }
-
-  .brandbar__text {
-    font-size: 20px;
-  }
+.register__form-button:focus {
+    outline: none;
+    box-shadow: var(--focus-ring);
 }
 
-/* === Móviles (pantallas pequeñas) === */
+.register__form-button:active {
+    transform: translateY(1px);
+}
+
+.register__form-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ==================== RESPONSIVE ==================== */
 @media (max-width: 768px) {
-  .brandbar {
-    padding: 10px 16px;
-  }
+    .brandbar {
+        padding: 10px 16px;
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
 
-  .brandbar__text {
-    font-size: 18px;
-  }
+    .brandbar__text {
+        font-size: 18px;
+    }
 
-  .brandbar__logo {
-    width: 40px;
-    height: 40px;
-  }
+    .brandbar__logo {
+        width: 40px;
+        height: 40px;
+    }
 
-  .register__image {
-    min-height: 40vh;
-    background-size: cover;
-    justify-content: center;
-  }
+    .register__form {
+        padding: 30px 20px;
+    }
 
-  .register__form {
-    padding: 30px 20px;
-  }
+    .register__title {
+        font-size: 20px;
+    }
 
-  .register__title {
-    font-size: 20px;
-  }
+    .register__form-container {
+        max-width: 280px;
+        gap: 1rem;
+    }
 
-  .register__form-container {
-    max-width: 280px;
-    gap: 1rem;
-  }
-
-  .register__form-input,
-  .register__form-select {
-    font-size: 13px;
-  }
+    .register__form-input,
+    .register__form-select {
+        font-size: 13px;
+    }
 }
 
-/* === Muy pequeños (teléfonos chicos) === */
 @media (max-width: 480px) {
-  .brandbar {
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-  }
+    .brandbar__text {
+        font-size: 16px;
+    }
 
-  .brandbar__text {
-    font-size: 16px;
-  }
+    .register__title {
+        font-size: 18px;
+    }
 
-  .register__title {
-    font-size: 18px;
-  }
+    .register__form-container {
+        max-width: 250px;
+    }
 
-  .register__form-container {
-    max-width: 250px;
-  }
+    .register__form-input,
+    .register__form-select {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
 
-  .register__form-input,
-  .register__form-select {
-    font-size: 12px;
-    padding: 8px 12px;
-  }
-
-  .register__form-button {
-    width: 100%;
-    padding: 10px;
-  }
+    .register__form-button {
+        width: 100%;
+        padding: 10px;
+    }
 }

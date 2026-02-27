@@ -39,7 +39,7 @@
 
 .header__item__welcome p {
   margin: 0;
-  font-size: 14px;
+  font-size: 1.6rem;
   color: var(--white);
 }
 

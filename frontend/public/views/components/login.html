@@ -1,7 +1,8 @@
 <!-- Main Content -->
 <main class="main-content-login" aria-labelledby="loginTitle">
+
   <!-- Left Section - Testimonial -->
-  <section class="hero-section-login" aria-hidden="false">
+  <section class="hero-section-login">
     <div class="hero-content-login">
       <div class="producer-name-login"></div>
       <div class="producer-title-login"></div>
@@ -14,6 +15,7 @@
     <h1 id="loginTitle" class="login-title-login">Inicia Sesión</h1>
 
     <form class="login-form-login" id="loginForm" role="form" novalidate>
+
       <div class="form-group-login">
         <label for="email">Correo electrónico</label>
         <input
@@ -24,7 +26,6 @@
           required
           autocomplete="email"
           aria-required="true"
-          aria-describedby="emailHelp"
         />
       </div>
 
@@ -41,12 +42,20 @@
         />
       </div>
 
-      <button type="submit" class="submit-btn-login" aria-label="Iniciar sesión">Iniciar Sesión</button>
+      <!-- Botón submit centrado en su propio contenedor -->
+      <div class="submit-container-login">
+        <button type="submit" class="submit-btn-login" aria-label="Iniciar sesión">
+          Iniciar Sesión
+        </button>
+      </div>
 
+      <!-- Botones secundarios centrados -->
       <div class="action-buttons-login" role="group" aria-label="Acciones de cuenta">
         <button type="button" class="secondary-btn-login" id="createAccountBtn">Crear Cuenta</button>
         <button type="button" class="secondary-btn-login" id="recoverAccountBtn">Recuperar Cuenta</button>
       </div>
+
     </form>
   </section>
+
 </main>

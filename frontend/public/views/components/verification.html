@@ -1,21 +1,22 @@
-<main class="verification-main" aria-labelledby="verificationTitle" role="main">
-  <!-- LEFT: testimonial / imagen -->
-  <section class="verification-hero" aria-hidden="false">
-    <div class="verification-hero-inner">
+<main class="verification-main" aria-labelledby="verificationTitlePanel" role="main">
 
-    </div>
+  <!-- LEFT: imagen de fondo -->
+  <section class="verification-hero">
+    <div class="verification-hero-inner"></div>
   </section>
 
-  <!-- RIGHT: verification form -->
-  <section class="verification-panel" aria-labelledby="verificationTitlePanel">
+  <!-- RIGHT: formulario de verificación -->
+  <section class="verification-panel">
     <div class="verification-panel-inner">
       <h1 id="verificationTitlePanel" class="verification-title">Recuperación de Cuenta</h1>
 
       <div class="verification-box" role="form" aria-describedby="verificationInstruction">
-        <p id="verificationInstruction" class="verification-instruction">Ingresa el código de 6 dígitos que enviamos a tu correo</p>
+        <p id="verificationInstruction" class="verification-instruction">
+          Ingresa el código de 6 dígitos que enviamos a tu correo
+        </p>
 
         <form id="verificationForm" class="verification-form" novalidate>
-          <fieldset class="verification-fieldset" aria-label="Código de verificación">
+          <fieldset class="verification-fieldset">
             <legend class="sr-only">Código de verificación</legend>
 
             <div class="code-row" role="group" aria-label="Seis dígitos del código">
@@ -36,16 +37,23 @@
             <div id="codeHelp" class="field-help" aria-live="polite"></div>
           </fieldset>
 
-          <button type="submit" class="btn-verification btn-primary-verification verification-submit" aria-label="Enviar código">
+          <button type="submit" class="btn-verification btn-primary-verification verification-submit"
+            aria-label="Enviar código">
             Enviar código
           </button>
         </form>
 
         <div class="verification-actions">
-          <button type="button" class="btn-verification btn-link-verification btn-resend-verification" id="resendCodeBtn">Reenviar código</button>
-          <button type="button" class="btn-verification btn-link-verification btn-back-verification" id="backBtn">Volver</button>
+          <button type="button" class="btn-verification btn-link-verification btn-resend-verification"
+            id="resendCodeBtn">Reenviar código</button>
+          <button type="button" class="btn-verification btn-link-verification btn-back-verification"
+            id="backBtn">Volver</button>
         </div>
       </div>
+
+      <!-- Toast — se muestra/oculta por JS -->
+      <div id="verificationToast" class="verification-toast" role="status" aria-live="polite"></div>
     </div>
   </section>
+
 </main>

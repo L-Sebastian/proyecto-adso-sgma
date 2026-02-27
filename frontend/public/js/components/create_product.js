@@ -82,8 +82,7 @@ function initProductCreate() {
             const el = document.getElementById(id);
             if (el) localStorage.setItem('product_' + id, el.value);
         });
-        /* BUG CORREGIDO: leer el valor actual del localStorage en vez
-           de usar la variable 'savedPhoto' que fue capturada al inicio */
+      
         const fotoActual = localStorage.getItem('productPhoto');
         if (fotoActual) localStorage.setItem('productPhoto', fotoActual);
     }

@@ -1,27 +1,33 @@
-<link rel="stylesheet" href="/frontend/public/css/main.css">
+<main class="register">
 
-<main class="register"> 
-    <section class="register__image"></section>
+    <!-- Imagen izquierda -->
+    <section class="register__image" aria-hidden="true"></section>
 
-    <section class="register__form">
-        <h2 class="register__title">CREAR UNA CUENTA</h2>
-        
-        <form id="formRegistro" class="register__form-container" novalidate> 
-            
+    <!-- Formulario derecho -->
+    <section class="register__form" aria-labelledby="registerTitle">
+        <!-- BUG CORREGIDO: h2 → h1 (título principal de la página) -->
+        <h1 id="registerTitle" class="register__title">CREAR UNA CUENTA</h1>
+
+        <form id="formRegistro" class="register__form-container" novalidate>
+
             <div class="register__form-group">
                 <label for="nombre">Nombre completo</label>
-                <input id="nombre" class="register__form-input" type="text" required autocomplete="name" />
+                <input id="nombre" class="register__form-input" type="text"
+                       required autocomplete="name" placeholder="Juan de la Cruz" />
             </div>
 
             <div class="register__form-group">
                 <label for="telefono">Número de teléfono</label>
-                <input id="telefono" class="register__form-input" type="tel" pattern="[0-9]{7,10}" title="Debe contener entre 7 y 10 números" required autocomplete="tel" />
+                <input id="telefono" class="register__form-input" type="tel"
+                       pattern="[0-9]{7,10}" title="Debe contener entre 7 y 10 números"
+                       required autocomplete="tel" placeholder="3001234567" />
             </div>
 
             <div class="register__form-group">
                 <label for="departamento">Departamento</label>
-                <select id="departamento" name="departamento" class="register__form-select" required autocomplete="address-level1">
-                    <option value="">-Selecciona tu departamento-</option>
+                <select id="departamento" name="departamento"
+                        class="register__form-select" required autocomplete="address-level1">
+                    <option value="">- Selecciona tu departamento -</option>
                     <option value="Risaralda">Risaralda</option>
                     <option value="Quindío">Quindío</option>
                     <option value="Caldas">Caldas</option>
@@ -30,15 +36,22 @@
 
             <div class="register__form-group">
                 <label for="email">Correo electrónico</label>
-                <input id="email" class="register__form-input" type="email" required autocomplete="email" />
+                <input id="email" class="register__form-input" type="email"
+                       required autocomplete="email" placeholder="ejemplo@correo.com" />
             </div>
 
             <div class="register__form-group">
                 <label for="password">Contraseña</label>
-                <input id="password" class="register__form-input" type="password" required autocomplete="new-password" />
+                <input id="password" class="register__form-input" type="password"
+                       required autocomplete="new-password" placeholder="••••••••" />
             </div>
 
+            <!-- Mensajes de error/éxito -->
+            <div id="formHelp" class="register__form-help" aria-live="polite"></div>
+
             <button type="submit" class="register__form-button">Crear Cuenta</button>
+
         </form>
     </section>
+
 </main>
