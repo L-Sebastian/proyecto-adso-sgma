@@ -1,16 +1,17 @@
-<!-- NAVBAR -->
-<nav class="navbar-register">
-    <div class="navbar__content-register">
+<!-- BUG CORREGIDO: se eliminó el <nav class="navbar-register"> wrapper
+     porque la vista ya tiene <nav class="navbar-register"></nav>
+     Al insertar innerHTML aquí, quedaba <nav> dentro de <nav>
+     duplicando el fondo y generando el doble borde visible -->
+<div class="navbar__content-register">
 
-        <!-- Logo -->
-        <div class="navbar__logo-register">
-            <a href="/index.html" class="navbar__logo-link-register">
-                <img src="/frontend/public/img/logo1.png" 
-                     alt="Logo SGMA" 
-                     class="navbar__logo-img-register">
-                <span class="navbar__logo-text-register">SGMA</span>
-            </a>
-        </div>
-
+    <!-- Logo -->
+    <div class="navbar__logo-register">
+        <a href="/index.html" class="navbar__logo-link-register">
+            <img src="/frontend/public/img/logo1.png"
+                 alt="Logo SGMA"
+                 class="navbar__logo-img-register">
+            <span class="navbar__logo-text-register">SGMA</span>
+        </a>
     </div>
-</nav>
+
+</div>

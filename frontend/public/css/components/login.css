@@ -95,7 +95,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 3rem 1.5rem;
-    background: linear-gradient(135deg, #1e4a61, #122d3e);
+    background: var(--primary-secundary-700);
     width: 100%;
 }
 
@@ -110,7 +110,7 @@ body {
 /* ==================== TÍTULO ==================== */
 .login-title-login {
     color: var(--white);
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     font-weight: var(--fw-bold);
     margin-bottom: 3rem;
     text-align: center;
@@ -212,7 +212,7 @@ body {
     padding: 0;
     border: none;
     border-radius: 7px;
-    background: linear-gradient(180deg, var(--primary-600), var(--primary-700));
+    background: var(--primary-600);
     color: var(--white);
     font-size: 1.6rem;
     font-weight: var(--fw-bold);
@@ -270,7 +270,7 @@ body {
     padding: 0;
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 7px;
-    background: linear-gradient(180deg, var(--primary-600), var(--primary-700));
+    background: var(--primary-600);
     color: var(--white);
     font-weight: var(--fw-medium);
     font-size: 1.6rem;

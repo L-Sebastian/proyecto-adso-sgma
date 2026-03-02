@@ -21,7 +21,7 @@
   align-items: center;
   gap: 8px;
   flex-direction: row-reverse;
-  font-size: 24px;
+  font-size: 2.4rem;
 }
 
 /* CLASE CORREGIDA: Se usa la clase correcta */
@@ -37,7 +37,7 @@
   font-weight: bold;
 }
 
-/* --- Título centrado (CORRECCIÓN DE ESPACIADO) --- */
+
 .navbar__title-shopping {
   /* CAMBIO CLAVE 1: No toma todo el espacio, solo lo que necesita. */
   flex: none;
@@ -45,7 +45,7 @@
   margin-left: auto;
   margin-right: auto;
   text-align: center;
-  font-size: 14px;
+  font-size: 1.6rem;
   font-weight: 500;
   color: #fff;
   margin-top: 0;
@@ -60,16 +60,16 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  font-size: 16px;
+  font-size: 1.6rem;
 }
 
-/* CLASE CORREGIDA: Se usa la clase correcta */
+
 .navbar__link-shopping {
   color: #fff;
   text-decoration: none;
   font-size: 0.95rem;
   transition: color 0.3s ease;
-  font-size: 12px;
+  font-size: 1.2rem;
 }
 
 .navbar__link-shopping:hover {
@@ -94,7 +94,6 @@
 
 /* Para pantallas medianas (tablets) */
 @media (max-width: 1024px) {
-  /* SELECTOR CORREGIDO: navbar-shopping -> navbar__container-shopping */
   .navbar__container-shopping {
     padding: 10px 20px;
   }
@@ -110,7 +109,6 @@
 
 /* Para pantallas pequeñas (celulares) */
 @media (max-width: 768px) {
-  /* SELECTOR CORREGIDO: navbar__contentv -> navbar__content-shopping */
   .navbar__content-shopping {
     flex-direction: column;
     align-items: center;

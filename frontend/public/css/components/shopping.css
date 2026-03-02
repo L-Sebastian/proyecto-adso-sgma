@@ -1,292 +1,404 @@
 /* =========================
-   BASE
+   CONTENEDOR PRINCIPAL
 ========================= */
 .shopping {
-  width: 100%;
-  font-family: var(--font-base);
-  color: var(--text);
+    width: 100%;
+    font-family: var(--font-family-base);
+    color: var(--gray-900);
+    position: relative;
+    min-height: calc(100vh - 3.5rem);
 }
 
+/* Imagen de fondo — ocupa toda la sección */
 .shopping__hero {
-  background: url('/frontend/public/img/shopping.jpg') center / cover no-repeat;
-  display: flex;
-  align-items: flex-start;
-  position: relative;
-  padding: 4rem 0;
+    background: url('/frontend/public/img/shopping.jpg') center/cover no-repeat;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
 }
 
+/* Capa que contiene el layout sobre la imagen */
 .shopping__overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.55);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  z-index: 1;
-}
-
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-  position: relative;
-  z-index: 2;
+    position: relative;
+    z-index: 1;
+    min-height: calc(100vh - 3.5rem);
+    padding: 2.5rem 2rem;
+    display: flex;
+    align-items: flex-start;
 }
 
 /* =========================
-   LAYOUT
+   GRID DE DOS COLUMNAS
 ========================= */
 .shopping__inner {
-  display: grid;
-  grid-template-columns: 1fr 360px;
-  gap: 3rem;
-}
-
-@media (max-width: 64rem) {
-  .shopping__inner {
-    grid-template-columns: 1fr;
-  }
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: start;
 }
 
 /* =========================
-   PRODUCTOS
+   CARD CARRITO (izquierda)
 ========================= */
 .shopping__products {
-  background: rgba(217, 217, 217, 0.65);
-  border-radius: 1.25rem;
-  padding: 2rem;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-}
-
-.shopping__title-section {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1.5rem;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
 
 .shopping__list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 /* =========================
-   CARD PRODUCTO
+   ITEM DE PRODUCTO
 ========================= */
 .shopping__item {
-  display: grid;
-  grid-template-columns: 90px 1fr auto;
-  gap: 1rem;
-  align-items: center;
-  background: #ffffff;
-  border-radius: 0.75rem;
-  padding: 1.25rem;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-  transition: transform 0.2s ease;
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 0.75rem;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 0.75rem;
+    padding: 0.75rem 1rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    position: relative;
+    transition: transform 0.2s ease;
 }
 
 .shopping__item:hover {
-  transform: translateY(-4px);
+    transform: translateY(-2px);
+}
+
+.shopping__remove {
+    width: 28px;
+    height: 28px;
+    border: none;
+    border-radius: 6px;
+    background: #fff0f0;
+    cursor: pointer;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease;
+    align-self: flex-end;  /* arriba a la derecha */
+    flex-shrink: 0;
+}
+
+.shopping__remove:hover {
+    background: #ffd5d5;
 }
 
 /* Imagen */
 .shopping__img {
-  width: 90px;
-  height: 90px;
-  object-fit: contain;
-  border-radius: 0.5rem;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    border-radius: 0.5rem;
 }
 
-/* Meta */
+/* Meta — nombre, descuento, descripción, vendedor */
 .shopping__meta {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
 }
 
-.shopping__product-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--primary-700);
+.shopping__title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--primary-700);
 }
 
-/* Descripción */
+.shopping__discount-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Badge de descuento — rojo pequeño */
+.shopping__badge {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #e74c3c;
+}
+
+/* Precio original tachado */
+.shopping__original {
+    font-size: 1.6rem;
+    color: #888;
+    text-decoration: line-through;
+}
+
 .shopping__desc--link {
-  font-size: 0.9rem;
-  color: #0a8f4d;
-  text-decoration: underline;
-  cursor: pointer;
+    font-size: 1.6rem;
+    color: #0a8f4d;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .shopping__desc--vendor {
-  font-size: 0.9rem;
-  color: #1e1e1e;
+    font-size: 1.6rem;
+    color: #555;
 }
 
-.shopping__original {
-  font-size: 0.85rem;
-  color: #777;
-  text-decoration: line-through;
-}
-
-/* =========================
-   CONTROLES
-========================= */
+/* COLUMNA 3: 🗑 arriba a la derecha | qty+precio centrados verticalmente */
 .shopping__controls {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.75rem;
-}
-
-/* Cantidad */
-.qty {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: #ffffff;
-  padding: 0.35rem 0.6rem;
-  border-radius: 0.5rem;
-}
-
-.qty__btn {
-  border: none;
-  background: none;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-
-.qty__value {
-  min-width: 2rem;
-  text-align: center;
-  font-weight: 600;
-}
-
-/* Precio */
-.shopping__price-wrap {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.shopping__price {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--primary-700);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    align-self: stretch;
+    min-width: 130px;
+    position: relative;
+    width: 16px;
+    height: 16px;
 }
 
 .shopping__remove {
-  width: 2.25rem;
-  height: 2.25rem;
-  border: none;
-  border-radius: 0.5rem;
-  background: #ffffff;
-  cursor: pointer;
+    align-self: flex-end;
+
 }
 
-/* =========================
-   CHECKOUT
-========================= */
-.shopping__checkout {
-  background: rgba(217, 217, 217, 0.65);
-  border-radius: 1.25rem;
-  padding: 2rem;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-  align-self: center;
-  text-align: center;
+/* Fila qty+precio: centrada verticalmente en el espacio restante */
+.shopping__bottom-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+    align-self: stretch;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 1.6rem;
 }
 
-.shopping__checkout-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: var(--primary-700);
+/* Controles de cantidad */
+.qty {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: #f0f0f0;
+    border-radius: 0.4rem;
+    padding: 0.2rem 0.4rem;
 }
 
-.shopping__amount-row {
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
+.qty__btn {
+    border: none;
+    background: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    padding: 0 4px;
+    line-height: 1;
+    color: #333;
+    transition: color 0.2s ease;
 }
 
-.shopping__amount {
-  font-size: 2.3rem;
-  font-weight: 800;
-  color: var(--primary-700);
+.qty__btn:hover {
+    color: var(--primary-600);
 }
 
-.shopping__currency {
-  font-size: 1rem;
-  color: #333;
+.qty__value {
+    min-width: 1.5rem;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.6rem;
 }
 
-/* Métodos de pago */
-.payment-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.25rem;
-  margin-bottom: 1.5rem;
-}
-
-.payment-icons img {
-  height: 36px;
-  object-fit: contain;
-}
-
-/* Botón pagar */
-.btn {
-  padding: 0.7rem 1.5rem;
-  border-radius: 1.5rem;
-  border: none;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.btn--primary {
-  background: linear-gradient(180deg, var(--primary-600), var(--primary-700));
-  color: #ffffff;
-}
-
-.btn--primary:hover {
-  transform: translateY(-2px);
+/* Precio final */
+.shopping__price {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: var(--primary-700);
 }
 
 /* =========================
    EMPTY STATE
 ========================= */
 .shopping__empty {
-  text-align: center;
-  padding: 2rem;
-  color: #777;
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+}
+
+/* =========================
+   CARD CHECKOUT (derecha)
+========================= */
+.shopping__checkout {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    text-align: center;
+}
+
+.shopping__checkout-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--primary-700);
+    margin-bottom: 0.75rem;
+}
+
+.shopping__amount-row {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem;
+}
+
+.shopping__amount {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary-700);
+}
+
+.shopping__currency {
+    font-size: 1.6rem;
+    color: #444;
+}
+
+/* Logos de pago */
+.payment-icons {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+    flex-wrap: wrap;
+}
+
+.payment-icons img {
+    height: 28px;
+    object-fit: contain;
+}
+
+/* Mensaje estado */
+.shopping__pay-help {
+    font-size: 1.6rem;
+    min-height: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    padding: 0.3rem 0.5rem;
+}
+
+.shopping__pay-help.success {
+    color: #065f46;
+    background: rgba(16, 185, 129, 0.15);
+}
+
+.shopping__pay-help.error {
+    color: #e74c3c;
+    background: rgba(231, 76, 60, 0.1);
+}
+
+/* Botón pagar */
+.btn {
+    padding: 0.6rem 1.5rem;
+    height: 40px;
+    
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.6rem;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn--primary {
+    background: linear-gradient(180deg, var(--primary-600), var(--primary-700));
+    color: #fff;
+    width: 150px;
+}
+
+.btn--primary:hover {
+    transform: translateY(-2px);
+}
+
+.btn--primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
 }
 
 /* =========================
    RESPONSIVE
 ========================= */
-@media (max-width: 48rem) {
-  .shopping__item {
-    grid-template-columns: 70px 1fr;
-    gap: 0.75rem;
-  }
+@media (max-width: 768px) {
+    .shopping__inner {
+        grid-template-columns: 1fr;
+    }
 
-  .shopping__controls {
-    grid-column: span 2;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-  }
+    .shopping__item {
+        grid-template-columns: 70px 1fr auto;
+    }
 
-  .shopping__img {
-    width: 70px;
-    height: 70px;
-  }
+    .shopping__img {
+        width: 70px;
+        height: 70px;
+    }
 
-  .shopping__amount {
-    font-size: 1.8rem;
-  }
+    .shopping__amount {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .shopping__overlay {
+        padding: 1rem;
+    }
+
+    /* Grid: imagen | meta — controls va aparte */
+    .shopping__item {
+        grid-template-columns: 60px 1fr;
+        grid-template-rows: auto auto;
+        gap: 0.5rem;
+        position: relative;
+    }
+
+    /* Meta ocupa su columna normalmente */
+    .shopping__meta {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    /* Controls: fila completa abajo, pero remove va arriba a la derecha absoluto */
+    .shopping__controls {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        min-width: unset;
+        padding-top: 0.25rem;
+        padding-right: 8px;
+        bottom: 6rem;
+    }
+
+    /* Botón eliminar — esquina superior derecha del card */
+    .shopping__remove {
+        position: absolute;
+        bottom: 4rem;
+        right: 0.5rem;
+        align-self: unset;
+    }
+
+    .shopping__bottom-row {
+        justify-content: flex-end;
+        flex: unset;
+        align-self: unset;
+    }
 }

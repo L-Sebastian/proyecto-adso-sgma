@@ -1,50 +1,36 @@
+<div class="shopping__hero" aria-hidden="true"></div>
 
-<section class="shopping" aria-labelledby="shoppingTitle">
-
-  <!-- Fondo -->
-  <div class="shopping__hero"></div>
-
-  <!-- CONTENEDOR SUPERIOR -->
-  <div class="shopping__overlay">
-
+<div class="shopping__overlay">
     <div class="shopping__inner">
 
-      <!-- ================= CARRITO ================= -->
-      <main class="shopping__products">
-
-        <h2 class="shopping__heading">Carrito de compras</h2>
-
-        <ul class="shopping__list" id="shoppingItems"></ul>
-
-        <div class="shopping__empty" id="shoppingEmpty" hidden>
-          <p>No hay productos en el carrito.</p>
+        <!-- ================= CARRITO ================= -->
+        <div class="shopping__products">
+            <ul class="shopping__list" id="shoppingItems"></ul>
+            <div class="shopping__empty" id="shoppingEmpty" hidden>
+                <p>No hay productos en el carrito.</p>
+            </div>
         </div>
 
-      </main>
+        <!-- ================= CHECKOUT ================= -->
+        <aside class="shopping__checkout" aria-label="Resumen de pago">
+            <h3 class="shopping__checkout-title">Total a pagar</h3>
 
-      <!-- ================= CHECKOUT ================= -->
-      <aside class="shopping__checkout">
+            <div class="shopping__amount-row">
+                <span class="shopping__amount" id="checkoutTotal">$0</span>
+                <span class="shopping__currency">pesos</span>
+            </div>
 
-        <h3 class="shopping__checkout-title">Total a pagar</h3>
+            <div class="payment-icons">
+                <img src="/frontend/public/img/visa.svg" alt="Visa">
+                <img src="/frontend/public/img/mastercard.svg" alt="Mastercard">
+                <img src="/frontend/public/img/american-express.svg" alt="American Express">
+                <img src="/frontend/public/img/pse-seeklogo.svg" alt="PSE">
+            </div>
 
-        <div class="shopping__summary">
-          <span class="shopping__amount" id="checkoutTotal">$0</span>
-          <span class="shopping__currency">pesos</span>
-        </div>
+            <div id="payHelp" class="shopping__pay-help" aria-live="polite"></div>
 
-        <div class="payment-icons">
-          <img src="/frontend/public/img/mastercard.svg" alt="Mastercard">
-          <img src="/frontend/public/img/american-express.svg" alt="Amex">
-          <img src="/frontend/public/img/pay.jpg" alt="PayPal">
-        </div>
-
-        <button class="btn btn--primary shopping__pay" id="payBtn">
-          Pagar
-        </button>
-
-      </aside>
+            <button class="btn btn--primary shopping__pay" id="payBtn">Pagar</button>
+        </aside>
 
     </div>
-  </div>
-
-</section>
+</div>

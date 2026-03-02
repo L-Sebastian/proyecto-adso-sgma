@@ -7,7 +7,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    background-image: url('/frontend/public/img/Imagen de WhatsApp 2025-11-23 a las 12.22.26_dcce6e35.jpg');
+    background-image: url('/frontend/public/img/create_producto.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -55,6 +55,13 @@
     border-radius: 14px;
     object-fit: cover;
     display: block;
+}
+
+.image-text {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    justify-content: center;
 }
 
 /* ==================== AVATAR ==================== */

@@ -1,26 +1,22 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
 
-    // 1. Seleccionar el contenedor del cuerpo
-    const bodyContainer = document.querySelector('.navbar-register');
+    /* La vista tiene <nav class="navbar-register"></nav>
+       Insertamos el contenido del componente directamente dentro de ese <nav>
+       El componente ya NO tiene el <nav> wrapper para evitar doble anidamiento */
+    var navContainer = document.querySelector('.navbar-register');
+    if (!navContainer) return;
 
-    // 2. Verificar si existe en el DOM
-    if (bodyContainer) {
+    var url = '/frontend/public/views/components/navbar_register.html';
 
-        // Ruta del archivo HTML del cuerpo
-        const bodyURL = '/frontend/public/views/components/navbar_register.html'; // **VERIFICA ESTA RUTA**
-
-        // 3. Cargar el contenido del cuerpo
-        fetch(bodyURL)
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                return response.text();
-            })
-            .then(data => {
-                // Insertar el contenido en la sección
-                bodyContainer.innerHTML = data;
-            })
-            .catch(error => console.error('Error cargando el cuerpo de la página:', error));
-    }
+    fetch(url)
+        .then(function (response) {
+            if (!response.ok) throw new Error('HTTP error! status: ' + response.status);
+            return response.text();
+        })
+        .then(function (html) {
+            navContainer.innerHTML = html;
+        })
+        .catch(function (error) {
+            console.error('Error cargando navbar_register:', error);
+        });
 });

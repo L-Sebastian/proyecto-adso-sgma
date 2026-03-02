@@ -4,7 +4,7 @@
     flex-direction: column;
     min-height: calc(100vh - 3.5rem);
     width: 100%;
-    background: linear-gradient(135deg, #1e4a61, #122d3e);
+    background: var(--primary-secundary-700);
 }
 
 @media (min-width: 1024px) {
@@ -41,7 +41,7 @@
 }
 
 .verification-hero-title {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     font-weight: 700;
     margin-bottom: 0.25rem;
 }
@@ -62,7 +62,7 @@
 
 /* ==================== PANEL DERECHO (formulario) ==================== */
 .verification-panel {
-    background: linear-gradient(135deg, #1e4a61, #122d3e);
+    background: var(--primary-secundary-700);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -88,7 +88,7 @@
 /* ==================== TÍTULO ==================== */
 .verification-title {
     color: var(--white);
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     font-weight: 700;
     margin-bottom: 1.75rem;
     letter-spacing: 0.06rem;
@@ -102,7 +102,7 @@
 
 /* ==================== BOX ==================== */
 .verification-box {
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+    /* background: linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02)); */
     padding: 1.5rem;
     border-radius: 0.75rem;
 }
@@ -236,7 +236,7 @@
     padding: 0.75rem 1rem;
     border: none;
     border-radius: 7px;
-    background: linear-gradient(180deg, var(--primary-600), var(--primary-700));
+    background: var(--primary-600);
     color: var(--white);
     font-weight: 700;
     cursor: pointer;
