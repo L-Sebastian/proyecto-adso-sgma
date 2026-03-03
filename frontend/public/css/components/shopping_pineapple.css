@@ -1,287 +1,460 @@
-/* -------------------------------------------------------
-   RESET
-------------------------------------------------------- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-/* body {
-    font-family: var(--font-family-base);
-    background: linear-gradient(180deg, #c8e6c9 0%, #a5d6a7 100%);
-    min-height: 100vh;
-} */
 
-/* -------------------------------------------------------
-   CONTENEDOR GENERAL
-------------------------------------------------------- */
 .main-content-shopping-pineapple {
-    font-family: var(--font-family-base);
     background: linear-gradient(180deg, #c8e6c9 0%, #a5d6a7 100%);
-    padding: 60px 40px;
-    max-width: 1400px;
+    height: auto;
+    overflow: visible;
+    padding: 40px 48px;
+    padding-bottom: 120px; /* AÑADIDO: Espacio extra para que el botón no tape contenido */
+    box-sizing: border-box;
+    font-family: var(--font-family-base);
 }
 
+/* ── CARD ── */
 .product-card-shopping-pineapple {
     background: white;
     border-radius: 20px;
-    padding: 50px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: flex-start;
-    gap: 35px;
-}
-
-/* -------------------------------------------------------
-   IMAGEN DEL PRODUCTO
-------------------------------------------------------- */
-.product-image-section-shopping-pineapple {
-    width: 420px;
-    display: flex;
-    justify-content: center;
-}
-
-.product-image {
+    padding: 40px;
+    max-width: 1200px;
     width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-
-/* -------------------------------------------------------
-   INFORMACIÓN DEL PRODUCTO
-------------------------------------------------------- */
-.product-info-section-shopping-pineapple {
-    flex: 1;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    height: auto;
+    overflow: visible;
+    gap: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    box-sizing: border-box;
+}
+
+/* ── FILA SUPERIOR: imagen | info ── */
+.product-top-row-shopping-pineapple {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 36px;
+    width: 100%;
+}
+
+/* ── IMAGEN ── */
+.product-image-section-shopping-pineapple {
+    flex: 0 0 480px;   /* tamaño grande */
+    max-width: 480px;;
+    flex-shrink: 0;
+    overflow: hidden;
+    align-self: flex-start;
+}
+
+.product-image-shopping-pineapple {
+    width: 100%;
+    height: auto;
+    max-height: 580px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+/* ── INFO ── */
+.product-info-section-shopping-pineapple {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .product-title-shopping-pineapple {
     color: #10b981;
-    font-size: var(--fs-h2);
+    font-size: 3.2rem;
     font-weight: 700;
-    line-height: 1.3;
+    line-height: 1.4;
+    margin: 0;
 }
 
-/* -------------------------------------------------------
-   PRECIOS
-------------------------------------------------------- */
+/* ── PRECIOS ── */
 .price-and-seller-shopping-pineapple {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 6px;
 }
 
 .price-stack {
     display: flex;
     flex-direction: column;
-    gap: 5px;
-}
-
-.text-shopping-pineapple {
-    font-size: var(--fs-body);
-    font-weight: 600;
+    gap: 4px;
 }
 
 .old-price-shopping-pineapple {
     color: #999;
-    font-size: var(--fs-body);
+    font-size: 1.6rem;
     text-decoration: line-through;
 }
 
-.current-price-row {
+.price-line-shopping-pineapple {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
 .current-price-shopping-pineapple {
-    color: #333;
-    font-size: var(--fs-precio);
-    font-weight: 700;
+    color: #222;
+    font-size: 3.2rem;
+    font-weight: 800;
 }
 
 .discount-badge-shopping-pineapple {
-    color: green;
     background: #e8fbe8;
-    padding: 4px 12px;
-    border-radius: 15px;
-    font-size: var(--fs-body);
-    font-weight: 600;
+    color: #10b981;
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 12px;
 }
 
-/* -------------------------------------------------------
-   CONDICIONES DE ENTREGA + ACCIONES
-------------------------------------------------------- */
+.seller-info-shopping-pineapple {
+    font-size: 1.6rem;
+    color: #555;
+    margin: 0;
+}
+
+/* ── MAIN DETAILS ROW ── */
 .product-main-details-shopping-pineapple {
     display: flex;
-    justify-content: space-between;
     align-items: flex-start;
     gap: 24px;
+    flex-wrap: wrap;
 }
 
+/* ── ENTREGA + ACCIONES ── */
 .delivery-and-actions-shopping-pineapple {
     display: flex;
-    gap: 24px;
+    gap: 20px;
+    align-items: flex-start;
 }
 
-/* Caja de entrega */
 .delivery-box-shopping-pineapple {
-    border: 2px solid #e5e7eb;
-    border-radius: 15px;
-    padding: 20px;
-    width: 300px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 10px;
+    padding: 14px 18px;
+    min-width: 200px;
 }
 
 .delivery-title-shopping-pineapple {
     font-weight: 700;
-    margin-bottom: 15px;
-    color: #333;
+    font-size: 1.6rem;
+    color: #222;
+    margin-bottom: 10px;
 }
 
 .delivery-item-shopping-pineapple {
     display: flex;
-    gap: 10px;
-    margin-bottom: 12px;
-    font-size: 15px;
-    color: #666;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.6rem;
+    color: #444;
+    margin-bottom: 8px;
 }
 
-/* -------------------------------------------------------
-   CANTIDAD + BOTÓN AGREGAR
-------------------------------------------------------- */
+.delivery-item-shopping-pineapple svg { 
+    flex-shrink: 0; 
+}
+
+.text-shopping-pineapple {
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+/* ── ACCIONES ── */
 .action-section-shopping-pineapple {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 15px;
+    gap: 12px;
+    padding-top: 4px;
 }
 
 .quantity-control-shopping-pineapple {
     display: flex;
     border: 1px solid #ccc;
-    border-radius: 8px;
+    border-radius: 6px;
     overflow: hidden;
 }
 
 .quantity-btn-shopping-pineapple {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     background: #f3f4f6;
     border: none;
+    font-size: 1.6rem;
     cursor: pointer;
-    font-size: 20px;
+    transition: background 0.15s;
 }
 
+.quantity-btn-shopping-pineapple:hover { background: #e5e7eb; }
+
 .quantity-input-shopping-pineapple {
-    width: 60px;
-    height: 40px;
+    width: 48px;
+    height: 36px;
     text-align: center;
     border: none;
     border-left: 1px solid #ccc;
     border-right: 1px solid #ccc;
-    font-size: 16px;
+    font-size: 1.6rem;
+    font-weight: 600;
+    -moz-appearance: textfield;
+}
+
+.quantity-input-shopping-pineapple::-webkit-outer-spin-button,
+.quantity-input-shopping-pineapple::-webkit-inner-spin-button { 
+    -webkit-appearance: none; 
 }
 
 .add-to-cart-btn-shopping-pineapple {
     background: #10b981;
     color: white;
     border: none;
-    padding: 8px 16px;
+    width: 150px;
+    height: 48px;
+    padding: 8px 18px;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 700;
     display: flex;
-    text-align: center;
     align-items: center;
+    gap: 8px;
     cursor: pointer;
-    transition: .3s;
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap;
 }
 
-.add-to-cart-btn-shopping-pineapple:hover {
-    background: #059669;
-    transform: translateY(-2px);
+.add-to-cart-btn-shopping-pineapple:hover { 
+    background: #059669; 
+    transform: translateY(-1px); 
+
+}
+.add-to-cart-btn-shopping-pineapple:active { 
+    transform: translateY(0); 
 }
 
-/* -------------------------------------------------------
-   DETALLES DEL PRODUCTO
-------------------------------------------------------- */
+/* ── DETALLES (segunda fila) ── */
 .product-details-shopping-pineapple {
-    margin-top: 40px;
-    padding: 24px;
-    background: #f0fdf4;
-    border-radius: 12px;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 20px 24px;
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    visibility: visible;
 }
 
 .details-header-shopping-pineapple {
-    font-size: 22px;
+    font-size: 1.6rem;
     font-weight: 700;
-    margin-bottom: 25px;
+    color: #222;
+    margin-bottom: 16px;
 }
 
 .details-grid-shopping-pineapple {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 16px;
 }
 
 .detail-item-shopping-pineapple {
     background: #f9fafb;
-    padding: 20px;
-    border-radius: 10px;
+    border-radius: 8px;
+    padding: 14px 16px;
 }
 
 .detail-label-shopping-pineapple {
-    font-size: 14px;
+    font-size: 1.6rem;
     color: #666;
     font-weight: 600;
+    margin-bottom: 4px;
 }
 
 .detail-value-shopping-pineapple {
-    font-size: 16px;
+    font-size: 1.6rem;
     font-weight: 700;
+    color: #222;
 }
 
-/* -------------------------------------------------------
-   BOTÓN REGRESAR
-------------------------------------------------------- */
+/* ── BOTÓN REGRESAR ── */
 .back-button-shopping-pineapple {
     position: fixed;
-    bottom: 40px;
-    right: 40px;
-    width: 60px;
-    height: 60px;
+    bottom: 32px;
+    right: 32px;
+    width: 52px;
+    height: 52px;
     background: #10b981;
     border-radius: 50%;
+    border: none;
     color: white;
     font-size: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    border: none;
+    box-shadow: 0 4px 14px rgba(16,185,129,0.4);
+    transition: background 0.2s, transform 0.15s;
+    z-index: 9999; 
 }
 
-/* -------------------------------------------------------
-   RESPONSIVE
-------------------------------------------------------- */
+.back-button-shopping-pineapple:hover { background: #059669; transform: translateY(-2px); }
+
+/* ───────────────────────────────────────── */
+/* ── RESPONSIVE 1024px ─────────────────── */
+/* ───────────────────────────────────────── */
 
 @media (max-width: 1024px) {
+
+    .main-content-shopping-pineapple {
+        padding: 32px 24px;
+    }
+
     .product-card-shopping-pineapple {
+        padding: 32px;
+        gap: 24px;
+    }
+
+    .product-title-shopping-pineapple {
+        font-size: 2.6rem;
+    }
+
+    .details-grid-shopping-pineapple {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .delivery-and-actions-shopping-pineapple {
+        flex-wrap: wrap;
+    }
+
+}
+
+
+/* ───────────────────────────────────────── */
+/* ── RESPONSIVE 768px (TABLET) ─────────── */
+/* ───────────────────────────────────────── */
+
+@media (max-width: 768px) {
+
+    /* Imagen arriba */
+    .product-top-row-shopping-pineapple {
         flex-direction: column;
         align-items: center;
+        gap: 24px;
+    }
+
+    .product-image-section-shopping-pineapple {
+        width: 100%;
+        max-width: 320px;
+        max-height: none;
+    }
+
+    .product-image-shopping-pineapple {
+        height: auto;
+        max-height: 320px;
+    }
+
+    .product-info-section-shopping-pineapple {
+        width: 100%;
+    }
+
+    .product-title-shopping-pineapple {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    .price-line-shopping-pineapple {
+        justify-content: center;
+    }
+
+    .seller-info-shopping-pineapple {
         text-align: center;
     }
 
     .product-main-details-shopping-pineapple {
         flex-direction: column;
+        gap: 20px;
     }
-}
 
-@media (max-width: 768px) {
+    .delivery-and-actions-shopping-pineapple {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .delivery-box-shopping-pineapple {
+        width: 100%;
+    }
+
+    .action-section-shopping-pineapple {
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .add-to-cart-btn-shopping-pineapple {
+        width: 100%;
+        justify-content: center;
+    }
+
     .details-grid-shopping-pineapple {
         grid-template-columns: 1fr;
     }
+
+    .back-button-shopping-pineapple {
+        bottom: 20px;
+        right: 20px;
+        width: 48px;
+        height: 48px;
+    }
+
+}
+
+
+/* ───────────────────────────────────────── */
+/* ── RESPONSIVE 480px (MÓVIL) ──────────── */
+/* ───────────────────────────────────────── */
+
+@media (max-width: 480px) {
+
+    .main-content-shopping-pineapple {
+        padding: 20px 16px;
+        padding-bottom: 100px;
+    }
+
+    .product-card-shopping-pineapple {
+        padding: 20px;
+        border-radius: 14px;
+    }
+
+    .product-title-shopping-pineapple {
+        font-size: 1.9rem;
+    }
+
+    .current-price-shopping-pineapple {
+        font-size: 2rem;
+    }
+
+    .old-price-shopping-pineapple {
+        font-size: 1.3rem;
+    }
+
+    .delivery-title-shopping-pineapple,
+    .delivery-item-shopping-pineapple,
+    .text-shopping-pineapple,
+    .detail-label-shopping-pineapple,
+    .detail-value-shopping-pineapple {
+        font-size: 1.4rem;
+    }
+
+    .quantity-btn-shopping-pineapple {
+        width: 32px;
+        height: 32px;
+    }
+
+    .quantity-input-shopping-pineapple {
+        width: 40px;
+        height: 32px;
+        font-size: 1.4rem;
+    }
+
 }
