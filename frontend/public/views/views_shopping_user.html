@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+
+    <link rel="stylesheet" href="/frontend/public/css/main.css">
+</head>
+<body>
+    <header class="header__index"> 
+        <div class="header__container"></div>
+    </header>
+    
+    <nav class="navbar__index">
+        <div class="navbar__container"></div>
+    </nav>
+
+    <!-- Placeholder donde inyectaremos shopping.html -->
+    <section class="shopping" aria-labelledby="shoppingTitle"></section> <!-- ST -->
+
+    <footer class="footer__index">
+        <div class="footer-container"></div>
+    </footer> 
+
+    <!-- Scripts: loader primero, lógica después -->
+    <script src="/frontend/public/js/components/header-index.js"></script>
+    <script src="/frontend/public/js/components/navbar-shopping-user.js"></script>
+
+    <!-- Loader ( Inserta el HTML del componente dentro de <section class="shopping") -->
+    <script src="/frontend/public/js/components/loader.js"></script> <!-- ST -->
+
+    <!-- Lógica del componente( depende de que el HTMl ya esté inyectado )-->
+    <script src="/frontend/public/js/components/shopping.js"></script> <!-- ST -->
+
+    <script src="/frontend/public/js/components/footer.js"></script>
+</body>
+</html>

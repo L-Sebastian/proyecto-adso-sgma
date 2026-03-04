@@ -1,6 +1,7 @@
 /* ==================== PAY CONTENT ==================== */
 .pay-content-pay {
-    background: url('/frontend/public/img/pay.jpg') center/cover no-repeat;
+    background: url('/frontend/public/assets/img/Pay.png') ;
+    background-size: cover;
     min-height: calc(100vh - 120px);
     padding: 40px;
     position: relative;

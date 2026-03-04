@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Perfil 2</title>
-    <link rel="stylesheet" href="/frontend/public/css/main.css">
+    <link rel="stylesheet" href="/frontend/public/css/main">
+
 </head>
 <body>
-    <header class="header__index-register"></header>
+    <header class="header__profile"> <!-- Sm -->
+        <div class="header__container"></div>
+    </header>
+
     <nav class="navbar-bottom-profile"></nav>
     <div class="container-main-profile"></div>
-    <footer class="footer"></footer>
+    <footer class="footer__index">
+        <div class="footer-container"></div>
+    </footer> <!-- Sm -->
 
     <!-- profile_data.js PRIMERO para que esté disponible cuando los demás scripts lo llamen -->
     <script src="/frontend/public/js/components/profile_data.js"></script>
-    <script src="/frontend/public/js/components/header.js"></script>
+    <script src="/frontend/public/js/components/header-profile.js"></script> <!-- Sm -->
     <script src="/frontend/public/js/components/navbar_profile2.js"></script>
     <script src="/frontend/public/js/components/edit_profile2.js"></script>
-    <script src="/frontend/public/js/components/footer.js"></script>
+    <script src="/frontend/public/js/components/footer.js"></script> <!-- Sm -->
 </body>
 </html>

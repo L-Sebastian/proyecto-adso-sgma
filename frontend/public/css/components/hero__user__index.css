@@ -1,5 +1,5 @@
 .hero__content__index__user {
-    background-image: url(/frontend/img/wallpaper_user.png);
+    background-image: url(/frontend/public/assets/img/parque-cafe.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }

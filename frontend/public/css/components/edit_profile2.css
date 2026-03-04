@@ -8,10 +8,13 @@
     justify-content: center;
     padding: var(--spacing-lg) var(--spacing-md);
     position: relative;
-    background-image: url('/frontend/public/img/Imagen de WhatsApp 2025-11-23 a las 12.22.26_dcce6e35.jpg');
+    background-image: url('/frontend/public/assets/img/Create.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    min-height: 100vh;
+    box-sizing: border-box;
+  
 }
 
 .background-overlay-profile {
@@ -216,7 +219,7 @@
     gap: var(--spacing-xs);
 }
 
-.form-group-profile label {
+.form-group-profile .label-edit-profile-user {
     color: var(--white);
     font-size: 1.2rem;
     font-weight: var(--fw-bold);
@@ -235,6 +238,7 @@
     font-family: var(--font-family-base);
     font-size: 1.6rem;
     transition: all var(--transition-md) ease;
+    border: none;
 }
 
 .form-input-profile-email{ 
@@ -247,6 +251,7 @@
     font-family: var(--font-family-base);
     font-size: 1.6rem;
     transition: all var(--transition-md) ease;
+    border: none;
 }
 
 .form-input-profile::placeholder {

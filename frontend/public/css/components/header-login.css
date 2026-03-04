@@ -30,6 +30,7 @@ body {
 .header__logo {
     padding-right: 5rem;
     gap: 24px;
+    display: flex;
 }
 
 .text {

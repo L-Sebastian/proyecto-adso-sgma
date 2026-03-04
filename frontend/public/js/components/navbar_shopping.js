@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(function (data) {
             navContainer.innerHTML = data;
+            aplicarDatosNavbar();
 
             /* Resaltar enlace activo */
             var currentPage = window.location.pathname.split('/').pop() || 'index.html';
@@ -25,7 +26,34 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
         })
+
+        // .then(function (data) {
+        //     navContainer.innerHTML = data;
+        //     aplicarDatosNavbar();
+        // })
         .catch(function (error) {
             console.error('Error cargando el navbar:', error);
         });
 });
+
+function aplicarDatosNavbar() {
+
+    /* ── Foto de perfil desde localStorage ── */
+    const avatarImg = document.querySelector('[data-profile-photo]');
+    const avatarSvg = document.querySelector('[data-profile-svg]');
+    const foto = localStorage.getItem('profilePhoto');
+
+    if (foto && avatarImg) {
+        avatarImg.src = foto;
+        avatarImg.style.display = 'block';
+        if (avatarSvg) avatarSvg.style.display = 'none';
+    } else if (avatarSvg) {
+        /* Sin foto → mostrar SVG por defecto */
+        avatarSvg.style.display = 'block';
+    }
+
+    /* Llamar función global por si hay otros navbars en el DOM */
+    if (typeof window.aplicarDatosPerfil === 'function') {
+        window.aplicarDatosPerfil();
+    }
+}

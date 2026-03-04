@@ -9,9 +9,10 @@
                     <input type="file" id="photoInput" accept="image/*" style="display:none;">
 
                     <div class="avatar" id="avatarContainer">
-                        <img id="avatarImg" src="" alt="Foto de perfil" style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:none;">
+                        <img id="avatarImg" src="" alt="Foto de perfil"
+                             style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:none;">
                         <svg id="avatarSvg" class="avatar-icon" viewBox="0 0 24 24" fill="none"
-                            stroke="currentColor" stroke-width="2">
+                             stroke="currentColor" stroke-width="2">
                             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                             <circle cx="12" cy="7" r="4"></circle>
                         </svg>
@@ -30,39 +31,44 @@
                 </div>
 
                 <!-- Right Column - Form (solo lectura) -->
-                <div class="profile-right">
+                <div class="profile-right-user">
                     <div class="form-row-edit-profile-user">
                         <div class="form-group-edit-profile-user">
-                            <label for="firstName">1mer Nombre</label>
-                            <input type="text" id="firstName" name="firstName" value="Juan" class="form-input-edit-profile-user" readonly>
+                            <label class="label-edit-profile-user" for="firstName">1mer Nombre</label>
+                            <input type="text" id="firstName" name="firstName"
+                                   value="Juan" class="form-input-edit-profile-user" readonly>
                         </div>
                         <div class="form-group-edit-profile-user">
-                            <label for="secondName">2do Nombre</label>
-                            <input type="text" id="secondName" name="secondName" value="Antonio" class="form-input-edit-profile-user" readonly>
+                            <label class="label-edit-profile-user" for="secondName" >2do Nombre</label>
+                            <input type="text" id="secondName" name="secondName"
+                                   value="Antonio" class="form-input-edit-profile-user" readonly>
                         </div>
                     </div>
 
                     <div class="form-row-edit-profile-user">
                         <div class="form-group-edit-profile-user">
-                            <label for="firstLastName">1mer Apellido</label>
-                            <input type="text" id="firstLastName" name="firstLastName" value="de la Cruz" class="form-input-edit-profile-user" readonly>
+                            <label class="label-edit-profile-user" for="firstLastName">1mer Apellido</label>
+                            <input type="text" id="firstLastName" name="firstLastName"
+                                   value="de la Cruz" class="form-input-edit-profile-user" readonly>
                         </div>
                         <div class="form-group-edit-profile-user">
-                            <label for="secondLastName">2do Apellido</label>
-                            <input type="text" id="secondLastName" name="secondLastName" value="" class="form-input-edit-profile-user" readonly>
+                            <label class="label-edit-profile-user" for="secondLastName">2do Apellido</label>
+                            <input type="text" id="secondLastName" name="secondLastName"
+                                   value="" class="form-input-edit-profile-user" readonly>
                         </div>
                     </div>
 
                     <div class="form-row-edit-profile-user full-width">
                         <div class="form-group-edit-profile-user">
-                            <label for="email">Correo electrónico</label>
-                            <input type="email" id="email" name="email" value="juandelosantoscruz11@gmail.com" class="form-input-edit-profile-user" readonly>
+                            <label class="label-edit-profile-user" for="email">Correo electrónico</label>
+                            <input type="email" id="email" name="email"
+                                   value="juandelosantoscruz11@gmail.com" class="form-input-edit-profile-user" readonly>
                         </div>
                     </div>
 
                     <div class="form-row-edit-profile-user">
                         <div class="form-group-edit-profile-user">
-                            <label for="departamento">Departamento</label>
+                            <label class="label-edit-profile-user" for="departamento">Departamento</label>
                             <select id="departamento" name="departamento"
                                     class="profile__form-select" disabled
                                     autocomplete="address-level1">
@@ -72,9 +78,10 @@
                                 <option value="Caldas">Caldas</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="address">Dirección</label>
-                            <input type="text" id="address" name="address" value="Calle 18 #3-60, Pereira" class="form-input-edit-profile-user" readonly>
+                        <div class="form-group-edit-profile-user">
+                            <label class="label-edit-profile-user"for="address">Dirección</label>
+                            <input type="text" id="address" name="address"
+                                   value="Calle 18 #3-60, Pereira" class="form-input-edit-profile-user" readonly>
                         </div>
                     </div>
                 </div>

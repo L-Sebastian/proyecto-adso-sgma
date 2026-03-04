@@ -11,7 +11,7 @@
 
 /* Imagen de fondo — ocupa toda la sección */
 .shopping__hero {
-    background: url('/frontend/public/img/shopping.jpg') center/cover no-repeat;
+    background: url('/frontend/public/assets/img/Pay.png') center/cover no-repeat;
     position: absolute;
     inset: 0;
     z-index: 0;

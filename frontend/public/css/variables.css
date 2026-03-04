@@ -166,56 +166,57 @@
     /* Iconos */
     --btn-icon-size: 1.8rem;   /* 18px */
     --icon-button-size: 2.4rem; /* 24px */
-    
 
-      /* spacing scale */
-  --spacing-xs: 0.5rem;   /* 8px */
-  --spacing-sm: 0.75rem;  /* 12px */
-  --spacing-md: 1rem;     /* 16px */
-  --spacing-lg: 1.5rem;   /* 24px */
-  --spacing-xl: 2rem;     /* 32px */
 
-  /* buttons */
-  --button-radius: 1.875rem; /* 30px -> 1.875rem */
-  --button-padding-y: 1rem;  /* 16px */
-  --button-padding-x: 0.667rem; /* 10px */
-  /* 150 x 40 */
+    /* ST */
+    /* spacing scale */
+    --spacing-xs: 0.5rem;   /* 8px */
+    --spacing-sm: 0.75rem;  /* 12px */
+    --spacing-md: 1rem;     /* 16px */
+    --spacing-lg: 1.5rem;   /* 24px */
+    --spacing-xl: 2rem;     /* 32px */
 
-  /* fonts (correcto fallback) */
-  --font-family-base: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-family-logo: "Century", serif;
+    /* buttons */
+    --button-radius: 1.875rem; /* 30px -> 1.875rem */
+    --button-padding-y: 1rem;  /* 16px */
+    --button-padding-x: 0.667rem; /* 10px */
+    /* 150 x 40 */
 
-  /* font sizes (in rem) */
-  --fs-precio: 2.25rem; /* 36px */
-  --fs-h1: 2rem;  /* 32px */
-  --fs-hero: 3rem;   /* 48px */
-  --fs-h2: 1.5rem;  /* 24px */
-  --fs-h3: 1.25rem;  /* 20px */
-  --fs-h4: 1rem;  /* 20px */
-  --fs-body: 1rem;   /* 16px */
-  --fs-h5: 0.875rem; /* 14px */
-  --fs-small: 0.75rem; /* 12px */
+    /* fonts (correcto fallback) */
+    --font-family-base: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-family-logo: "Century", serif;
 
-  /* font weights */
-  --fw-regular: 400;
-  --fw-medium: 500;
-  --fw-bold: 700;
+    /* font sizes (in rem) */
+    --fs-precio: 2.25rem; /* 36px */
+    --fs-h1: 2rem;  /* 32px */
+    --fs-hero: 3rem;   /* 48px */
+    --fs-h2: 1.5rem;  /* 24px */
+    --fs-h3: 1.25rem;  /* 20px */
+    --fs-h4: 1rem;  /* 20px */
+    --fs-body: 1rem;   /* 16px */
+    --fs-h5: 0.875rem; /* 14px */
+    --fs-small: 0.75rem; /* 12px */
 
-  /* transition */
-  --transition-fast: 180ms;
-  --transition-md: 300ms;
+    /* font weights */
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-bold: 700;
 
-  /* accessible focus outline */
-  --focus-ring: 0 0 0 0.2rem rgba(0,193,106,0.24); /* verde primario-600 hue */
+    /* transition */
+    --transition-fast: 180ms;
+    --transition-md: 300ms;
 
-  --v-primary-600: var(--primary-600);
-  --v-primary-700: var(--primary-700);
-  --v-secondary-800: var(--primary-secundary-800);
-  --v-white: var(--white);
-  --v-surface: #ffffff;
-  --v-error: #e74c3c;
-  --v-focus-ring: 0 0 0 0.2rem rgba(0,193,106,0.18);
-  --v-input-size: 3rem; 
-  --v-input-gap: 0.75rem;
+    /* accessible focus outline */
+    --focus-ring: 0 0 0 0.2rem rgba(0,193,106,0.24); /* verde primario-600 hue */
+
+    --v-primary-600: var(--primary-600);
+    --v-primary-700: var(--primary-700);
+    --v-secondary-800: var(--primary-secundary-800);
+    --v-white: var(--white);
+    --v-surface: #ffffff;
+    --v-error: #e74c3c;
+    --v-focus-ring: 0 0 0 0.2rem rgba(0,193,106,0.18);
+    --v-input-size: 3rem; 
+    --v-input-gap: 0.75rem;
 
 }

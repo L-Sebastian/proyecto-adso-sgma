@@ -9,18 +9,23 @@
 </head>
 <body>
     <!-- 1. Contenedor para el Header (será llenado por header.js) -->
-    <header class="header__index-register"></header>
+    <header class="header__index">
+        <div class="header__container"></div>
+    </header>
     
-    <!-- 2. Contenedor para el Cuerpo (será llenado por welcome.js) -->
-    <nav class="navbar"></nav>
+     <nav class="navbar__index">
+        <div class="navbar__container"></div>
+    </nav> <!-- Sm -->
 
     <section class="checkout-container"></section>
 
-    <footer class="footer"></footer>
+    <footer class="footer__index">
+        <div class="footer-container"></div>
+    </footer>
 
     <!-- Carga de scripts al final del body para mejor rendimiento -->
-    <script src="/frontend/public/js/components/header.js"></script>
-    <script src="/frontend/public/js/components/navbar_shopping.js"></script>
+    <script src="/frontend/public/js/components/header-index.js"></script>
+    <script src="/frontend/public/js/components/navbar-shopping-user.js"></script>
     <script src="/frontend/public/js/components/pay.js"></script>
     <script src="/frontend/public/js/components/footer.js"></script>
 </body>

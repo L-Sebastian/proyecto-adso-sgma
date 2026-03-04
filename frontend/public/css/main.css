@@ -34,6 +34,10 @@
 @import url('components/hero__user__index.css');
 /* Import Index Seller */
 @import url('components/hero-seller.css');
+/* Import Profile */
+@import url('components/header-profile.css');
+/* Import Product */
+@import url("components/header-product.css");
 
 /* Import ST */
 @import url('components/navbar.css');
@@ -56,9 +60,6 @@
 @import url('components/recovery.css');
 @import url('components/create_product.css');
 
-@import url('components/product_new.css');
-@import url('components/product_new-2.css');
-@import url('components/edit_product.css');
 @import url('components/pay.css');
 @import url('components/login.css');
 @import url('components/header_2.css');
@@ -67,3 +68,6 @@
 @import url('components/card_product.css');
 @import url('components/cards_descuent.css');
 @import url('components/navbar_create_product.css');
+@import url('components/product_new.css');
+@import url('components/product_new-2.css');
+@import url('components/edit_product.css');

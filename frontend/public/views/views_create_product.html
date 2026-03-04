@@ -9,17 +9,21 @@
 </head>
 <body>
     <!-- 1. Contenedor para el Header (será llenado por header.js) -->
-    <header class="header__index__producto"></header>
+    <header class="header__product"> <!-- Sm -->
+        <div class="header__container"></div>
+    </header>
     
     <!-- 2. Contenedor para el Cuerpo (será llenado por welcome.js) -->
     <nav class="navbar-bottom-product"></nav>
 
     <main class="main-content-create"></main>
 
-    <footer class="footer"></footer>
+    <footer class="footer__index">
+        <div class="footer-container"></div>
+    </footer> <!-- Sm -->
 
     <!-- Carga de scripts al final del body para mejor rendimiento -->
-    <script src="/frontend/public/js/components/header_create_product.js"></script>
+    <script src="/frontend/public/js/components/header-product.js"></script> <!-- Sm -->
     <script src="/frontend/public/js/components/navbar_create_product.js"></script>
     <script src="/frontend/public/js/components/create_product.js"></script>
     <script src="/frontend/public/js/components/footer.js"></script>

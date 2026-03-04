@@ -1,0 +1,66 @@
+/* Para quitarle el espacio en blanco */
+
+.header__product{
+    background:  linear-gradient(to right, var(--primary-secundary-700) 14%, var(--primary-600) 25%);
+    /*alterar el padding aqui, tambien altera en el index*/
+    /* padding 25 en el componente */
+    /*padding: 15px;*/
+    padding: 1.5px;
+    color: white;
+    
+}
+
+.header__container {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    margin-left: 3rem;
+    gap: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    
+}
+
+.header__logo__index {
+    padding-right: 5rem;
+    margin-top: 0.2rem;
+
+    
+}
+.header__text {
+    /* Esta medida sive para la pantalla 100% de zoom*/ 
+    margin-right: 23rem;
+}
+
+
+.icon_two { 
+    /*Espacio izquierdo, esto con la funcionalidad de estar separado con el icono y texto ezquierdo.*/ 
+    padding-left: rem;
+}
+
+/* Responsive */ 
+@media (max-width > 768px) {
+    .navbar-container{
+        flex-direction: column;
+        
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-right {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+    .navbar-left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+}
+
+

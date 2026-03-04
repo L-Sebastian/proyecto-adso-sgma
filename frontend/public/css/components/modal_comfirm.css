@@ -16,11 +16,11 @@
     width: 100%;
     height: 35vh;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-
+    margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-end; /* 👈 BAJA TODO */
-    padding: 24px;
+    padding: 8rem;
 }
 
 
@@ -33,10 +33,11 @@
 /* ==================== MODAL TITLE ==================== */
 .modal-title {
     color: #fff;
-    font-size: var(--fs-h1);
+    font-size: 2.4rem;
     font-weight: 600;
     margin-bottom: 2rem;
     text-align: center;
+    
 }
 
 /* ==================== MODAL ACTIONS ==================== */
@@ -52,11 +53,12 @@
     color: #fff;
     border: none;
     padding: var(--button-padding-x) var(--button-padding-y);
-    font-size: 1rem;
+    font-size: 1.6rem;
     font-weight: 600;
     cursor: pointer;
     min-width: 100px;
     width: 150px;
+    height: 40px;
     transition: background 0.2s ease, transform 0.1s ease;
 }
 

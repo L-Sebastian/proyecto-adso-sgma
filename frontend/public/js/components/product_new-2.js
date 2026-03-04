@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 });
 
-var UNA_HORA_MS = 60 * 60 * 1000; /* 3600000 ms */
+var UNA_HORA_MS = 5 * 5 * 1000; /* 3600000 ms */
 
 /* ── Productos fijos sección Frutas ── */
 var productosBase = [
