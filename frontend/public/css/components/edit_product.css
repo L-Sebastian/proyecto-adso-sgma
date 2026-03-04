@@ -1,0 +1,192 @@
+/* EDIT PRODUCT — sin reset *, sin body */
+
+.ep-page {
+    background: #c8ecd4;
+    min-height: calc(100vh - 3.5rem);
+    padding: 40px 48px 80px;
+    box-sizing: border-box;
+    font-family: var(--font-family-base);
+}
+
+.ep-wrapper {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08);
+    box-sizing: border-box;
+}
+
+/* ── IMAGEN ── */
+.ep-image-section {
+    flex-shrink: 0;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.ep-image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.ep-avatar {
+    width: 180px;
+    height: 180px;
+    border-radius: 12px;
+    border: 2px dashed #d1d5db;
+    background: #f9fafb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.ep-avatar:hover { border-color: #10b981; }
+
+.ep-img-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+/* ── FORMULARIO ── */
+.ep-form-section {
+    flex: 1;
+    min-width: 0;
+}
+
+.ep-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #1a4a6b;
+    margin: 0 0 24px 0;
+}
+
+.ep-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.ep-full-width {
+    grid-column: 1 / -1;
+}
+
+.ep-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.ep-label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+.ep-input,
+.ep-select,
+.ep-textarea {
+    padding: 9px 12px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 1.6rem;
+    color: #111;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+    width: 100%;
+    font-family: var(--font-family-base);
+}
+
+.ep-input:focus,
+.ep-select:focus,
+.ep-textarea:focus {
+    outline: none;
+    border-color: #10b981;
+}
+
+.ep-textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* ── BOTONES ── */
+.ep-btn-row {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.ep-btn {
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    cursor: pointer;
+    border: none;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.ep-btn:hover { transform: translateY(-1px); }
+
+.ep-btn-primary {
+    background: #10b981;
+    color: white;
+}
+.ep-btn-primary:hover { background: #059669; }
+
+.ep-btn-secondary {
+    background: #f3f4f6;
+    color: #374151;
+    border: 1.5px solid #d1d5db;
+}
+.ep-btn-secondary:hover { background: #e5e7eb; }
+
+.ep-btn-danger {
+    background: #fee2e2;
+    color: #dc2626;
+    border: 1.5px solid #fca5a5;
+}
+.ep-btn-danger:hover { background: #fecaca; }
+
+/* ── TOAST ── */
+.ep-toast {
+    position: fixed;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%) translateY(80px);
+    background: #10b981;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    box-shadow: 0 4px 16px rgba(16,185,129,0.4);
+    transition: transform 0.3s ease;
+    z-index: 999;
+    pointer-events: none;
+}
+.ep-toast.show { transform: translateX(-50%) translateY(0); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+    .ep-page { padding: 20px 16px 60px; }
+    .ep-wrapper { flex-direction: column; padding: 24px; gap: 24px; }
+    .ep-image-section { width: 100%; align-items: center; }
+    .ep-form-grid { grid-template-columns: 1fr; }
+    .ep-btn-row { flex-direction: column; }
+}

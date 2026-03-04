@@ -1,0 +1,119 @@
+<div class="ep-page">
+
+    <div class="ep-wrapper">
+
+        <!-- Imagen -->
+        <div class="ep-image-section">
+            <div class="ep-image-container">
+                <input type="file" id="epPhotoInput" accept="image/*" style="display:none;">
+                <div class="ep-avatar" id="epAvatarContainer">
+                    <img id="epAvatarImg" src="" alt="Foto producto"
+                         style="width:100%;height:100%;object-fit:cover;border-radius:12px;display:none;">
+                    <svg id="epAvatarSvg" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5"
+                         style="width:60px;height:60px;">
+                        <rect x="3" y="3" width="18" height="18" rx="3"/>
+                        <circle cx="8.5" cy="8.5" r="1.5"/>
+                        <path d="M21 15l-5-5L5 21"/>
+                    </svg>
+                </div>
+                <div class="ep-img-buttons">
+                    <button class="ep-btn ep-btn-secondary" id="epBtnCambiarFoto" type="button">Cambiar Foto</button>
+                    <button class="ep-btn ep-btn-danger"    id="epBtnEliminarFoto" type="button">Eliminar Foto</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formulario -->
+        <div class="ep-form-section">
+            <h2 class="ep-title">Editar Producto</h2>
+
+            <form id="editProductForm">
+                <div class="ep-form-grid">
+
+                    <div class="ep-form-group">
+                        <label class="ep-label">Nombre Producto</label>
+                        <input type="text" class="ep-input" id="epNombre">
+                    </div>
+
+                    <div class="ep-form-group">
+                        <label class="ep-label">Tipo de producto</label>
+                        <select class="ep-select" id="epTipo">
+                            <option value="fruta">Fruta</option>
+                            <option value="verdura">Verdura</option>
+                            <option value="carnes">Carne</option>
+                            <option value="fertilizantes">Fertilizante</option>
+                        </select>
+                    </div>
+
+                    <div class="ep-form-group">
+                        <label class="ep-label">Peso</label>
+                        <input type="number" class="ep-input" id="epPeso">
+                    </div>
+
+                    <div class="ep-form-group">
+                        <label class="ep-label">Tipo de peso</label>
+                        <select class="ep-select" id="epTipoPeso">
+                            <option value="kilos">Kilos</option>
+                            <option value="gramos">Gramos</option>
+                            <option value="libras">Libras</option>
+                            <option value="toneladas">Toneladas</option>
+                        </select>
+                    </div>
+
+                    <div class="ep-form-group">
+                        <label class="ep-label">Precio</label>
+                        <input type="text" class="ep-input" id="epPrecio">
+                    </div>
+
+                    <div class="ep-form-group">
+                        <label class="ep-label">Descuento</label>
+                        <select class="ep-select" id="epDescuento">
+                            <option value="no">No aplica</option>
+                            <option value="10">10%</option>
+                            <option value="15">15%</option>
+                            <option value="20">20%</option>
+                        </select>
+                    </div>
+
+                    <div class="ep-form-group">
+                        <label class="ep-label">Nombre Finca</label>
+                        <input type="text" class="ep-input" id="epFinca">
+                    </div>
+
+                    <div class="ep-form-group">
+                        <label class="ep-label">Stock</label>
+                        <input type="number" class="ep-input" id="epStock">
+                    </div>
+
+                    <div class="ep-form-group">
+                        <label class="ep-label">Dirección Finca</label>
+                        <input type="text" class="ep-input" id="epDireccion">
+                    </div>
+
+                    <div class="ep-form-group">
+                        <label class="ep-label">Tipo de Envío</label>
+                        <select class="ep-select" id="epTipoEnvio">
+                            <option value="domicilio">Domicilio</option>
+                            <option value="recogida">Recogida en Finca</option>
+                            <option value="transporte">Transporte Propio</option>
+                            <option value="mensajeria">Mensajería</option>
+                        </select>
+                    </div>
+
+                    <div class="ep-form-group ep-full-width">
+                        <label class="ep-label">Descripción</label>
+                        <textarea class="ep-textarea" id="epDescripcion" rows="3"></textarea>
+                    </div>
+
+                </div>
+
+                <div class="ep-btn-row">
+                    <button type="button" class="ep-btn ep-btn-secondary" id="epBtnVolver">Volver</button>
+                    <button type="submit" class="ep-btn ep-btn-primary">Guardar Cambios</button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>
