@@ -1,24 +1,64 @@
 /* El archivo main.css solo debe importar los demás para evitar múltiples solicitudes HTTP en producción: */
 
-@import url('reset.css');
 @import url('variables.css');
-@import url('layout.css');
+@import url('layout.css'); 
+@import url('components/navbar.css');
+@import url('components/footer.css');
+/* @import url('/css/components/header_index.css'); */
+/* Import Index */
+@import url('components/header-index.css');
+@import url('components/hero-index.css');
+@import url('components/agriculture.css');
+@import url('components/products-index.css');
+@import url('components/card.css');
+@import url('components/hero-tree.css');
+@import url('components/form.css');
+/* Import US */
+@import url('components/hero-us.css');
+@import url('components/box.css');
+/* Import BUY */
+/* @import url('components/header-buy.css'); Corregir este header, ya que desconfigura el header del index */
+@import url('components/filters-button-buy.css'); /* Problema con el header */
+@import url('components/products-filter-buy.css');
+/* Import BLOG */
+@import url('components/navbar_blog_user.css');
+
+@import url('components/hero-blog.css');
+@import url('components/shere-section-blog.css');
+/* Import Events */
+
+/* Import Login */
+@import url('components/header-login.css');
+@import url('components/login-content.css');
+/* Import Index User */
+@import url('components/hero__user__index.css');
+/* Import Index Seller */
+@import url('components/hero-seller.css');
+
+/* Import ST */
 @import url('components/navbar.css');
 @import url('components/navbarshopping.css');
+/* */
 @import url('components/navbar_register.css');
-@import url('components/header.css');
+/* @import url('components/header.css'); */
 @import url('components/header_create_product.css');
 @import url('components/create_product_2.css');
 @import url('components/welcome.css');
 @import url('components/shopping.css');
 @import url('components/shopping_pineapple.css');
+/**/
 @import url('components/edit_profile2.css');
+/**/
 @import url('components/edit_profile.css');
 @import url('components/navbar_profile.css');
 @import url('components/verification.css');
 @import url('components/register.css');
 @import url('components/recovery.css');
 @import url('components/create_product.css');
+
+@import url('components/product_new.css');
+@import url('components/product_new-2.css');
+@import url('components/edit_product.css');
 @import url('components/pay.css');
 @import url('components/login.css');
 @import url('components/header_2.css');
@@ -27,7 +67,3 @@
 @import url('components/card_product.css');
 @import url('components/cards_descuent.css');
 @import url('components/navbar_create_product.css');
-@import url('components/footer.css');
-/* @import url('components/forms.css'); */
-/* @import url('pages/home.css'); */
-/* @import url('themes/dark-mode.css'); */

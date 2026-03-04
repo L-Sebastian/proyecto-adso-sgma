@@ -3,7 +3,7 @@
     background-color: #000;
     color: white;
     padding: 6px 40px;
-    font-family: var(--font-family-base);
+    /* font-family: var(--font-family-base); */
     font-size: 1.6rem;
     position: relative;
 }

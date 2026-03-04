@@ -1,63 +1,174 @@
-:root{
-  /* PRIMARY (verde) */
-  --primary-950: #00341e;
-  --primary-900: #0a5d3a;
-  --primary-800: #0a7144;
-  --primary-700: #049152;
-  --primary-600: #00c16a;
-  --primary-500: #09de7d;
-  --primary-400: #33f59d;
-  --primary-300: #76ffc0;
-  --primary-200: #b2ffdb;
-  --primary-100: #d7ffec;
-  --primary-50:  #eefff6;
+:root {
+    /* Primary color*/
 
-  /* PRIMARY-SECUNDARY (azul) */
-  --primary-secundary-950: #142b3d;
-  --primary-secundary-900: #1e425c;
-  --primary-secundary-800: #1e4f6e;
-  --primary-secundary-700: #215f88;
-  --primary-secundary-600: #2673a3;
-  --primary-secundary-500: #3690c1;
-  --primary-secundary-400: #5baad5;
-  --primary-secundary-300: #94c7e5;
-  --primary-secundary-200: #c6e0f1;
-  --primary-secundary-100: #e6f0f8;
-  --primary-secundary-50:  #f3f8fc;
+    --primary-950: #00341e;
+    --primary-900: #0a5d3a;
+    --primary-800: #0a7144;
+    --primary-700: #049152;
+    --primary-600: #00c16a; /*color primario*/ 
+    --primary-500: #09de7d;
+    --primary-400: #33f59d;
+    --primary-300: #76ffc0;
+    --primary-200: #b2ffdb;
+    --primary-100: #d7ffec;
+    --primary-50: #eefff6;
 
-  /* SECUNDARY */
-  --secundary-950: #181D16;
-  --secundary-900: #313A2D;
-  --secundary-800: #3B4536;
-  --secundary-700: #475540;
-  --secundary-600: #5B6D51;
-  --secundary-500: #708364;
-  --secundary-400: #90A286;
-  --secundary-300: #B7C5B0;
-  --secundary-200: #D8DFD3;
-  --secundary-100: #EBEFE9;
-  --secundary-50:  #F6F8F5;
+    /*Secound primary color*/
 
-  /* TERCIARY (corregido nombre consistente) */
-  --terciary-950: #12260D;
-  --terciary-900: #294621;
-  --terciary-800: #2E5222;
-  --terciary-700: #366625;
-  --terciary-600: #44852B;
-  --terciary-500: #5AA73B;
-  --terciary-400: #79C259;
-  --terciary-300: #9CD581;
-  --terciary-200: #C2E6B0;
-  --terciary-100: #E4F4DB;
-  --terciary-50:  #F1F9EC;
+    --primary-secundary-950: #142b3d;
+    --primary-secundary-900: #1e425c;
+    --primary-secundary-800: #1e4f6e;
+    --primary-secundary-700: #215f88; /*color primario*/ 
+    --primary-secundary-600: #2673a3; 
+    --primary-secundary-500: #3690c1;
+    --primary-secundary-400: #5baad5;
+    --primary-secundary-300: #94c7e5;
+    --primary-secundary-200: #c6e0f1;
+    --primary-secundary-100: #e6f0f8;
+    --primary-secundary-50: #f3f8fc;
 
-  --gray-200: #d4d4d4;
+    /* Secundary color*/
 
-  /* Basics */
-  --white: #ffffff;
-  --black: #000000;
+    --secundary-950: #181D16;
+    --secundary-900: #313A2D;
+    --secundary-800: #3B4536;
+    --secundary-700: #475540;
+    --secundary-600: #5B6D51; /* Secundary color */ 
+    --secundary-500: #708364;
+    --secundary-400: #90A286;
+    --secundary-300: #B7C5B0;
+    --secundary-200: #D8DFD3;
+    --secundary-100: #EBEFE9;
+    --secundary-50: #F6F8F5;
 
-  /* spacing scale */
+     /* Tertiary color*/
+
+    --terciary-950: #12260D;
+    --terciary-900: #294621;
+    --terciary-800: #2E5222;
+    --terciary-700: #366625;
+    --terciary-600: #44852B;
+    --terciary-500: #5AA73B;
+    --terciary-400: #79C259;
+    --terciary-300: #9CD581;
+    --terciary-200: #C2E6B0;
+    --terciary-100: #E4F4DB; /* Tertiary color */
+    --tertiary-50: #F1F9EC;
+
+    /* Basic color*/
+    --white: #fff;
+    --black: #000;
+    --gray-950: #101010;
+    --gray-900: #262626;
+    --gray-800: #3B3B3B;
+    --gray-700: #515151;
+    --gray-600: #676767;
+    --gray-500: #7D7D7D;
+    --gray-400: #929292;
+    --gray-300: #A8A8A8;
+    --gray-200: #BEBEBE;
+    --gray-100: #D4D4D4;
+    --gray-50: #E9E9E9;
+
+    /* Font-family */
+    --main-font: Helvetica, Arial, sans-serif;
+    --main-poppins: ;
+    
+
+    /* Font-size */
+    --fs-xxxxl: 8.0rem; /* Ultra grande */
+    --fs-xxxl: 6.4rem; /* Súper grande */
+    --fs-xxl: 4.8rem; /* Extra grande */
+    --fs-xl: 4.0rem;  /* Muy grande */
+    --fs-lg: 3.2rem;  /* Grande */
+    --fs-md: 2.4rem;  /* Mediano */
+    --fs-sm: 2.0rem;  /* Pequeño */
+    --fs-xs: 1.6rem;  /* Extra pequeño */
+    --fs-xxs: 1.4rem; /* Extra extra pequeño */
+    --fs-xxxs: 1.2rem; /* Mínimo */
+
+    /* medidas de botones */
+
+    --padding-top: 16px;
+    --padding-button: 0 16px;
+
+    /*******************************************
+    ***************** Botones *****************
+    *******************************************/
+
+    /* Colores principales */
+    --button-big: var(--primary-500);
+    --btn-bg-hover: var(--primary-600);
+    --btn-bg-disabled: var(--primary-200);
+    --btn-text: var(--white);
+    --btn-text-disabled: var(--gray-500);
+
+    /* Tipografía */
+    --btn-font-size: 1.6rem;        /* 16px */
+    --btn-font-weight: 500;         /* semi-bold */
+    --btn-font-bold: 700;
+    --btn-font-italic: italic;
+    --btn-font-normal: normal;
+
+    /* Espaciados */
+    --btn-padding: 1.6rem 1.6rem;   /* 16px */
+    --btn-padding-y: 1.6rem;        /* 16px */
+    --btn-padding-top: 12px;    
+    --btn-padding-bottom: 12px; 
+    --btn-padding-x: 1.6rem;        /* 16px */
+    --btn-gap: 1.6rem;              /* 16px entre icono y texto */
+    --btn-margin: 0.8rem;           /* 8px margen estándar */
+
+    /* Bordes */
+    --btn-border-radius: 0.8rem;    /* 8px */
+    --btn-border-radius-lg: 1.2rem; /* 12px estilo pill */
+    --btn-border: none;
+
+    /* Sombras */
+    --btn-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.15);
+    --btn-shadow-hover: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.2);
+
+    /* Tamaños mínimos */
+    --btn-min-height: 4rem;       /* 40px */
+    --btn-max-height: 5.6rem;       /* 56px */
+    --btn-min-width: 5.6rem;        /* 56px */
+
+    /* ================================
+    Variantes de Tamaño
+    ================================ */
+    --btn-sm-padding-y: 0.4rem;     /* 4px */
+    --btn-sm-padding-x: 1.2rem;     /* 12px */
+    --btn-sm-font-size: 1.2rem;     /* 12px */
+
+    --btn-md-padding-y: 0.8rem;     /* 8px */
+    --btn-md-padding-x: 1.6rem;     /* 16px */
+    --btn-md-font-size: 1.4rem;     /* 14px */
+
+    --btn-lg-padding-y: 1.2rem;     /* 12px */
+    --btn-lg-padding-x: 2rem;       /* 20px */
+    --btn-lg-font-size: 1.6rem;     /* 16px */
+
+    /* Espaciado de letras */
+    --btn-letter-spacing: 0.02857em; /* valor por defecto de Material Design */
+
+    /* Transiciones */
+    --btn-transition-duration: 150ms;
+    --btn-transition-timing: ease-in-out;
+
+    /* Estado presionado */
+    --btn-bg-pressed: var(--primary-700);
+    --btn-text-pressed: var(--white);
+    --btn-shadow-pressed: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.25);
+
+    /* Estado hover */
+    --btn-text-hover: var(--white);
+
+    /* Iconos */
+    --btn-icon-size: 1.8rem;   /* 18px */
+    --icon-button-size: 2.4rem; /* 24px */
+    
+
+      /* spacing scale */
   --spacing-xs: 0.5rem;   /* 8px */
   --spacing-sm: 0.75rem;  /* 12px */
   --spacing-md: 1rem;     /* 16px */

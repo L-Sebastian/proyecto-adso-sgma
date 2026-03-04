@@ -1,12 +1,8 @@
 /* Reset y estilos base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; */
     background: linear-gradient(135deg, #5eead4 0%, #a5f3fc 50%, #6ee7b7 100%);
     min-height: 100vh;
     padding: 3rem 1rem;

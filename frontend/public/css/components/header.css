@@ -1,139 +1,150 @@
-.header__index-register {
-  background: linear-gradient(90deg, var(--primary-secundary-700) 70%, var(--primary-600) 100%);
-  color: var(--white);
-  padding: 0.7rem 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+/* Para quitarle el espacio en blanco */
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
-  
+}
+header{
+    background:  linear-gradient(to left, var(--primary-600) 2%, var(--primary-secundary-700) 25%);
+    /*alterar el padding aqui, tambien altera en el index*/
+    /* padding 25 en el componente */
+    /*padding: 15px;*/
+    padding: 3px;
+    color: white;
+    
 }
 
-.header__content-register {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1200px;
+.header__content {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+
+
+    margin-left: 3rem;
+    gap: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    
 }
 
-/* --- Contenedor de los correos y teléfono --- */
-.header__info-register {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
+.header__logo {
+    padding-right: 5rem;
+    margin-top: 0.2rem;
+    padding-left: 63rem;
+    
 }
 
-/* Ícono + texto juntos */
-.header__item-register {
-  display: flex;
-  align-items: center;
-  gap: 6px;
+
+
+img {
+    /* Alineamiento de los iconos */
+    margin-top: 0.3rem;
 }
 
-.header__item-register img {
-  width: 22px;
-  height: 22px;
-  margin: 0;
+.icon_one {
+    padding-left: ;
 }
 
-.header__item-register p {
-  margin: 0;
-  font-size: 1.6rem;
-  color: var(--white);
-  white-space: nowrap;
+.icon_two { 
+    /*Espacio izquierdo, esto con la funcionalidad de estar separado con el icono y texto ezquierdo.*/ 
+    padding-left: rem;
 }
 
-/* --- Redes sociales --- */
-.header__logo-register {
-  display: flex;
-  align-items: center;
-  gap: 24px;
+/* Responsive */ /*
+@media (max-width > 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-right {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+    .navbar-left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+}
+/* Navbar */
+
+.navbar-container {
+    background-color: var(--primary-secundary-700);
+    padding: 10px;
+    padding: auto;
+    
 }
 
-.header__logo-register svg {
-  cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+.navbar__title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: var(--fs-xs);
+    padding-left: 5rem;
 }
 
-.header__logo-register svg:hover {
-  transform: scale(1.1);
-  opacity: 0.85;
+.navbar__logo {
+    margin-top: -200px;
+    margin-left: 160px;
 }
 
-/* -------------------------------------------------- */
-/* ----------- 🔹 RESPONSIVE DESIGN 🔹 ------------- */
-/* -------------------------------------------------- */
-
-/* --- Tablets (pantallas medianas) --- */
-@media (max-width: 1024px) {
-  .header__index-register {
-    padding: 1rem;
-  }
-
-  .header__content-register {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-  }
-
-  .header__info-register {
-    justify-content: center;
-    gap: 20px;
-  }
-
-  .header__logo-register {
-    justify-content: center;
-  }
+.navbar__list{
+    display: flex;
+    justify-content: right;
+    padding-right: 10rem;
+    color: var(--white);
+    
+       
 }
 
-/* --- Móviles (pantallas pequeñas) --- */
+.navbar__link {
+    margin-top: -28px;
+    text-decoration: none;
+    color: var(--white);
+    padding-right: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-size: var(--fs-xxxs); */
+    
+
+    
+}
+
+.navbar__link__ONE {
+    text-decoration: none;
+    color: var(--white);
+    padding-right: 10px;
+    padding-left: 40px;
+    margin-top: -28px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+/* */
+
+/* Responsive */
 @media (max-width: 768px) {
-  .header__index-register {
-    padding: 0.8rem 1rem;
-  }
+    .menu-toggle {
+        display: block;
+    }
 
-  .header__content-register {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 0.8rem;
-  }
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #1f6f96;
+        width: 100%;
+        display: none;
+    }
 
-  .header__info-register {
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
+    .nav-links.active {
+        display: flex;
+    }
 
-  .header__item-register p {
-    font-size: 13px;
-  }
-
-  .header__item-register img {
-    width: 20px;
-    height: 20px;
-  }
-
-  .header__logo-register {
-    gap: 10px;
-  }
-
-  .header__logo-register svg {
-    width: 26px;
-    height: 26px;
-  }
-}
-
-/* --- Extra pequeño (muy pequeños móviles) --- */
-@media (max-width: 480px) {
-  .header__item-register p {
-    font-size: 16px;
-  }
-
-  .header__logo-register svg {
-    width: 22px;
-    height: 22px;
+    .nav-links li {
+        padding: 15px;
+        border-top: 1px solid #fff;
   }
 }

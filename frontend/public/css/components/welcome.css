@@ -1,17 +1,10 @@
   /* ---------------------------- */
         /* ===== 1. RESET GLOBAL ====== */
         /* ---------------------------- */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        } 
-    
-
-
+        
         html, body {
             height: 100%;
-            font-family: var(--font-family-base);
+            /* font-family: var(--font-family-base); */
         }
 
         /* ---------------------------- */
@@ -20,7 +13,7 @@
         .hero-welcome {
             display: flex;
             height: 100vh;
-            overflow: hidden;
+            /* overflow: hidden; */
         }
 
         /* Imagen solo a la izquierda */

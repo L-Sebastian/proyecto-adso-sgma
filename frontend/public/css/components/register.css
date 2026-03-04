@@ -1,13 +1,9 @@
 /* ==================== RESET ==================== */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+
 
 html, body {
     height: 100%;
-    font-family: var(--font-family-base);
+    /* font-family: var(--font-family-base); */
     background: var(--white);
     color: var(--gray-900);
 }
@@ -86,7 +82,7 @@ html, body {
     background: var(--primary-secundary-700);
     padding: 48px 40px;
     border-left: 4px solid rgba(255, 255, 255, 0.05);
-    box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.03);
+    /* box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.03); */
     display: flex;
     flex-direction: column;
     justify-content: center;

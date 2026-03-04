@@ -4,7 +4,7 @@
    GENERAL
 ============================= */
 body {
-    font-family: var(--font-family-base);
+    /* font-family: var(--font-family-base); */
     background-color: var(--white);
     color: var(--black);
     overflow-x: hidden;
@@ -114,7 +114,7 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-family: var(--font-family-base);
+    /* font-family: var(--font-family-base); */
     font-size: 1.6rem;
     font-weight: var(--fw-bold);
     padding: var(--button-padding-y) var(--button-padding-x);
@@ -231,7 +231,7 @@ body {
     border-radius: var(--button-radius);
     height: 48px;
     font-size: 1.6rem;
-    font-family: var(--font-family-base);
+    /* font-family: var(--font-family-base); */
     background: var(--white);
     color: var(--black);
     transition: all var(--transition-md) ease;
@@ -277,7 +277,7 @@ body {
     border-radius: var(--button-radius);
     height: 48px;
     font-size: 1.6rem;
-    font-family: var(--font-family-base);
+    /* font-family: var(--font-family-base); */
     appearance: none;
     background: var(--white) url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>') no-repeat right 15px center;
     background-size: 20px;
@@ -327,7 +327,7 @@ body {
     border-radius: 1.5625rem;
     font-size: 1.6rem;
     font-weight: var(--fw-medium);
-    font-family: var(--font-family-base);
+    /* font-family: var(--font-family-base); */
     min-height: 100px;
     resize: vertical;
     background: var(--white);

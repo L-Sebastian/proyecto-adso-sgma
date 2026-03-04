@@ -1,66 +1,50 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
 
-    var container = document.querySelector('.main-content-shopping-pineapple');
-    if (!container) return;
+    // 1. Seleccionar el contenedor de la barra de navegación (NAVBAR)
+    // CAMBIO CLAVE 1: Usar la clase del contenedor de la barra de navegación.
+    const headerContainer = document.querySelector('.main-content-shopping-pineapple');
 
-    /* Agregar la clase del componente para que apliquen los estilos */
-    container.classList.add('main-content-shopping-pineapple');
+    // 2. Verificar si existe en el DOM
+    if (headerContainer) {
 
-    fetch('/frontend/public/views/components/shopping_pineapple.html')
-        .then(function (res) {
-            if (!res.ok) throw new Error('Error ' + res.status);
-            return res.text();
-        })
-        .then(function (html) {
-            container.innerHTML = html;
-            initSP();
-        })
-        .catch(function (err) {
-            console.error('Error cargando shopping_pineapple:', err);
-        });
+        // Ruta del archivo HTML del header
+        const headerURL = '/frontend/public/views/components/shopping_pineapple.html';
+
+        // 3. Cargar el contenido del header
+        fetch(headerURL)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.text();
+            })
+            .then(data => {
+
+                // Insertar el contenido en el contenedor
+                headerContainer.innerHTML = data;
+
+                // ================ LÓGICA PARA RESALTAR ENLACE ACTIVO ================
+
+                // Obtener el nombre de la página actual
+                const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+                // Seleccionar los enlaces dentro del header 
+                // CAMBIO CLAVE 2: Usar la clase correcta de tus enlaces.
+                const headerLinks = headerContainer.querySelectorAll(".navbar__link-shopping");
+
+                // Recorrer cada enlace
+                headerLinks.forEach(link => {
+
+                    // Comparar el href con la página actual
+                    if (link.getAttribute("href")?.includes(currentPage)) {
+                        link.classList.add("active"); // resaltar
+                    }
+
+                });
+
+                // =====================================================================
+
+            })
+            .catch(error => console.error('Error cargando el header:', error));
+    }
 });
-
-function initSP() {
-    var qtyInput = document.getElementById('quantityInput');
-    var btnDec   = document.getElementById('btnDecrease');
-    var btnInc   = document.getElementById('btnIncrease');
-    var btnAdd   = document.getElementById('btnAddToCart');
-    var btnBack  = document.getElementById('btnGoBack');
-
-    if (!qtyInput) return;
-
-    btnDec.addEventListener('click', function () {
-        var v = parseInt(qtyInput.value) || 1;
-        if (v > 1) qtyInput.value = v - 1;
-    });
-
-    btnInc.addEventListener('click', function () {
-        qtyInput.value = (parseInt(qtyInput.value) || 1) + 1;
-    });
-
-    btnAdd.addEventListener('click', function () {
-        var qty = parseInt(qtyInput.value) || 1;
-        var cart = [];
-        try { cart = JSON.parse(localStorage.getItem('cart')) || []; }
-        catch (e) { cart = []; }
-
-        var product = {
-            id: 'pina-01', name: 'Piña Oro Miel',
-            price: 3600, originalPrice: 4000, quantity: qty,
-            vendor: 'Finca el Porvenir', img: '/frontend/public/img/piña_g.jpg'
-        };
-
-        var found = cart.find(function (p) { return p.id === product.id; });
-        if (found) { found.quantity += qty; } else { cart.push(product); }
-        localStorage.setItem('cart', JSON.stringify(cart));
-
-        btnAdd.querySelector('span').textContent = '✓ Agregado';
-        btnAdd.style.background = '#059669';
-        setTimeout(function () {
-            btnAdd.querySelector('span').textContent = 'Agregar';
-            btnAdd.style.background = '';
-        }, 1500);
-    });
-
-    btnBack.addEventListener('click', function () { window.history.back(); });
-}

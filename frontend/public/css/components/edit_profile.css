@@ -85,7 +85,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-family: var(--font-family-base);
+    /* font-family: var(--font-family-base); */
     font-size: 1.6rem;
     /* font-weight: var(--fw-bold); */
     padding: var(--button-padding-x) var(--button-padding-y);
@@ -166,23 +166,23 @@
     padding: var(--spacing-lg);
 }
 
-.form-row {
+.form-row-edit-profile-user {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);
 }
 
-.form-row.full-width {
+.form-row-edit-profile-user.full-width {
     grid-template-columns: 1fr;
 }
 
-.form-group {
+.form-group-edit-profile-user {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xs);
 }
 
-.form-group label {
+.form-group-edit-profile-user label {
     font-size: 1.2rem;
     font-weight: var(--fw-bold);
     color: var(--white);
@@ -191,7 +191,7 @@
 }
 
 /* =============== INPUTS — 6 estados ================= */
-.form-input {
+.form-input-edit-profile-user {
     width: 100%;
     padding: var(--spacing-xs) var(--spacing-md);
     border-radius: var(--button-radius);
@@ -204,25 +204,25 @@
 }
 
 /* Hover */
-.form-input:hover {
+.form-input-edit-profile-user:hover {
     border-color: var(--primary-secundary-400);
     background: rgba(255, 255, 255, 0.3);
 }
 
 /* Focus */
-.form-input:focus {
+.form-input-edit-profile-user:focus {
     outline: none;
     background: rgba(255, 255, 255, 0.3);
     box-shadow: var(--focus-ring);
 }
 
 /* Active */
-.form-input:active {
+.form-input-edit-profile-user:active {
     border-color: var(--primary-700);
 }
 
 /* Disabled */
-.form-input:disabled {
+.form-input-edit-profile-user:disabled {
     background: rgba(255, 255, 255, 0.3);
     color: var(--primary-secundary-400);
     cursor: not-allowed;
@@ -230,7 +230,7 @@
 }
 
 /* Error */
-.form-input.error {
+.form-input-edit-profile-user.error {
     border-color: var(--v-error, #e74c3c);
     box-shadow: 0 0 0 0.18rem rgba(231, 76, 60, 0.12);
 }
@@ -281,7 +281,7 @@
 
 /* sm — 640px */
 @media (min-width: 640px) {
-    .form-row {
+    .form-row-edit-profile-user {
         grid-template-columns: 1fr 1fr;
     }
 

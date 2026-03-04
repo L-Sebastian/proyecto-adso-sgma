@@ -1,0 +1,97 @@
+.login__content {
+    background-color: var(--primary-secundary-700); 
+}
+.form__login{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: max-content;
+    padding: 12px;
+    margin: 0 auto; 
+    justify-content: center;
+}
+
+.form__login__title{
+    text-align: center;
+    font-size: 34px;
+}
+
+.form__login__form{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;      
+}
+
+.form__login__form-grup{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;        
+}
+
+.form__login__form-grup-label {
+    margin: 0 0 0 20px;
+    font-size: 12px;
+}
+
+.form__login__form-grup-input{
+    height: 56px;
+    font-size: 16px;
+    width: 400px;
+    padding: 16px;
+    border-radius: 2.5rem;
+    border:  none;
+}
+
+.form__login__form-button{
+    background-color: var(--primary-600);
+    width: 150px;
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    padding: 0 16px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    border: none;
+    margin: 0 auto;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.form__login__form-button a{
+    text-decoration: none;
+    color: white;
+
+
+}
+
+.form__login__form-row-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+@media (width > 768px) {
+    .login__content{
+        
+    }
+}
+
+.login__content{
+    display: flex;
+    height: 100vh; /* pantalla completa */
+}
+.login__content__right {
+    flex: 70%;
+    
+    background: linear-gradient(to right, rgba(30,74,97,0) 70%, var(--primary-secundary-900) 100%), url(/frontend/public/assets/img/DOÑA\ GLORIA.png);
+    min-height: 50rem;
+    background-size: cover;
+}
+
+.login__content__left{
+    flex: 40%;
+    margin: auto;
+}

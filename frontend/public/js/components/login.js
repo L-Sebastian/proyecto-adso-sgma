@@ -58,6 +58,10 @@ function attachLoginHandlers() {
             return;
         }
 
+        setTimeout(() => {
+            window.location.href = "/frontend/public/views/index_user.html";
+        }, 1000);
+
         showMessage('Inicio de sesión correcto. Redirigiendo...', 'success');
         /* aquí va la lógica real: fetch a la API, etc. */
     });
@@ -69,12 +73,14 @@ function attachLoginHandlers() {
     if (createBtn) {
         createBtn.addEventListener('click', function () {
             showMessage('Formulario de creación de cuenta (pendiente).', 'info');
+            window.location.href = "/frontend/public/views/views_register.html";
         });
     }
 
     if (recoverBtn) {
         recoverBtn.addEventListener('click', function () {
             showMessage('Recuperación de cuenta (pendiente).', 'info');
+            window.location.href = "/fronted/public/views/views_recover.html";
         });
     }
 }

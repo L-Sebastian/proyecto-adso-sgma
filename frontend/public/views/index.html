@@ -1,36 +1,78 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SGMA - Sistema de Gestión del Medio Ambiente</title>
-  <link rel="stylesheet" href="/frontend/public/css/variables.css">
-  <script>
-    function resizeIframe(iframe) {
-      iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
-    }
-  </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>SGMA</title>
+    
+    <link rel="stylesheet" href="/frontend/public/css/main.css">
+    
+    <script src="/frontend/public/js/components/header-index.js" defer></script>
+    <script src="/frontend/public/js/components/hero-index.js" defer></script>
+    <script src="/frontend/public/js/components/agriculture.js" defer></script>
+    <script src="/frontend/public/js/components/products.index.js" defer></script>
+    <script src="/frontend/public/js/components/card.js" defer></script>
+    <script src="/frontend/public/js/components/hero-tree.js" defer></script>
+    <script src="/frontend/public/js/components/form.js" defer></script>
+    <script src="/frontend/public/js/components/footer.js" defer></script>
+    <script type="module">
+        import {loadCards} from "/frontend/public/js/components/card.js";
+        loadCards(".services__cards-container");//Clase para cargar todas las cards
+    </script>
 </head>
 <body>
+    <!-- Encabezado -->
+    <header class="header__index">
+       
+    </header>   
 
-  <!-- Importamos cada sección -->
-  <!-- <iframe src="/frontend/public/views/components/header.html" width="100%" 
-          style="border: none;" scrolling="no" onload="resizeIframe(this)"></iframe>
+    <!-- Hero -->
+    <section class="hero__content__index"> 
 
-  <iframe src="/frontend/public/views/components/navbar.html" width="100%" 
-          style="border: none;" scrolling="no" onload="resizeIframe(this)"></iframe> -->
+    </section>
 
-  <iframe src="/frontend/public/views/components/events.html" width="100%" 
-          style="border: none;" scrolling="no" onload="resizeIframe(this)"></iframe>
+    <!-- Agricultura -->
+    <section class="agriculture">
+        <div class="agricultura-box">
 
-  <!-- <iframe src="/frontend/public/views/components/community.html" width="100%" 
-          style="border: none;" scrolling="no" onload="resizeIframe(this)"></iframe>
+        </div>
+    </section>
 
-  <iframe src="/frontend/public/views/contact.html" width="100%" 
-          style="border: none;" scrolling="no" onload="resizeIframe(this)"></iframe>
+    <!-- Productos mas comercializados
+    <section class="marketed_products">
 
-  <iframe src="/frontend/public/views/components/footer.html" width="100%" 
-          style="border: none;" scrolling="no" onload="resizeIframe(this)"></iframe> -->
+    </section>
+
+    <main class="services">
+        <!-- Cards section -->
+        <!-- <div class="services__cards-container"> </div> -->
+
+    <!-- Productos en descuento -->
+    <!-- <section class="products__discount"> -->
+
+    </section> -->
+
+    <!-- Hero Tree -->
+    <section class="community-hero">
+        <div class="community-hero__overlay">
+        
+        </div>
+    </section>
+
+    <!-- Form -->
+    <section class="form">
+        <div class="form__contact">
+            
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer__index">
+        <div class="footer-container">
+
+        </div>
+    </footer>
 
 </body>
 </html>

@@ -3,7 +3,7 @@
 ========================= */
 .shopping {
     width: 100%;
-    font-family: var(--font-family-base);
+    /* font-family: var(--font-family-base); */
     color: var(--gray-900);
     position: relative;
     min-height: calc(100vh - 3.5rem);
