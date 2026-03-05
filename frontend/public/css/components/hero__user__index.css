@@ -2,17 +2,19 @@
     background-image: url(/frontend/public/assets/img/parque-cafe.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: 100%;
+    
 }
 
 /* ===== Navbar ===== */
-.navbar__hero {
+.navbar__hero__user {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 4rem;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    background: transparent
-
+    background: transparent;
+    background-color: rgb(91, 109, 81, 0.5);  /* opcional: para dar contraste */
 }
 
 .navbar__logo {
@@ -72,7 +74,7 @@
     color: #3ca75b;
 }
 
-.hero__description,
+.hero__description_index__user,
 .hero__text {
     margin-top: 1rem;
     font-size: 1rem;
@@ -99,7 +101,7 @@
     color: var(--white);
     padding: 4rem;
     color: var(--white);
-    background-color: rgb(91, 109, 81, 0.5);  /* opcional: para dar contraste */
+    
     border-radius: 10px;
     text-align: left;
     max-width: 100%;

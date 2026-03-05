@@ -29,8 +29,8 @@
 }
 .header__text {
     /* Esta medida sive para la pantalla 100% de zoom*/ 
-    margin-right: 23rem;
-}
+    /* margin-right: 23rem; */
+} 
 
 
 .icon_two { 

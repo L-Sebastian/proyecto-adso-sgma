@@ -5,10 +5,28 @@
 
 .product-vevo-page {
     background: #c8ecd4;
-    min-height: calc(100vh - 3.5rem);
     padding: 48px 60px 80px;
     box-sizing: border-box;
     font-family: var(--font-family-base);
+}
+
+/* ── Layout fix: footer siempre al fondo, nunca encima ── */
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1 0 auto;
+}
+
+.footer {
+    flex-shrink: 0;
 }
 
 /* ── HEADER ── */
@@ -170,13 +188,13 @@
     position: fixed;
     bottom: 32px;
     right: 32px;
-    width: 52px;
-    height: 52px;
+    width: 62px;
+    height: 62px;
     background: #10b981;
     border-radius: 50%;
     border: none;
     color: white;
-    font-size: 26px;
+    font-size: 1.6rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -199,11 +217,99 @@
 }
 
 @media (max-width: 768px) {
-    .product-vevo-page { padding: 32px 20px 60px; }
-    .product-vevo-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-    .product-vevo-main-title { font-size: 1.5rem; }
+    .product-vevo-page { 
+        padding: 32px 20px 60px; 
+    }
+
+    .product-vevo-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 16px; 
+    }
+
+    .product-vevo-main-title { 
+        font-size: 3.2rem; 
+    }
 }
 
 @media (max-width: 480px) {
-    .product-vevo-grid { grid-template-columns: 1fr; }
+    .product-vevo-grid { 
+        grid-template-columns: 1fr; 
+    }
+
+}
+/* ── BOTONES EDITAR / DESHABILITAR ── */
+.pn-card-actions {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.pn-btn-edit,
+.pn-btn-disable {
+    flex: 1;
+    border: none;
+    padding: 7px 8px;
+    border-radius: 6px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap;
+}
+
+.pn-btn-edit {
+    background: #10b981;
+    color: white;
+}
+.pn-btn-edit:hover { 
+    background: #059669; 
+    transform: translateY(-1px); 
+}
+
+.pn-btn-disable {
+    background: #6b7280;
+    color: white;
+}
+.pn-btn-disable:hover { 
+    background: #4b5563; 
+    transform: translateY(-1px); 
+}
+
+.pn-btn-disable.disabled { 
+    background: #9ca3af; 
+}
+
+/* ── BOTÓN ELIMINAR ── */
+.product-vevo-card { 
+    position: relative; 
+}
+
+.pn-btn-delete {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 34px;
+    height: 34px;
+    background: #d1d5db;
+    border: 1.5px solid #9ca3af;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+    z-index: 10;
+    padding: 0;
+}
+.pn-btn-delete:hover { 
+    background: #ef4444; 
+    border-color: #ef4444; 
+}
+
+.pn-btn-delete:hover svg { 
+    stroke: white; 
 }

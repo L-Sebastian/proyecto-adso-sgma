@@ -38,6 +38,8 @@
 @import url('components/header-profile.css');
 /* Import Product */
 @import url("components/header-product.css");
+/* Import Index Admin */
+@import url("components/hero_admin.css");
 
 /* Import ST */
 @import url('components/navbar.css');

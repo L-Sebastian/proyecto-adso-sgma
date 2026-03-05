@@ -24,6 +24,14 @@ header{
 
 .header__text{
     font-size: 1.6rem;
+    
+}
+
+.test_on1 {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding-left: 3rem;
 }
 
 .header__logo__index {

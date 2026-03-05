@@ -3,7 +3,7 @@
 /* ==================== MAIN CONTENT ==================== */
 .main-content-profile-2 {
     flex: 1;
-    display: flex;
+    /* display: flex; */
     align-items: center;
     justify-content: center;
     padding: var(--spacing-lg) var(--spacing-md);
@@ -216,7 +216,8 @@
 .form-group-profile {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-xs);
+    /* gap: var(--spacing-xs); */
+    gap: 0.8rem;
 }
 
 .form-group-profile .label-edit-profile-user {
@@ -230,7 +231,7 @@
 /* ==================== INPUTS — estado base ==================== */
 .form-input-profile {
     width: 100%;
-    padding: var(--spacing-xs) var(--spacing-md);
+    /* padding: var(--spacing-xs) var(--spacing-md); */
     border-radius: var(--button-radius);
     height: 48px;
     background: rgba(255, 255, 255, 0.7);
@@ -239,11 +240,12 @@
     font-size: 1.6rem;
     transition: all var(--transition-md) ease;
     border: none;
+    padding: 1.6rem;
 }
 
 .form-input-profile-email{ 
     width: 100%;
-    padding: var(--spacing-xs) var(--spacing-md);
+    /* padding: var(--spacing-xs) var(--spacing-md); */
     border-radius: var(--button-radius);
     height: 4.8rem;
     background: rgba(255, 255, 255, 0.7);
@@ -252,6 +254,7 @@
     font-size: 1.6rem;
     transition: all var(--transition-md) ease;
     border: none;
+    padding: 1.6rem;
 }
 
 .form-input-profile::placeholder {
@@ -431,7 +434,7 @@
     }
     .form-input-profile{
         max-width: 100%;
-        width: 30rem;
+        /* width: 30rem; */
     }
     .form-group-profile-email{
         max-width: 100%;

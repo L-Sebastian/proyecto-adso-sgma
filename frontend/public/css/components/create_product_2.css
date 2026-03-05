@@ -44,9 +44,6 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg,
-            rgba(0, 193, 106, 0.3) 0%,
-            rgba(4, 145, 82, 0.4) 100%);
 }
 
 /* =============================
