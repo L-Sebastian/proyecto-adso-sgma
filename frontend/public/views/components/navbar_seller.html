@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos Nuevos</title>
-    <link rel="stylesheet" href="/frontend/public/css/main.css">
-</head>
-<body>
-    <header class="header__index"></header> <!-- Sm -->
-    <nav class="navbar"></nav>
-
-    <nav class="navbar__index">
+<nav class="navbar__index">
     <div class="navbar__container">
         <div class="navbar__logo">
             <a href="/frontend/public/views/index_user.html" class="navbar__logo__index">
@@ -39,15 +27,45 @@
         </div>    
     </div>
 </nav>
-    <main class="main-content"></main>
 
-    <footer class="footer__index"> <!-- Sm -->
-        <div class="footer-container"></div>
-    </footer> 
 
-    <script src="/frontend/public/js/components/header-index.js"></script> <!-- Sm -->
-    <script src="/frontend/public/js/components/navbar_shopping.js"></script>
-    <script src="/frontend/public/js/components/product_new.js"></script>
-    <script src="/frontend/public/js/components/footer.js"></script> <!-- Sm -->
-</body>
-</html>
+
+<!-- BUG CORREGIDO: se eliminó el <link> de CSS — va en el <head> de la vista, no en el componente -->
+<!-- BUG CORREGIDO: se eliminó el <nav class="navbar__container-shopping"> wrapper
+     porque la vista ya tiene <nav class="navbar"></nav>
+     Al insertar innerHTML quedaba <nav> dentro de <nav>, generando el doble borde -->
+<div class="navbar__content-shopping">
+
+    <div class="navbar__logo-shopping">
+        <img src="/frontend/public/img/logo1.png" alt="Logo SGMA" class="navbar__logo-img-shopping">
+        SGMA <span class="navbar__icon-shopping"></span>
+    </div>
+
+    <h2 class="navbar__title-shopping">Tu carro de compras</h2>
+
+    <ul class="navbar__menu-shopping">
+        <li class="navbar__item-shopping">
+            <a href="#nosotros" class="navbar__link-shopping">NOSOTROS</a>
+        </li>
+        <li class="navbar__item-shopping">
+            <a href="#blog" class="navbar__link-shopping">BLOG DE COMUNIDAD</a>
+        </li>
+        <li class="navbar__item-shopping">
+            <a href="#eventos" class="navbar__link-shopping">EVENTOS AGRÍCOLAS</a>
+        </li>
+        <li class="navbar__item-shopping navbar__profile-shopping">
+        <img data-profile-photo
+             src="/frontend/public/img/foto_usuario_shopping.jpg"
+             alt="Usuario"
+             class="navbar__avatar-product"
+             style="display:none;">
+        <svg data-profile-svg class="avatar-icon-navbar" viewBox="0 0 24 24"
+             fill="none" stroke="white" stroke-width="2"
+             style="width:28px;height:28px;">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+        </svg>
+        </li>
+    </ul>
+
+</div>

@@ -27,10 +27,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /* ── Productos base ── */
 var productosBase = [
-    { id: 'fresas-01',  name: 'Fresas',         price: 12140, unit: 'lb', vendor: 'Finca el Porvenir', img: '/frontend/public/img/fresas.jpeg',       tipo: 'Fruta' },
-    { id: 'uva-01',     name: 'Uva Isabella',    price: 5260,  unit: 'lb', vendor: 'Finca el Indio',    img: '/frontend/public/img/uvas.jpeg',         tipo: 'Fruta' },
-    { id: 'naranja-01', name: 'Naranja Tangelo', price: 6400,  unit: 'lb', vendor: 'Finca Imbachi',     img: '/frontend/public/img/naranja.jpeg',      tipo: 'Fruta' },
-    { id: 'ciruela-01', name: 'Ciruela Roja',    price: 3600,  unit: 'lb', vendor: 'Finca Imbachi',     img: '/frontend/public/img/ciruela_roja.jpeg', tipo: 'Fruta' }
+    { id: 'fresas-01',  
+    name: 'Fresas',
+    price: 12140, 
+    unit: 'lb', 
+    vendor: 'Finca el Porvenir', 
+    img: '/frontend/public/img/fresas.jpeg',
+    tipo: 'Fruta' 
+},
+
+    { id: 'uva-01',     
+        name: 'Uva Isabella',    
+        price: 5260,  unit: 'lb',
+        vendor: 'Finca el Indio',
+        img: '/frontend/public/img/uvas.jpeg',
+        tipo: 'Fruta' 
+        },
+    { id: 'naranja-01', 
+        name: 'Naranja Tangelo', 
+        price: 6400,  unit: 'lb', 
+        vendor: 'Finca Imbachi',     
+        img: '/frontend/public/img/naranja.jpeg',
+        tipo: 'Fruta' 
+    }
+    ,
+    { id: 'ciruela-01', 
+        name: 'Ciruela Roja',    
+        price: 3600,  
+        unit: 'lb',
+         vendor: 'Finca Imbachi',
+        img: '/frontend/public/img/ciruela_roja.jpeg', 
+        tipo: 'Fruta' 
+    }
 ];
 
 function buscarProducto(id) {
@@ -144,6 +172,9 @@ function cargarProducto(container) {
     /* ── Botón Volver — id exacto: btnGoBack ── */
     var btnBack = container.querySelector('#btnGoBack');
     if (btnBack) btnBack.addEventListener('click', function () { window.history.back(); });
+
+    var btnreport = container.querySelector('#btnreport');
+    if (btnreport) btnreport.addEventListener('click', function () { window.history.report(); });
 }
 
 function addToCart(product, qty) {

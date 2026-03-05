@@ -299,7 +299,20 @@
     z-index: 9999; 
 }
 
-.back-button-shopping-pineapple:hover { background: #059669; transform: translateY(-2px); }
+.back-button-shopping-pineapple:hover { 
+    background: #059669; 
+    transform: translateY(-2px); 
+}
+
+/* .shopping_alert_pineapple {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 24px;
+    align-items: end;
+    justify-content: center;
+    cursor: pointer;
+    position: fixed; 
+} */
 
 /* ───────────────────────────────────────── */
 /* ── RESPONSIVE 1024px ─────────────────── */

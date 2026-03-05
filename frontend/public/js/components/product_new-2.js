@@ -166,6 +166,7 @@ function initProductNew() {
             var btnEdit    = e.target.closest('.pn-btn-edit');
             var btnDisable = e.target.closest('.pn-btn-disable');
             var btnDelete  = e.target.closest('.pn-btn-delete');
+            var card       = e.target.closest('.product-vevo-card');
             var misProductos = cargarMisProductos();
 
             if (btnDelete) {
@@ -178,7 +179,7 @@ function initProductNew() {
 
             } else if (btnEdit) {
                 e.stopPropagation();
-                window.location.href = '/frontend/public/views/views_edit_product.html' + btnEdit.dataset.id;
+                window.location.href = '/frontend/public/views/views_edit_product.html?id=' + btnEdit.dataset.id;
 
             } else if (btnDisable) {
                 e.stopPropagation();
@@ -193,6 +194,11 @@ function initProductNew() {
                 }
                 btnDisable.textContent = prod.activo ? 'Deshabilitar' : 'Habilitar';
                 btnDisable.classList.toggle('disabled', !prod.activo);
+                
+            } else if (card) {
+                /* Click en la card → ir al detalle del producto */
+                var id = card.dataset.id;
+                window.location.href = '/frontend/public/views/views_shopping_pineapple.html?id=' + id;
             }
         });
     }
