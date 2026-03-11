@@ -1,0 +1,128 @@
+<body>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="grid-layout">
+                <!-- Columna Izquierda - Imágenes -->
+                <div class="left-column">
+                    <div class="image-gallery">
+                        <!-- Imagen Principal -->
+                        <div class="main-image-container">
+                            <img id="mainImage" src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800&h=800&fit=crop" alt="Finca" class="main-image">
+                        </div>
+
+                        <!-- Galería de Miniaturas -->
+                        <div class="gallery-section">
+                            <p class="gallery-label">Galería de fotos (máx. 4)</p>
+                            <div class="gallery-container">
+                                <button class="gallery-nav-btn gallery-prev" id="galleryPrev" aria-label="Galería anterior">
+                                    <span>&#10094;</span>
+                                </button>
+                                <div class="gallery-wrapper">
+                                    <div class="gallery-items" id="galleryItems">
+                                        <button class="gallery-item active" data-index="0">
+                                            <img src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=400&h=400&fit=crop" alt="Finca 1">
+                                        </button>
+                                        <button class="gallery-item" data-index="1">
+                                            <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad576?w=400&h=400&fit=crop" alt="Finca 2">
+                                        </button>
+                                        <button class="gallery-item" data-index="2">
+                                            <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=400&fit=crop" alt="Finca 3">
+                                        </button>
+                                    </div>
+                                </div>
+                                <button class="gallery-nav-btn gallery-next" id="galleryNext" aria-label="Galería siguiente">
+                                    <span>&#10095;</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha - Información -->
+                <div class="right-column">
+                    <!-- Información del Propietario -->
+                    <div class="info-card owner-card">
+                        <h2 class="finca-title">Finca El Porvenir</h2>
+                        <div class="owner-info">
+                            <div class="info-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8m3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+                                </svg>
+                                <div class="fdInfo">
+                                    <p class="label">Propietario</p>
+                                    <p class="value">Juan Pérez García</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <path d="M22 6l-10 7L2 6"/>
+                                </svg>
+                                <div class="fdInfo">
+                                    <p class="fdInf">Correo electrónico</p>
+                                    <p class="value">juan.perez@finca.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <!-- Detalles de la Finca -->
+                    <div class="info-card details-card">
+                        <h3 class="section-title">Detalles de la finca</h3>
+                        <div class="details-grid">
+                            <div class="detail-item">
+                                <p class="fdtext">
+                                    <span class="leaf-icon"></span> Tipo de producción
+                                </p>
+                                <p class="value">Frutas</p>
+                            </div>
+                            <div class="detail-item">
+                                <p class="fdtext">
+                                    <span class="map-icon"></span> Departamento
+                                </p>
+                                <p class="value">Risaralda</p>
+                            </div>
+                            <div class="detail-item">
+                                <p class="fdtext">
+                                    <span class="package-icon"></span> Dirección
+                                </p>
+                                <p class="value">Vereda La Esperanza, Km 5</p>
+                            </div>
+                        </div>
+
+                        <div class="description-section">
+                            <p class="descripcion">Descripción</p>
+                            <p class="description-tex">Finca dedicada al cultivo de frutas tropicales de alta calidad. Contamos con 50 hectáreas de terreno fértil, sistemas de riego modernos y prácticas agrícolas sostenibles. Nuestros productos son certificados y frescos directamente del campo.</p>
+                        </div>
+                    </div>
+
+                    <!-- Información de Envío
+                    <div class="info-card shipping-card">
+                        <h3 class="section-title">Condiciones de entrega</h3>
+                        <div class="shipping-info">
+                            <div class="shipping-item active">
+                                <div class="shipping-radio"></div>
+                                <div>
+                                    <p class="shipping-title">Enviado por: Juan Pérez García</p>
+                                    <p class="shipping-subtitle">Finca El Porvenir</p>
+                                </div>
+                            </div>
+                            <div class="shipping-item">
+                                <div class="shipping-radio"></div>
+                                <div>
+                                    <p class="shipping-title">Tipo de envío: Domicilio a tu dirección</p>
+                                    <p class="shipping-subtitle">Entrega en 3-5 días hábiles</p>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>

@@ -1,0 +1,565 @@
+body {
+    background: #c8ecd4;
+    padding: 48px 60px 80px;
+    box-sizing: border-box;
+    font-family: var(--font-family-base);
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+
+.main-content {
+    padding: 2rem 0;
+}
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    background: var(--white);
+    height: auto;
+    overflow: visible;
+    padding: 40px 48px;
+    padding-bottom: 120px; /* AÑADIDO: Espacio extra para que el botón no tape contenido */
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+@media (min-width: 1024px) {
+    .grid-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+}
+
+/* ============================================
+   COLUMNA IZQUIERDA - GALERÍA
+   ============================================ */
+
+.left-column {
+    animation: slideInLeft 0.6s ease-out;
+}
+
+.image-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Imagen Principal */
+.main-image-container {
+    border: 2px dashed var(--primary);
+    border-radius: var(--radius);
+    overflow: hidden;
+    aspect-ratio: 1;
+    box-shadow: var(--shadow-md);
+}
+
+.main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    border-radius: 6px;
+}
+
+.main-image-container:hover .main-image {
+    transform: scale(1.05);
+}
+
+/* Galería de Miniaturas */
+.gallery-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.gallery-label {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--muted-foreground);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.gallery-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.gallery-wrapper {
+    flex: 1;
+    overflow: hidden;
+}
+
+.gallery-items {
+    display: flex;
+    gap: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: none;
+    padding: 0;
+}
+
+.gallery-item:hover {
+    border-color: var(--primary);
+}
+
+.gallery-item.active {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-md);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-nav-btn {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: var(--muted);
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: var(--foreground);
+    transition: all 0.2s ease;
+}
+
+.gallery-nav-btn:hover:not(:disabled) {
+    background-color: var(--primary);
+    color: white;
+}
+
+.gallery-nav-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ============================================
+   COLUMNA DERECHA - INFORMACIÓN
+   ============================================ */
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    animation: slideInRight 0.6s ease-out;
+}
+
+/* Info Cards */
+.info-card {
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Owner Card */
+.owner-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.finca-title {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--foreground);
+    margin-bottom: 0;
+    color: #10b981;
+}
+
+.owner-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+}
+
+.info-item {
+ display: flex;
+    flex-direction: row;    
+    align-items: center;    
+    justify-content: center;
+    gap: 0.5rem;            
+    width: 100%;
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    color: var(--primary);
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+    stroke-width: 2;
+}
+
+.descripcion {
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--foreground);
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.descripcion-tex {
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.value {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--foreground);
+    word-break: break-all;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Purchase Card */
+.purchase-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.price-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.price-fdInf {
+    font-size: 1.6rem;
+    color: var(--muted-foreground);
+    font-weight: 500;
+}
+
+.fdinf {
+    text-align: center;
+}
+
+.fdInfo {
+    display: flex;
+    align-items: center;    /* Centra los hijos (nombre, correo) horizontalmente */
+    text-align: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* Quantity Section */
+.quantity-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.5rem;
+    width: fit-content;
+}
+
+.qty-btn {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.375rem;
+    transition: background-color 0.2s ease;
+    font-size: 1.25rem;
+    color: var(--foreground);
+}
+
+.qty-btn:hover {
+    background-color: var(--muted);
+}
+
+.qty-input {
+    width: 48px;
+    text-align: center;
+    border: none;
+    background: transparent;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--foreground);
+}
+
+.qty-input:focus {
+    outline: none;
+}
+
+/* ============================================
+   DETALLES CARD
+   ============================================ */
+
+.details-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    border: 1.5px solid black;
+    border-radius: 6px;
+}
+
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--foreground);
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: 3, 1fr;
+    white-space: normal;
+    gap: 1.6rem;
+    text-align: center;
+}
+
+@media (min-width: 768px) {
+    .details-grid {
+        grid-template-columns: repeat(3, 1fr);
+        
+    }
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.detail-item .fdtext {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.leaf-icon,
+.map-icon,
+.package-icon {
+    font-size: 1.6rem;
+}
+
+/* Description Section */
+.description-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+}
+
+.description {
+    font-size: 1.6rem;
+    color: var(--foreground);
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+/* ============================================
+   SHIPPING CARD
+   ============================================ */
+
+.shipping-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.shipping-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.shipping-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.shipping-radio {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+    transition: all 0.2s ease;
+}
+
+.shipping-item.active .shipping-radio {
+    border-color: var(--primary);
+    background-color: var(--primary);
+    box-shadow: inset 0 0 0 3px white;
+}
+
+.shipping-title {
+    font-weight: 600;
+    color: var(--foreground);
+    font-size: 0.95rem;
+}
+
+.shipping-subtitle {
+    font-size: 2rem;
+    color: var(--muted-foreground);
+    margin-top: 0.25rem;
+}
+
+/* ============================================
+   ANIMACIONES
+   ============================================ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .finca-title {
+        font-size: 1.5rem;
+    }
+
+    .price {
+        font-size: 1.75rem;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-nav-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+
+    .gallery-item {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 0.75rem;
+    }
+
+    .header h1 {
+        font-size: 1.25rem;
+        padding: 0.75rem 0;
+    }
+
+    .main-content {
+        padding: 1rem 0;
+    }
+
+    .grid-layout {
+        gap: 1rem;
+    }
+
+    .info-card {
+        padding: 1rem;
+    }
+
+    .finca-title {
+        font-size: 1.25rem;
+    }
+
+    .price {
+        font-size: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1rem;
+    }
+
+    .gallery-item {
+        width: 60px;
+        height: 60px;
+    }
+
+    .gallery-nav-btn {
+        width: 32px;
+        height: 32px;
+    }
+}

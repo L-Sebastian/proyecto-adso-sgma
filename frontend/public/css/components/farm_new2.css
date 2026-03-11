@@ -1,46 +1,49 @@
 /* =====================================================
-   FINCA — vista lista de fincas
+   FARM NEW 2 — dos secciones (espejo de product_new-2.css)
    Sin reset *, sin body
 ===================================================== */
 
 .finca-page {
     background: #c8ecd4;
     min-height: calc(100vh - 3.5rem);
-    padding: 48px 60px 120px;
+    padding: 40px 60px 80px;
     box-sizing: border-box;
     font-family: var(--font-family-base);
 }
 
-/* ── HEADER ── */
+/* ── TÍTULO PRINCIPAL ── */
+.finca-main-title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #1a4a6b;
+    text-align: center;
+    margin: 0 0 24px 0;
+}
+
+/* ── SECCIÓN NUEVAS ── */
 .finca-header {
     text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 12px;
 }
 
-.finca-main-title {
-    font-size: 3.2rem;
-    font-weight: 800;
-    color: #1a4a6b;
-    margin: 0;
-    letter-spacing: 0.01em;
-}
-
 .finca-section-title {
-    font-size: 2rem;
+    font-size: 2.4rem;
     font-weight: 800;
     color: #1a4a6b;
-    margin: 0;
-    letter-spacing: 0.01em;
+    text-align: center;
+    margin: 0 0 28px 0;
 }
 
 .finca-create-btn {
     background: #10b981;
     color: white;
     border: none;
+    width: 160px;
+    height: 40px;
     padding: 8px 20px;
     border-radius: 6px;
     font-size: 1.6rem;
@@ -48,21 +51,17 @@
     cursor: pointer;
     transition: background 0.2s, transform 0.15s;
 }
-.finca-create-btn:hover {
-    background: #059669;
-    transform: translateY(-1px);
-}
+.finca-create-btn:hover { background: #059669; transform: translateY(-1px); }
 
-/* ── SECCIÓN ── */
 .finca-section {
-    margin-bottom: 56px;
+    margin-bottom: 48px;
 }
 
 /* ── GRILLA ── */
 .finca-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    gap: 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -70,101 +69,65 @@
 /* ── CARD ── */
 .finca-card {
     background: white;
-    border-radius: 12px;
-    overflow: visible;
+    border-radius: 10px;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
+    width: 100%;
     transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
     position: relative;
 }
 .finca-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
 /* ── IMAGEN ── */
 .finca-card-img-box {
     width: 100%;
-    height: 180px;
+    height: 170px;
     overflow: hidden;
-    background: #f8f8f8;
-    border-radius: 12px 12px 0 0;
+    background: #f5f5f5;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
 }
 .finca-card-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s;
-    border-radius: 12px 12px 0 0;
 }
 .finca-card:hover .finca-card-img { transform: scale(1.04); }
 
-/* Botón eliminar — esquina superior derecha */
-.finca-btn-delete {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    width: 36px;
-    height: 36px;
-    background: rgba(255,255,255,0.92);
-    border: none;
-    border-radius: 8px;
-    color: #6b7280;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    transition: background 0.2s, color 0.2s;
-    z-index: 5;
-}
-.finca-btn-delete:hover { background: #ef4444; color: white; }
-
-/* Badge deshabilitada */
-.finca-disabled-badge {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    background: rgba(0,0,0,0.6);
-    color: white;
-    font-size: 1.6rem;
-    font-weight: 700;
-    padding: 3px 10px;
-    border-radius: 20px;
-    pointer-events: none;
-    z-index: 5;
-}
-
 /* ── BODY ── */
 .finca-card-body {
-    padding: 14px 16px 4px;
+    padding: 12px 14px 14px;
     display: flex;
     flex-direction: column;
     gap: 3px;
     text-align: center;
+    flex: 1;
 }
 .finca-card-name {
-    font-size: 1.6rem;
+    font-size: 2.4rem;
     color: #555;
     font-weight: 400;
 }
 .finca-card-tipo {
-    font-size: 1.6rem;
+    font-size: 2rem;
     font-weight: 800;
     color: #111;
+    line-height: 1.2;
 }
 .finca-card-location {
     font-size: 1.6rem;
     color: #666;
-    font-weight: 400;
+    margin-bottom: 6px;
 }
 .finca-card-desc {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     color: #999;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -172,71 +135,84 @@
     overflow: hidden;
 }
 
-/* ── ACCIONES ── */
+/* ── BOTONES EDITAR / DESHABILITAR ── */
 .finca-card-actions {
     display: flex;
-    gap: 8px;
-    padding: 10px 14px 14px;
+    gap: 6px;
+    margin-top: auto;
+    padding: 0 14px 14px;
 }
 
-.finca-btn-edit {
+.fn2-btn-edit,
+.fn2-btn-disable {
     flex: 1;
     border: none;
-    padding: 10px 8px;
-    border-radius: 8px;
+    padding: 6px 8px;
+    border-radius: 6px;
+    height: 40px;
     font-size: 1.6rem;
     font-weight: 700;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 4px;
+    transition: background 0.2s, transform 0.15s;
+    white-space: nowrap;
+}
+
+.fn2-btn-edit {
     background: #10b981;
     color: white;
-    transition: background 0.2s, transform 0.15s;
 }
-.finca-btn-edit:hover { background: #059669; transform: translateY(-1px); }
+.fn2-btn-edit:hover { background: #059669; transform: translateY(-1px); }
 
-.finca-btn-disable {
-    flex: 1;
-    border: none;
-    padding: 10px 8px;
-    border-radius: 8px;
-    font-size: 1.6rem;
-    font-weight: 700;
-    cursor: pointer;
+.fn2-btn-disable {
+    background: var(--primary-600);
+    color: white;
+}
+.fn2-btn-disable:hover { background: #153a56; transform: translateY(-1px); }
+.fn2-btn-disable.fn2-disabled { background: #9ca3af; }
+.fn2-btn-disable.fn2-disabled:hover { background: #10b981; }
+
+/* ── BOTÓN ELIMINAR — esquina superior derecha ── */
+.fn2-btn-delete {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 34px;
+    height: 34px;
+    background: #d1d5db;
+    border: 1.5px solid #9ca3af;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
-    background: var(--primary-700);
-    color: white;
-    transition: background 0.2s, transform 0.15s;
-}
-.finca-btn-disable:hover { background: #153a56; transform: translateY(-1px); }
-
-.finca-btn-enable {
-    flex: 1;
-    border: none;
-    padding: 10px 8px;
-    border-radius: 8px;
-    font-size: 1.6rem;
-    font-weight: 700;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    background: #10b981;
-    color: white;
-    transition: background 0.2s, transform 0.15s;
+    transition: background 0.2s, border-color 0.2s;
+    z-index: 10;
+    padding: 0;
 }
-.finca-btn-enable:hover { background: #059669; transform: translateY(-1px); }
+.fn2-btn-delete:hover { background: #ef4444; border-color: #ef4444; }
+.fn2-btn-delete:hover svg { stroke: white; }
 
 /* ── CARD DESHABILITADA ── */
 .finca-card-disabled {
     opacity: 0.6;
     filter: grayscale(40%);
+}
+.finca-disabled-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    pointer-events: none;
+    z-index: 5;
 }
 
 /* ── EMPTY STATE ── */
@@ -271,9 +247,30 @@
 .finca-back-btn:hover { background: #059669; transform: translateY(-2px); }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 1024px) { .finca-grid { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 768px) {
-    .finca-page { padding: 32px 20px 80px; }
-    .finca-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+@media (max-width: 1024px) { 
+    .finca-grid { 
+        grid-template-columns: repeat(3, 1fr); 
+        
+    } 
 }
-@media (max-width: 480px) { .finca-grid { grid-template-columns: 1fr; } }
+
+@media (max-width: 768px) {
+    .finca-page  { 
+        padding: 24px 16px 60px; 
+    }
+
+    .finca-grid  { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 14px; 
+    }
+
+    .finca-main-title { 
+        font-size: 2.4rem; 
+    }
+}
+
+@media (max-width: 480px) { 
+    .finca-grid { 
+        grid-template-columns: 1fr; 
+    } 
+}

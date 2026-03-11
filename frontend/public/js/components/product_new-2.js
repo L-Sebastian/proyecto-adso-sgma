@@ -21,20 +21,20 @@ var UNA_HORA_MS = 5 * 5 * 1000; /* 3600000 ms */
 
 /* ── Productos fijos sección Frutas ── */
 var productosBase = [
-    { id: 'fresas-01',  name: 'Fresas',         price: 12140, unit: 'lb', vendor: 'Finca el Porvenir', img: '/frontend/public/img/fresas.jpeg',       activo: true },
-    { id: 'uva-01',     name: 'Uva Isabella',    price: 5260,  unit: 'lb', vendor: 'Finca el Indio',    img: '/frontend/public/img/uvas.jpeg',         activo: true },
-    { id: 'naranja-01', name: 'Naranja Tangelo', price: 6400,  unit: 'lb', vendor: 'Finca Imbachi',     img: '/frontend/public/img/naranja.jpeg',      activo: true },
-    { id: 'ciruela-01', name: 'Ciruela Roja',    price: 3600,  unit: 'lb', vendor: 'Finca Imbachi',     img: '/frontend/public/img/ciruela_roja.jpeg', activo: true }
+    { id: 'fresas-01', name: 'Fresas', price: 12140, unit: 'lb', vendor: 'Finca el Porvenir', img: '/frontend/public/img/fresas.jpeg', activo: true },
+    { id: 'uva-01', name: 'Uva Isabella', price: 5260, unit: 'lb', vendor: 'Finca el Indio', img: '/frontend/public/img/uvas.jpeg', activo: true },
+    { id: 'naranja-01', name: 'Naranja Tangelo', price: 6400, unit: 'lb', vendor: 'Finca Imbachi', img: '/frontend/public/img/naranja.jpeg', activo: true },
+    { id: 'ciruela-01', name: 'Ciruela Roja', price: 3600, unit: 'lb', vendor: 'Finca Imbachi', img: '/frontend/public/img/ciruela_roja.jpeg', activo: true }
 ];
 
-var iconEdit  = '<svg width="13" height="13" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4l5 5L7 18H2v-5L11 4z"/><path d="M15 2l3 3"/></svg>';
+var iconEdit = '<svg width="13" height="13" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4l5 5L7 18H2v-5L11 4z"/><path d="M15 2l3 3"/></svg>';
 var iconTrash = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>';
 
 /* ── Separar productos: nuevos (< 1h) vs maduros (>= 1h) ── */
 function clasificarProductos() {
     var todos = cargarMisProductos();
     var ahora = Date.now();
-    var nuevos  = [];
+    var nuevos = [];
     var maduros = [];
 
     todos.forEach(function (p) {
@@ -51,11 +51,11 @@ function clasificarProductos() {
 }
 
 function buildCard(p, esMio) {
-    var nombre = p.nombre || p.name   || 'Producto';
-    var precio = p.precio || p.price  || 0;
+    var nombre = p.nombre || p.name || 'Producto';
+    var precio = p.precio || p.price || 0;
     var unidad = p.tipoPeso || p.unit || '';
-    var finca  = p.finca   || p.vendor || '';
-    var foto   = p.foto    || p.img   || '';
+    var finca = p.finca || p.vendor || '';
+    var foto = p.foto || p.img || '';
     var activo = p.activo !== false;
 
     var acciones = '<button class="pn-btn-edit" data-id="' + p.id + '">' + iconEdit + ' Editar</button>'
@@ -69,14 +69,14 @@ function buildCard(p, esMio) {
     return '<div class="pn-card" data-id="' + p.id + '">'
         + deleteBtn
         + '<div class="pn-card-img-box">'
-        +   '<img src="' + foto + '" alt="' + nombre + '" class="pn-card-img" onerror="this.style.opacity=\'0.3\'">'
+        + '<img src="' + foto + '" alt="' + nombre + '" class="pn-card-img" onerror="this.style.opacity=\'0.3\'">'
         + '</div>'
         + '<div class="pn-card-body">'
-        +   '<span class="pn-card-name">' + nombre + '</span>'
-        +   '<span class="pn-card-price">$' + Number(precio).toLocaleString('es-CO')
-        +     '<span class="pn-card-price-unit">' + unidad + '</span></span>'
-        +   '<span class="pn-card-vendor">Vendido por: <strong>' + finca + '</strong></span>'
-        +   '<div class="pn-card-actions">' + acciones + '</div>'
+        + '<span class="pn-card-name">' + nombre + '</span>'
+        + '<span class="pn-card-price">$' + Number(precio).toLocaleString('es-CO')
+        + '<span class="pn-card-price-unit">' + unidad + '</span></span>'
+        + '<span class="pn-card-vendor">Vendido por: <strong>' + finca + '</strong></span>'
+        + '<div class="pn-card-actions">' + acciones + '</div>'
         + '</div>'
         + '</div>';
 }
@@ -102,7 +102,7 @@ function renderMyGrid(myGrid) {
 }
 
 function renderFruitGrid(fruitGrid) {
-    var clasificados  = clasificarProductos();
+    var clasificados = clasificarProductos();
     /* Combinar: productos base fijos + mis productos maduros (>= 1h) */
     var todosAbajo = productosBase.concat(
         clasificados.maduros.map(function (p) { return p; })
@@ -115,9 +115,9 @@ function renderFruitGrid(fruitGrid) {
 
 function initProductNew() {
 
-    var myGrid    = document.getElementById('myProductGrid');
+    var myGrid = document.getElementById('myProductGrid');
     var fruitGrid = document.getElementById('fruitGrid');
-    var btnBack   = document.getElementById('btnGoBack');
+    var btnBack = document.getElementById('btnGoBack');
 
     /* ── Mis productos nuevos (< 1h) ── */
     if (myGrid) {
@@ -127,9 +127,9 @@ function initProductNew() {
         programarActualizacion(myGrid, fruitGrid);
 
         myGrid.addEventListener('click', function (e) {
-            var btnEdit    = e.target.closest('.pn-btn-edit');
+            var btnEdit = e.target.closest('.pn-btn-edit');
             var btnDisable = e.target.closest('.pn-btn-disable');
-            var btnDelete  = e.target.closest('.pn-btn-delete');
+            var btnDelete = e.target.closest('.pn-btn-delete');
             var misProductos = cargarMisProductos();
 
             if (btnDelete) {
@@ -147,7 +147,7 @@ function initProductNew() {
 
             } else if (btnDisable) {
                 e.stopPropagation();
-                var id   = btnDisable.dataset.id;
+                var id = btnDisable.dataset.id;
                 var prod = misProductos.find(function (p) { return p.id === id; });
                 if (!prod) return;
                 prod.activo = !prod.activo;
@@ -163,10 +163,10 @@ function initProductNew() {
         renderFruitGrid(fruitGrid);
 
         fruitGrid.addEventListener('click', function (e) {
-            var btnEdit    = e.target.closest('.pn-btn-edit');
+            var btnEdit = e.target.closest('.pn-btn-edit');
             var btnDisable = e.target.closest('.pn-btn-disable');
-            var btnDelete  = e.target.closest('.pn-btn-delete');
-            var card       = e.target.closest('.product-vevo-card');
+            var btnDelete = e.target.closest('.pn-btn-delete');
+            var card = e.target.closest('.pn-card');
             var misProductos = cargarMisProductos();
 
             if (btnDelete) {
@@ -183,10 +183,10 @@ function initProductNew() {
 
             } else if (btnDisable) {
                 e.stopPropagation();
-                var id   = btnDisable.dataset.id;
+                var id = btnDisable.dataset.id;
                 /* Buscar en mis productos primero, luego en base */
                 var prod = misProductos.find(function (p) { return p.id === id; })
-                        || productosBase.find(function (p) { return p.id === id; });
+                    || productosBase.find(function (p) { return p.id === id; });
                 if (!prod) return;
                 prod.activo = !prod.activo;
                 if (misProductos.find(function (p) { return p.id === id; })) {
@@ -194,7 +194,7 @@ function initProductNew() {
                 }
                 btnDisable.textContent = prod.activo ? 'Deshabilitar' : 'Habilitar';
                 btnDisable.classList.toggle('disabled', !prod.activo);
-                
+
             } else if (card) {
                 /* Click en la card → ir al detalle del producto */
                 var id = card.dataset.id;

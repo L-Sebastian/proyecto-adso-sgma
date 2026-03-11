@@ -10,148 +10,171 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .then(function (html) {
             container.innerHTML = html;
-            initFinca();
+            initFarmNew2();
         })
         .catch(function (err) {
-            console.error('Error cargando finca:', err);
+            console.error('Error cargando farm_new2:', err);
         });
 });
 
-/* ── Iconos ── */
-var iconEdit    = '<svg width="13" height="13" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4l5 5L7 18H2v-5L11 4z"/><path d="M15 2l3 3"/></svg>';
-var iconTrash   = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>';
-var iconDisable = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
-var iconEnable  = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg>';
+var FN2_UNA_HORA_MS = 60 * 60 * 1000;
 
-/* ── Helpers localStorage ── */
-function cargarFincas() {
+var fn2IconEdit = '<svg width="13" height="13" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4l5 5L7 18H2v-5L11 4z"/><path d="M15 2l3 3"/></svg>';
+var fn2IconTrash = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>';
+
+function fn2CargarFincas() {
     try { return JSON.parse(localStorage.getItem('misFincas')) || []; }
     catch (e) { return []; }
 }
-function guardarFincas(lista) {
+function fn2GuardarFincas(lista) {
     localStorage.setItem('misFincas', JSON.stringify(lista));
 }
 
-/* ── Construir card ── */
-function buildCard(f) {
-    var nombre   = f.nombreFinca    || f.fpFinca || 'Sin nombre';
-    var tipo     = f.tipoProduccion || '';
-    var depto    = f.departamento   || '';
-    var desc     = f.descripcion    || '';
-    var foto     = f.foto           || '';
-    var disabled = f.activo === false;
-
-    var cardClass = 'finca-card' + (disabled ? ' finca-card-disabled' : '');
-
-    var imgContent = foto
-        ? '<img src="' + foto + '" alt="' + nombre + '" class="finca-card-img" onerror="this.style.opacity=\'0.2\'">'
-        : '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:48px;">🌿</div>';
-
-    var toggleBtn = disabled
-        ? '<button class="finca-btn-enable"  data-id="' + f.id + '">' + iconEnable  + ' Habilitar</button>'
-        : '<button class="finca-btn-disable" data-id="' + f.id + '">' + iconDisable + ' Deshabilitar</button>';
-
-    return [
-        '<div class="' + cardClass + '" data-id="' + f.id + '">',
-        '  <div class="finca-card-img-box">',
-        '    ' + imgContent,
-        '    <button class="finca-btn-delete" data-id="' + f.id + '" title="Eliminar">' + iconTrash + '</button>',
-        disabled ? '    <div class="finca-disabled-badge">Deshabilitada</div>' : '',
-        '  </div>',
-        '  <div class="finca-card-body">',
-        '    <span class="finca-card-name">' + nombre + '</span>',
-        tipo   ? '<span class="finca-card-tipo">' + tipo + '</span>'   : '',
-        depto  ? '<span class="finca-card-location">📍 ' + depto + '</span>' : '',
-        desc   ? '<span class="finca-card-desc">' + desc + '</span>'  : '',
-        '  </div>',
-        '  <div class="finca-card-actions">',
-        '    <button class="finca-btn-edit" data-id="' + f.id + '">' + iconEdit + ' Editar</button>',
-        '    ' + toggleBtn,
-        '  </div>',
-        '</div>'
-    ].join('');
+function fn2Clasificar() {
+    var todas = fn2CargarFincas();
+    var ahora = Date.now();
+    var nuevas = [], maduras = [];
+    todas.forEach(function (f) {
+        var edad = ahora - (f.fechaCreacion ? new Date(f.fechaCreacion).getTime() : 0);
+        (edad >= FN2_UNA_HORA_MS ? maduras : nuevas).push(f);
+    });
+    return { nuevas: nuevas, maduras: maduras };
 }
 
-/* ── Render grids ── */
-function renderGrids() {
+function fn2BuildCard(f, esMia) {
+    var nombre = f.nombreFinca || 'Sin nombre';
+    var tipo = f.tipoProduccion || '';
+    var depto = f.departamento || '';
+    var desc = f.descripcion || '';
+    var foto = f.foto || '';
+    var activo = f.activo !== false;
+
+    var deleteBtn = esMia
+        ? '<button class="fn2-btn-delete" data-id="' + f.id + '" title="Eliminar">' + fn2IconTrash + '</button>'
+        : '';
+
+    return '<div class="finca-card" data-id="' + f.id + '">'
+        + deleteBtn
+        + '<div class="finca-card-img-box">'
+        + (foto
+            ? '<img src="' + foto + '" alt="' + nombre + '" class="finca-card-img" onerror="this.style.opacity=\'0.3\'">'
+            : '<div style="width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:48px;">🌿</div>')
+        + '</div>'
+        + '<div class="finca-card-body">'
+        + '<span class="finca-card-name">' + nombre + '</span>'
+        + (tipo ? '<span class="finca-card-tipo">' + tipo + '</span>' : '')
+        + (depto ? '<span class="finca-card-location">📍 ' + depto + '</span>' : '')
+        + (desc ? '<span class="finca-card-desc">' + desc + '</span>' : '')
+        + '<div class="finca-card-actions">'
+        + '<button class="fn2-btn-edit" data-id="' + f.id + '">' + fn2IconEdit + ' Editar</button>'
+        + '<button class="fn2-btn-disable' + (activo ? '' : ' fn2-disabled') + '" data-id="' + f.id + '">'
+        + (activo ? 'Deshabilitar' : 'Habilitar')
+        + '</button>'
+        + '</div>'
+        + '</div>'
+        + '</div>';
+}
+
+/* ── Render grid "Fincas Nuevas" (< 1h) ── */
+function fn2RenderNuevas(grid) {
+    var c = fn2Clasificar();
+    var nuevas = c.nuevas.filter(function (f) { return f.activo !== false; });
+
+    grid.innerHTML = nuevas.length
+        ? nuevas.map(function (f) { return fn2BuildCard(f, true); }).join('')
+        : '<p style="text-align:center;color:#666;padding:24px;grid-column:1/-1;">No hay fincas nuevas recientes.</p>';
+}
+
+/* ── Render grid "Mis Fincas" (>= 1h) ── */
+function fn2RenderMias(grid) {
+    var c = fn2Clasificar();
+    var mias = c.maduras;   /* todas — activas y deshabilitadas */
+
+    grid.innerHTML = mias.length
+        ? mias.map(function (f) { return fn2BuildCard(f, true); }).join('')
+        : '<p style="text-align:center;color:#666;padding:24px;grid-column:1/-1;">Aún no tienes fincas registradas.</p>';
+}
+
+function initFarmNew2() {
+
     var gridNuevas = document.getElementById('fincaGridNuevas');
-    var gridMias   = document.getElementById('fincaGridMias');
-    if (!gridNuevas || !gridMias) return;
-
-    var fincas = cargarFincas();
-    var ahora  = Date.now();
-    var UNA_HORA = 60 * 60 * 1000;
-
-    /* Nuevas: creadas hace menos de 1h y activas */
-    var nuevas = fincas.filter(function (f) {
-        var edad = ahora - new Date(f.fechaCreacion).getTime();
-        return edad < UNA_HORA && f.activo !== false;
-    });
-
-    /* Mis fincas: todas (activas y deshabilitadas) */
-    var mias = fincas.filter(function (f) {
-        var edad = ahora - new Date(f.fechaCreacion).getTime();
-        return edad >= UNA_HORA || f.activo === false;
-    });
-
-    gridNuevas.innerHTML = nuevas.length
-        ? nuevas.map(buildCard).join('')
-        : '<div class="finca-empty">No hay fincas nuevas recientes</div>';
-
-    gridMias.innerHTML = mias.length
-        ? mias.map(buildCard).join('')
-        : '<div class="finca-empty">🌱 Aún no tienes fincas registradas</div>';
-}
-
-/* ── Init ── */
-function initFinca() {
-
-    renderGrids();
-
+    var gridMias = document.getElementById('fincaGridMias');
     var btnCrear = document.getElementById('btnCrearFinca');
-    var btnBack  = document.getElementById('btnGoBackFinca');
+    var btnBack = document.getElementById('btnGoBackFinca');
 
-    /* Delegación de eventos en toda la página */
-    document.addEventListener('click', function (e) {
+    if (gridNuevas) {
+        fn2RenderNuevas(gridNuevas);
+        fn2ProgramarActualizacion(gridNuevas, gridMias);
 
-        if (e.target.closest('.finca-btn-edit')) {
-            e.stopPropagation();
-            var id = e.target.closest('.finca-btn-edit').dataset.id;
-            window.location.href = '/frontend/public/views/views_create_farm.html?id=' + id;
+        gridNuevas.addEventListener('click', function (e) {
+            fn2HandleClick(e, gridNuevas, gridMias);
+        });
+    }
 
-        } else if (e.target.closest('.finca-btn-disable')) {
-            e.stopPropagation();
-            var id = e.target.closest('.finca-btn-disable').dataset.id;
-            var lista = cargarFincas().map(function (f) {
-                if (f.id === id) f.activo = false;
-                return f;
-            });
-            guardarFincas(lista);
-            renderGrids();
+    if (gridMias) {
+        fn2RenderMias(gridMias);
 
-        } else if (e.target.closest('.finca-btn-enable')) {
-            e.stopPropagation();
-            var id = e.target.closest('.finca-btn-enable').dataset.id;
-            var lista = cargarFincas().map(function (f) {
-                if (f.id === id) f.activo = true;
-                return f;
-            });
-            guardarFincas(lista);
-            renderGrids();
-
-        } else if (e.target.closest('.finca-btn-delete')) {
-            e.stopPropagation();
-            var id = e.target.closest('.finca-btn-delete').dataset.id;
-            if (confirm('¿Eliminar esta finca?')) {
-                guardarFincas(cargarFincas().filter(function (f) { return f.id !== id; }));
-                renderGrids();
-            }
-        }
-    });
+        gridMias.addEventListener('click', function (e) {
+            fn2HandleClick(e, gridNuevas, gridMias);
+        });
+    }
 
     if (btnCrear) btnCrear.addEventListener('click', function () {
         window.location.href = '/frontend/public/views/views_create_farm.html';
     });
-
     if (btnBack) btnBack.addEventListener('click', function () { window.history.back(); });
+}
+
+function fn2HandleClick(e, gridNuevas, gridMias) {
+    var btnEdit = e.target.closest('.fn2-btn-edit');
+    var btnDisable = e.target.closest('.fn2-btn-disable');
+    var btnDelete = e.target.closest('.fn2-btn-delete');
+    var card = e.target.closest('.finca-card');
+    var todas = fn2CargarFincas();
+
+    if (btnDelete) {
+        e.stopPropagation();
+        if (confirm('¿Eliminar esta finca?')) {
+            fn2GuardarFincas(todas.filter(function (f) { return f.id !== btnDelete.dataset.id; }));
+            fn2RenderNuevas(gridNuevas);
+            fn2RenderMias(gridMias);
+        }
+
+    } else if (btnEdit) {
+        e.stopPropagation();
+        window.location.href = '/frontend/public/views/views_edit_farm.html?id=' + btnEdit.dataset.id;
+
+    } else if (btnDisable) {
+        e.stopPropagation();
+        var id = btnDisable.dataset.id;
+        var finca = todas.find(function (f) { return f.id === id; });
+        if (!finca) return;
+        finca.activo = !finca.activo;
+        fn2GuardarFincas(todas);
+        /* Re-render ambos grids porque puede moverse de sección */
+        fn2RenderNuevas(gridNuevas);
+        fn2RenderMias(gridMias);
+    } else if (card) {
+        /* Click en la card → ir al detalle del producto */
+        var id = card.dataset.id;
+        window.location.href = '/frontend/public/views/views_farm_details.html?id=' + id;
+    }
+}
+
+function fn2ProgramarActualizacion(gridNuevas, gridMias) {
+    var todas = fn2CargarFincas();
+    var ahora = Date.now();
+    var tiempos = todas
+        .filter(function (f) {
+            return ahora - (f.fechaCreacion ? new Date(f.fechaCreacion).getTime() : 0) < FN2_UNA_HORA_MS;
+        })
+        .map(function (f) {
+            return FN2_UNA_HORA_MS - (ahora - new Date(f.fechaCreacion).getTime());
+        });
+    if (tiempos.length === 0) return;
+    setTimeout(function () {
+        fn2RenderNuevas(gridNuevas);
+        fn2RenderMias(gridMias);
+        fn2ProgramarActualizacion(gridNuevas, gridMias);
+    }, Math.min.apply(null, tiempos) + 100);
 }

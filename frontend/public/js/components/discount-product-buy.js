@@ -66,19 +66,21 @@ document.addEventListener('DOMContentLoaded', function () {
     var grid = document.getElementById('discountGrid');
     grid.innerHTML = productosConDescuento.map(buildCard).join('');
 
-    /* Notificación única */
-    var notification = document.createElement('div');
-    notification.classList.add('notification');
-    notification.textContent = 'Debes iniciar sesión primero';
-    document.body.appendChild(notification);
-
     section.addEventListener('click', function (e) {
         var btn  = e.target.closest('.product__button');
         var card = e.target.closest('.product');
         if (btn) {
             e.stopPropagation();
-            notification.classList.add('show');
-            setTimeout(function () { notification.classList.remove('show'); }, 3000);
+            /* Buscar el producto correspondiente y agregarlo al carrito */
+            var pid = btn.dataset.id || card?.dataset.id;
+            var prod = productosConDescuento.find(function (p) { return p.id === pid; });
+            if (prod) cartAgregar(prod);
+            /* Feedback visual en el botón */
+            var spanBtn = btn.querySelector('span') || btn;
+            var origText = btn.innerHTML;
+            btn.style.background = '#059669';
+            btn.innerHTML = '✓ Agregado';
+            setTimeout(function () { btn.innerHTML = origText; btn.style.background = ''; }, 1200);
         } else if (card) {
             window.location.href = '/frontend/public/views/views_shopping_pineapple.html?id=' + card.dataset.id;
         }

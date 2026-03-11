@@ -50,8 +50,10 @@
 @import url('components/header_create_product.css');
 @import url('components/create_product_2.css');
 @import url('components/create_farm.css');
-@import url('components/finca_new.css');
+@import url('components/edit_farm.css');
+@import url('components/farm_new.css');
 @import url('components/farm_new2.css');
+@import url('components/farm_detail.css');
 @import url('components/welcome.css');
 @import url('components/shopping.css');
 @import url('components/shopping_pineapple.css');

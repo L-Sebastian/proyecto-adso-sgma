@@ -1,5 +1,3 @@
-
-
 var productosBaseF = [
     { id: 'fresas-01',  name: 'Fresas',         price: 12140, unit: 'lb', vendor: 'Finca el Porvenir',  img: '/frontend/public/img/fresas.jpeg',       tipo: 'fruta',   activo: true },
     { id: 'limon-01',   name: 'Limón Tahití',    price: 2500,  unit: 'lb', vendor: 'Finca el Porvenir',  img: '/frontend/img/Buy/limon_taiti.jpeg',        tipo: 'fruta',   activo: true },
@@ -50,7 +48,15 @@ document.addEventListener('DOMContentLoaded', function () {
         var card = e.target.closest('.product');
         if (btn) {
             e.stopPropagation();
-            mostrarNotificacion();
+            var pid = btn.dataset.id;
+            var todos = obtenerTodosProductos();
+            var prod = todos.find(function (p) { return p.id === pid; });
+            if (prod) cartAgregar(prod);
+            /* Feedback visual en el botón */
+            var origHTML = btn.innerHTML;
+            btn.style.background = '#059669';
+            btn.innerHTML = '✓ Agregado';
+            setTimeout(function () { btn.innerHTML = origHTML; btn.style.background = ''; }, 1200);
         } else if (card) {
             window.location.href = '/frontend/public/views/views_shopping_pineapple.html?id=' + card.dataset.id;
         }
