@@ -1,6 +1,25 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    var params  = new URLSearchParams(window.location.search);
+    var container = document.querySelector('.main-content-finca');
+    if (!container) return;
+
+    fetch('/frontend/public/views/components/edit_farm.html')
+        .then(function (r) {
+            if (!r.ok) throw new Error('Error ' + r.status);
+            return r.text();
+        })
+        .then(function (html) {
+            container.innerHTML = html;
+            initEditFarm();
+        })
+        .catch(function (err) {
+            console.error('Error cargando edit_farm:', err);
+        });
+});
+
+function initEditFarm() {
+
+    var params = new URLSearchParams(window.location.search);
     var fincaId = params.get('id');
 
     if (!fincaId) {
@@ -9,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     var misFincas = [];
-    try { misFincas = JSON.parse(localStorage.getItem('misFincas')) || []; } catch (e) {}
+    try { misFincas = JSON.parse(localStorage.getItem('misFincas')) || []; } catch (e) { }
 
     var finca = misFincas.find(function (f) { return f.id === fincaId; });
     if (!finca) {
@@ -18,14 +37,14 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /* ── Referencias DOM (prefijo fpEd-) ── */
-    var avatarImg       = document.getElementById('fpEdAvatarImg');
-    var avatarSvg       = document.getElementById('fpEdAvatarSvg');
+    var avatarImg = document.getElementById('fpEdAvatarImg');
+    var avatarSvg = document.getElementById('fpEdAvatarSvg');
     var avatarContainer = document.getElementById('fpEdAvatarContainer');
-    var photoInput      = document.getElementById('fpEdPhotoInput');
-    var btnCambiarFoto  = document.getElementById('fpEdBtnCambiarFoto');
+    var photoInput = document.getElementById('fpEdPhotoInput');
+    var btnCambiarFoto = document.getElementById('fpEdBtnCambiarFoto');
     var btnEliminarFoto = document.getElementById('fpEdBtnEliminarFoto');
-    var form            = document.getElementById('fpEdForm');
-    var btnVolver       = document.getElementById('fpEdBtnVolver');
+    var form = document.getElementById('fpEdForm');
+    var btnVolver = document.getElementById('fpEdBtnVolver');
 
     var foto = finca.foto || '';
 
@@ -54,14 +73,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    setVal('fpEdNombre',            finca.nombre         || '');
-    setVal('fpEdApellido',          finca.apellido       || '');
-    setVal('fpEdCorreoElectronico', finca.correo         || '');
-    setVal('fpEdFinca',             finca.nombreFinca    || '');
-    setVal('fpEdDireccion',         finca.direccion      || '');
-    setVal('fpEdDescripcion',       finca.descripcion    || '');
-    setSelect('fpEdProduccion',     finca.tipoProduccion || 'frutas');
-    setSelect('fpEdDepartamento',   finca.departamento   || 'risaralda');
+    setVal('fpEdNombre', finca.nombre || '');
+    setVal('fpEdApellido', finca.apellido || '');
+    setVal('fpEdCorreoElectronico', finca.correo || '');
+    setVal('fpEdFinca', finca.nombreFinca || '');
+    setVal('fpEdDireccion', finca.direccion || '');
+    setVal('fpEdDescripcion', finca.descripcion || '');
+    setSelect('fpEdProduccion', finca.tipoProduccion || 'frutas');
+    setSelect('fpEdDepartamento', finca.departamento || 'risaralda');
 
     /* ── Foto — cambiar ── */
     if (btnCambiarFoto) {
@@ -131,20 +150,20 @@ document.addEventListener('DOMContentLoaded', function () {
             var galeriaActualizada = [];
             for (var i = 0; i < 4; i++) {
                 var label = document.getElementById('fpEdSlot' + i);
-                var img   = label ? label.querySelector('.fpEd-gallery-preview') : null;
+                var img = label ? label.querySelector('.fpEd-gallery-preview') : null;
                 galeriaActualizada.push(img ? img.src : '');
             }
 
-            finca.nombre         = document.getElementById('fpEdNombre').value.trim();
-            finca.apellido       = document.getElementById('fpEdApellido').value.trim();
-            finca.correo         = document.getElementById('fpEdCorreoElectronico').value.trim();
-            finca.nombreFinca    = document.getElementById('fpEdFinca').value.trim();
+            finca.nombre = document.getElementById('fpEdNombre').value.trim();
+            finca.apellido = document.getElementById('fpEdApellido').value.trim();
+            finca.correo = document.getElementById('fpEdCorreoElectronico').value.trim();
+            finca.nombreFinca = document.getElementById('fpEdFinca').value.trim();
             finca.tipoProduccion = document.getElementById('fpEdProduccion').value;
-            finca.departamento   = document.getElementById('fpEdDepartamento').value;
-            finca.direccion      = document.getElementById('fpEdDireccion').value.trim();
-            finca.descripcion    = document.getElementById('fpEdDescripcion').value.trim();
-            finca.foto           = foto;
-            finca.galeria        = galeriaActualizada;
+            finca.departamento = document.getElementById('fpEdDepartamento').value;
+            finca.direccion = document.getElementById('fpEdDireccion').value.trim();
+            finca.descripcion = document.getElementById('fpEdDescripcion').value.trim();
+            finca.foto = foto;
+            finca.galeria = galeriaActualizada;
 
             var idx = misFincas.findIndex(function (f) { return f.id === fincaId; });
             if (idx !== -1) misFincas[idx] = finca;
@@ -156,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }, 1600);
         });
     }
-});
+}
 
 /* ── Helpers galería (fpEd-) ── */
 function efSetSlotImage(slot, dataURL) {
@@ -164,7 +183,7 @@ function efSetSlotImage(slot, dataURL) {
     if (!label) return;
     label.querySelectorAll('.fpEd-gallery-preview, .fpEd-gallery-remove').forEach(function (el) { el.remove(); });
     label.classList.add('has-image');
-    var plusEl = label.querySelector('.fpEd-gallery-plus');
+    var plusEl = label.querySelector('.fp-gallery-plus');
     if (plusEl) plusEl.style.display = 'none';
     var img = document.createElement('img');
     img.src = dataURL;
@@ -185,10 +204,19 @@ function efClearSlot(slot) {
     if (!label) return;
     label.querySelectorAll('.fpEd-gallery-preview, .fpEd-gallery-remove').forEach(function (el) { el.remove(); });
     label.classList.remove('has-image');
-    var plusEl = label.querySelector('.fpEd-gallery-plus');
+    var plusEl = label.querySelector('.fp-gallery-plus');
     if (plusEl) plusEl.style.display = '';
     var input = label.querySelector('.fpEd-gallery-input');
     if (input) input.value = '';
+}
+function efSaveGallery() {
+    var galeria = [];
+    for (var i = 0; i < 4; i++) {
+        var label = document.getElementById('fpSlot' + i);
+        var img = label ? label.querySelector('.fp-gallery-preview') : null;
+        galeria.push(img ? img.src : '');
+    }
+    localStorage.setItem('cf_galeria', JSON.stringify(galeria));
 }
 function efMostrarToast(msg) {
     var toast = document.createElement('div');

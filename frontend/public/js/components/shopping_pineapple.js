@@ -27,47 +27,37 @@ document.addEventListener("DOMContentLoaded", function () {
 
 /* ── Productos base ── */
 var productosBase = [
-    { id: 'fresas-01',  
-    name: 'Fresas',
-    price: 12140, 
-    unit: 'lb', 
-    vendor: 'Finca el Porvenir', 
-    img: '/frontend/public/img/fresas.jpeg',
-    tipo: 'Fruta' 
-},
-
-    { id: 'uva-01',     
-        name: 'Uva Isabella',    
-        price: 5260,  unit: 'lb',
-        vendor: 'Finca el Indio',
-        img: '/frontend/public/img/uvas.jpeg',
-        tipo: 'Fruta' 
-        },
-    { id: 'naranja-01', 
-        name: 'Naranja Tangelo', 
-        price: 6400,  unit: 'lb', 
-        vendor: 'Finca Imbachi',     
-        img: '/frontend/public/img/naranja.jpeg',
-        tipo: 'Fruta' 
-    }
-    ,
-    { id: 'ciruela-01', 
-        name: 'Ciruela Roja',    
-        price: 3600,  
-        unit: 'lb',
-         vendor: 'Finca Imbachi',
-        img: '/frontend/public/img/ciruela_roja.jpeg', 
-        tipo: 'Fruta' 
-    }
+    /* Filtros */
+    { id: 'fresas-01',    name: 'Fresas',          price: 12140, unit: 'lb',  vendor: 'Finca el Porvenir',   img: '/frontend/public/img/fresas.jpeg',       tipo: 'Fruta'   },
+    { id: 'limon-01',     name: 'Limón Tahití',     price: 2500,  unit: 'lb',  vendor: 'Finca el Porvenir',   img: '/frontend/img/Buy/limon_taiti.jpeg',      tipo: 'Fruta'   },
+    { id: 'uchuva-01',    name: 'Uchuva',           price: 5500,  unit: 'lb',  vendor: 'Finca la esperanza',  img: '/frontend/img/Buy/uchua.jpeg',            tipo: 'Fruta'   },
+    { id: 'uva-01',       name: 'Uva Isabella',     price: 5260,  unit: 'lb',  vendor: 'Finca el Indio',      img: '/frontend/public/img/uvas.jpeg',         tipo: 'Fruta'   },
+    { id: 'naranja-01',   name: 'Naranja Tangelo',  price: 6400,  unit: 'lb',  vendor: 'Finca Imbachi',       img: '/frontend/public/img/naranja.jpeg',      tipo: 'Fruta'   },
+    { id: 'ciruela-01',   name: 'Ciruela Roja',     price: 3600,  unit: 'lb',  vendor: 'Finca Imbachi',       img: '/frontend/public/img/ciruela_roja.jpeg', tipo: 'Fruta'   },
+    /* Descuentos */
+    { id: 'pina-01',      name: 'Piña Oro Miel',    price: 3600,  unit: 'und', vendor: 'Finca el Porvenir',   img: '/frontend/public/img/piña.jpg',          tipo: 'Fruta',   descuento: 10, precioOriginal: 4000  },
+    { id: 'zanahoria-01', name: 'Zanahoria',        price: 4410,  unit: 'lb',  vendor: 'Finca el Indio',      img: '/frontend/img/Buy/zanahoria.png',        tipo: 'Verdura', descuento: 10, precioOriginal: 4900  },
+    { id: 'lomo-01',      name: 'Lomo de cerdo',    price: 11700, unit: 'lb',  vendor: 'Finca la cristalina', img: '/frontend/img/Buy/Carne.png',            tipo: 'Carnes',  descuento: 10, precioOriginal: 13000 },
+    { id: 'papaya-01',    name: 'Papaya',           price: 1710,  unit: 'lb',  vendor: 'Finca el Porvenir',   img: '/frontend/public/img/papaya.jpg',        tipo: 'Fruta',   descuento: 10, precioOriginal: 1900  }
 ];
 
 function buscarProducto(id) {
+    /* 1. misProductos (productos creados por el vendedor) */
     try {
         var mis = JSON.parse(localStorage.getItem('misProductos')) || [];
-        var encontrado = mis.find(p => p.id === id);
+        var encontrado = mis.find(function(p) { return p.id === id; });
         if (encontrado) return encontrado;
     } catch (e) {}
-    return productosBase.find(p => p.id === id) || null;
+
+    /* 2. cart — el producto puede estar guardado ahí con todos sus datos */
+    try {
+        var cart = JSON.parse(localStorage.getItem('cart')) || [];
+        var enCart = cart.find(function(p) { return p.id === id; });
+        if (enCart) return enCart;
+    } catch (e) {}
+
+    /* 3. productosBase (hardcoded) */
+    return productosBase.find(function(p) { return p.id === id; }) || null;
 }
 
 function cargarProducto(container) {

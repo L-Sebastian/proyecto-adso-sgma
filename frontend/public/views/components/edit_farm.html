@@ -1,8 +1,7 @@
 <div class="fpEd-page">
-
     <div class="fpEd-wrapper">
 
-        <!-- Columna izquierda: foto principal + galería -->
+        <!-- Columna izquierda: foto + galería -->
         <div class="fpEd-image-section">
 
             <input type="file" id="fpEdPhotoInput" accept="image/*" style="display:none;">
@@ -17,46 +16,40 @@
                     <path d="M21 15l-5-5L5 21"/>
                 </svg>
             </div>
-<!-- -->
+
             <div class="fpEd-img-buttons">
-                <button class="fpEd-btn fp-btn-secondary" id="fpBtnCambiarFoto" type="button">Cambiar Foto</button>
-                <button class="fpEd-btn fp-btn-danger"    id="fpBtnEliminarFoto" type="button">Eliminar Foto</button>
+                <button class="fpEd-btn fpEd-btn-secondary" id="fpEdBtnCambiarFoto" type="button">Cambiar Foto</button>
+                <button class="fpEd-btn fpEd-btn-danger"    id="fpEdBtnEliminarFoto" type="button">Eliminar Foto</button>
             </div>
 
-            <!-- Galería 4 imágenes -->
             <div class="fpEd-gallery-section">
                 <p class="fpEd-gallery-label">Galería de fotos <span>(máx. 4)</span></p>
-                <div class="fpEd-gallery-grid" id="fpEdGalleryGrid">
+                <div class="fpEd-gallery-grid">
 
                     <label class="fpEd-gallery-slot" id="fpEdSlot0">
                         <input type="file" accept="image/*" class="fpEd-gallery-input" data-slot="0" style="display:none;">
                         <span class="fpEd-gallery-plus">+</span>
                     </label>
-
                     <label class="fpEd-gallery-slot" id="fpEdSlot1">
                         <input type="file" accept="image/*" class="fpEd-gallery-input" data-slot="1" style="display:none;">
                         <span class="fpEd-gallery-plus">+</span>
                     </label>
-
                     <label class="fpEd-gallery-slot" id="fpEdSlot2">
                         <input type="file" accept="image/*" class="fpEd-gallery-input" data-slot="2" style="display:none;">
                         <span class="fpEd-gallery-plus">+</span>
                     </label>
-
                     <label class="fpEd-gallery-slot" id="fpEdSlot3">
                         <input type="file" accept="image/*" class="fpEd-gallery-input" data-slot="3" style="display:none;">
                         <span class="fpEd-gallery-plus">+</span>
                     </label>
 
-
                 </div>
             </div>
-
         </div>
 
-        <!-- Columna derecha: título + formulario -->
+        <!-- Columna derecha: formulario -->
         <div class="fpEd-form-section">
-            <h2 class="fpEd-title">Crear finca</h2>
+            <h2 class="fpEd-title">Editar finca</h2>
 
             <form id="fpEdForm">
                 <div class="fpEd-form-grid">
@@ -65,22 +58,18 @@
                         <label class="fpEd-label">Nombre propietario</label>
                         <input type="text" class="fpEd-input" id="fpEdNombre">
                     </div>
-
                     <div class="fpEd-form-group">
                         <label class="fpEd-label">Apellido Propietario</label>
                         <input type="text" class="fpEd-input" id="fpEdApellido">
                     </div>
-
                     <div class="fpEd-form-group fpEd-full-width">
                         <label class="fpEd-label">Correo electrónico</label>
                         <input type="text" class="fpEd-input" id="fpEdCorreoElectronico">
                     </div>
-
                     <div class="fpEd-form-group">
                         <label class="fpEd-label">Nombre Finca</label>
                         <input type="text" class="fpEd-input" id="fpEdFinca">
                     </div>
-
                     <div class="fpEd-form-group">
                         <label class="fpEd-label">Tipo de producción</label>
                         <select class="fpEd-select" id="fpEdProduccion">
@@ -90,7 +79,6 @@
                             <option value="mixto">Mixto</option>
                         </select>
                     </div>
-
                     <div class="fpEd-form-group">
                         <label class="fpEd-label">Departamento</label>
                         <select class="fpEd-select" id="fpEdDepartamento">
@@ -99,12 +87,10 @@
                             <option value="quindio">Quindío</option>
                         </select>
                     </div>
-
                     <div class="fpEd-form-group">
                         <label class="fpEd-label">Dirección Finca</label>
                         <input type="text" class="fpEd-input" id="fpEdDireccion">
                     </div>
-
                     <div class="fpEd-form-group fpEd-full-width">
                         <label class="fpEd-label">Descripción</label>
                         <textarea class="fpEd-textarea" id="fpEdDescripcion" rows="3"></textarea>
@@ -113,10 +99,9 @@
                 </div>
 
                 <div class="fpEd-btn-row">
-                    <button type="button" class="fpEd-btn fp-btn-secondary" id="fpEdBtnVolver">Volver</button>
-                    <button type="submit" class="fpEd-btn fp-btn-primary">Guardar Cambios</button>
+                    <button type="button" class="fpEd-btn fpEd-btn-secondary" id="fpEdBtnVolver">Volver</button>
+                    <button type="submit" class="fpEd-btn fpEd-btn-primary">Guardar Cambios</button>
                 </div>
-
             </form>
         </div>
 

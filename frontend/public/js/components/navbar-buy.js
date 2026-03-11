@@ -64,11 +64,12 @@ function cartBadgeInicializar() {
             transition:transform 0.2s, box-shadow 0.2s;
             position:relative;
         ">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"
-                 stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
-                <line x1="3" y1="6" x2="21" y2="6"/>
-                <path d="M16 10a4 4 0 01-8 0"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+            viewBox="0 0 24 24" fill="none" stroke="white" 
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
+            class="icon icon-tabler icons-tabler-outline icon-tabler-shopping-cart">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 19a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+            <path d="M15 19a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M17 17h-11v-14h-2" /><path d="M6 5l14 1l-1 7h-13" />
             </svg>
 
             <span id="cartBadge" style="

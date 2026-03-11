@@ -3,17 +3,19 @@
 ========================= */
 .shopping {
     width: 100%;
-    /* font-family: var(--font-family-base); */
     color: var(--gray-900);
     position: relative;
-    min-height: calc(100vh - 3.5rem);
+    /* Sin min-height fijo — crece con el contenido */
 }
 
 /* Imagen de fondo — ocupa toda la sección */
 .shopping__hero {
     background: url('/frontend/public/assets/img/Pay.png') center/cover no-repeat;
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 0;
 }
 
@@ -21,8 +23,7 @@
 .shopping__overlay {
     position: relative;
     z-index: 1;
-    min-height: calc(100vh - 3.5rem);
-    padding: 2.5rem 2rem;
+    padding: 2.5rem 2rem 4rem;
     display: flex;
     align-items: flex-start;
 }

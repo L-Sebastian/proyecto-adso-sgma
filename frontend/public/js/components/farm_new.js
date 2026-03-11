@@ -123,7 +123,7 @@ function initFincaNew() {
 
         } else if (btnEdit) {
             e.stopPropagation();
-            window.location.href = '/frontend/public/views/views_create_farm.html?id=' + btnEdit.dataset.id;
+            window.location.href = '/frontend/public/views/views_edit_farm.html?id=' + btnEdit.dataset.id;
 
         } else if (btnDisable) {
             e.stopPropagation();

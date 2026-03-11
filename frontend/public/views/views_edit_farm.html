@@ -5,119 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Finca</title>
     <link rel="stylesheet" href="/frontend/public/css/main.css">
-    <link rel="stylesheet" href="/frontend/public/css/components/edit_farm.css">
-    <style>
-        html, body { height: auto; min-height: 100%; margin: 0; }
-        body { display: flex; flex-direction: column; min-height: 100vh; }
-        .main-content-finca { flex: 1 0 auto; }
-        .footer { flex-shrink: 0; }
-    </style>
+
 </head>
 <body>
     <header class="header__index-register"></header>
     <nav class="navbar"></nav>
 
-    <main class="main-content-finca">
-        <div class="fpEd-page">
-            <div class="fpEd-wrapper">
-
-                <!-- Columna izquierda -->
-                <div class="fpEd-image-section">
-                    <input type="file" id="fpEdPhotoInput" accept="image/*" style="display:none;">
-                    <div class="fpEd-avatar" id="fpEdAvatarContainer">
-                        <img id="fpEdAvatarImg" src="" alt="Foto finca"
-                             style="width:100%;height:100%;object-fit:cover;border-radius:12px;display:none;">
-                        <svg id="fpEdAvatarSvg" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5"
-                             style="width:60px;height:60px;">
-                            <rect x="3" y="3" width="18" height="18" rx="3"/>
-                            <circle cx="8.5" cy="8.5" r="1.5"/>
-                            <path d="M21 15l-5-5L5 21"/>
-                        </svg>
-                    </div>
-                    <div class="fpEd-img-buttons">
-                        <button class="fpEd-btn fpEd-btn-secondary" id="fpEdBtnCambiarFoto" type="button">Cambiar Foto</button>
-                        <button class="fpEd-btn fpEd-btn-danger"    id="fpEdBtnEliminarFoto" type="button">Eliminar Foto</button>
-                    </div>
-                    <div class="fpEd-gallery-section">
-                        <p class="fpEd-gallery-label">Galería de fotos <span>(máx. 4)</span></p>
-                        <div class="fpEd-gallery-grid" id="fpEdGalleryGrid">
-                            <label class="fpEd-gallery-slot" id="fpEdSlot0">
-                                <input type="file" accept="image/*" class="fpEd-gallery-input" data-slot="0" style="display:none;">
-                                <span class="fpEd-gallery-plus">+</span>
-                            </label>
-                            <label class="fpEd-gallery-slot" id="fpEdSlot1">
-                                <input type="file" accept="image/*" class="fpEd-gallery-input" data-slot="1" style="display:none;">
-                                <span class="fpEd-gallery-plus">+</span>
-                            </label>
-                            <label class="fpEd-gallery-slot" id="fpEdSlot2">
-                                <input type="file" accept="image/*" class="fpEd-gallery-input" data-slot="2" style="display:none;">
-                                <span class="fpEd-gallery-plus">+</span>
-                            </label>
-                            <label class="fpEd-gallery-slot" id="fpEdSlot3">
-                                <input type="file" accept="image/*" class="fpEd-gallery-input" data-slot="3" style="display:none;">
-                                <span class="fpEd-gallery-plus">+</span>
-                            </label>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Columna derecha -->
-                <div class="fpEd-form-section">
-                    <h2 class="fpEd-title">Editar finca</h2>
-                    <form id="fpEdForm">
-                        <div class="fpEd-form-grid">
-                            <div class="fpEd-form-group">
-                                <label class="fpEd-label">Nombre propietario</label>
-                                <input type="text" class="fpEd-input" id="fpEdNombre">
-                            </div>
-                            <div class="fpEd-form-group">
-                                <label class="fpEd-label">Apellido Propietario</label>
-                                <input type="text" class="fpEd-input" id="fpEdApellido">
-                            </div>
-                            <div class="fpEd-form-group fpEd-full-width">
-                                <label class="fpEd-label">Correo electrónico</label>
-                                <input type="text" class="fpEd-input" id="fpEdCorreoElectronico">
-                            </div>
-                            <div class="fpEd-form-group">
-                                <label class="fpEd-label">Nombre Finca</label>
-                                <input type="text" class="fpEd-input" id="fpEdFinca">
-                            </div>
-                            <div class="fpEd-form-group">
-                                <label class="fpEd-label">Tipo de producción</label>
-                                <select class="fpEd-select" id="fpEdProduccion">
-                                    <option value="frutas">Frutas</option>
-                                    <option value="verduras">Verduras</option>
-                                    <option value="carnes">Carnes</option>
-                                    <option value="mixto">Mixto</option>
-                                </select>
-                            </div>
-                            <div class="fpEd-form-group">
-                                <label class="fpEd-label">Departamento</label>
-                                <select class="fpEd-select" id="fpEdDepartamento">
-                                    <option value="risaralda">Risaralda</option>
-                                    <option value="caldas">Caldas</option>
-                                    <option value="quindio">Quindío</option>
-                                </select>
-                            </div>
-                            <div class="fpEd-form-group">
-                                <label class="fpEd-label">Dirección Finca</label>
-                                <input type="text" class="fpEd-input" id="fpEdDireccion">
-                            </div>
-                            <div class="fpEd-form-group fpEd-full-width">
-                                <label class="fpEd-label">Descripción</label>
-                                <textarea class="fpEd-textarea" id="fpEdDescripcion" rows="3"></textarea>
-                            </div>
-                        </div>
-                        <div class="fpEd-btn-row">
-                            <button type="button" class="fpEd-btn fpEd-btn-secondary" id="fpEdBtnVolver">Volver</button>
-                            <button type="submit" class="fpEd-btn fpEd-btn-primary">Guardar Cambios</button>
-                        </div>
-                    </form>
-                </div>
-
-            </div>
-        </div>
-    </main>
+    <main class="main-content-finca"></main>
 
     <footer class="footer"></footer>
 
