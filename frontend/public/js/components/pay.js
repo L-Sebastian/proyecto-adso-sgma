@@ -27,6 +27,52 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function initPay() {
 
+    /* ── Cargar datos del perfil ── */
+    var firstName  = localStorage.getItem('profile_firstName')      || '';
+    var secondName = localStorage.getItem('profile_secondName')     || '';
+    var lastName1  = localStorage.getItem('profile_firstLastName')  || '';
+    var lastName2  = localStorage.getItem('profile_secondLastName') || '';
+    var email      = localStorage.getItem('profile_email')          || '';
+
+    var nombreCompleto = [firstName, secondName, lastName1, lastName2]
+        .filter(Boolean).join(' ');
+
+    /* Llenar paso 1 — Tus datos */
+    var userInfoEl = document.querySelector('.user-info-pay');
+    if (userInfoEl) {
+        userInfoEl.innerHTML =
+            '<p><strong>' + (nombreCompleto || 'Sin nombre') + '</strong></p>' +
+            '<p>' + (email || 'Sin correo') + '</p>';
+    }
+
+    /* Pre-rellenar nombre en tarjeta */
+    var cardNameEl = document.getElementById('cardName');
+    if (cardNameEl && nombreCompleto) cardNameEl.value = nombreCompleto;
+
+    /* Pre-rellenar nombre en preview de tarjeta */
+    var displayCardNameEl = document.getElementById('displayCardName');
+    if (displayCardNameEl && nombreCompleto) displayCardNameEl.textContent = nombreCompleto;
+
+    /* ── Cargar total desde localStorage.cart ── */
+    var cart = [];
+    try { cart = JSON.parse(localStorage.getItem('cart')) || []; } catch (e) {}
+
+    var total = cart.reduce(function (sum, p) {
+        return sum + (p.price || p.precio || 0) * (p.quantity || 1);
+    }, 0);
+
+    var totalFormateado = new Intl.NumberFormat('es-CO', {
+        style: 'currency', currency: 'COP', maximumFractionDigits: 0
+    }).format(total);
+
+    /* Resumen — total */
+    var summaryTotalEl = document.querySelector('.summary-total-pay div');
+    if (summaryTotalEl) summaryTotalEl.textContent = totalFormateado;
+
+    /* Resumen — descripción con cantidad de items */
+    var descEl = document.querySelector('.summary-item-pay:nth-child(2) div');
+    if (descEl) descEl.textContent = 'Pago de ' + cart.length + ' producto(s)';
+
     /* ── Referencias ── */
     var cardNameInput   = document.getElementById('cardName');
     var cardNumberInput = document.getElementById('cardNumber');

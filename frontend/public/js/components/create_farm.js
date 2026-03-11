@@ -1,5 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    var container = document.querySelector('.main-content-finca');
+    if (!container) return;
+
+    fetch('/frontend/public/views/components/create_farm.html')
+        .then(function (r) {
+            if (!r.ok) throw new Error('Error ' + r.status);
+            return r.text();
+        })
+        .then(function (html) {
+            container.innerHTML = html;
+            initCreateFarm();
+        })
+        .catch(function (err) {
+            console.error('Error cargando create_farm:', err);
+        });
+});
+
+function initCreateFarm() {
+
     var photoInput      = document.getElementById('fpPhotoInput');
     var btnCambiarFoto  = document.getElementById('fpBtnCambiarFoto');
     var btnEliminarFoto = document.getElementById('fpBtnEliminarFoto');
@@ -172,7 +191,7 @@ document.addEventListener('DOMContentLoaded', function () {
             window.location.href = '/frontend/public/views/views_farm_new2.html';
         }, 1600);
     });
-});
+}
 
 function cfSetSlotImage(slot, dataURL) {
     var label = document.getElementById('fpSlot' + slot);
