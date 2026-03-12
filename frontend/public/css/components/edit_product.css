@@ -185,7 +185,12 @@
 /* ── RESPONSIVE ── */
 @media (max-width: 768px) {
     .ep-page { padding: 20px 16px 60px; }
-    .ep-wrapper { flex-direction: column; padding: 24px; gap: 24px; }
+    .ep-wrapper { 
+        flex-direction: column; 
+        padding: 24px; 
+        gap: 24px; 
+        align-items: center;
+    }
     .ep-image-section { width: 100%; align-items: center; }
     .ep-form-grid { grid-template-columns: 1fr; }
     .ep-btn-row { flex-direction: column; }

@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 /* ── Productos base ── */
-var productosBase = [
+const productosBase = [
     /* Filtros */
     { id: 'fresas-01',    name: 'Fresas',          price: 12140, unit: 'lb',  vendor: 'Finca el Porvenir',   img: '/frontend/public/img/fresas.jpeg',       tipo: 'Fruta'   },
     { id: 'limon-01',     name: 'Limón Tahití',     price: 2500,  unit: 'lb',  vendor: 'Finca el Porvenir',   img: '/frontend/img/Buy/limon_taiti.jpeg',      tipo: 'Fruta'   },
@@ -44,15 +44,15 @@ var productosBase = [
 function buscarProducto(id) {
     /* 1. misProductos (productos creados por el vendedor) */
     try {
-        var mis = JSON.parse(localStorage.getItem('misProductos')) || [];
-        var encontrado = mis.find(function(p) { return p.id === id; });
+        const mis = JSON.parse(localStorage.getItem('misProductos')) || [];
+        const encontrado = mis.find(function(p) { return p.id === id; });
         if (encontrado) return encontrado;
     } catch (e) {}
 
     /* 2. cart — el producto puede estar guardado ahí con todos sus datos */
     try {
-        var cart = JSON.parse(localStorage.getItem('cart')) || [];
-        var enCart = cart.find(function(p) { return p.id === id; });
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const enCart = cart.find(function(p) { return p.id === id; });
         if (enCart) return enCart;
     } catch (e) {}
 
@@ -62,26 +62,26 @@ function buscarProducto(id) {
 
 function cargarProducto(container) {
 
-    var params = new URLSearchParams(window.location.search);
-    var id     = params.get('id');
-    var prod   = id ? buscarProducto(id) : null;
+    const params = new URLSearchParams(window.location.search);
+    const id     = params.get('id');
+    const prod   = id ? buscarProducto(id) : null;
 
     if (!prod) return; /* sin id → deja HTML estático */
 
     /* ── Normalizar campos ── */
-    var nombre    = prod.nombre    || prod.name    || 'Producto';
-    var unidad    = prod.tipoPeso  || prod.unit    || '';
-    var finca     = prod.finca     || prod.vendor  || '';
-    var foto      = prod.foto      || prod.img     || '';
-    var tipo      = prod.tipo      || 'Fruta';
-    var peso      = prod.peso      || '';
-    var tipoEnvio = prod.tipoEnvio || '';
-    var precioOriginal = prod.precioOriginal || prod.price || prod.precio || 0;
-    var descuento      = prod.descuento || 0;
-    var precioFinal    = prod.precio    || prod.price || 0;
+    const nombre    = prod.nombre    || prod.name    || 'Producto';
+    const unidad    = prod.tipoPeso  || prod.unit    || '';
+    const finca     = prod.finca     || prod.vendor  || '';
+    const foto      = prod.foto      || prod.img     || '';
+    const tipo      = prod.tipo      || 'Fruta';
+    const peso      = prod.peso      || '';
+    const tipoEnvio = prod.tipoEnvio || '';
+    const precioOriginal = prod.precioOriginal || prod.price || prod.precio || 0;
+    const descuento      = prod.descuento || 0;
+    const precioFinal    = prod.precio    || prod.price || 0;
 
     /* ── IMAGEN — clase correcta: product-image-shopping-pineapple ── */
-    var imgEl = container.querySelector('.product-image-shopping-pineapple');
+    const imgEl = container.querySelector('.product-image-shopping-pineapple');
     if (imgEl) {
         imgEl.src = foto || '';
         imgEl.alt = nombre;
@@ -92,13 +92,13 @@ function cargarProducto(container) {
     }
 
     /* ── Título ── */
-    var titleEl = container.querySelector('.product-title-shopping-pineapple');
+    const titleEl = container.querySelector('.product-title-shopping-pineapple');
     if (titleEl) titleEl.innerHTML = nombre + (unidad ? '<br>' + unidad : '');
 
     /* ── Precios ── */
-    var oldPriceEl  = container.querySelector('.old-price-shopping-pineapple');
-    var currPriceEl = container.querySelector('.current-price-shopping-pineapple');
-    var badgeEl     = container.querySelector('.discount-badge-shopping-pineapple');
+    const oldPriceEl  = container.querySelector('.old-price-shopping-pineapple');
+    const currPriceEl = container.querySelector('.current-price-shopping-pineapple');
+    const badgeEl     = container.querySelector('.discount-badge-shopping-pineapple');
 
     if (descuento > 0) {
         if (oldPriceEl)  { oldPriceEl.textContent = '$' + Number(precioOriginal).toLocaleString('es-CO'); oldPriceEl.style.display = ''; }
@@ -111,14 +111,14 @@ function cargarProducto(container) {
     }
 
     /* ── Vendedor ── */
-    var sellerEl = container.querySelector('.seller-info-shopping-pineapple strong');
+    const sellerEl = container.querySelector('.seller-info-shopping-pineapple strong');
     if (sellerEl) sellerEl.textContent = finca;
 
     /* ── Condiciones de entrega ── */
-    var deliveryItems = container.querySelectorAll('.text-shopping-pineapple');
+    const deliveryItems = container.querySelectorAll('.text-shopping-pineapple');
     if (deliveryItems[0]) deliveryItems[0].innerHTML = '<strong>Enviado por:</strong> ' + finca;
     if (deliveryItems[1]) {
-        var envioTexto = {
+        const envioTexto = {
             domicilio:  'Domicilio a tu dirección',
             recogida:   'Recogida en finca',
             transporte: 'Transporte propio',
@@ -128,19 +128,19 @@ function cargarProducto(container) {
     }
 
     /* ── Detalles — clases exactas del HTML ── */
-    var detailValues = container.querySelectorAll('.detail-value-shopping-pineapple');
+    const detailValues = container.querySelectorAll('.detail-value-shopping-pineapple');
     if (detailValues[0]) detailValues[0].textContent = prod.id || 'SIN REF.';
     if (detailValues[1]) detailValues[1].textContent = tipo;
     if (detailValues[2]) detailValues[2].textContent = peso ? peso + ' ' + unidad : '—';
 
     /* ── Botón Agregar — id exacto del HTML: btnAddToCart ── */
-    var btnAgregar = container.querySelector('#btnAddToCart');
+    const btnAgregar = container.querySelector('#btnAddToCart');
     if (btnAgregar) {
         btnAgregar.addEventListener('click', function () {
-            var qty  = parseInt(container.querySelector('#quantityInput')?.value || '1', 10);
+            const qty  = parseInt(container.querySelector('#quantityInput')?.value || '1', 10);
             addToCart(prod, qty);
-            var span = btnAgregar.querySelector('span') || btnAgregar;
-            var orig = span.textContent;
+            const span = btnAgregar.querySelector('span') || btnAgregar;
+            const orig = span.textContent;
             span.textContent = '✓ Agregado';
             btnAgregar.style.background = '#059669';
             setTimeout(function () { span.textContent = orig; btnAgregar.style.background = ''; }, 1400);
@@ -148,9 +148,9 @@ function cargarProducto(container) {
     }
 
     /* ── Cantidad — ids exactos: btnIncrease, btnDecrease, quantityInput ── */
-    var btnIncrease = container.querySelector('#btnIncrease');
-    var btnDecrease = container.querySelector('#btnDecrease');
-    var qtyInput    = container.querySelector('#quantityInput');
+    const btnIncrease = container.querySelector('#btnIncrease');
+    const btnDecrease = container.querySelector('#btnDecrease');
+    const qtyInput    = container.querySelector('#quantityInput');
 
     if (btnIncrease) btnIncrease.addEventListener('click', function () {
         if (qtyInput) qtyInput.value = parseInt(qtyInput.value) + 1;
@@ -160,17 +160,17 @@ function cargarProducto(container) {
     });
 
     /* ── Botón Volver — id exacto: btnGoBack ── */
-    var btnBack = container.querySelector('#btnGoBack');
+    const btnBack = container.querySelector('#btnGoBack');
     if (btnBack) btnBack.addEventListener('click', function () { window.history.back(); });
 
-    var btnreport = container.querySelector('#btnreport');
+    const btnreport = container.querySelector('#btnreport');
     if (btnreport) btnreport.addEventListener('click', function () { window.history.report(); });
 }
 
 function addToCart(product, qty) {
-    var cart = [];
+    let cart = [];
     try { cart = JSON.parse(localStorage.getItem('cart')) || []; } catch (e) { cart = []; }
-    var found = cart.find(p => p.id === product.id);
+    const found = cart.find(p => p.id === product.id);
     if (found) { found.quantity += qty; }
     else { cart.push(Object.assign({}, product, { quantity: qty })); }
     localStorage.setItem('cart', JSON.stringify(cart));

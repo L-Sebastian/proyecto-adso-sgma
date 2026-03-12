@@ -80,7 +80,7 @@ function attachLoginHandlers() {
     if (recoverBtn) {
         recoverBtn.addEventListener('click', function () {
             showMessage('Recuperación de cuenta (pendiente).', 'info');
-            window.location.href = "/frontend/public/views/views_recover.html";
+            window.location.href = "/fronted/public/views/views_recover.html";
         });
     }
 }

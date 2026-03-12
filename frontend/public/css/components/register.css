@@ -1,12 +1,6 @@
 /* ==================== RESET ==================== */
 
 
-html, body {
-    height: 100%;
-    /* font-family: var(--font-family-base); */
-    background: var(--white);
-    color: var(--gray-900);
-}
 
 /* ==================== BRANDBAR ==================== */
 .brandbar {

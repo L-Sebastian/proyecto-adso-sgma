@@ -29,17 +29,13 @@
                         <div class="step-title-pay">Tus datos</div>
                         <a href="#" class="modify-link-pay">Modificar Mis Datos</a>
                     </div>
-                    <div class="user-info-pay">
-                        <p><strong>Juan Antonio de la Cruz</strong></p>
-                        <p>juandelosantocruz11@gmail.com</p>
-                    </div>
+                    <div class="user-info-pay"></div>
                 </div>
 
                 <!-- PASO 2 -->
                 <div class="form-step-pay">
                     <div class="step-header-pay">
                         <div class="step-number-pay">2</div>
-                    
                         <div class="step-title-pay">Selecciona el medio de pago</div>
                         <a href="#" class="modify-link-pay">Cambiar medio de pago</a>
                     </div>
@@ -52,49 +48,46 @@
                         <div class="payment-option-pay" data-method="pse"><img src="/frontend/public/img/pse-seeklogo.svg" alt="PSE"></div>
                     </div>
 
-                    <!-- GRID DEL FORMULARIO -->
                     <div class="form-grid-pay">
 
-                        
                         <div class="form-group-pay full-width-pay">
-                            <label class="form-label-pay" for="cardName">Nombre en la tarjeta *</label>
-                            <input type="text" class="form-input-pay" id="cardName" value="Juan Antonio de la Cruz">
+                            <label class="form-label-pay">Nombre en la tarjeta *</label>
+                            <input type="text" class="form-input-pay cardName">
                         </div>
 
                         <div class="form-group-pay">
-                            <label class="form-label-pay" for="docNumber">Documento de Identidad *</label>
+                            <label class="form-label-pay">Documento de Identidad *</label>
                             <div class="form-row-pay">
-                            
-                                <select class="form-select-pay" id="docType">
+                                <select class="form-select-pay docType">
                                     <option>C.C</option>
                                     <option>T.I</option>
                                     <option>C.E</option>
                                 </select>
-                                <input type="text" class="form-input-pay" id="docNumber" value="1004310780">
+                                <input type="text" class="form-input-pay docNumber">
                             </div>
                         </div>
 
                         <div class="form-group-pay">
-                            <label class="form-label-pay" for="cardNumber">Número de Tarjeta *</label>
-                            <input type="text" class="form-input-pay" id="cardNumber" value="4321 8765 0987 1234" maxlength="19">
+                            <label class="form-label-pay">Número de Tarjeta *</label>
+                            <input type="text" class="form-input-pay cardNumber" maxlength="19">
                         </div>
 
                         <div class="form-group-pay">
-                            <label class="form-label-pay" for="cardCvv">Código de Seguridad *</label>
-                            <input type="password" class="form-input-pay" id="cardCvv" maxlength="3" placeholder="***">
+                            <label class="form-label-pay">Código de Seguridad *</label>
+                            <input type="password" class="form-input-pay cardCvv" maxlength="3" placeholder="***">
                         </div>
 
                         <div class="form-group-pay">
                             <label class="form-label-pay">Fecha de Vencimiento *</label>
                             <div class="form-row-pay">
-                                <select class="form-select-pay" id="expMonth">
+                                <select class="form-select-pay expMonth">
                                     <option>01</option><option>02</option><option>03</option>
                                     <option>04</option><option>05</option><option>06</option>
                                     <option>07</option><option>08</option><option>09</option>
                                     <option>10</option><option>11</option><option selected>12</option>
                                 </select>
                                 <span class="date-separator-pay">/</span>
-                                <select class="form-select-pay" id="expYear">
+                                <select class="form-select-pay expYear">
                                     <option selected>24</option><option>25</option><option>26</option>
                                     <option>27</option><option>28</option><option>29</option>
                                     <option>30</option>
@@ -102,20 +95,17 @@
                             </div>
                         </div>
 
-                
                         <div class="form-group-pay full-width-pay">
-                            <label class="form-label-pay" for="phoneNumber">Número de teléfono *</label>
-                            <input type="tel" class="form-input-pay" id="phoneNumber" value="+57 3143641869">
+                            <label class="form-label-pay">Número de teléfono *</label>
+                            <input type="tel" class="form-input-pay phoneNumber">
                         </div>
 
                     </div>
                 </div>
             </div>
 
-            <!-- Mensaje de error/éxito -->
-            <div id="payFormHelp" class="pay-form-help" aria-live="polite"></div>
-
-            <button class="pay-button-pay" id="btnPagar">Pagar</button>
+            <div class="pay-form-help payFormHelp" aria-live="polite"></div>
+            <button class="pay-button-pay btnPagar">Pagar</button>
         </div>
 
         <!-- COLUMNA DERECHA -->
@@ -130,13 +120,12 @@
 
                 <div class="summary-item-pay">
                     <label>Descripción:</label>
-                    <div>Pago de recibo #000</div>
+                    <div>—</div>
                 </div>
 
-               
                 <div class="summary-item-pay summary-total-pay">
                     <label>Total a pagar ................</label>
-                    <div>COP $26.940</div>
+                    <div>—</div>
                     <div class="summary-note-pay">COP: Pesos colombianos</div>
                 </div>
 
@@ -148,19 +137,16 @@
                             <circle cx="40" cy="20" r="18" fill="#FF5F00" opacity="0.8"/>
                         </svg>
                     </div>
-
                     <div class="card-chip-pay"></div>
-
-                    <div class="card-number-pay" id="displayCardNumber">•••• •••• •••• 1234</div>
-
+                    <div class="card-number-pay displayCardNumber">•••• •••• •••• ••••</div>
                     <div class="card-info-pay">
                         <div class="card-holder-pay">
                             <div class="label-small-pay">TITULAR</div>
-                            <div id="displayCardName">Juan Antonio de la Cruz</div>
+                            <div class="displayCardName">—</div>
                         </div>
                         <div>
                             <div class="label-small-pay">VÁLIDA</div>
-                            <div id="displayExpiry">12/24</div>
+                            <div class="displayExpiry">••/••</div>
                         </div>
                     </div>
                 </div>

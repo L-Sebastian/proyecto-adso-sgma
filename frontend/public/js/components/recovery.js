@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (!response.ok) throw new Error('HTTP error! status: ' + response.status);
                 return response.text();
             })
+
             .then(function (data) {
                 wrapper.innerHTML = data;
                 initRecovery();
@@ -25,7 +26,17 @@ document.addEventListener('DOMContentLoaded', function () {
         initRecovery();
     }
 });
+function recover(){
+    let btnVerification = document.getElementsByClassName('submit-btn-recover');
 
+    if (btnVerification) {
+        btnVerification.addEventListener('click', function () {
+            window.location.href = '/frontend/public/views/views_verification.html'
+        })
+    }
+}
+
+    
 function initRecovery() {
 
     /* BUG CORREGIDO: no había lógica de validación ni submit */
@@ -41,6 +52,7 @@ function initRecovery() {
         var emailEl    = document.getElementById('email');
         var telefonoEl = document.getElementById('telefono');
         var hasError   = false;
+        const goy = document.getElementById('submit-btn-recover');
 
         /* Validar email */
         if (!validateEmail(emailEl.value)) {
@@ -61,6 +73,10 @@ function initRecovery() {
             setHelp('Por favor corrige los errores.', 'error');
             return;
         }
+
+        setTimeout(() => {
+            window.location.href = "/frontend/public/views/views_verification.html";
+        }, 1000);
 
         /* Sin errores → lógica real aquí (fetch a la API, etc.) */
         setHelp('Código enviado. Revisa tu correo.', 'success');

@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  // 1️⃣ Cargar navbar
-  fetch("/frontend/public/views/components/navbar_blog_client.html")
+  // Cargar navbar
+  fetch("/frontend/public/views/components/navbar_blog_user.html")
     .then(res => {
       if (!res.ok) throw new Error("Error cargando navbar");
       return res.text();
@@ -9,8 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(html => {
       document.getElementById("navbar-root").innerHTML = html;
 
-      // 2️⃣ Activar interacciones
+      // Activar interacciones
       initNavbar();
+      
     })
     .catch(err => console.error(err));
 });
@@ -27,7 +28,7 @@ function initNavbar() {
 
   if (!navbar || !menu) return;
 
-  // 🔥 Botón hamburguesa
+  // Botón hamburguesa
   const toggleBtn = document.createElement("button");
   toggleBtn.className = "navbar__toggle";
   toggleBtn.innerHTML = "☰";
@@ -56,23 +57,59 @@ function initNavbar() {
 }
 
 
+document.addEventListener("DOMContentLoaded", function(){
 
-document.addEventListener("DOMContentLoaded", function () {
-  const shareSection = document.querySelector(".navbar__index");
+  const navbarElement = document.querySelector(".navbar__index");
 
-  if (shareSection) {
-    fetch("/frontend/public/views/components/navbar_blog_user.html")
-      .then(response => {
-        if (!response.ok) {
-          throw new Error("No se pudo cargar el componente.");
-        }
-        return response.text();
-      })
+  if(navbarElement){
+
+      fetch("/frontend/public/views/components/navbar_blog_user.html")
+      .then(response => response.text())
       .then(data => {
-        shareSection.innerHTML = data;
+
+          /* Insertar navbar */
+          navbarElement.innerHTML = data;
+
+          /* Aplicar avatar DESPUÉS de insertar el HTML */
+          aplicarDatosNavbar();
+
       })
-      .catch(error => {
-        console.error("Error al cargar el componente 'share-section':", error);
-      });
+      .catch(error => console.log("Error cargando el header", error));
+
   }
+
 });
+
+// Avatar 
+
+function aplicarDatosNavbar() {
+
+  const foto = localStorage.getItem('profilePhoto');
+
+  const avatarImgs = document.querySelectorAll('[data-profile-photo]');
+  const avatarSvgs = document.querySelectorAll('[data-profile-svg]');
+
+  avatarImgs.forEach(function(img, index){
+
+      const svg = avatarSvgs[index];
+
+      if (foto) {
+          img.src = foto;
+          img.style.display = 'block';
+
+          if (svg) svg.style.display = 'none';
+
+      } else {
+
+          img.style.display = 'none';
+
+          if (svg) svg.style.display = 'block';
+    }
+
+  });
+
+  if (typeof window.aplicarDatosPerfil === 'function') {
+      window.aplicarDatosPerfil();
+  }
+
+}

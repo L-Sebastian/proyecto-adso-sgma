@@ -105,9 +105,10 @@ function initVerification() {
 
     if (backBtn) {
         backBtn.addEventListener('click', function () {
-            window.location.href = '/frontend/public/views/views_login.html';
+            window.location.href = '/frontend/public/views/views_recover.html';
         });
     }
+
 
     /* ── Helpers ── */
     function setHelp(msg, isError) {
@@ -134,5 +135,9 @@ function initVerification() {
         setTimeout(function () {
             toast.classList.remove('visible');
         }, 3500);
+
+        setTimeout(() => {
+            window.location.href = "/frontend/public/views/views_verification.html";
+        }, 1000);
     }
 }

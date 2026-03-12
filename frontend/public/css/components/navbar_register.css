@@ -1,10 +1,12 @@
-
-
-body {
-    /* font-family: var(--font-family-base); */
-    background-color: var(--white);
+.navbar__register {
+    background-color: var(--primary-secundary-700);
+    padding: 1.5rem;
 }
-
+.navbar__logo__register{
+    justify-content: left;
+    padding-left: 2.5rem;
+}
+/* ------- SM ----- */ 
 /* === NAVBAR GENERAL === */
 .navbar-register {
     background: var(--primary-secundary-700);

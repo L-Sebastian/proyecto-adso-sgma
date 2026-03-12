@@ -5,11 +5,11 @@ function formatCurrency(n) {
 }
 
 function initShoppingLogic() {
-    var listEl  = document.getElementById('shoppingItems');
-    var emptyEl = document.getElementById('shoppingEmpty');
-    var totalEl = document.getElementById('checkoutTotal');
-    var payBtn  = document.getElementById('payBtn');
-    var payHelp = document.getElementById('payHelp');
+    const listEl  = document.querySelector('.shoppingItems');
+    const emptyEl = document.querySelector('.shoppingEmpty');
+    const totalEl = document.querySelector('.checkoutTotal');
+    const payBtn  = document.querySelector('.payBtn');
+    const payHelp = document.querySelector('.payHelp');
 
     if (!listEl || !totalEl || !payBtn) {
         console.error('Error: Elementos del carrito no encontrados.');
@@ -24,11 +24,11 @@ function initShoppingLogic() {
         localStorage.setItem('cart', JSON.stringify(cart));
     }
 
-    var cart = cargarCart();
+    let cart = cargarCart();
 
     function discount(item) {
-        var orig = item.originalPrice || item.precioOriginal;
-        var price = item.price || item.precio || 0;
+        let orig = item.originalPrice || item.precioOriginal;
+        const price = item.price || item.precio || 0;
         if (!orig || orig <= price) return 0;
         return Math.round((1 - price / orig) * 100);
     }
@@ -49,21 +49,21 @@ function initShoppingLogic() {
 
     function createItemEl(item) {
         /* Normalizar campos — compatibilidad con productos de buy.html */
-        var nombre = item.name   || item.nombre || 'Producto';
-        var precio = item.price  || item.precio || 0;
-        // var unidad = item.unit   || item.tipoPeso || '';
-        var finca  = item.vendor || item.finca  || '';
-        var foto   = item.img    || item.foto   || '';
-        var orig   = item.originalPrice || item.precioOriginal || 0;
-        var qty    = item.quantity || 1;
-        var pct    = discount(item);
-        var idProd = item.id;
+        const nombre = item.name   || item.nombre || 'Producto';
+        const precio = item.price  || item.precio || 0;
+        // const unidad = item.unit   || item.tipoPeso || '';
+        const finca  = item.vendor || item.finca  || '';
+        const foto   = item.img    || item.foto   || '';
+        let orig   = item.originalPrice || item.precioOriginal || 0;
+        const qty    = item.quantity || 1;
+        const pct    = discount(item);
+        const idProd = item.id;
 
-        var li = document.createElement('li');
+        let li = document.createElement('li');
         li.className = 'shopping__item';
         li.dataset.id = idProd;
 
-        var discountRow = pct > 0
+        const discountRow = pct > 0
             ? '<div class="shopping__discount-row">' +
                 '<span class="shopping__badge">-' + pct + '%</span>' +
                 '<span class="shopping__original">' + formatCurrency(orig) + '</span>' +
@@ -96,11 +96,11 @@ function initShoppingLogic() {
     }
 
     listEl.addEventListener('click', function (e) {
-        var btn = e.target.closest('[data-action]');
+        const btn = e.target.closest('[data-action]');
         if (!btn) return;
-        var li     = btn.closest('.shopping__item');
-        var id     = li && li.dataset.id;
-        var action = btn.dataset.action;
+        let li     = btn.closest('.shopping__item');
+        let id     = li && li.dataset.id;
+        let action = btn.dataset.action;
         if (!id || !action) return;
         if (action === 'increase') changeQty(id, +1);
         if (action === 'decrease') changeQty(id, -1);
@@ -122,7 +122,7 @@ function initShoppingLogic() {
     }
 
     function updateTotal() {
-        var total = cart.reduce(function (s, p) {
+        const total = cart.reduce(function (s, p) {
             return s + (p.price || p.precio || 0) * (p.quantity || 1);
         }, 0);
         totalEl.textContent = formatCurrency(total);
@@ -144,7 +144,7 @@ function initShoppingLogic() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    var container = document.querySelector('.shopping');
+    const container = document.querySelector('.shopping');
     if (container) {
         fetch('/frontend/public/views/components/shopping.html')
             .then(function (res) {

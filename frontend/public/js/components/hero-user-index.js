@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", function(){
         .then(response => response.text())
         .then(data => {
             heroElement.innerHTML = data;
+
+            aplicarDatosNavbar();
         })
 
     .catch(error => console.log("Error cargando el hero", error));
@@ -13,19 +15,36 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 
 
-const input = document.getElementById("file-input");
-const image = document.getElementById("img-preview");
+// Avatar
 
-input.addEventListener("change", (e)=>{
-    if(e.target.files.length){
-        const src = URL.createObjectURL(e.target.files[0]);
-        image.src = src;
+function aplicarDatosNavbar() {
+
+    const foto = localStorage.getItem('profilePhoto');
+
+    const avatarImgs = document.querySelectorAll('[data-profile-photo]');
+    const avatarSvgs = document.querySelectorAll('[data-profile-svg]');
+
+    avatarImgs.forEach(function(img, index){
+
+        const svg = avatarSvgs[index];
+
+        if (foto) {
+            img.src = foto;
+            img.style.display = 'block';
+
+            if (svg) svg.style.display = 'none';
+
+        } else {
+
+            img.style.display = 'none';
+
+            if (svg) svg.style.display = 'block';
+        }
+
+    });
+
+    if (typeof window.aplicarDatosPerfil === 'function') {
+        window.aplicarDatosPerfil();
     }
-});
 
-// Toast
-function showToast(){
-    var toast = document.getElementById("toast");
-    toast.className = "show";
-    setTimeout(function(){toast.className = toast.className.replace("show", "");},3000);
 }

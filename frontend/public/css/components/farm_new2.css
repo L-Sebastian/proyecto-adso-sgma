@@ -36,6 +36,7 @@
     color: #1a4a6b;
     text-align: center;
     margin: 0 0 28px 0;
+    padding: 30px;
 }
 
 .finca-create-btn {
@@ -149,7 +150,8 @@
     border: none;
     padding: 6px 8px;
     border-radius: 6px;
-    height: 40px;
+    height: 48px;
+    width: 150px;
     font-size: 1.6rem;
     font-weight: 700;
     cursor: pointer;
@@ -159,6 +161,7 @@
     gap: 4px;
     transition: background 0.2s, transform 0.15s;
     white-space: nowrap;
+
 }
 
 .fn2-btn-edit {

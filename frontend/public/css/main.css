@@ -21,7 +21,7 @@
 @import url('components/filters-button-buy.css'); /* Problema con el header */
 @import url('components/products-filter-buy.css');
 /* Import BLOG */
-@import url('components/navbar_blog_user.css');
+@import url('components/navbar_blog_user.css'); /* Componente Fantasma */
 
 @import url('components/hero-blog.css');
 @import url('components/shere-section-blog.css');
@@ -40,21 +40,17 @@
 @import url("components/header-product.css");
 /* Import Index Admin */
 @import url("components/hero_admin.css");
+/* Import Manage User Admin */
+@import url('components/header-gov.css');
 
 /* Import ST */
-@import url('components/navbar.css');
+/* @import url('components/navbar.css'); */
 @import url('components/navbarshopping.css');
 /* */
 @import url('components/navbar_register.css');
 /* @import url('components/header.css'); */
 @import url('components/header_create_product.css');
 @import url('components/create_product_2.css');
-@import url('components/create_farm.css');
-@import url('components/edit_farm.css');
-@import url('components/farm_admin.css');
-@import url('components/farm_new.css');
-@import url('components/farm_new2.css');
-@import url('components/farm_detail.css');
 @import url('components/welcome.css');
 @import url('components/shopping.css');
 @import url('components/shopping_pineapple.css');
@@ -79,3 +75,10 @@
 @import url('components/product_new.css');
 @import url('components/product_new-2.css');
 @import url('components/edit_product.css');
+
+@import url('components/create_farm.css');
+@import url('components/edit_farm.css');
+@import url('components/farm_new.css');
+@import url('components/farm_new2.css');
+@import url('components/farm_detail.css');
+@import url('components/farm_admin.css');

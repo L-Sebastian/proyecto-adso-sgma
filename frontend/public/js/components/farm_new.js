@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    var container = document.querySelector('.main-content');
+    const container = document.querySelector('.main-content');
     if (!container) return;
 
     container.classList.add('finca-vevo-page');
@@ -19,10 +19,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 });
 
-var FN_UNA_HORA_MS = 60 * 60 * 1000;
+const FN_UNA_HORA_MS = 60 * 60 * 1000;
 
-var fnIconEdit = '<svg width="13" height="13" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4l5 5L7 18H2v-5L11 4z"/><path d="M15 2l3 3"/></svg>';
-var fnIconTrash = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>';
+const fnIconEdit = '<svg width="13" height="13" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4l5 5L7 18H2v-5L11 4z"/><path d="M15 2l3 3"/></svg>';
+const fnIconTrash = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>';
 
 function fnCargarFincas() {
     try { return JSON.parse(localStorage.getItem('misFincas')) || []; }
@@ -33,25 +33,25 @@ function fnGuardarFincas(lista) {
 }
 
 function fnClasificar() {
-    var todas = fnCargarFincas();
-    var ahora = Date.now();
-    var nuevas = [], maduras = [];
+    let todas = fnCargarFincas();
+    let ahora = Date.now();
+    let nuevas = [], maduras = [];
     todas.forEach(function (f) {
-        var edad = ahora - (f.fechaCreacion ? new Date(f.fechaCreacion).getTime() : 0);
+        const edad = ahora - (f.fechaCreacion ? new Date(f.fechaCreacion).getTime() : 0);
         (edad >= FN_UNA_HORA_MS ? maduras : nuevas).push(f);
     });
     return { nuevas: nuevas, maduras: maduras };
 }
 
 function fnBuildCard(f, esMia) {
-    var nombre = f.nombreFinca || 'Sin nombre';
-    var tipo = f.tipoProduccion || '';
-    var depto = f.departamento || '';
-    var desc = f.descripcion || '';
-    var foto = f.foto || '';
-    var activo = f.activo !== false;
+    const nombre = f.nombreFinca || 'Sin nombre';
+    const tipo = f.tipoProduccion || '';
+    const depto = f.departamento || '';
+    const desc = f.descripcion || '';
+    const foto = f.foto || '';
+    const activo = f.activo !== false;
 
-    var deleteBtn = esMia
+    const deleteBtn = esMia
         ? '<button class="fn-btn-delete" data-id="' + f.id + '" title="Eliminar">' + fnIconTrash + '</button>'
         : '';
 
@@ -78,15 +78,15 @@ function fnBuildCard(f, esMia) {
 }
 
 function fnRenderGrid(grid) {
-    var c = fnClasificar();
+    const c = fnClasificar();
 
     /* Nuevas activas primero */
-    var nuevasActivas = c.nuevas.filter(function (f) { return f.activo !== false; });
+    const nuevasActivas = c.nuevas.filter(function (f) { return f.activo !== false; });
 
     /* Maduras activas */
-    var madura = c.maduras.filter(function (f) { return f.activo !== false; });
+    const madura = c.maduras.filter(function (f) { return f.activo !== false; });
 
-    var html = '';
+    let html = '';
     html += nuevasActivas.map(function (f) { return fnBuildCard(f, true); }).join('');
     html += madura.map(function (f) { return fnBuildCard(f, true); }).join('');
 
@@ -98,9 +98,9 @@ function fnRenderGrid(grid) {
 
 function initFincaNew() {
 
-    var grid = document.getElementById('fincaGrid');
-    var btnCrear = document.getElementById('btnCrearFinca');
-    var btnBack = document.getElementById('btnGoBackFinca');
+    const grid = document.querySelector('.fincaGrid');
+    const btnCrear = document.querySelector('.btnCrearFinca');
+    const btnBack = document.querySelector('.btnGoBackFinca');
 
     if (!grid) return;
 
@@ -108,11 +108,11 @@ function initFincaNew() {
     fnProgramarMovimiento(function () { fnRenderGrid(grid); });
 
     grid.addEventListener('click', function (e) {
-        var btnEdit = e.target.closest('.fn-btn-edit');
-        var btnDisable = e.target.closest('.fn-btn-disable');
-        var btnDelete = e.target.closest('.fn-btn-delete');
-        var card       = e.target.closest('.finca-vevo-card');
-        var todas = fnCargarFincas();
+        const btnEdit = e.target.closest('.fn-btn-edit');
+        const btnDisable = e.target.closest('.fn-btn-disable');
+        const btnDelete = e.target.closest('.fn-btn-delete');
+        const card       = e.target.closest('.finca-vevo-card');
+        let todas = fnCargarFincas();
 
         if (btnDelete) {
             e.stopPropagation();
@@ -127,8 +127,8 @@ function initFincaNew() {
 
         } else if (btnDisable) {
             e.stopPropagation();
-            var id = btnDisable.dataset.id;
-            var finca = todas.find(function (f) { return f.id === id; });
+            let id = btnDisable.dataset.id;
+            const finca = todas.find(function (f) { return f.id === id; });
             if (!finca) return;
             finca.activo = !finca.activo;
             fnGuardarFincas(todas);
@@ -136,7 +136,7 @@ function initFincaNew() {
             btnDisable.classList.toggle('fn-disabled', !finca.activo);
         } else if (card) {
             /* Click en la card → ir al detalle del producto */
-            var id = card.dataset.id;
+            let id = card.dataset.id;
             window.location.href = '/frontend/public/views/views_farm_details.html?id=' + id;
         }
     });
@@ -148,9 +148,9 @@ function initFincaNew() {
 }
 
 function fnProgramarMovimiento(callback) {
-    var todas = fnCargarFincas();
-    var ahora = Date.now();
-    var tiempos = todas
+    let todas = fnCargarFincas();
+    let ahora = Date.now();
+    const tiempos = todas
         .filter(function (f) {
             return ahora - (f.fechaCreacion ? new Date(f.fechaCreacion).getTime() : 0) < FN_UNA_HORA_MS;
         })

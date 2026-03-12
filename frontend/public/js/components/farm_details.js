@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    var container = document.querySelector('.main-content');
+    const container = document.querySelector('.main-content');
     if (!container) return;
 
     fetch('/frontend/public/views/components/farm_details.html')
@@ -45,56 +45,56 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function cargarFinca(container) {
 
-    var params = new URLSearchParams(window.location.search);
-    var id     = params.get('id');
+    const params = new URLSearchParams(window.location.search);
+    let id     = params.get('id');
     if (!id) return;
 
-    var misFincas = [];
+    let misFincas = [];
     try { misFincas = JSON.parse(localStorage.getItem('misFincas')) || []; } catch (e) {}
 
-    var finca = misFincas.find(function (f) { return f.id === id; });
+    const finca = misFincas.find(function (f) { return f.id === id; });
     if (!finca) return;
 
     /* ── Normalizar campos ── */
-    var nombreFinca  = finca.nombreFinca    || 'Sin nombre';
-    var propietario  = ((finca.nombre || '') + ' ' + (finca.apellido || '')).trim() || '—';
-    var correo       = finca.correo         || '—';
-    var tipo         = finca.tipoProduccion || '—';
-    var departamento = finca.departamento   || '—';
-    var direccion    = finca.direccion      || '—';
-    var descripcion  = finca.descripcion    || '—';
-    var foto         = finca.foto           || '';
-    var galeria      = (finca.galeria || []).filter(function (g) { return g; });
+    const nombreFinca  = finca.nombreFinca    || 'Sin nombre';
+    const propietario  = ((finca.nombre || '') + ' ' + (finca.apellido || '')).trim() || '—';
+    const correo       = finca.correo         || '—';
+    const tipo         = finca.tipoProduccion || '—';
+    const departamento = finca.departamento   || '—';
+    const direccion    = finca.direccion      || '—';
+    const descripcion  = finca.descripcion    || '—';
+    const foto         = finca.foto           || '';
+    const galeria      = (finca.galeria || []).filter(function (g) { return g; });
 
     /* ── Nombre finca ── */
-    var tituloEl = container.querySelector('.finca-title');
+    const tituloEl = container.querySelector('.finca-title');
     if (tituloEl) tituloEl.textContent = nombreFinca;
 
     /* ── Propietario: primer .fdInfo .value ── */
-    var fdInfoBlocks = container.querySelectorAll('.fdInfo');
+    const fdInfoBlocks = container.querySelectorAll('.fdInfo');
     if (fdInfoBlocks[0]) {
-        var valProp = fdInfoBlocks[0].querySelector('.value');
+        const valProp = fdInfoBlocks[0].querySelector('.value');
         if (valProp) valProp.textContent = propietario;
     }
 
     /* ── Correo: segundo .fdInfo .value ── */
     if (fdInfoBlocks[1]) {
-        var valCorreo = fdInfoBlocks[1].querySelector('.value');
+        const valCorreo = fdInfoBlocks[1].querySelector('.value');
         if (valCorreo) valCorreo.textContent = correo;
     }
 
     /* ── Tipo, Departamento, Dirección ── */
-    var detailValues = container.querySelectorAll('.details-grid .detail-item .value');
+    const detailValues = container.querySelectorAll('.details-grid .detail-item .value');
     if (detailValues[0]) detailValues[0].textContent = tipo;
     if (detailValues[1]) detailValues[1].textContent = departamento;
     if (detailValues[2]) detailValues[2].textContent = direccion;
 
     /* ── Descripción ── */
-    var descEl = container.querySelector('.description-tex');
+    const descEl = container.querySelector('.description-tex');
     if (descEl) descEl.textContent = descripcion;
 
     /* ── Foto principal ── */
-    var mainImage = container.querySelector('#mainImage');
+    const mainImage = container.querySelector('#mainImage');
     if (mainImage) {
         if (foto) {
             mainImage.src = foto;
@@ -107,17 +107,17 @@ function cargarFinca(container) {
     }
 
     /* ── Galería ── */
-    var galleryItems = container.querySelector('#galleryItems');
+    const galleryItems = container.querySelector('#galleryItems');
     if (galleryItems) {
-        var todasFotos = foto
+        const todasFotos = foto
             ? [foto].concat(galeria.filter(function (g) { return g !== foto; }))
             : galeria;
 
         galleryItems.innerHTML = '';
-        var currentIdx = 0;
+        let currentIdx = 0;
 
         todasFotos.forEach(function (src, i) {
-            var btn = document.createElement('button');
+            const btn = document.createElement('button');
             btn.className = 'gallery-item' + (i === 0 ? ' active' : '');
             btn.dataset.index = i;
             btn.innerHTML = '<img src="' + src + '" alt="foto finca">';
@@ -135,11 +135,11 @@ function cargarFinca(container) {
         });
 
         /* ── Prev / Next ── */
-        var galleryPrev = container.querySelector('#galleryPrev');
-        var galleryNext = container.querySelector('#galleryNext');
+        const galleryPrev = container.querySelector('#galleryPrev');
+        const galleryNext = container.querySelector('#galleryNext');
 
         function irA(idx) {
-            var items = galleryItems.querySelectorAll('.gallery-item');
+            const items = galleryItems.querySelectorAll('.gallery-item');
             if (!items.length) return;
             currentIdx = (idx + todasFotos.length) % todasFotos.length;
             items.forEach(function (el) { el.classList.remove('active'); });
@@ -156,16 +156,16 @@ function cargarFinca(container) {
     }
 
     /* ── Botón Editar ── */
-    var btnEditar = container.querySelector('#fdBtnEditar');
+    const btnEditar = container.querySelector('#fdBtnEditar');
     if (btnEditar) {
         btnEditar.addEventListener('click', function () {
-            var params = new URLSearchParams(window.location.search);
+            const params = new URLSearchParams(window.location.search);
             window.location.href = '/frontend/public/views/views_edit_farm.html?id=' + params.get('id');
         });
     }
 
     /* ── Botón Volver ── */
-    var btnVolver = container.querySelector('#fdBtnVolver');
+    const btnVolver = container.querySelector('#fdBtnVolver');
     if (btnVolver) {
         btnVolver.addEventListener('click', function () { window.history.back(); });
     }

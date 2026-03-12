@@ -14,51 +14,6 @@
     <script src="/frontend/public/js/components/filters-product-buy.js" defer></script>
     <script src="/frontend/public/js/components/footer.js" defer></script>
 
-    <script>
-    function buscar(event) {
-        event.preventDefault(); // evita que recargue la página
-        const texto = document.getElementById("searchInput").value;
-
-        if (texto.trim() === "") {
-            alert("Escribe algo para buscar");
-            return;
-        }
-
-        // Ejemplo de redirección
-        window.location.href = "buscar.html?q=" + encodeURIComponent(texto);
-    }
-    
-    document.addEventListener("DOMContentLoaded", function() {
-        const btnComprar = document.getElementById("btn-comprar");
-        const loginAlert = document.getElementById("login-alert");
-
-        btnComprar.addEventListener("click", function(event) {
-            event.preventDefault(); // Evita que el enlace navegue
-            loginAlert.style.display = "block"; // Muestra el mensaje
-        });
-    });
-
-    </script>
-    <style>
-        #login-alert {
-        background-color: #f8d7da;
-        color: #721c24;
-        border: 1px solid #f5c6cb;
-        padding: 1rem;
-        border-radius: 5px;
-        display: inline-block;
-}
-
-    #login-alert .btn-login {
-        display: inline-block;
-        margin-top: 0.5rem;
-        padding: 0.5rem 1rem;
-        background-color: #28a745;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 4px;
-    }
-
     </style>
 </head>
 </html>
@@ -85,14 +40,6 @@
             
         </div>
     </section>
-
-    <a href="#" id="btn-comprar" class="product__button">COMPRAR</a>
-
-<!-- Contenedor donde aparecerá el aviso -->
-<div id="login-alert" style="display: none; margin-top: 1rem;">
-    <p>No has iniciado sesión</p>
-    <a href="/frontend/public/views/login.html" class="btn-login">Iniciar sesión</a>
-</div>
 
     
     <!-- Footer -->

@@ -153,7 +153,7 @@
 .fn2-btn-edit:hover { background: #059669; transform: translateY(-1px); }
 
 .fn2-btn-disable {
-    background: #1a4a6b;
+    background: var(--primary-600);
     color: white;
 }
 .fn2-btn-disable:hover { background: #153a56; transform: translateY(-1px); }

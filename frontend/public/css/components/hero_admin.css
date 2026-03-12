@@ -178,6 +178,9 @@
         margin: 0;
         text-align: center;
     }
+    .menu__inside li a {
+        width: 100%;
+    }
 }
 
 
@@ -190,6 +193,7 @@
     right: 70px;
     background-color: var(--primary-secundary-700);
     padding: 10px;
+    
 
 }
 

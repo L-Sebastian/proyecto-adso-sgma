@@ -1,7 +1,7 @@
-var UNA_HORA_MS = 60 * 60 * 1000;
+const UNA_HORA_MS = 60 * 60 * 1000;
 
 /* Productos base con descuento para la sección superior */
-var productosConDescuento = [
+const productosConDescuento = [
     { id: 'pina-01',    
     name: 'Piña Oro Miel',   
     price: 3600,  
@@ -54,7 +54,7 @@ var productosConDescuento = [
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    var section = document.querySelector('.discounts');
+    const section = document.querySelector('.discounts');
     if (!section) return;
 
     section.innerHTML = `
@@ -63,21 +63,21 @@ document.addEventListener('DOMContentLoaded', function () {
         <div class="discounts__grid" id="discountGrid"></div>
     `;
 
-    var grid = document.getElementById('discountGrid');
+    const grid = document.getElementById('discountGrid');
     grid.innerHTML = productosConDescuento.map(buildCard).join('');
 
     section.addEventListener('click', function (e) {
-        var btn  = e.target.closest('.product__button');
-        var card = e.target.closest('.product');
+        const btn  = e.target.closest('.product__button');
+        const card = e.target.closest('.product');
         if (btn) {
             e.stopPropagation();
             /* Buscar el producto correspondiente y agregarlo al carrito */
-            var pid = btn.dataset.id || card?.dataset.id;
-            var prod = productosConDescuento.find(function (p) { return p.id === pid; });
+            const pid = btn.dataset.id || card?.dataset.id;
+            const prod = productosConDescuento.find(function (p) { return p.id === pid; });
             if (prod) cartAgregar(prod);
             /* Feedback visual en el botón */
-            var spanBtn = btn.querySelector('span') || btn;
-            var origText = btn.innerHTML;
+            const spanBtn = btn.querySelector('span') || btn;
+            const origText = btn.innerHTML;
             btn.style.background = '#059669';
             btn.innerHTML = '✓ Agregado';
             setTimeout(function () { btn.innerHTML = origText; btn.style.background = ''; }, 1200);
@@ -88,15 +88,15 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function buildCard(p) {
-    var nombre = p.nombre || p.name    || 'Producto';
-    var precio = p.precio || p.price   || 0;
-    var unidad = p.tipoPeso || p.unit  || '';
-    var finca  = p.finca   || p.vendor || '';
-    var foto   = p.foto    || p.img    || '';
-    var desc   = parseInt(p.descuento) || 0;
-    var orig   = p.precioOriginal || precio;
+    const nombre = p.nombre || p.name    || 'Producto';
+    const precio = p.precio || p.price   || 0;
+    const unidad = p.tipoPeso || p.unit  || '';
+    const finca  = p.finca   || p.vendor || '';
+    const foto   = p.foto    || p.img    || '';
+    const desc   = parseInt(p.descuento) || 0;
+    const orig   = p.precioOriginal || precio;
 
-    var precioHtml = desc > 0
+    const precioHtml = desc > 0
         ? `<p class="product__price-info"><span class="product__discount">-${desc}%</span> <span class="product__old-price">$${Number(orig).toLocaleString('es-CO')}</span></p>
            <p class="product__price">$${Number(precio).toLocaleString('es-CO')} <span class="product__unit">${unidad}</span></p>`
         : `<p class="product__price">$${Number(precio).toLocaleString('es-CO')} <span class="product__unit">${unidad}</span></p>`;

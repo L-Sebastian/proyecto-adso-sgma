@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /* BUG CORREGIDO: buscaba '.checkout-container' pero el HTML
        tiene '.checkout-container-pay' → nunca encontraba el contenedor */
-    var wrapper = document.querySelector('.checkout-container');
+    const wrapper = document.querySelector('.checkout-container');
 
     if (wrapper) {
-        var bodyURL = '/frontend/public/views/components/pay.html';
+        const bodyURL = '/frontend/public/views/components/pay.html';
 
         fetch(bodyURL)
             .then(function (response) {
@@ -28,17 +28,17 @@ document.addEventListener('DOMContentLoaded', function () {
 function initPay() {
 
     /* ── Cargar datos del perfil ── */
-    var firstName  = localStorage.getItem('profile_firstName')      || '';
-    var secondName = localStorage.getItem('profile_secondName')     || '';
-    var lastName1  = localStorage.getItem('profile_firstLastName')  || '';
-    var lastName2  = localStorage.getItem('profile_secondLastName') || '';
-    var email      = localStorage.getItem('profile_email')          || '';
+    const firstName  = localStorage.getItem('profile_firstName')      || '';
+    const secondName = localStorage.getItem('profile_secondName')     || '';
+    const lastName1  = localStorage.getItem('profile_firstLastName')  || '';
+    const lastName2  = localStorage.getItem('profile_secondLastName') || '';
+    const email      = localStorage.getItem('profile_email')          || '';
 
-    var nombreCompleto = [firstName, secondName, lastName1, lastName2]
+    const nombreCompleto = [firstName, secondName, lastName1, lastName2]
         .filter(Boolean).join(' ');
 
     /* Llenar paso 1 — Tus datos */
-    var userInfoEl = document.querySelector('.user-info-pay');
+    const userInfoEl = document.querySelector('.user-info-pay');
     if (userInfoEl) {
         userInfoEl.innerHTML =
             '<p><strong>' + (nombreCompleto || 'Sin nombre') + '</strong></p>' +
@@ -46,44 +46,44 @@ function initPay() {
     }
 
     /* Pre-rellenar nombre en tarjeta */
-    var cardNameEl = document.getElementById('cardName');
+    const cardNameEl = document.querySelector('.cardName');
     if (cardNameEl && nombreCompleto) cardNameEl.value = nombreCompleto;
 
     /* Pre-rellenar nombre en preview de tarjeta */
-    var displayCardNameEl = document.getElementById('displayCardName');
+    const displayCardNameEl = document.querySelector('.displayCardName');
     if (displayCardNameEl && nombreCompleto) displayCardNameEl.textContent = nombreCompleto;
 
     /* ── Cargar total desde localStorage.cart ── */
-    var cart = [];
+    let cart = [];
     try { cart = JSON.parse(localStorage.getItem('cart')) || []; } catch (e) {}
 
-    var total = cart.reduce(function (sum, p) {
+    const total = cart.reduce(function (sum, p) {
         return sum + (p.price || p.precio || 0) * (p.quantity || 1);
     }, 0);
 
-    var totalFormateado = new Intl.NumberFormat('es-CO', {
+    const totalFormateado = new Intl.NumberFormat('es-CO', {
         style: 'currency', currency: 'COP', maximumFractionDigits: 0
     }).format(total);
 
     /* Resumen — total */
-    var summaryTotalEl = document.querySelector('.summary-total-pay div');
+    const summaryTotalEl = document.querySelector('.summary-total-pay div');
     if (summaryTotalEl) summaryTotalEl.textContent = totalFormateado;
 
     /* Resumen — descripción con cantidad de items */
-    var descEl = document.querySelector('.summary-item-pay:nth-child(2) div');
+    const descEl = document.querySelector('.summary-item-pay:nth-child(2) div');
     if (descEl) descEl.textContent = 'Pago de ' + cart.length + ' producto(s)';
 
     /* ── Referencias ── */
-    var cardNameInput   = document.getElementById('cardName');
-    var cardNumberInput = document.getElementById('cardNumber');
-    var expMonth        = document.getElementById('expMonth');
-    var expYear         = document.getElementById('expYear');
-    var btnPagar        = document.getElementById('btnPagar');
-    var formHelp        = document.getElementById('payFormHelp');
+    const cardNameInput   = document.querySelector('.cardName');
+    const cardNumberInput = document.querySelector('.cardNumber');
+    const expMonth        = document.querySelector('.expMonth');
+    const expYear         = document.querySelector('.expYear');
+    const btnPagar        = document.querySelector('.btnPagar');
+    const formHelp        = document.querySelector('.payFormHelp');
 
-    var displayCardName   = document.getElementById('displayCardName');
-    var displayCardNumber = document.getElementById('displayCardNumber');
-    var displayExpiry     = document.getElementById('displayExpiry');
+    const displayCardName   = document.querySelector('.displayCardName');
+    const displayCardNumber = document.querySelector('.displayCardNumber');
+    const displayExpiry     = document.querySelector('.displayExpiry');
 
     /* ── Preview en tiempo real — nombre ── */
     if (cardNameInput && displayCardName) {
@@ -95,10 +95,10 @@ function initPay() {
     /* ── Preview en tiempo real — número de tarjeta ── */
     if (cardNumberInput && displayCardNumber) {
         cardNumberInput.addEventListener('input', function () {
-            var raw = this.value.replace(/\D/g, '').slice(0, 16);
+            const raw = this.value.replace(/\D/g, '').slice(0, 16);
             /* Formatear con espacios cada 4 dígitos */
             this.value = raw.replace(/(.{4})/g, '$1 ').trim();
-            var last4 = raw.slice(-4) || '????';
+            const last4 = raw.slice(-4) || '????';
             displayCardNumber.textContent = '•••• •••• •••• ' + last4;
         });
     }
@@ -113,7 +113,7 @@ function initPay() {
     if (expYear)  expYear.addEventListener('change', updateExpiry);
 
     /* ── Selección de método de pago ── */
-    var paymentOptions = document.querySelectorAll('.payment-option-pay');
+    const paymentOptions = document.querySelectorAll('.payment-option-pay');
     paymentOptions.forEach(function (option) {
         option.addEventListener('click', function () {
             paymentOptions.forEach(function (o) { o.classList.remove('selected'); });
@@ -126,13 +126,13 @@ function initPay() {
         btnPagar.addEventListener('click', function () {
             clearHelp();
 
-            var cardName   = document.getElementById('cardName');
-            var cardNumber = document.getElementById('cardNumber');
-            var cardCvv    = document.getElementById('cardCvv');
-            var docNumber  = document.getElementById('docNumber');
-            var phone      = document.getElementById('phoneNumber');
+            const cardName   = document.querySelector('.cardName');
+            const cardNumber = document.querySelector('.cardNumber');
+            const cardCvv    = document.querySelector('.cardCvv');
+            const docNumber  = document.querySelector('.docNumber');
+            const phone      = document.querySelector('.phoneNumber');
 
-            var hasError = false;
+            let hasError = false;
 
             if (!cardName || !cardName.value.trim()) {
                 setHelp('El nombre en la tarjeta es obligatorio.', 'error');

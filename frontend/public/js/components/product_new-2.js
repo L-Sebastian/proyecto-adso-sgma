@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    var container = document.querySelector('.main-content');
+    const container = document.querySelector('.main-content');
     if (!container) return;
 
     fetch('/frontend/public/views/components/product_new-2.html')
@@ -17,29 +17,29 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 });
 
-var UNA_HORA_MS = 5 * 5 * 1000; /* 3600000 ms */
+const UNA_HORA_MS = 5 * 5 * 1000; /* 3600000 ms */
 
 /* ── Productos fijos sección Frutas ── */
-var productosBase = [
+const productosBase = [
     { id: 'fresas-01', name: 'Fresas', price: 12140, unit: 'lb', vendor: 'Finca el Porvenir', img: '/frontend/public/img/fresas.jpeg', activo: true },
     { id: 'uva-01', name: 'Uva Isabella', price: 5260, unit: 'lb', vendor: 'Finca el Indio', img: '/frontend/public/img/uvas.jpeg', activo: true },
     { id: 'naranja-01', name: 'Naranja Tangelo', price: 6400, unit: 'lb', vendor: 'Finca Imbachi', img: '/frontend/public/img/naranja.jpeg', activo: true },
     { id: 'ciruela-01', name: 'Ciruela Roja', price: 3600, unit: 'lb', vendor: 'Finca Imbachi', img: '/frontend/public/img/ciruela_roja.jpeg', activo: true }
 ];
 
-var iconEdit = '<svg width="13" height="13" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4l5 5L7 18H2v-5L11 4z"/><path d="M15 2l3 3"/></svg>';
-var iconTrash = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>';
+const iconEdit = '<svg width="13" height="13" viewBox="0 0 20 20" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4l5 5L7 18H2v-5L11 4z"/><path d="M15 2l3 3"/></svg>';
+const iconTrash = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6M14 11v6"/><path d="M9 6V4h6v2"/></svg>';
 
 /* ── Separar productos: nuevos (< 1h) vs maduros (>= 1h) ── */
 function clasificarProductos() {
-    var todos = cargarMisProductos();
-    var ahora = Date.now();
-    var nuevos = [];
-    var maduros = [];
+    const todos = cargarMisProductos();
+    let ahora = Date.now();
+    let nuevos = [];
+    const maduros = [];
 
     todos.forEach(function (p) {
-        var fechaCreacion = p.fechaCreacion ? new Date(p.fechaCreacion).getTime() : 0;
-        var edad = ahora - fechaCreacion;
+        const fechaCreacion = p.fechaCreacion ? new Date(p.fechaCreacion).getTime() : 0;
+        let edad = ahora - fechaCreacion;
         if (edad >= UNA_HORA_MS) {
             maduros.push(p);
         } else {
@@ -51,18 +51,18 @@ function clasificarProductos() {
 }
 
 function buildCard(p, esMio) {
-    var nombre = p.nombre || p.name || 'Producto';
-    var precio = p.precio || p.price || 0;
-    var unidad = p.tipoPeso || p.unit || '';
-    var finca = p.finca || p.vendor || '';
-    var foto = p.foto || p.img || '';
-    var activo = p.activo !== false;
+    const nombre = p.nombre || p.name || 'Producto';
+    const precio = p.precio || p.price || 0;
+    const unidad = p.tipoPeso || p.unit || '';
+    const finca = p.finca || p.vendor || '';
+    const foto = p.foto || p.img || '';
+    const activo = p.activo !== false;
 
-    var acciones = '<button class="pn-btn-edit" data-id="' + p.id + '">' + iconEdit + ' Editar</button>'
+    const acciones = '<button class="pn-btn-edit" data-id="' + p.id + '">' + iconEdit + ' Editar</button>'
         + '<button class="pn-btn-disable' + (activo ? '' : ' disabled') + '" data-id="' + p.id + '">'
         + (activo ? 'Deshabilitar' : 'Habilitar') + '</button>';
 
-    var deleteBtn = esMio
+    const deleteBtn = esMio
         ? '<button class="pn-btn-delete" data-id="' + p.id + '" title="Eliminar">' + iconTrash + '</button>'
         : '';
 
@@ -91,8 +91,8 @@ function guardarMisProductos(lista) {
 }
 
 function renderMyGrid(myGrid) {
-    var clasificados = clasificarProductos();
-    var nuevos = clasificados.nuevos;
+    let clasificados = clasificarProductos();
+    let nuevos = clasificados.nuevos;
 
     if (nuevos.length > 0) {
         myGrid.innerHTML = nuevos.map(function (p) { return buildCard(p, true); }).join('');
@@ -102,22 +102,22 @@ function renderMyGrid(myGrid) {
 }
 
 function renderFruitGrid(fruitGrid) {
-    var clasificados = clasificarProductos();
+    let clasificados = clasificarProductos();
     /* Combinar: productos base fijos + mis productos maduros (>= 1h) */
-    var todosAbajo = productosBase.concat(
+    const todosAbajo = productosBase.concat(
         clasificados.maduros.map(function (p) { return p; })
     );
     fruitGrid.innerHTML = todosAbajo.map(function (p) {
-        var esMio = !productosBase.find(function (b) { return b.id === p.id; });
+        const esMio = !productosBase.find(function (b) { return b.id === p.id; });
         return buildCard(p, esMio);
     }).join('');
 }
 
 function initProductNew() {
 
-    var myGrid = document.getElementById('myProductGrid');
-    var fruitGrid = document.getElementById('fruitGrid');
-    var btnBack = document.getElementById('btnGoBack');
+    const myGrid = document.querySelector('.myProductGrid');
+    const fruitGrid = document.querySelector('.fruitGrid');
+    const btnBack = document.querySelector('.btnGoBack');
 
     /* ── Mis productos nuevos (< 1h) ── */
     if (myGrid) {
@@ -127,14 +127,14 @@ function initProductNew() {
         programarActualizacion(myGrid, fruitGrid);
 
         myGrid.addEventListener('click', function (e) {
-            var btnEdit = e.target.closest('.pn-btn-edit');
-            var btnDisable = e.target.closest('.pn-btn-disable');
-            var btnDelete = e.target.closest('.pn-btn-delete');
-            var misProductos = cargarMisProductos();
+            let btnEdit = e.target.closest('.pn-btn-edit');
+            let btnDisable = e.target.closest('.pn-btn-disable');
+            let btnDelete = e.target.closest('.pn-btn-delete');
+            let misProductos = cargarMisProductos();
 
             if (btnDelete) {
                 e.stopPropagation();
-                var id = btnDelete.dataset.id;
+                let id = btnDelete.dataset.id;
                 if (confirm('¿Eliminar este producto?')) {
                     guardarMisProductos(misProductos.filter(function (p) { return p.id !== id; }));
                     renderMyGrid(myGrid);
@@ -147,8 +147,8 @@ function initProductNew() {
 
             } else if (btnDisable) {
                 e.stopPropagation();
-                var id = btnDisable.dataset.id;
-                var prod = misProductos.find(function (p) { return p.id === id; });
+                let id = btnDisable.dataset.id;
+                let prod = misProductos.find(function (p) { return p.id === id; });
                 if (!prod) return;
                 prod.activo = !prod.activo;
                 guardarMisProductos(misProductos);
@@ -163,15 +163,15 @@ function initProductNew() {
         renderFruitGrid(fruitGrid);
 
         fruitGrid.addEventListener('click', function (e) {
-            var btnEdit = e.target.closest('.pn-btn-edit');
-            var btnDisable = e.target.closest('.pn-btn-disable');
-            var btnDelete = e.target.closest('.pn-btn-delete');
-            var card = e.target.closest('.pn-card');
-            var misProductos = cargarMisProductos();
+            let btnEdit = e.target.closest('.pn-btn-edit');
+            let btnDisable = e.target.closest('.pn-btn-disable');
+            let btnDelete = e.target.closest('.pn-btn-delete');
+            const card = e.target.closest('.pn-card');
+            let misProductos = cargarMisProductos();
 
             if (btnDelete) {
                 e.stopPropagation();
-                var id = btnDelete.dataset.id;
+                let id = btnDelete.dataset.id;
                 if (confirm('¿Eliminar este producto?')) {
                     guardarMisProductos(misProductos.filter(function (p) { return p.id !== id; }));
                     renderFruitGrid(fruitGrid);
@@ -183,9 +183,9 @@ function initProductNew() {
 
             } else if (btnDisable) {
                 e.stopPropagation();
-                var id = btnDisable.dataset.id;
+                let id = btnDisable.dataset.id;
                 /* Buscar en mis productos primero, luego en base */
-                var prod = misProductos.find(function (p) { return p.id === id; })
+                let prod = misProductos.find(function (p) { return p.id === id; })
                     || productosBase.find(function (p) { return p.id === id; });
                 if (!prod) return;
                 prod.activo = !prod.activo;
@@ -197,7 +197,7 @@ function initProductNew() {
 
             } else if (card) {
                 /* Click en la card → ir al detalle del producto */
-                var id = card.dataset.id;
+                let id = card.dataset.id;
                 window.location.href = '/frontend/public/views/views_shopping_pineapple.html?id=' + id;
             }
         });
@@ -208,13 +208,13 @@ function initProductNew() {
 
 /* ── Programa un setTimeout para mover el próximo producto que cumpla 1h ── */
 function programarActualizacion(myGrid, fruitGrid) {
-    var misProductos = cargarMisProductos();
-    var ahora = Date.now();
+    let misProductos = cargarMisProductos();
+    let ahora = Date.now();
 
     /* Encontrar el producto nuevo más cercano a cumplir 1h */
-    var tiemposRestantes = misProductos
+    const tiemposRestantes = misProductos
         .filter(function (p) {
-            var edad = ahora - new Date(p.fechaCreacion).getTime();
+            let edad = ahora - new Date(p.fechaCreacion).getTime();
             return edad < UNA_HORA_MS;
         })
         .map(function (p) {
@@ -223,7 +223,7 @@ function programarActualizacion(myGrid, fruitGrid) {
 
     if (tiemposRestantes.length === 0) return;
 
-    var masProximo = Math.min.apply(null, tiemposRestantes);
+    const masProximo = Math.min.apply(null, tiemposRestantes);
 
     setTimeout(function () {
         renderMyGrid(myGrid);

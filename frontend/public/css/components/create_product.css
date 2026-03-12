@@ -4,7 +4,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    background-image: url('/frontend/public/img/create_producto.jpg');
+    background-image: url('/frontend/public/assets/img/image\ \(1\).png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -146,6 +146,7 @@
     transition: all var(--transition-md) ease;
     min-height: 48px;
     gap: var(--spacing-xs);
+    border-radius: 8px;
 }
 
 .btn-primary-create {
@@ -319,13 +320,14 @@
     min-width: 150px;
     border: none;
     width: 150px;
-    height: 40;
+    height: 48px;
     cursor: pointer;
     background-color: var(--primary-600);
     color: var(--white);
     box-shadow: 0 4px 12px rgba(0, 193, 106, 0.3);
     transition: all var(--transition-md) ease;
     text-decoration: none;
+    border-radius: 8px;
 }
 
 .btn-submit-create:hover {

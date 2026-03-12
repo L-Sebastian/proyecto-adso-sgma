@@ -4,7 +4,8 @@
 .navbar__container{
     background-color: var(--primary-secundary-700);
     justify-content: space-between;
-    display: flex;         
+    display: flex;   
+    
 }
         
 .navbar__logo{
@@ -31,18 +32,27 @@
 }
 
 .navbar__link__ONE__index{
-    margin: auto;
-    padding-right: 3rem;
+    margin: 0 auto;
 }
 
+/* Avatar*/ 
+/* Este avatar es para los navbar navegables */
+.avatar-profile-navbar-avatar-profile-3 {
+    height: 40px;
+    width: 40px;
+    margin-right: 4.5rem;
+}
+/* Este es el avatar para los index */
+.avatar-profile-navbar-avatar-profile-4 {
+    height: 40px;
+    width: 40px;
+}
 .menu__inside {
     position: absolute;
     display: none;
     list-style: none;
-    width: ;
-    right: 70px;
     background-color: var(--primary-secundary-700);
-    padding: 10px;
+    margin: 0 auto;
 }
 
 .navbar__list li:hover .menu__inside{
@@ -55,11 +65,21 @@
 .menu__inside li a{
     display: block;
     color: white;
-    padding: 15px 15px 15px 20px;
     list-style-type: none;
     text-decoration: none;
-    width: 15rem;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    
 }
+
+.menu__inside__hidden{
+}
+
+.menu__inside__li{
+   
+}
+
         
         
 @media (max-width: 768px) {
@@ -81,6 +101,7 @@
         align-items: center;
         gap: 2rem;
         padding: 0;
+        
     }
 
     .navbar__link {
@@ -88,18 +109,38 @@
     }
 
     .navbar__link__ONE__index {
-        padding-right: 0;
+        margin: 0 auto;
+        
     }
 
+    .avatar-profile-navbar-avatar-profile-3{
+        margin: 0;
+        
+    }
     /* Dropdown */
     .menu__inside {
         position: static;
         width: 100%;
+        height: auto;
         text-align: center;
+        
+           
     }
 
     .menu__inside li a {
         padding: 1rem;
+        text-align: center;
+        width: 0%;
+        
+    }
+
+    .menu__inside__li{
+        margin: auto;
+        width: 0%;
+    }
+
+    .menu__inside__hidden {
+    
     }
 }
 

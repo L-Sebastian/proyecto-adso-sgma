@@ -5,8 +5,8 @@
 
         <!-- ================= CARRITO ================= -->
         <div class="shopping__products">
-            <ul class="shopping__list" id="shoppingItems"></ul>
-            <div class="shopping__empty" id="shoppingEmpty" hidden>
+            <ul class="shopping__list shoppingItems"></ul>
+            <div class="shopping__empty shoppingEmpty" hidden>
                 <p>No hay productos en el carrito.</p>
             </div>
         </div>
@@ -16,7 +16,7 @@
             <h3 class="shopping__checkout-title">Total a pagar</h3>
 
             <div class="shopping__amount-row">
-                <span class="shopping__amount" id="checkoutTotal">$0</span>
+                <span class="shopping__amount checkoutTotal">$0</span>
                 <span class="shopping__currency">pesos</span>
             </div>
 
@@ -27,9 +27,9 @@
                 <img src="/frontend/public/img/pse-seeklogo.svg" alt="PSE">
             </div>
 
-            <div id="payHelp" class="shopping__pay-help" aria-live="polite"></div>
+            <div class="shopping__pay-help payHelp" aria-live="polite"></div>
 
-            <button class="btn btn--primary shopping__pay" id="payBtn">Pagar</button>
+            <button class="btn btn--primary shopping__pay payBtn">Pagar</button>
         </aside>
 
     </div>

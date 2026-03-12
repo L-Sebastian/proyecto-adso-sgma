@@ -1,16 +1,12 @@
-body {
-    background: #c8ecd4;
-    padding: 48px 60px 80px;
-    box-sizing: border-box;
-    font-family: var(--font-family-base);
-}
+
 
 /* ============================================
    MAIN CONTENT
    ============================================ */
 
 .main-content {
-    padding: 2rem 0;
+    background-color: #c8ecd4;
+    
 }
 
 .grid-layout {
@@ -530,7 +526,7 @@ body {
     }
 
     .main-content {
-        padding: 1rem 0;
+        /* padding: 1rem 0; */
     }
 
     .grid-layout {

@@ -23,7 +23,7 @@ function initEditFarm() {
     var fincaId = params.get('id');
 
     if (!fincaId) {
-        window.location.href = '/frontend/public/views/views_create_farm.html';
+        window.location.href = '/frontend/public/views/views_edit_farm.html';
         return;
     }
 

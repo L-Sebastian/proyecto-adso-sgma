@@ -40,7 +40,7 @@ body {
 
 img {
     /* Alineamiento de los iconos */
-    margin-top: 0.3rem;
+    /* margin-top: 0.3rem; */
 }
 
 @media (max-width: 768px) {

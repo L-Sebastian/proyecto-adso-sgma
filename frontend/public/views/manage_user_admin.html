@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión Usuarios</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/frontend/public/css/main.css">
+
+    <!-- Scripts -->
+    <script src="/frontend/public/js/components/header-gov.js"></script>
+    <script src="/frontend/public/js/components/header-product.js"></script>
+
+    <script src="/frontend/public/js/components/footer.js" defer></script>
+
+    <!-- Crear Nuevo Navbar para... Solo LOGO y Avatar -->
+    <!-- Con boton de Devolver -->
+    <script src="/frontend/public/js/components/footer.js" defer></script>
+
+    <style>
+        body{
+            background-image: url(/frontend/public/assets/img/vista-a-montana-y-a-las-nubes_1920x1080_xtrafondos.com.jpg);
+            background-size: cover;
+        }
+
+        .manage__user{
+            align-self: center;
+            
+        }
+        .manage__user__container{
+            background-color: white;
+            border-radius: 8px;
+            width: 110vh;
+
+            
+        }
+        .manage__user__button__right {
+            justify-self: right;
+           
+        }
+        .manage__user__title{
+            text-align: center;
+            color: #0b3c87;
+        } 
+
+        .manage__user__user{
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .manage__user__user__information{
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+
+</head>
+<body>
+    <header class="header__gov"></header>
+    
+    <header class="header__product">
+        <div class="header-content"></div>
+    </header>
+
+    <section class="manage__user">
+        <div class="manage__user__container">
+            <div class="manage__user__button__right">  
+                <button class="manage__user__button"> Buscar </button>
+                <button class="manage__user__button"> Crear Usuario</button>
+            </div>
+            
+            <h2 class="manage__user__title">Usuarios</h2>
+
+            <div class="manage__user__user">
+                <p class=""> <strong> ID </strong></p>
+                <p class=""> <strong> Nombre </strong></p>
+                <p class=""> <strong> Apellido </strong></p>
+                <p class=""> <strong> Email </strong></p>
+                <p class=""> <strong> Activo </strong></p>
+                <p class=""> <strong> Acciones </strong></p>
+                
+            </div>
+
+            <div class="manage__user__user__information">
+                <p class=""> 01 </p>
+                <p class=""> Mariana </p>
+                <p class=""> Piedrahíta </p>
+                <p class=""> guru1317@gmail.com </p>
+                <p> Si </p>
+                <div class="manage__user__action">
+                    <button> Ver </button>
+                    <button> Editar </button>
+                    <button> Deshabilitar </button>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer__index">
+        <div class="footer-container"></div>
+    </footer>
+</body>
+</html>
