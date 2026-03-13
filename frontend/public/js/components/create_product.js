@@ -3,35 +3,39 @@ document.addEventListener('DOMContentLoaded', function () {
     const bodyContainer = document.querySelector('.main-content-create');
     if (!bodyContainer) return;
 
-    const productURL = '/frontend/public/views/components/create_product.html';
-
-    Promise.all([
-        fetch(productURL).then(function (r) {
+    fetch('/frontend/public/views/components/create_product.html')
+        .then(function (r) {
             if (!r.ok) throw new Error('Error cargando create_product.html');
             return r.text();
-        }),
-    ])
-    .then(function (resultados) {
-        bodyContainer.innerHTML = resultados[0];
-
-
-        initProductCreate();
-    })
-    .catch(function (error) {
-        console.error('Error cargando componentes:', error);
-    });
+        })
+        .then(function (html) {
+            bodyContainer.innerHTML = html;
+            initProductCreate();
+        })
+        .catch(function (error) {
+            console.error('Error cargando componentes:', error);
+        });
 });
 
 function initProductCreate() {
 
-    const photoInput       = document.getElementById('photoInput');
-    const uploadBtn        = document.getElementById('uploadBtn');
-    const avatarContainer  = document.getElementById('avatarContainer');
-    const avatarImgProduct = document.getElementById('avatarImgProduct');
-    const avatarSvgProduct = document.getElementById('avatarSvgProduct');
-    const btnSiguiente     = document.getElementById('btnSiguiente');
+    const photoInput       = document.querySelector('.photoInput');
+    const uploadBtn        = document.querySelector('.uploadBtn');
+    const avatarContainer  = document.querySelector('.avatarContainer');
+    const avatarImgProduct = document.querySelector('.avatarImgProduct');
+    const avatarSvgProduct = document.querySelector('.avatarSvgProduct');
+    const btnSiguiente     = document.querySelector('.btnSiguiente');
+    const imageText        = document.querySelector('.avatarImageText');
 
-    const FIELDS = ['nombreProducto', 'tipoProducto', 'pesoProducto', 'tipoPeso', 'precioProducto', 'descuento'];
+    /* Mapeo: clave localStorage → clase del campo */
+    const FIELDS = [
+        { key: 'nombreProducto', cls: '.nombreProducto' },
+        { key: 'tipoProducto',   cls: '.tipoProducto'   },
+        { key: 'pesoProducto',   cls: '.pesoProducto'   },
+        { key: 'tipoPeso',       cls: '.tipoPeso'       },
+        { key: 'precioProducto', cls: '.precioProducto' },
+        { key: 'descuento',      cls: '.descuento'      }
+    ];
 
     /* ── Restaurar foto guardada ── */
     const savedPhoto = localStorage.getItem('productPhoto');
@@ -39,35 +43,32 @@ function initProductCreate() {
         avatarImgProduct.src = savedPhoto;
         avatarImgProduct.style.display = 'block';
         avatarSvgProduct.style.display = 'none';
+        if (imageText) imageText.style.display = 'none';
     }
 
     /* ── Restaurar campos guardados (prefijo cp_) ── */
-    FIELDS.forEach(function (id) {
-        const savedValue = localStorage.getItem('cp_' + id);
-        if (savedValue !== null) {
-            const el = document.getElementById(id);
-            if (el) el.value = savedValue;
+    FIELDS.forEach(function (field) {
+        const saved = localStorage.getItem('cp_' + field.key);
+        if (saved !== null) {
+            const el = document.querySelector(field.cls);
+            if (el) el.value = saved;
         }
     });
 
-    /* ── Guardar valores originales para detectar cambios ── */
+    /* ── Guardar valores originales ── */
     const valoresOriginales = {};
-    FIELDS.forEach(function (id) {
-        const el = document.getElementById(id);
-        valoresOriginales[id] = el ? el.value : '';
+    FIELDS.forEach(function (field) {
+        const el = document.querySelector(field.cls);
+        valoresOriginales[field.key] = el ? el.value : '';
     });
-
-
 
     /* ── Guardar datos en localStorage con prefijo cp_ ── */
     function guardarDatos() {
-        FIELDS.forEach(function (id) {
-            const el = document.getElementById(id);
-            if (el) localStorage.setItem('cp_' + id, el.value);
+        FIELDS.forEach(function (field) {
+            const el = document.querySelector(field.cls);
+            if (el) localStorage.setItem('cp_' + field.key, el.value);
         });
     }
-
-
 
     /* ── Aplicar foto al avatar ── */
     function aplicarFoto(dataURL) {
@@ -76,6 +77,7 @@ function initProductCreate() {
             avatarImgProduct.style.display = 'block';
             avatarSvgProduct.style.display = 'none';
         }
+        if (imageText) imageText.style.display = 'none';
         localStorage.setItem('productPhoto', dataURL);
     }
 
@@ -104,7 +106,7 @@ function initProductCreate() {
     /* ── Botón Siguiente ── */
     if (btnSiguiente) {
         btnSiguiente.addEventListener('click', function () {
-            guardarDatos(); /* siempre guarda antes de ir al paso 2 */
+            guardarDatos();
             window.location.href = '/frontend/public/views/views_create_product_2.html';
         });
     }
