@@ -3,30 +3,21 @@ document.addEventListener('DOMContentLoaded', function () {
     const bodyContainer = document.querySelector('.container-main-profile');
     if (!bodyContainer) return;
 
-    const profileURL = '/frontend/public/views/components/edit_profile2.html';
-    const modalURL   = '/frontend/public/views/components/modal_confirm.html';
-
-    /* Cargar los dos HTML en paralelo */
     Promise.all([
-        fetch(profileURL).then(function (r) {
+        fetch('/frontend/public/views/components/edit_profile2.html').then(function (r) {
             if (!r.ok) throw new Error('Error cargando edit_profile2.html');
             return r.text();
         }),
-        fetch(modalURL).then(function (r) {
+        fetch('/frontend/public/views/components/modal_confirm.html').then(function (r) {
             if (!r.ok) throw new Error('Error cargando modal_confirm.html');
             return r.text();
         })
     ])
     .then(function (resultados) {
-        const profileHTML = resultados[0];
-        const modalHTML   = resultados[1];
+        bodyContainer.innerHTML = resultados[0];
 
-        /* Insertar el formulario en su contenedor */
-        bodyContainer.innerHTML = profileHTML;
-
-        /* Insertar el modal al final del body */
         const modalWrapper = document.createElement('div');
-        modalWrapper.innerHTML = modalHTML;
+        modalWrapper.innerHTML = resultados[1];
         document.body.appendChild(modalWrapper);
 
         initProfileEdit();
@@ -38,82 +29,90 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function initProfileEdit() {
 
-    const avatarImg   = document.getElementById('avatarImgProfile');
-    const avatarSvg   = document.getElementById('avatarSvgProfile');
-    const nameDisplay = document.getElementById('profileNameProfile');
-    const btnVolver   = document.getElementById('btnVolver');
-    const btnGuardar  = document.getElementById('btnGuardar');
-    const modal       = document.getElementById('modalConfirmarSalida');
-    const modalSi     = document.getElementById('modalSi');
-    const modalNo     = document.getElementById('modalNo');
+    const avatarImg   = document.querySelector('.avatarImgProfile');
+    const avatarSvg   = document.querySelector('.avatarSvgProfile');
+    const avatarImg2  = document.querySelector('.avatarImgProfile22');
+    const avatarSvg2  = document.querySelector('.avatarSvgProfile22');
+    const nameDisplay = document.querySelector('.profileNameProfile');
+    const btnVolver   = document.querySelector('.btnVolver');
+    const btnGuardar  = document.querySelector('.btnGuardar');
+    const modal       = document.querySelector('.modalConfirmarSalida');
+    const modalSi     = document.querySelector('.modalSi');
+    const modalNo     = document.querySelector('.modalNo');
 
-    const FIELDS = ['firstName', 'secondName', 'firstLastName', 'secondLastName', 'email', 'departamento', 'address'];
+    /* Mapeo: clave localStorage → clase del input */
+    const FIELDS = [
+        { key: 'firstName',      cls: '.inputFirstName'      },
+        { key: 'secondName',     cls: '.inputSecondName'     },
+        { key: 'firstLastName',  cls: '.inputFirstLastName'  },
+        { key: 'secondLastName', cls: '.inputSecondLastName' },
+        { key: 'email',          cls: '.inputEmail'          },
+        { key: 'departamento',   cls: '.selectDepartamento'  },
+        { key: 'address',        cls: '.inputAddress'        }
+    ];
 
     /* ── Restaurar foto guardada ── */
     const savedPhoto = localStorage.getItem('profilePhoto');
-    if (savedPhoto && avatarImg && avatarSvg) {
-        avatarImg.src = savedPhoto;
-        avatarImg.style.display = 'block';
-        avatarSvg.style.display = 'none';
+    if (savedPhoto) {
+        if (avatarImg)  { avatarImg.src  = savedPhoto; avatarImg.style.display  = 'block'; }
+        if (avatarSvg)  { avatarSvg.style.display  = 'none'; }
+        if (avatarImg2) { avatarImg2.src = savedPhoto; avatarImg2.style.display = 'block'; }
+        if (avatarSvg2) { avatarSvg2.style.display = 'none'; }
     }
 
     /* ── Restaurar datos guardados en los campos ── */
-    FIELDS.forEach(function (id) {
-        const savedValue = localStorage.getItem('profile_' + id);
-        if (savedValue !== null) {
-            const el = document.getElementById(id);
-            if (el) el.value = savedValue;
+    FIELDS.forEach(function (field) {
+        const saved = localStorage.getItem('profile_' + field.key);
+        if (saved !== null) {
+            const el = document.querySelector(field.cls);
+            if (el) el.value = saved;
         }
     });
 
     /* ── Guardar valores originales para detectar cambios ── */
     const valoresOriginales = {};
-    FIELDS.forEach(function (id) {
-        const el = document.getElementById(id);
-        valoresOriginales[id] = el ? el.value : '';
+    FIELDS.forEach(function (field) {
+        const el = document.querySelector(field.cls);
+        valoresOriginales[field.key] = el ? el.value : '';
     });
 
     /* ── Detectar si hubo cambios ── */
     function huboCambios() {
-        return FIELDS.some(function (id) {
-            const el = document.getElementById(id);
-            return el && el.value !== valoresOriginales[id];
+        return FIELDS.some(function (field) {
+            const el = document.querySelector(field.cls);
+            return el && el.value !== valoresOriginales[field.key];
         });
     }
 
     /* ── Actualizar nombre en tiempo real ── */
     function updateName() {
         if (!nameDisplay) return;
-        const first  = document.getElementById('firstName')?.value.trim()  || '';
-        const second = document.getElementById('secondName')?.value.trim() || '';
-        const last1  = document.getElementById('firstLastName')?.value.trim()  || '';
-        const last2  = document.getElementById('secondLastName')?.value.trim() || '';
+        const first  = document.querySelector('.inputFirstName')?.value.trim()      || '';
+        const second = document.querySelector('.inputSecondName')?.value.trim()     || '';
+        const last1  = document.querySelector('.inputFirstLastName')?.value.trim()  || '';
+        const last2  = document.querySelector('.inputSecondLastName')?.value.trim() || '';
         const line1  = [first, second].filter(Boolean).join(' ');
         const line2  = [last1, last2].filter(Boolean).join(' ');
         nameDisplay.innerHTML = line1 + (line2 ? '<br>' + line2 : '');
     }
 
-    ['firstName', 'secondName', 'firstLastName', 'secondLastName'].forEach(function (id) {
-        const el = document.getElementById(id);
-        if (el) el.addEventListener('input', updateName);
-    });
+    ['.inputFirstName', '.inputSecondName', '.inputFirstLastName', '.inputSecondLastName']
+        .forEach(function (cls) {
+            const el = document.querySelector(cls);
+            if (el) el.addEventListener('input', updateName);
+        });
 
     updateName();
 
     /* ── Mostrar / ocultar modal ── */
-    function mostrarModal() {
-        if (modal) modal.style.display = 'flex';
-    }
+    function mostrarModal() { if (modal) modal.style.display = 'flex'; }
+    function ocultarModal()  { if (modal) modal.style.display = 'none'; }
 
-    function ocultarModal() {
-        if (modal) modal.style.display = 'none';
-    }
-
-    /* ── Guardar datos y actualizar navbar ── */
+    /* ── Guardar datos ── */
     function guardarDatos() {
-        FIELDS.forEach(function (id) {
-            const el = document.getElementById(id);
-            if (el) localStorage.setItem('profile_' + id, el.value);
+        FIELDS.forEach(function (field) {
+            const el = document.querySelector(field.cls);
+            if (el) localStorage.setItem('profile_' + field.key, el.value);
         });
         if (typeof window.aplicarDatosPerfil === 'function') {
             window.aplicarDatosPerfil();
@@ -153,7 +152,7 @@ function initProfileEdit() {
         });
     }
 
-    /* ── Botón Guardar → guardar y volver al perfil ── */
+    /* ── Botón Guardar ── */
     if (btnGuardar) {
         btnGuardar.addEventListener('click', function () {
             guardarDatos();

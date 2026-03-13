@@ -1,15 +1,14 @@
 <div class="ep-page">
-
     <div class="ep-wrapper">
 
         <!-- Imagen -->
         <div class="ep-image-section">
             <div class="ep-image-container">
-                <input type="file" id="epPhotoInput" accept="image/*" style="display:none;">
-                <div class="ep-avatar" id="epAvatarContainer">
-                    <img id="epAvatarImg" src="" alt="Foto producto"
+                <input type="file" class="epPhotoInput" accept="image/*" style="display:none;">
+                <div class="ep-avatar epAvatarContainer">
+                    <img class="epAvatarImg" src="" alt="Foto producto"
                          style="width:100%;height:100%;object-fit:cover;border-radius:12px;display:none;">
-                    <svg id="epAvatarSvg" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5"
+                    <svg class="epAvatarSvg" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5"
                          style="width:60px;height:60px;">
                         <rect x="3" y="3" width="18" height="18" rx="3"/>
                         <circle cx="8.5" cy="8.5" r="1.5"/>
@@ -17,8 +16,8 @@
                     </svg>
                 </div>
                 <div class="ep-img-buttons">
-                    <button class="ep-btn ep-btn-secondary" id="epBtnCambiarFoto" type="button">Cambiar Foto</button>
-                    <button class="ep-btn ep-btn-danger"    id="epBtnEliminarFoto" type="button">Eliminar Foto</button>
+                    <button class="ep-btn ep-btn-secondary epBtnCambiarFoto" type="button">Cambiar Foto</button>
+                    <button class="ep-btn ep-btn-danger epBtnEliminarFoto"   type="button">Eliminar Foto</button>
                 </div>
             </div>
         </div>
@@ -27,17 +26,17 @@
         <div class="ep-form-section">
             <h2 class="ep-title">Editar Producto</h2>
 
-            <form id="editProductForm">
+            <form class="editProductForm">
                 <div class="ep-form-grid">
 
                     <div class="ep-form-group">
                         <label class="ep-label">Nombre Producto</label>
-                        <input type="text" class="ep-input" id="epNombre">
+                        <input type="text" class="ep-input epNombre">
                     </div>
 
                     <div class="ep-form-group">
                         <label class="ep-label">Tipo de producto</label>
-                        <select class="ep-select" id="epTipo">
+                        <select class="ep-select epTipo">
                             <option value="fruta">Fruta</option>
                             <option value="verdura">Verdura</option>
                             <option value="carnes">Carne</option>
@@ -47,12 +46,12 @@
 
                     <div class="ep-form-group">
                         <label class="ep-label">Peso</label>
-                        <input type="number" class="ep-input" id="epPeso">
+                        <input type="number" class="ep-input epPeso">
                     </div>
 
                     <div class="ep-form-group">
                         <label class="ep-label">Tipo de peso</label>
-                        <select class="ep-select" id="epTipoPeso">
+                        <select class="ep-select epTipoPeso">
                             <option value="kilos">Kilos</option>
                             <option value="gramos">Gramos</option>
                             <option value="libras">Libras</option>
@@ -62,12 +61,12 @@
 
                     <div class="ep-form-group">
                         <label class="ep-label">Precio</label>
-                        <input type="text" class="ep-input" id="epPrecio">
+                        <input type="text" class="ep-input epPrecio">
                     </div>
 
                     <div class="ep-form-group">
                         <label class="ep-label">Descuento</label>
-                        <select class="ep-select" id="epDescuento">
+                        <select class="ep-select epDescuento">
                             <option value="no">No aplica</option>
                             <option value="10">10%</option>
                             <option value="15">15%</option>
@@ -77,22 +76,22 @@
 
                     <div class="ep-form-group">
                         <label class="ep-label">Nombre Finca</label>
-                        <input type="text" class="ep-input" id="epFinca">
+                        <input type="text" class="ep-input epFinca">
                     </div>
 
                     <div class="ep-form-group">
                         <label class="ep-label">Stock</label>
-                        <input type="number" class="ep-input" id="epStock">
+                        <input type="number" class="ep-input epStock">
                     </div>
 
                     <div class="ep-form-group">
                         <label class="ep-label">Dirección Finca</label>
-                        <input type="text" class="ep-input" id="epDireccion">
+                        <input type="text" class="ep-input epDireccion">
                     </div>
 
                     <div class="ep-form-group">
                         <label class="ep-label">Tipo de Envío</label>
-                        <select class="ep-select" id="epTipoEnvio">
+                        <select class="ep-select epTipoEnvio">
                             <option value="domicilio">Domicilio</option>
                             <option value="recogida">Recogida en Finca</option>
                             <option value="transporte">Transporte Propio</option>
@@ -102,13 +101,13 @@
 
                     <div class="ep-form-group ep-full-width">
                         <label class="ep-label">Descripción</label>
-                        <textarea class="ep-textarea" id="epDescripcion" rows="3"></textarea>
+                        <textarea class="ep-textarea epDescripcion" rows="3"></textarea>
                     </div>
 
                 </div>
 
                 <div class="ep-btn-row">
-                    <button type="button" class="ep-btn ep-btn-secondary" id="epBtnVolver">Volver</button>
+                    <button type="button" class="ep-btn ep-btn-secondary epBtnVolver">Volver</button>
                     <button type="submit" class="ep-btn ep-btn-primary">Guardar Cambios</button>
                 </div>
 

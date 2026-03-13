@@ -67,8 +67,8 @@ function attachLoginHandlers() {
     });
 
     /* ── Botones secundarios ── */
-    var createBtn = document.getElementById('createAccountBtn');
-    var recoverBtn = document.getElementById('recoverAccountBtn');
+    const createBtn = document.getElementById('createAccountBtn');
+    const recoverBtn = document.getElementById('recoverAccountBtn');
 
     if (createBtn) {
         createBtn.addEventListener('click', function () {
@@ -80,7 +80,7 @@ function attachLoginHandlers() {
     if (recoverBtn) {
         recoverBtn.addEventListener('click', function () {
             showMessage('Recuperación de cuenta (pendiente).', 'info');
-            window.location.href = "/fronted/public/views/views_recover.html";
+            window.location.href = "/frontend/public/views/views_recover.html";
         });
     }
 }
@@ -106,7 +106,7 @@ function setFieldError(inputEl, msg) {
 function clearFieldErrors() {
     document.querySelectorAll('.form-group-login.has-error').forEach(function (w) {
         w.classList.remove('has-error');
-        var help = w.querySelector('.field-help');
+        let help = w.querySelector('.field-help');
         if (help) help.remove();
     });
     document.querySelectorAll('.form-group-login input').forEach(function (i) {
@@ -123,10 +123,10 @@ function validateEmail(value) {
 function showMessage(text, type) {
     type = type || 'info';
 
-    var existing = document.querySelector('.message-login');
+    let existing = document.querySelector('.message-login');
     if (existing) existing.remove();
 
-    var div = document.createElement('div');
+    let div = document.createElement('div');
     div.className = 'message-login ' + type;
     div.setAttribute('role', 'status');
     div.textContent = text;

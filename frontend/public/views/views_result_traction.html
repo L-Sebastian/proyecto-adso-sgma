@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrito</title>
+
+  <!-- Estilos globales -->
+  <link rel="stylesheet" href="/frontend/public/css/main.css">
+
+  <!-- Estilo del componente shopping (puedes mover el import dentro de main.css si prefieres) -->
+  <!-- <link rel="stylesheet" href="/frontend/public/css/components/shopping.css"> -->
+</head>
+<body>
+  <header class="header__index">
+    <div class="header__container"></div>
+  </header> <!-- Sm -->
+
+  <nav class="navbar__pay__user">
+    <div class="navbar__container"></div>
+  </nav>
+
+  <!-- Placeholder donde inyectaremos shopping.html -->
+  <div class = "page-wrapper"></div>
+
+  <footer class="footer__index">
+    <div class="footer-container"></div>  
+  </footer> <!-- SM -->
+
+  <!-- Scripts: loaders primero, lógica después -->
+  <script src="/frontend/public/js/components/header-index.js"></script>
+  <script src="/frontend/public/js/components/navbar-pay-user.js"></script>
+
+  <!-- Lógica del componente (depende de que el HTML ya esté inyectado) -->
+  <script src="/frontend/public/js/components/result_traction.js"></script>
+
+  <script src="/frontend/public/js/components/footer.js"></script> <!-- Sm -->
+</body>
+</html>

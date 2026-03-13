@@ -64,9 +64,9 @@ function aplicarDatosNavbar() {
 
 function cartAgregar(product, qty) {
     qty = qty || 1;
-    let cart = [];
+    var cart = [];
     try { cart = JSON.parse(localStorage.getItem('cart')) || []; } catch (e) {}
-    const found = cart.find(function (p) { return p.id === product.id; });
+    var found = cart.find(function (p) { return p.id === product.id; });
     if (found) { found.quantity += qty; }
     else { cart.push(Object.assign({}, product, { quantity: qty })); }
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -75,7 +75,7 @@ function cartAgregar(product, qty) {
 }
 
 function cartConteo() {
-    let cart = [];
+    var cart = [];
     try { cart = JSON.parse(localStorage.getItem('cart')) || []; } catch (e) {}
     return cart.reduce(function (sum, p) { return sum + (p.quantity || 1); }, 0);
 }
@@ -83,7 +83,7 @@ function cartConteo() {
 function cartBadgeInicializar() {
     if (document.getElementById('cartFloating')) return;
 
-    const wrap = document.createElement('div');
+    var wrap = document.createElement('div');
     wrap.id = 'cartFloating';
     wrap.style.cssText = [
         'position:fixed',
@@ -140,7 +140,7 @@ function cartBadgeInicializar() {
 
     document.body.appendChild(wrap);
 
-    const btn = wrap.querySelector('#cartBtn');
+    var btn = wrap.querySelector('#cartBtn');
 
     btn.addEventListener("click", function () {
 
@@ -161,7 +161,7 @@ function cartBadgeInicializar() {
 }
 
 function cartBadgeActualizar() {
-    const badge = document.getElementById('cartBadge');
+    var badge = document.getElementById('cartBadge');
     if (!badge) return;
     var total = cartConteo();
     badge.textContent = total;
@@ -169,7 +169,7 @@ function cartBadgeActualizar() {
 }
 
 function cartAnimarBotón() {
-    const btn = document.getElementById('cartBtn');
+    var btn = document.getElementById('cartBtn');
     if (!btn) return;
     btn.style.transform = 'scale(1.25)';
     btn.style.boxShadow = '0 6px 28px rgba(16,185,129,0.7)';

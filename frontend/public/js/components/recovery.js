@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', function () {
     /* BUG CORREGIDO: buscaba .main-content-recover e insertaba recover.html que
        contiene <main class="main-content-recover"> → doble anidamiento.
        Ahora inserta en el contenedor padre .main-content */
-    var wrapper = document.querySelector('.main-content-recover');
+    const wrapper = document.querySelector('.main-content-recover');
 
     if (wrapper) {
-        var bodyURL = '/frontend/public/views/components/recover.html';
+        const bodyURL = '/frontend/public/views/components/recover.html';
 
         fetch(bodyURL)
             .then(function (response) {

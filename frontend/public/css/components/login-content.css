@@ -13,32 +13,36 @@
 
 .form__login__title{
     text-align: center;
-    font-size: 34px;
+    font-size: 3.4rem;
+
+    
 }
 
 .form__login__form{
     display: flex;
     flex-direction: column;
-    gap: 24px;      
+    gap: 24px;
+    padding: 4rem;    
 }
 
 .form__login__form-grup{
-    margin: 0;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 4px;        
+    gap: 0.8rem;        
 }
 
 .form__login__form-grup-label {
     margin: 0 0 0 20px;
-    font-size: 12px;
+    font-size: 1.2rem;
 }
 
 .form__login__form-grup-input{
-    height: 56px;
-    font-size: 16px;
-    width: 400px;
-    padding: 16px;
+    height: 46px;
+    font-size: 1.6rem;
+    height: 4.8rem;
+    width: 30rem;
+    padding: 1.6rem;
     border-radius: 2.5rem;
     border:  none;
 }
@@ -75,7 +79,17 @@
 
 @media (width > 768px) {
     .login__content{
+        flex-direction: column;
+    
+    }
+
+    .login__content__left{
+        flex-direction: column;
         
+    }
+
+    .main__content__change__password {
+        background: none;
     }
 }
 
@@ -85,13 +99,57 @@
 }
 .login__content__right {
     flex: 70%;
-    
+  
     background: linear-gradient(to right, rgba(30,74,97,0) 70%, var(--primary-secundary-900) 100%), url(/frontend/public/assets/img/DOÑA\ GLORIA.png);
     min-height: 50rem;
     background-size: cover;
 }
 
 .login__content__left{
-    flex: 40%;
-    margin: auto;
+    flex: 45%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    
+    
 }
+
+
+/* VIEWS CHANGE PASSWORD */
+.main__content__change__password{
+    display: flex;
+    /* height: 100vh; */
+    flex: 70%;
+    background: linear-gradient(to right, rgba(30,74,97,0) 70%, var(--primary-secundary-900) 100%), url(/frontend/public/assets/img/DOÑA\ GLORIA.png);
+    min-height: 50rem;
+    background-size: cover;
+    
+}
+
+
+.login__content__left {
+    color: var(--white);
+    flex: 1;
+    background-color: var(--primary-secundary-700);
+
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    color: var(--white);
+    padding: 2rem;
+    height: 100%;
+    
+    
+    
+    
+    align-content: center;
+}
+
+.form__login__form-grup-password, .form__login__form-grup-confirm-password{
+    flex-direction: column;
+    gap: 0.4rem;
+    display: flex;
+    
+    
+}
+

@@ -153,7 +153,54 @@ function initPay() {
 
             if (!hasError) {
                 setHelp('Procesando pago...', 'success');
-                /* aquí va la lógica real: fetch a la API de pagos */
+
+                /* ── Guardar datos del resultado para result_traction ── */
+                const selectedMethod = document.querySelector('.payment-option-pay.selected');
+                const metodo = selectedMethod ? (selectedMethod.dataset.method || 'Tarjeta') : 'Tarjeta';
+
+                /* Calcular total y finca desde cart */
+                let cartData = [];
+                try { cartData = JSON.parse(localStorage.getItem('cart')) || []; } catch (e2) {}
+
+                const totalPago = cartData.reduce(function (sum, p) {
+                    return sum + (p.price || p.precio || 0) * (p.quantity || 1);
+                }, 0);
+
+                const totalFormateado = new Intl.NumberFormat('es-CO', {
+                    style: 'currency', currency: 'COP', maximumFractionDigits: 0
+                }).format(totalPago);
+
+                const fincaNombre = cartData.length > 0
+                    ? (cartData[0].finca || cartData[0].nombreFinca || 'SGMA')
+                    : 'SGMA';
+
+                const now = new Date();
+                const fechaStr = now.toLocaleDateString('es-CO', { year: 'numeric', month: '2-digit', day: '2-digit' })
+                    + ', ' + now.toLocaleTimeString('es-CO', { hour: '2-digit', minute: '2-digit', hour12: true });
+
+                const nitVal   = docNumber  && docNumber.value.trim()  ? docNumber.value.trim()  : '—';
+                const telVal   = phone      && phone.value.trim()      ? phone.value.trim()      : '—';
+
+                const paymentResult = {
+                    nombre:      nombreCompleto || '—',
+                    finca:       fincaNombre,
+                    nit:         nitVal,
+                    idTx:        Math.floor(1000 + Math.random() * 9000).toString(),
+                    valor:       totalFormateado,
+                    descripcion: 'Compra de productos - ' + fincaNombre.toUpperCase(),
+                    ref:         '100',
+                    banco:       metodo === 'pse' ? 'PSE' : 'Bancolombia',
+                    telefono:    telVal,
+                    fecha:       fechaStr
+                };
+
+                localStorage.setItem('payment_result', JSON.stringify(paymentResult));
+                localStorage.removeItem('cart');
+
+                /* Redirigir al resultado */
+                setTimeout(function () {
+                    window.location.href = '/frontend/public/views/views_result_traction.html';
+                }, 800);
             }
         });
     }
