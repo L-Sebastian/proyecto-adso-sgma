@@ -81,6 +81,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
 }
 
 @media (min-width: 1024px) {
@@ -101,20 +102,22 @@
 
 /* ==================== CONTENEDOR DEL FORM ==================== */
 .register__form-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
     gap: 10px;
     width: 100%;
     max-width: 320px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column: auto;
 }
 
 /* ==================== GRUPOS DE CAMPO ==================== */
 .register__form-group {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    display: grid;
+    /* flex-direction: column; */
     gap: 4px;
     width: 100%;
+    grid-template-columns: repeat();
+
 }
 
 .register__form label {

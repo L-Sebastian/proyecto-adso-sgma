@@ -92,7 +92,7 @@
     display: block;
 }
 
-#avatarSvgProduct {
+.avatarSvgProduct {
     width: 210px;
     height: 210px;
     max-width: 210px;
@@ -100,7 +100,7 @@
     color: var(--black);
 }
 
-#avatarImgProduct {
+.avatarImgProduct {
     position: absolute;
     top: 0; left: 0;
     width: 100%;
@@ -195,19 +195,17 @@
     gap: var(--spacing-lg);
 }
 
-/* ==================== GRUPO DE CAMPO ==================== */
-.form-group-create {
+/* label es ahora el grid item y flex container */
+.form-label-create {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xs);
-}
-
-.form-label-create {
     font-size: 1.2rem;
     font-weight: var(--fw-bold);
     color: var(--white);
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    cursor: default;
 }
 
 /* ==================== INPUT ==================== */
@@ -364,6 +362,9 @@
 @media (min-width: 640px) {
     .form-grid-create {
         grid-template-columns: 1fr 1fr;
+    }
+    .submit-container-create {
+        grid-column: 1 / -1;
     }
 }
 

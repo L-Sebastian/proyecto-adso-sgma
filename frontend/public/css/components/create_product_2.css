@@ -1,5 +1,3 @@
-
-
 /* =============================
    GENERAL
 ============================= */
@@ -208,19 +206,18 @@ body {
     gap: var(--spacing-lg);
 }
 
-.form-group-product2 {
+/* label es ahora el grid item y flex container */
+.form-label-product2 {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-xs);
-}
-
-.form-label-product2 {
     font-size: 1.2rem;
     font-weight: var(--fw-bold);
     color: var(--white);
     text-transform: uppercase;
     letter-spacing: 0.5px;
     line-height: 1;
+    cursor: default;
 }
 
 /* =============================

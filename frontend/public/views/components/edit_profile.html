@@ -1,92 +1,79 @@
-<body class="container__profile">
-    <!-- Main Content -->
-    <main class="main-content-profile">
-        <div class="profile-container">
-            <div class="profile-grid">
+<div class="profile-container">
+    <div class="profile-grid">
 
-                <!-- Left Column - Profile Picture -->
-                <div class="profile-left">
-                    <input type="file" id="photoInput" accept="image/*" style="display:none;">
+        <!-- Left Column -->
+        <div class="profile-left">
 
-                    <div class="avatar" id="avatarContainer">
-                        <img id="avatarImg" src="" alt="Foto de perfil"
-                             style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:none;">
-                        <svg id="avatarSvg" class="avatar-icon" viewBox="0 0 24 24" fill="none"
-                             stroke="currentColor" stroke-width="2">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
-                    </div>
+            <label class="avatar avatarContainer uploadBtn">
+                <input type="file" class="photoInput" accept="image/*" style="display:none;">
+                <img class="avatarImg" src="" alt="Foto de perfil"
+                     style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:none;">
+                <svg class="avatarSvg avatar-icon" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2">
+                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+            </label>
 
-                    <h2 class="profile-name" id="profileName">Juan de la Cruz</h2>
+            <h2 class="profile-name profileName">Juan de la Cruz</h2>
 
-                    <div class="button-group">
-                        <button class="btn-profile btn-primary-profile" id="uploadBtn" type="button">
-                            Subir Foto
-                        </button>
-                        <button class="btn-profile btn-primary-profile" id="editBtn" type="button">
-                            Editar Perfil
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Right Column - Form (solo lectura) -->
-                <div class="profile-right-user">
-                    <div class="form-row-edit-profile-user">
-                        <div class="form-group-edit-profile-user">
-                            <label class="label-edit-profile-user" for="firstName">1mer Nombre</label>
-                            <input type="text" id="firstName" name="firstName"
-                                   value="Juan" class="form-input-edit-profile-user" readonly>
-                        </div>
-                        <div class="form-group-edit-profile-user">
-                            <label class="label-edit-profile-user" for="secondName" >2do Nombre</label>
-                            <input type="text" id="secondName" name="secondName"
-                                   value="Antonio" class="form-input-edit-profile-user" readonly>
-                        </div>
-                    </div>
-
-                    <div class="form-row-edit-profile-user">
-                        <div class="form-group-edit-profile-user">
-                            <label class="label-edit-profile-user" for="firstLastName">1mer Apellido</label>
-                            <input type="text" id="firstLastName" name="firstLastName"
-                                   value="de la Cruz" class="form-input-edit-profile-user" readonly>
-                        </div>
-                        <div class="form-group-edit-profile-user">
-                            <label class="label-edit-profile-user" for="secondLastName">2do Apellido</label>
-                            <input type="text" id="secondLastName" name="secondLastName"
-                                   value="" class="form-input-edit-profile-user" readonly>
-                        </div>
-                    </div>
-
-                    <div class="form-row-edit-profile-user full-width">
-                        <div class="form-group-edit-profile-user">
-                            <label class="label-edit-profile-user" for="email">Correo electrónico</label>
-                            <input type="email" id="email" name="email"
-                                   value="juandelosantoscruz11@gmail.com" class="form-input-edit-profile-user" readonly>
-                        </div>
-                    </div>
-
-                    <div class="form-row-edit-profile-user">
-                        <div class="form-group-edit-profile-user">
-                            <label class="label-edit-profile-user" for="departamento">Departamento</label>
-                            <select id="departamento" name="departamento"
-                                    class="profile__form-select" disabled
-                                    autocomplete="address-level1">
-                                <option value="">-Selecciona tu departamento-</option>
-                                <option value="Risaralda" selected>Risaralda</option>
-                                <option value="Quindío">Quindío</option>
-                                <option value="Caldas">Caldas</option>
-                            </select>
-                        </div>
-                        <div class="form-group-edit-profile-user">
-                            <label class="label-edit-profile-user"for="address">Dirección</label>
-                            <input type="text" id="address" name="address"
-                                   value="Calle 18 #3-60, Pereira" class="form-input-edit-profile-user" readonly>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="button-group">
+                <button class="btn-profile btn-primary-profile editBtn" type="button">Editar Perfil</button>
             </div>
         </div>
-    </main>
-</body>
+
+        <!-- Right Column - solo lectura -->
+        <div class="profile-right-user">
+
+            <div class="form-row-edit-profile-user">
+                <label class="label-edit-profile-user">1mer Nombre
+                    <input type="text" name="firstName"
+                           class="form-input-edit-profile-user inputFirstName" value="Juan" readonly>
+                </label>
+                <label class="label-edit-profile-user">2do Nombre
+                    <input type="text" name="secondName"
+                           class="form-input-edit-profile-user inputSecondName" value="Antonio" readonly>
+                </label>
+            </div>
+
+            <div class="form-row-edit-profile-user">
+                <label class="label-edit-profile-user">1mer Apellido
+                    <input type="text" name="firstLastName"
+                           class="form-input-edit-profile-user inputFirstLastName" value="de la Cruz" readonly>
+                </label>
+                <label class="label-edit-profile-user">2do Apellido
+                    <input type="text" name="secondLastName"
+                           class="form-input-edit-profile-user inputSecondLastName" value="" readonly>
+                </label>
+            </div>
+
+            <div class="form-row-edit-profile-user full-width">
+                <label class="label-edit-profile-user">Correo electrónico
+                    <input type="email" name="email"
+                           class="form-input-edit-profile-user inputEmail"
+                           value="juandelosantoscruz11@gmail.com" readonly>
+                </label>
+            </div>
+
+            <div class="form-row-edit-profile-user">
+                <label class="label-edit-profile-user">Departamento
+                    <select name="departamento"
+                            class="profile__form-select selectDepartamento" disabled
+                            autocomplete="address-level1">
+                        <option value="">-Selecciona tu departamento-</option>
+                        <option value="Risaralda" selected>Risaralda</option>
+                        <option value="Quindío">Quindío</option>
+                        <option value="Caldas">Caldas</option>
+                    </select>
+                </label>
+                <label class="label-edit-profile-user">Dirección
+                    <input type="text" name="address"
+                           class="form-input-edit-profile-user inputAddress"
+                           value="Calle 18 #3-60, Pereira" readonly>
+                </label>
+            </div>
+
+        </div>
+
+    </div>
+</div>

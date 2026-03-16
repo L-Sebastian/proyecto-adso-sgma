@@ -4,8 +4,9 @@
         <!-- Imagen -->
         <div class="ep-image-section">
             <div class="ep-image-container">
-                <input type="file" class="epPhotoInput" accept="image/*" style="display:none;">
-                <div class="ep-avatar epAvatarContainer">
+
+                <label class="ep-avatar epAvatarContainer epBtnCambiarFoto">
+                    <input type="file" class="epPhotoInput" accept="image/*" style="display:none;">
                     <img class="epAvatarImg" src="" alt="Foto producto"
                          style="width:100%;height:100%;object-fit:cover;border-radius:12px;display:none;">
                     <svg class="epAvatarSvg" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5"
@@ -14,11 +15,12 @@
                         <circle cx="8.5" cy="8.5" r="1.5"/>
                         <path d="M21 15l-5-5L5 21"/>
                     </svg>
-                </div>
+                </label>
+
                 <div class="ep-img-buttons">
-                    <button class="ep-btn ep-btn-secondary epBtnCambiarFoto" type="button">Cambiar Foto</button>
-                    <button class="ep-btn ep-btn-danger epBtnEliminarFoto"   type="button">Eliminar Foto</button>
+                    <button class="ep-btn ep-btn-danger epBtnEliminarFoto" type="button">Eliminar Foto</button>
                 </div>
+
             </div>
         </div>
 
@@ -29,80 +31,59 @@
             <form class="editProductForm">
                 <div class="ep-form-grid">
 
-                    <div class="ep-form-group">
-                        <label class="ep-label">Nombre Producto</label>
+                    <label class="ep-label">Nombre Producto
                         <input type="text" class="ep-input epNombre">
-                    </div>
-
-                    <div class="ep-form-group">
-                        <label class="ep-label">Tipo de producto</label>
+                    </label>
+                    <label class="ep-label">Tipo de producto
                         <select class="ep-select epTipo">
                             <option value="fruta">Fruta</option>
                             <option value="verdura">Verdura</option>
                             <option value="carnes">Carne</option>
                             <option value="fertilizantes">Fertilizante</option>
                         </select>
-                    </div>
-
-                    <div class="ep-form-group">
-                        <label class="ep-label">Peso</label>
+                    </label>
+                    <label class="ep-label">Peso
                         <input type="number" class="ep-input epPeso">
-                    </div>
-
-                    <div class="ep-form-group">
-                        <label class="ep-label">Tipo de peso</label>
+                    </label>
+                    <label class="ep-label">Tipo de peso
                         <select class="ep-select epTipoPeso">
                             <option value="kilos">Kilos</option>
                             <option value="gramos">Gramos</option>
                             <option value="libras">Libras</option>
                             <option value="toneladas">Toneladas</option>
                         </select>
-                    </div>
-
-                    <div class="ep-form-group">
-                        <label class="ep-label">Precio</label>
+                    </label>
+                    <label class="ep-label">Precio
                         <input type="text" class="ep-input epPrecio">
-                    </div>
-
-                    <div class="ep-form-group">
-                        <label class="ep-label">Descuento</label>
+                    </label>
+                    <label class="ep-label">Descuento
                         <select class="ep-select epDescuento">
                             <option value="no">No aplica</option>
                             <option value="10">10%</option>
                             <option value="15">15%</option>
                             <option value="20">20%</option>
                         </select>
-                    </div>
-
-                    <div class="ep-form-group">
-                        <label class="ep-label">Nombre Finca</label>
+                    </label>
+                    <label class="ep-label">Nombre Finca
                         <input type="text" class="ep-input epFinca">
-                    </div>
-
-                    <div class="ep-form-group">
-                        <label class="ep-label">Stock</label>
+                    </label>
+                    <label class="ep-label">Stock
                         <input type="number" class="ep-input epStock">
-                    </div>
-
-                    <div class="ep-form-group">
-                        <label class="ep-label">Dirección Finca</label>
+                    </label>
+                    <label class="ep-label">Dirección Finca
                         <input type="text" class="ep-input epDireccion">
-                    </div>
-
-                    <div class="ep-form-group">
-                        <label class="ep-label">Tipo de Envío</label>
+                    </label>
+                    <label class="ep-label">Tipo de Envío
                         <select class="ep-select epTipoEnvio">
                             <option value="domicilio">Domicilio</option>
                             <option value="recogida">Recogida en Finca</option>
                             <option value="transporte">Transporte Propio</option>
                             <option value="mensajeria">Mensajería</option>
                         </select>
-                    </div>
-
-                    <div class="ep-form-group ep-full-width">
-                        <label class="ep-label">Descripción</label>
+                    </label>
+                    <label class="ep-label ep-full-width">Descripción
                         <textarea class="ep-textarea epDescripcion" rows="3"></textarea>
-                    </div>
+                    </label>
 
                 </div>
 

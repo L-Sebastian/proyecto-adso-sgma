@@ -1,25 +1,22 @@
 <div class="fp-page">
-
     <div class="fp-wrapper">
 
         <!-- Columna izquierda: foto principal + galería -->
         <div class="fp-image-section">
 
-            <input type="file fpPhotoInput" accept="image/*" style="display:none;">
-
-            <div class="fp-avatar fpAvatarContainer">
-                <img id="fpAvatarImg" src="" alt="Foto finca"
+            <label class="fp-avatar fpAvatarContainer fpBtnCambiarFoto">
+                <input type="file" class="fpPhotoInput" accept="image/*" style="display:none;">
+                <img class="fpAvatarImg" src="" alt="Foto finca"
                      style="width:100%;height:100%;object-fit:cover;border-radius:12px;display:none;">
-                <svg id="fpAvatarSvg" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5"
+                <svg class="fpAvatarSvg" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5"
                      style="width:60px;height:60px;">
                     <rect x="3" y="3" width="18" height="18" rx="3"/>
                     <circle cx="8.5" cy="8.5" r="1.5"/>
                     <path d="M21 15l-5-5L5 21"/>
                 </svg>
-            </div>
+            </label>
 
             <div class="fp-img-buttons">
-                <button class="fp-btn fp-btn-secondary fpBtnCambiarFoto" type="button">Cambiar Foto</button>
                 <button class="fp-btn fp-btn-danger fpBtnEliminarFoto" type="button">Eliminar Foto</button>
             </div>
 
@@ -28,26 +25,22 @@
                 <p class="fp-gallery-label">Galería de fotos <span>(máx. 4)</span></p>
                 <div class="fp-gallery-grid fpGalleryGrid">
 
-                    <label class="fp-gallery-slot fpSlot0">
+                    <label class="fp-gallery-slot fpSlot fpSlot0" data-slot="0">
                         <input type="file" accept="image/*" class="fp-gallery-input" data-slot="0" style="display:none;">
                         <span class="fp-gallery-plus">+</span>
                     </label>
-
-                    <label class="fp-gallery-slot fpSlot1">
+                    <label class="fp-gallery-slot fpSlot fpSlot1" data-slot="1">
                         <input type="file" accept="image/*" class="fp-gallery-input" data-slot="1" style="display:none;">
                         <span class="fp-gallery-plus">+</span>
                     </label>
-
-                    <label class="fp-gallery-slot fpSlot2">
+                    <label class="fp-gallery-slot fpSlot fpSlot2" data-slot="2">
                         <input type="file" accept="image/*" class="fp-gallery-input" data-slot="2" style="display:none;">
                         <span class="fp-gallery-plus">+</span>
                     </label>
-
-                    <label class="fp-gallery-slot fpSlot3">
+                    <label class="fp-gallery-slot fpSlot fpSlot3" data-slot="3">
                         <input type="file" accept="image/*" class="fp-gallery-input" data-slot="3" style="display:none;">
                         <span class="fp-gallery-plus">+</span>
                     </label>
-
 
                 </div>
             </div>
@@ -58,57 +51,42 @@
         <div class="fp-form-section">
             <h2 class="fp-title">Crear finca</h2>
 
-            <form class = "fpForm">
+            <form class="fpForm">
                 <div class="fp-form-grid">
 
-                    <div class="fp-form-group">
-                        <label class="fp-label">Nombre propietario</label>
+                    <label class="fp-label">Nombre propietario
                         <input type="text" class="fp-input fpNombre">
-                    </div>
-
-                    <div class="fp-form-group">
-                        <label class="fp-label">Apellido Propietario</label>
+                    </label>
+                    <label class="fp-label">Apellido Propietario
                         <input type="text" class="fp-input fpApellido">
-                    </div>
-
-                    <div class="fp-form-group fp-full-width">
-                        <label class="fp-label">Correo electrónico</label>
+                    </label>
+                    <label class="fp-label fp-full-width">Correo electrónico
                         <input type="text" class="fp-input fpCorreoElectronico">
-                    </div>
-
-                    <div class="fp-form-group">
-                        <label class="fp-label">Nombre Finca</label>
+                    </label>
+                    <label class="fp-label">Nombre Finca
                         <input type="text" class="fp-input fpFinca">
-                    </div>
-
-                    <div class="fp-form-group">
-                        <label class="fp-label">Tipo de producción</label>
+                    </label>
+                    <label class="fp-label">Tipo de producción
                         <select class="fp-select fpProduccion">
                             <option value="frutas">Frutas</option>
                             <option value="verduras">Verduras</option>
                             <option value="carnes">Carnes</option>
                             <option value="mixto">Mixto</option>
                         </select>
-                    </div>
-
-                    <div class="fp-form-group">
-                        <label class="fp-label">Departamento</label>
+                    </label>
+                    <label class="fp-label">Departamento
                         <select class="fp-select fpDepartamento">
                             <option value="risaralda">Risaralda</option>
                             <option value="caldas">Caldas</option>
                             <option value="quindio">Quindío</option>
                         </select>
-                    </div>
-
-                    <div class="fp-form-group">
-                        <label class="fp-label">Dirección Finca</label>
+                    </label>
+                    <label class="fp-label">Dirección Finca
                         <input type="text" class="fp-input fpDireccion">
-                    </div>
-
-                    <div class="fp-form-group fp-full-width">
-                        <label class="fp-label">Descripción</label>
+                    </label>
+                    <label class="fp-label fp-full-width">Descripción
                         <textarea class="fp-textarea fpDescripcion" rows="3"></textarea>
-                    </div>
+                    </label>
 
                 </div>
 
@@ -116,7 +94,6 @@
                     <button type="button" class="fp-btn fp-btn-secondary fpBtnVolver">Volver</button>
                     <button type="submit" class="fp-btn fp-btn-primary">Guardar Cambios</button>
                 </div>
-
             </form>
         </div>
 
