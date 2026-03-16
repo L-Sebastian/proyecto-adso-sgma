@@ -19,35 +19,32 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function initCreateFarm() {
 
-    var photoInput      = document.getElementById('fpPhotoInput');
-    var btnCambiarFoto  = document.getElementById('fpBtnCambiarFoto');
-    var btnEliminarFoto = document.getElementById('fpBtnEliminarFoto');
-    var avatarContainer = document.getElementById('fpAvatarContainer');
-    var avatarImg       = document.getElementById('fpAvatarImg');
-    var avatarSvg       = document.getElementById('fpAvatarSvg');
-    var btnVolver       = document.getElementById('fpBtnVolver');
-    var form            = document.getElementById('fpForm');
+    var photoInput      = document.querySelector('.fpPhotoInput');
+    var btnEliminarFoto = document.querySelector('.fpBtnEliminarFoto');
+    var avatarImg       = document.querySelector('.fpAvatarImg');
+    var avatarSvg       = document.querySelector('.fpAvatarSvg');
+    var btnVolver       = document.querySelector('.fpBtnVolver');
+    var form            = document.querySelector('.fpForm');
 
     if (!form) return;
 
     var foto = '';
 
-    /* Campos que se guardan/restauran en localStorage (los del perfil se excluyen) */
     var FIELDS = ['fpFinca','fpProduccion','fpDepartamento','fpDireccion','fpDescripcion'];
 
     /* ── Cargar datos del perfil y bloquear campos ── */
-    var firstName  = localStorage.getItem('profile_firstName')      || '';
-    var secondName = localStorage.getItem('profile_secondName')     || '';
-    var lastName1  = localStorage.getItem('profile_firstLastName')  || '';
-    var lastName2  = localStorage.getItem('profile_secondLastName') || '';
-    var email      = localStorage.getItem('profile_email')          || '';
+    var firstName    = localStorage.getItem('profile_firstName')      || '';
+    var secondName   = localStorage.getItem('profile_secondName')     || '';
+    var lastName1    = localStorage.getItem('profile_firstLastName')  || '';
+    var lastName2    = localStorage.getItem('profile_secondLastName') || '';
+    var email        = localStorage.getItem('profile_email')          || '';
 
-    var nombreCompleto  = [firstName, secondName].filter(Boolean).join(' ');
+    var nombreCompleto   = [firstName, secondName].filter(Boolean).join(' ');
     var apellidoCompleto = [lastName1, lastName2].filter(Boolean).join(' ');
 
-    var elNombre  = document.getElementById('fpNombre');
-    var elApellido = document.getElementById('fpApellido');
-    var elCorreo  = document.getElementById('fpCorreoElectronico');
+    var elNombre   = document.querySelector('.fpNombre');
+    var elApellido = document.querySelector('.fpApellido');
+    var elCorreo   = document.querySelector('.fpCorreoElectronico');
 
     if (elNombre)   { elNombre.value   = nombreCompleto;   elNombre.setAttribute('readonly', true);   elNombre.style.background   = '#f3f4f6'; elNombre.style.cursor = 'not-allowed'; }
     if (elApellido) { elApellido.value = apellidoCompleto; elApellido.setAttribute('readonly', true); elApellido.style.background = '#f3f4f6'; elApellido.style.cursor = 'not-allowed'; }
@@ -73,14 +70,14 @@ function initCreateFarm() {
     FIELDS.forEach(function (id) {
         var saved = localStorage.getItem('cf_' + id);
         if (saved !== null) {
-            var el = document.getElementById(id);
+            var el = document.querySelector('.' + id);
             if (el) el.value = saved;
         }
     });
 
     /* ── Guardar campos en tiempo real ── */
     FIELDS.forEach(function (id) {
-        var el = document.getElementById(id);
+        var el = document.querySelector('.' + id);
         if (el) {
             el.addEventListener('input', function () {
                 localStorage.setItem('cf_' + id, el.value);
@@ -88,7 +85,7 @@ function initCreateFarm() {
         }
     });
 
-    /* ── Foto — cambiar ── */
+    /* ── Foto — aplicar ── */
     function aplicarFoto(dataURL) {
         foto = dataURL;
         if (avatarImg) { avatarImg.src = foto; avatarImg.style.display = 'block'; }
@@ -96,15 +93,7 @@ function initCreateFarm() {
         localStorage.setItem('cf_foto', foto);
     }
 
-    if (btnCambiarFoto) {
-        btnCambiarFoto.addEventListener('click', function () { photoInput.click(); });
-    }
-    if (avatarContainer) {
-        avatarContainer.style.cursor = 'pointer';
-        avatarContainer.addEventListener('click', function (e) {
-            if (!e.target.closest('.fp-gallery-remove')) photoInput.click();
-        });
-    }
+    /* ── Foto — label nativo, solo leer archivo ── */
     if (photoInput) {
         photoInput.addEventListener('change', function () {
             var file = this.files[0];
@@ -151,13 +140,13 @@ function initCreateFarm() {
     form.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        var nombreFincaEl = document.getElementById('fpFinca');
-        if (!nombreFincaEl || nombreFincaEl.value.trim() === '') {
-            nombreFincaEl.classList.add('fp-error');
-            nombreFincaEl.focus();
+        var fincaInput = document.querySelector('.fpFinca');
+        if (!fincaInput || fincaInput.value.trim() === '') {
+            fincaInput.classList.add('fp-error');
+            fincaInput.focus();
             return;
         }
-        nombreFincaEl.classList.remove('fp-error');
+        fincaInput.classList.remove('fp-error');
 
         var galeria = [];
         try { galeria = JSON.parse(localStorage.getItem('cf_galeria')) || []; } catch(e) {}
@@ -167,11 +156,11 @@ function initCreateFarm() {
             nombre:         nombreCompleto,
             apellido:       apellidoCompleto,
             correo:         email,
-            nombreFinca:    document.getElementById('fpFinca').value.trim(),
-            tipoProduccion: document.getElementById('fpProduccion').value,
-            departamento:   document.getElementById('fpDepartamento').value,
-            direccion:      document.getElementById('fpDireccion').value.trim(),
-            descripcion:    document.getElementById('fpDescripcion').value.trim(),
+            nombreFinca:    document.querySelector('.fpFinca').value.trim(),
+            tipoProduccion: document.querySelector('.fpProduccion').value,
+            departamento:   document.querySelector('.fpDepartamento').value,
+            direccion:      document.querySelector('.fpDireccion').value.trim(),
+            descripcion:    document.querySelector('.fpDescripcion').value.trim(),
             foto:           foto,
             galeria:        galeria,
             fechaCreacion:  new Date().toISOString()
@@ -194,7 +183,7 @@ function initCreateFarm() {
 }
 
 function cfSetSlotImage(slot, dataURL) {
-    var label = document.getElementById('fpSlot' + slot);
+    var label = document.querySelector('.fpSlot[data-slot="' + slot + '"]');
     if (!label) return;
     label.querySelectorAll('.fp-gallery-preview, .fp-gallery-remove').forEach(function (el) { el.remove(); });
     label.classList.add('has-image');
@@ -214,8 +203,9 @@ function cfSetSlotImage(slot, dataURL) {
     });
     label.appendChild(btn);
 }
+
 function cfClearSlot(slot) {
-    var label = document.getElementById('fpSlot' + slot);
+    var label = document.querySelector('.fpSlot[data-slot="' + slot + '"]');
     if (!label) return;
     label.querySelectorAll('.fp-gallery-preview, .fp-gallery-remove').forEach(function (el) { el.remove(); });
     label.classList.remove('has-image');
@@ -224,15 +214,17 @@ function cfClearSlot(slot) {
     var input = label.querySelector('.fp-gallery-input');
     if (input) input.value = '';
 }
+
 function cfSaveGallery() {
     var galeria = [];
     for (var i = 0; i < 4; i++) {
-        var label = document.getElementById('fpSlot' + i);
+        var label = document.querySelector('.fpSlot[data-slot="' + i + '"]');
         var img = label ? label.querySelector('.fp-gallery-preview') : null;
         galeria.push(img ? img.src : '');
     }
     localStorage.setItem('cf_galeria', JSON.stringify(galeria));
 }
+
 function cfMostrarToast(msg) {
     var toast = document.createElement('div');
     toast.textContent = msg;

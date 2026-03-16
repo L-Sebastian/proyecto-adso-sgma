@@ -7,7 +7,8 @@
 } */
 
 /* =============== CONTENEDOR PRINCIPAL ================= */
-.main-content-profile {
+/* =============== CONTENEDOR PRINCIPAL ================= */
+.profile-container {
     background-image: url('/frontend/public/assets/img/Create.png');
     background-size: cover;
     background-position: center;
@@ -20,8 +21,8 @@
     box-sizing: border-box;
 }
 
-/* Caja central */
-.profile-container {
+/* CONTENEDOR INTERNO para el efecto blur */
+.profile-inner {
     max-width: 1000px;
     width: 100%;
     background: rgba(255, 255, 255, 0.15);
@@ -32,6 +33,12 @@
     align-self: flex-start;
 }
 
+/* GRID principal */
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+}
 /* GRID principal */
 .profile-grid {
     display: grid;

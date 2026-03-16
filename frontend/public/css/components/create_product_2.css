@@ -1,12 +1,6 @@
 /* =============================
    GENERAL
 ============================= */
-body {
-    /* font-family: var(--font-family-base); */
-    background-color: var(--white);
-    color: var(--black);
-    overflow-x: hidden;
-}
 
 /* =============================
    SUBHEADER
