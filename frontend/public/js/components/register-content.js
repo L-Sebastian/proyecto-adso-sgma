@@ -48,7 +48,7 @@ function initRegisterContent() {
         const secondLast = inputSecondLast ? inputSecondLast.value.trim() : '';
         const email      = inputEmail      ? inputEmail.value.trim()      : '';
         const depto      = selectDepto     ? selectDepto.value            : '';
-        const address     = inputAddress    ? inputAddress.value.trim()  : '';
+        const address    = inputAddress    ? inputAddress.value.trim()  : '';
         const telefono   = inputTelefono   ? inputTelefono.value.trim()   : '';
         const password   = inputPassword   ? inputPassword.value          : '';
 

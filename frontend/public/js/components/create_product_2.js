@@ -21,6 +21,7 @@ function initProductCreate2() {
 
     const productImage  = document.querySelector('.productImage');
     const photoInput    = document.querySelector('.photoInputProduct2');
+    const btnCambiarFoto= document.querySelector('.btnCambiarFoto');
     const btnEliminar   = document.querySelector('.btnEliminarFoto');
     const btnVolver     = document.querySelector('.btnVolver');
     const form          = document.querySelector('.fincaFormProduct2');
@@ -47,7 +48,15 @@ function initProductCreate2() {
     });
 
     /* ── Cambiar foto — label nativo ── */
-    if (photoInput) {
+    if (btnCambiarFoto && photoInput) {
+        const newUploadBtn = btnCambiarFoto.cloneNode(true);
+        btnCambiarFoto.parentNode.replaceChild(newUploadBtn, btnCambiarFoto);
+        
+        newUploadBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            photoInput.click();
+        });
+        
         photoInput.addEventListener('change', function () {
             const file = this.files[0];
             if (!file) return;

@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+
     var wrapper = document.querySelector('.register');
 
     if (wrapper) {

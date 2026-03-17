@@ -149,6 +149,15 @@
     pointer-events: none;
 }
 
+.photo-hint-product2 {
+    background-color: var(--primary-600);
+    width: 150px;
+    height: 48px;
+    border: none;
+    color: var(--white);
+    font-size: 1.6rem;
+    border-radius: 8px;
+}
 /* Botón secundario */
 .btn-secondary-product2 {
     background-color: var(--primary-600);

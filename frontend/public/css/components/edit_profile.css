@@ -108,6 +108,10 @@
 }
 
 .btn-primary-profile {
+    width: 150px;
+    height: 48px;
+    font-size: 1.6rem;
+    border: none;
     background-color: var(--primary-600);
     color: var(--white);
     box-shadow: 0 4px 15px rgba(0, 193, 106, 0.3);

@@ -29,15 +29,15 @@ function initProfileView() {
 
     // Mapeo de clases para cada campo
     const fieldClasses = {
-        'firstName': '.inputFirstName',
-        'secondName': '.inputSecondName',
-        'firstLastName': '.inputFirstLastName',
-        'secondLastName': '.inputSecondLastName',
-        'email': '.inputEmail',
-        'departamento': '.selectDepartamento',
-        'address': '.inputAddress',
-        'telefono': '.inputTelefono',
-        'password': '.inputPassword'
+        'firstName'         : '.inputFirstName',
+        'secondName'        : '.inputSecondName',
+        'firstLastName'     : '.inputFirstLastName',
+        'secondLastName'    : '.inputSecondLastName',
+        'email'             : '.inputEmail',
+        'departamento'      : '.selectDepartamento',
+        'address'           : '.inputAddress',
+        'telefono'          : '.inputTelefono',
+        'password'          : '.inputPassword'
     };
 
     /* ── Restaurar foto guardada ── */
