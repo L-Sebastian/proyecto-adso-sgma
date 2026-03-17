@@ -1,0 +1,74 @@
+<main class="register__content">
+    <div class="register__content__right"></div>
+
+    <div class="register__content__left__user">
+        <div class="form__register">
+            <h1 class="form__register__title">Crear Usuario</h1>
+
+            <form class="form__register__form formRegistro" novalidate>
+
+                <!-- Nombres y Apellidos - 2 columnas -->
+                <div class="register__form__column__column">
+                    <label class="user-label">Primer Nombre
+                        <input class="user-input inputFirstName" 
+                        type="text" placeholder="firstName">
+                    </label>
+                    <label class="user-label">Segundo Nombre
+                        <input class="user-input inputSecondName" 
+                        type="text" placeholder="Middle Name">
+                    </label>
+                    <label class="user-label">Primer Apellido
+                        <input class="user-input inputFirstLastName" 
+                        type="text" placeholder="firstLastName">
+                    </label>
+                    <label class="user-label">Segundo Apellido
+                        <input class="user-input inputSecondLastName" 
+                        type="text" placeholder="secondLastName">
+                    </label>
+                </div>
+
+                <!-- Correo - Fila completa -->
+                <div style="width: 100%; margin-bottom: 1.5rem;">
+                    <label class="user-label-email">Correo Electrónico
+                        <input type="email" class="user-input-email inputEmail" placeholder="ejemplo@correo.com" style="width: 100%;">
+                    </label>
+                </div>
+
+                <!-- Departamento y Dirección - 2 columnas -->
+                <div class="register__form__column__column" style="margin-bottom: 1.5rem;">
+                    <label class="user-label">Departamento
+                        <select class="register__form-select selectDepartamento" name="departamento" required>
+                            <option value="">- Selecciona -</option>
+                            <option value="Risaralda">Risaralda</option>
+                            <option value="Quindío">Quindío</option>
+                            <option value="Caldas">Caldas</option>
+                        </select>
+                    </label>
+
+                    <label class="user-label">Dirección
+                        <input class="user-input inputAddress" type="text" placeholder="Dirección">
+                    </label>
+            
+
+                <!-- TELÉFONO Y CONTRASEÑA - 2 columnas (SOLUCIÓN) -->
+                    <label class="user-label">Número de Teléfono
+                        <input class="user-input inputTelefono" type="tel" placeholder="Phone">
+                    </label>
+
+                    <label class="user-label">Contraseña
+                        <input class="user-input inputPassword" type="password" placeholder="••••••••">
+                    </label>
+                </div>
+
+                <!-- Mensaje de ayuda -->
+                <div class="register__form-help formHelp" aria-live="polite"></div>
+
+                <!-- Botón -->
+                <div class="form__login__form-row-button">
+                    <button type="submit" class="form__login__form-button">Crear Cuenta</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</main>

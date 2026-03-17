@@ -1,61 +1,124 @@
-<section class="register__image" aria-hidden="true"></section>
+<main class="register">
 
-<section class="register__form" aria-labelledby="registerTitle">
-    <h2 class="register__title registerTitle">CREAR UNA CUENTA</h2>
+    <!-- Imagen izquierda -->
+    <section class="register__image"></section>
 
-    <form class="register__form-container formRegistro" novalidate>
+    <!-- Formulario derecho -->
+    <section class="register__form" aria-labelledby="registerTitle">
+        <!-- BUG CORREGIDO: h2 → h1 (título principal de la página) -->
+        <h2 id="registerTitle" class="register__title">CREAR UNA CUENTA</h2>
 
-        <div class="register__form-group">
-            <label>Primer nombre</label>
-            <input class="register__form-input inputNombre" type="text"
-                   required autocomplete="name" placeholder="Juan" />
+        <form id="formRegistro" class="register__form-container" novalidate>
+        
+            <div class="register__form__column__column">
 
-            <label>Segundo nombre</label>
-            <input class="register__form-input inputNombre" type="text"
-                   required autocomplete="name" placeholder="luis" />
+                <!-- <div class="register__form-group">
+                    <label for="nombre">Primer Nombre</label>
+                    <input class="register__form-input" type="text" required autocomplete="name" placeholder="Primer Nombre" />
+                </div> -->
 
-            <label>Primer apellido</label>
-            <input class="register__form-input inputNombre" type="text"
-                   required autocomplete="name" placeholder="de la cruz" />
+                <!-- <div class="register__form-group">
+                    <label for="nombre">Segundo Nombre</label>
+                    <input  class="register__form-input" type="text" required autocomplete="name" placeholder="Segundo Nombre" />
+                </div>
 
-            <label>Segundo Apellido</label>
-            <input class="register__form-input inputNombre" type="text"
-                   required autocomplete="name" placeholder="agudelo" />
-        </div>
+                <div class="register__form-group">
+                    <label for="nombre">Primer Apellido</label>
+                    <input  class="register__form-input" type="text" required autocomplete="name" placeholder="Primer Apellido" />
+                </div>
 
-        <div class="register__form-group">
-            <label>Número de teléfono</label>
-            <input class="register__form-input inputTelefono" type="tel"
-                   pattern="[0-9]{7,10}" title="Debe contener entre 7 y 10 números"
-                   required autocomplete="tel" placeholder="3001234567" />
-        </div>
+                <div class="register__form-group">
+                    <label for="nombre">Segundo Apellido</label>
+                    <input  class="register__form-input" type="text" required autocomplete="name" placeholder="Segundo Apellido" />
+                </div> -->
 
-        <div class="register__form-group">
-            <label>Departamento</label>
-            <select name="departamento" class="register__form-select selectDepartamento"
-                    required autocomplete="address-level1">
-                <option value="">- Selecciona tu departamento -</option>
-                <option value="Risaralda">Risaralda</option>
-                <option value="Quindío">Quindío</option>
-                <option value="Caldas">Caldas</option>
-            </select>
-        </div>
+                <!-- <div class="register__form-group">
+                    <label for="telefono">Número de teléfono</label>
+                    <input  class="register__form-input" type="tel"
+                        pattern="[0-9]{7,10}" title="Debe contener entre 7 y 10 números"
+                        required autocomplete="tel" placeholder="3001234567" />
+                </div> -->
 
-        <div class="register__form-group">
-            <label>Correo electrónico</label>
-            <input class="register__form-input inputEmail" type="email"
-                   required autocomplete="email" placeholder="ejemplo@correo.com" />
-        </div>
+                <!-- <div class="register__form-group">
+                    <label for="departamento">Departamento</label>
+                    <select  name="departamento"
+                            class="register__form-select" required autocomplete="address-level1">
+                        <option value="">- Selecciona tu departamento -</option>
+                        <option value="Risaralda">Risaralda</option>
+                        <option value="Quindío">Quindío</option>
+                        <option value="Caldas">Caldas</option>
+                    </select>
+                </div> -->
 
-        <div class="register__form-group">
-            <label>Contraseña</label>
-            <input class="register__form-input inputPassword" type="password"
-                   required autocomplete="new-password" placeholder="••••••••" />
-        </div>
+                <!-- <div class="register__form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input  class="register__form-input" type="email"
+                    required autocomplete="email" placeholder="ejemplo@correo.com" />
+                </div>
 
-        <div class="register__form-help formHelp" aria-live="polite"></div>
+                <div class="register__form-group">
+                    <label for="password">Contraseña</label>
+                    <input  class="register__form-input" type="password"
+                    required autocomplete="new-password" placeholder="••••••••" />
+                </div> -->
+            
 
-        <button type="submit" class="register__form-button">Crear Cuenta</button>
 
-    </form>
-</section>
+                <label class="user-label">
+                    Primer Nombre
+                    <input class="user-input" type="text" placeholder="Firts Name ">
+                </label>
+
+                <label class="user-label">
+                    Segundo Nombre
+                    <input class="user-input" type="text" placeholder="Middle Name">
+                </label>
+
+                <label class="user-label">
+                    Primer Apellido
+                    <input class="user-input" type="text" placeholder="Last Name ">
+                </label>
+
+                <label class="user-label">
+                    Segundo Apellido 
+                    <input class="user-input" type="text" placeholder="Secund Last Name">
+                </label>
+
+                <label class="user-label" for="telefono">
+                    Número de Teléfono
+                    <input class="user-input" type="tel" placeholder="Phone">
+                </label>
+
+                <label class="user-label" for="departamento">
+                    Departamento
+                    <select name="departamento"
+                        class="register__form-select" required autocomplete="address-level1">
+                        <option value="">- Selecciona tu departamento -</option>
+                        <option value="Risaralda">Risaralda</option>
+                        <option value="Quindío">Quindío</option>
+                        <option value="Caldas">Caldas</option>
+                    </select>
+                </label>
+
+                <label class="user-label" for="email">
+                    Contraseña
+                    <input class="user-input" type="tel" placeholder="ejemplo@correo.com">
+                </label>
+
+                <label class="user-label" for="password">
+                    Contraseña
+                    <input class="user-input" type="tel" placeholder="••••••••">
+                </label>
+            </div>
+
+            <!-- Mensajes de error/éxito -->
+            <div  class="register__form-help" aria-live="polite"></div>
+
+            <button type="submit" class="register__form-button">Crear Cuenta</button>
+
+        </form>
+    </section>
+
+</main>
+
+<body></body>

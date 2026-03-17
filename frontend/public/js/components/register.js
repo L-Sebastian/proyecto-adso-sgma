@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    /* BUG CORREGIDO: buscaba .register e insertaba register.html que contiene
-       <main class="register"> → doble anidamiento.
-       Ahora inserta en el contenedor padre .main-content */
     var wrapper = document.querySelector('.register');
 
     if (wrapper) {
@@ -38,7 +35,7 @@ function initRegister() {
         clearHelp();
         clearErrors();
 
-        var nombre      = document.getElementById('nombre');
+        let nombre      = document.querySelector('.nombre');
         var telefono    = document.getElementById('telefono');
         var departamento = document.getElementById('departamento');
         var email       = document.getElementById('email');
@@ -84,6 +81,9 @@ function initRegister() {
             return;
         }
 
+        setTimeout(() => {
+            window.location.href = "/frontend/public/views/index_user.html";
+        })
         /* Sin errores → lógica real aquí (fetch a la API, etc.) */
         setHelp('Cuenta creada correctamente. Redirigiendo...', 'success');
     });

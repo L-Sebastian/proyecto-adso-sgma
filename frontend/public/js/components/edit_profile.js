@@ -35,7 +35,9 @@ function initProfileView() {
         'secondLastName': '.inputSecondLastName',
         'email': '.inputEmail',
         'departamento': '.selectDepartamento',
-        'address': '.inputAddress'
+        'address': '.inputAddress',
+        'telefono': '.inputTelefono',
+        'password': '.inputPassword'
     };
 
     /* ── Restaurar foto guardada ── */

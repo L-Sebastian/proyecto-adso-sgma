@@ -46,7 +46,7 @@ function initTraction() {
     const btnInicio = document.querySelector('.btnIrAlInicio');
     if (btnInicio) {
         btnInicio.addEventListener('click', function () {
-            window.location.href = '/frontend/public/views/views_shopping_user.html';
+            window.location.href = '/frontend/public/views/index_user.html';
         });
     }
 

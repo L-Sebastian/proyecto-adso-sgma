@@ -14,7 +14,7 @@
 @import url('components/hero-tree.css');
 @import url('components/form.css');
 /* Import US */
-@import url('components/hero-us.css');
+@import url('components/hero-us.css');  
 @import url('components/box.css');
 /* Import BUY */
 /* @import url('components/header-buy.css'); Corregir este header, ya que desconfigura el header del index */
@@ -42,6 +42,8 @@
 @import url("components/hero_admin.css");
 /* Import Manage User Admin */
 @import url('components/header-gov.css');
+/* Import Register */
+@import url('components/register-content.css');
 
 /* Import ST */
 /* @import url('components/navbar.css'); */

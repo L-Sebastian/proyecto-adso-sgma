@@ -1,12 +1,4 @@
 
-
-body {
-    /* font-family: var(--font-family-base); */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
 /* ==================== LAYOUT — Mobile first ==================== */
 .main-content-recover {
     flex: 1;
@@ -27,7 +19,7 @@ body {
 .testimonial-section-recover {
     background:
         linear-gradient(to right, rgba(30, 74, 97, 0) 70%, var(--primary-secundary-900) 100%),
-        url('/frontend/public/img/4.png') center/cover no-repeat;
+        url('/frontend/public/assets/img/4.png') center/cover no-repeat;
     display: flex;
     align-items: flex-end;
     padding: 5px;

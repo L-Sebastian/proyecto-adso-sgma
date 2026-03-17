@@ -73,7 +73,7 @@ function attachLoginHandlers() {
     if (createBtn) {
         createBtn.addEventListener('click', function () {
             showMessage('Formulario de creación de cuenta (pendiente).', 'info');
-            window.location.href = "/frontend/public/views/views_register.html";
+            window.location.href = "/frontend/public/views/register.html";
         });
     }
 

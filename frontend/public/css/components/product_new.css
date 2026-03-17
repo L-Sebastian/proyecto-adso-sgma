@@ -10,12 +10,15 @@
     font-family: var(--font-family-base);
 }
 
+/* ── Layout fix: footer siempre al fondo, nunca encima ── */
 
 
 
-.footer {
-    flex-shrink: 0;
+.main-content {
+    flex: 1 0 auto;
 }
+
+
 
 /* ── HEADER ── */
 .product-vevo-header {
@@ -44,7 +47,7 @@
     padding: 8px 20px;
     border-radius: 6px;
     font-size: 1.6rem;
-    font-weight: 600;
+    /* font-weight: 600; */
     cursor: pointer;
     transition: background 0.2s, transform 0.15s;
 }

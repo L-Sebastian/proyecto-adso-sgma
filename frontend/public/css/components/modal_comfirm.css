@@ -1,24 +1,33 @@
 /* ==================== MODAL OVERLAY ==================== */
 .modal-overlay {
-    display: none;
     position: fixed;
     inset: 0;
     z-index: 9999;
     background: rgba(0, 0, 0, 0.45);
-    align-items: center;
+
+    display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 /* ==================== MODAL BOX ==================== */
 .modal-box {
     background: #1a78c2;
-    border-radius: 1rem;
-    padding: 2.5rem 3rem;
-    text-align: center;
-    /* max-width: 420px; */
-    width: 90%;
-    height: 200px;
+    width: 100%;
+    height: 35vh;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* 👈 BAJA TODO */
+    padding: 8rem;
+}
+
+
+/* ==================== CONTENIDO INTERNO ==================== */
+.modal-content {
+    text-align: center;
+    padding-bottom: 4rem;
 }
 
 /* ==================== MODAL TITLE ==================== */
@@ -27,6 +36,8 @@
     font-size: 2.4rem;
     font-weight: 600;
     margin-bottom: 2rem;
+    text-align: center;
+    
 }
 
 /* ==================== MODAL ACTIONS ==================== */
@@ -41,14 +52,13 @@
     background: #00c16a;
     color: #fff;
     border: none;
-    border-radius: 0.8rem;
-    padding: 0.55rem 2rem;
+    padding: var(--button-padding-x) var(--button-padding-y);
     font-size: 1.6rem;
     font-weight: 600;
     cursor: pointer;
-    min-width: 80px;
-    height: 40px;
+    min-width: 100px;
     width: 150px;
+    height: 40px;
     transition: background 0.2s ease, transform 0.1s ease;
 }
 
@@ -59,12 +69,4 @@
 
 .modal-btn:active {
     transform: translateY(1px);
-}
-
-/* ── Diferenciar Sí / No ── */
-.modal-btn-no {
-    background: #6b7280;
-}
-.modal-btn-no:hover {
-    background: #4b5563;
 }

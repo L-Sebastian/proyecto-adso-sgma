@@ -1,143 +1,154 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
 
-    /* BUG CORREGIDO: el fetch insertaba verification.html (que contiene .verification-main)
-       DENTRO de .main-content-verification → doble anidamiento.
-       Ahora se busca el contenedor padre .main-content y se inserta ahí. */
     const wrapper = document.querySelector('.main-content-verification');
 
     if (wrapper) {
-        var url = '/frontend/public/views/components/verification.html';
+
+        const url = '/frontend/public/views/components/verification.html';
 
         fetch(url)
-            .then(function (res) {
+            .then(res => {
                 if (!res.ok) throw new Error('No se pudo cargar verification.html');
                 return res.text();
             })
-            .then(function (html) {
+            .then(html => {
                 wrapper.innerHTML = html;
                 initVerification();
             })
-            .catch(function (err) {
+            .catch(err => {
                 console.error('Error cargando el componente de verificación:', err);
             });
+
     } else {
-        /* Si el HTML ya está en el DOM (renderizado estático), inicializar directamente */
         initVerification();
     }
+
 });
+
 
 function initVerification() {
 
-    var form = document.getElementById('verificationForm');
+    const form = document.querySelector('.verification-form');
     if (!form) return;
 
-    var inputs  = Array.from(form.querySelectorAll('.code-input'));
-    var help    = document.getElementById('codeHelp');
-    var toast   = document.getElementById('verificationToast');
+    const inputs = Array.from(form.querySelectorAll('.code-input'));
+    const help = document.querySelector('.field-help');
+    const toast = document.querySelector('.verification-toast');
 
-    /* Enfocar primer input al cargar */
+    const resendBtn = document.querySelector('.btn-resend-verification');
+    const backBtn = document.querySelector('.btn-back-verification');
+
     if (inputs[0]) inputs[0].focus();
 
-    /* ── Navegación entre inputs ── */
-    inputs.forEach(function (input, idx) {
+    inputs.forEach((input, idx) => {
 
-        input.addEventListener('input', function (e) {
-            var digit = e.target.value.replace(/[^0-9]/g, '').slice(0, 1);
+        input.addEventListener('input', e => {
+
+            const digit = e.target.value.replace(/[^0-9]/g, '').slice(0, 1);
             e.target.value = digit;
 
-            /* Clase visual filled */
             if (digit) {
                 input.classList.add('filled');
-                if (idx < inputs.length - 1) inputs[idx + 1].focus();
+                if (idx < inputs.length - 1) {
+                    inputs[idx + 1].focus();
+                }
             } else {
                 input.classList.remove('filled');
             }
         });
 
-        input.addEventListener('keydown', function (e) {
+        input.addEventListener('keydown', e => {
+
             if (e.key === 'Backspace' && !input.value && idx > 0) {
                 inputs[idx - 1].focus();
                 inputs[idx - 1].classList.remove('filled');
             }
         });
 
-        /* Seleccionar contenido al hacer foco */
-        input.addEventListener('focus', function () {
+        input.addEventListener('focus', () => {
             input.select();
         });
+
     });
 
-    /* ── Envío del formulario ── */
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', e => {
+
         e.preventDefault();
 
-        var code = inputs.map(function (i) { return i.value; }).join('');
+        const code = inputs.map(i => i.value.trim()).join('');
 
-        if (code.length !== 6) {
+        /* verificar campos vacíos */
+        if (inputs.some(i => i.value.trim() === '')) {
             setHelp('Debe ingresar los 6 dígitos.', true);
-            inputs.forEach(function (i) { i.classList.add('error'); });
+            inputs.forEach(i => i.classList.add('error'));
+            return;
+        }
+
+        if (code !== '123456') {
+            setHelp('Código incorrecto. Intente otra vez.', true);
+            inputs.forEach(i => i.classList.add('error'));
             return;
         }
 
         clearHelp();
-        inputs.forEach(function (i) { i.classList.remove('error'); });
+        inputs.forEach(i => i.classList.remove('error'));
 
-        /* BUG CORREGIDO: se reemplaza alert() por el sistema de toast del CSS */
-        if (code === '123456') {
-            showToast('Código correcto. Redirigiendo...', 'success');
-            /* aquí va la lógica real: fetch a la API, redirección, etc. */
-        } else {
-            setHelp('Código incorrecto. Intente otra vez.', true);
-            inputs.forEach(function (i) { i.classList.add('error'); });
-        }
+        showToast('Código correcto. Redirigiendo...', 'success');
+
+        setTimeout(() => {
+            window.location.href = "/frontend/public/views/change_password.html";
+        }, 1000);
+
     });
 
-    /* ── BUG CORREGIDO: handlers para botones que no tenían lógica ── */
-    var resendBtn = document.getElementById('resendCodeBtn');
-    var backBtn   = document.getElementById('backBtn');
-
     if (resendBtn) {
-        resendBtn.addEventListener('click', function () {
+        resendBtn.addEventListener('click', () => {
             showToast('Código reenviado a tu correo.', 'info');
-            /* aquí va la lógica real de reenvío */
         });
     }
 
+
     if (backBtn) {
-        backBtn.addEventListener('click', function () {
+        backBtn.addEventListener('click', () => {
             window.location.href = '/frontend/public/views/views_recover.html';
         });
     }
 
 
-    /* ── Helpers ── */
-    function setHelp(msg, isError) {
+    const setHelp = (msg, isError) => {
         if (!help) return;
         help.textContent = msg;
-        if (isError) help.classList.add('error');
-        else help.classList.remove('error');
-    }
+        if (isError) {
+            help.classList.add('error');
+        } else {
+            help.classList.remove('error');
+        }
+    };
 
-    function clearHelp() {
+
+    const clearHelp = () => {
         if (!help) return;
         help.textContent = '';
         help.classList.remove('error');
-    }
+    };
 
-    function showToast(msg, type) {
+
+    const showToast = (msg, type) => {
+
         if (!toast) return;
+
         toast.textContent = msg;
+
         toast.className = 'verification-toast ' + (type || 'info');
-        /* Forzar reflow para reiniciar la transición */
+
         toast.offsetHeight;
+
         toast.classList.add('visible');
 
-        setTimeout(function () {
+        setTimeout(() => {
             toast.classList.remove('visible');
         }, 3500);
 
-        setTimeout(() => {
-            window.location.href = "/frontend/public/views/views_verification.html";
-        }, 1000);
-    }
+    };
+
 }

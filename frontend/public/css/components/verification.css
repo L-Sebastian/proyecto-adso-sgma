@@ -17,7 +17,7 @@
 .verification-hero {
     background:
         linear-gradient(to right, rgba(30, 74, 97, 0) 70%, rgba(18, 52, 69, 0.9) 100%),
-        url('/frontend/public/img/2.png') center/cover no-repeat;
+        url('/frontend/public/assets/img/2.png') center/cover no-repeat;
     display: flex;
     align-items: flex-end;
     padding: 1.25rem;

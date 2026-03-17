@@ -2,10 +2,6 @@
         /* ===== 1. RESET GLOBAL ====== */
         /* ---------------------------- */
         
-        html, body {
-            height: 100%;
-            /* font-family: var(--font-family-base); */
-        }
 
         /* ---------------------------- */
         /* ===== 2. HERO SECTION ====== */

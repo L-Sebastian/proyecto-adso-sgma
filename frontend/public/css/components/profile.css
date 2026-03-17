@@ -2,13 +2,13 @@
 
 body {
     /* font-family: var(--font-family-base); */
-    min-height: 100vh;
+    /* min-height: 100vh;
     display: flex;
     flex-direction: column;
     background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><rect fill="%234A7C59" width="1000" height="1000"/></svg>');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: fixed; */
 }
 
 /* Header */
