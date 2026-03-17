@@ -48,7 +48,7 @@ function initRegisterContent() {
         const secondLast = inputSecondLast ? inputSecondLast.value.trim() : '';
         const email      = inputEmail      ? inputEmail.value.trim()      : '';
         const depto      = selectDepto     ? selectDepto.value            : '';
-        const address    = inputAddress    ? inputAddress.value.trim()  : '';
+        const address    = inputAddress    ? inputAddress.value.trim()    : '';
         const telefono   = inputTelefono   ? inputTelefono.value.trim()   : '';
         const password   = inputPassword   ? inputPassword.value          : '';
 
@@ -82,7 +82,7 @@ function initRegisterContent() {
         localStorage.setItem('profile_secondLastName', secondLast);
         localStorage.setItem('profile_email',          email);
         localStorage.setItem('profile_departamento',   depto);
-        localStorage.setItem('profile_direccion',      address);
+        localStorage.setItem('profile_address',      address);
         localStorage.setItem('profile_telefono',       telefono);
 
         setHelp('¡Cuenta creada! Redirigiendo...', 'success');

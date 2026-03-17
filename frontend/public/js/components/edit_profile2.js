@@ -56,7 +56,9 @@ function initProfileEdit() {
         { key: 'secondLastName', cls: '.inputSecondLastName' },
         { key: 'email',          cls: '.inputEmail'          },
         { key: 'departamento',   cls: '.selectDepartamento'  },
-        { key: 'address',        cls: '.inputAddress'        }
+        { key: 'address',        cls: '.inputAddress'        },
+        { key: 'telefono',       cls: '.inputTelefono'       },
+        { key: 'password',       cls: '.inputPassword'       }
     ];
 
     /* ── Restaurar foto guardada ── */

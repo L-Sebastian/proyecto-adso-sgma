@@ -24,7 +24,7 @@ function initProfileView() {
     const avatarImg = document.querySelector('.avatarImg');
     const avatarSvg = document.querySelector('.avatarSvg');
     const uploadBtn = document.querySelector('.uploadBtn');
-    const editBtn = document.querySelector('.editBtn');
+    const editBtn   = document.querySelector('.editBtn');
     const profileName = document.querySelector('.profileName');
 
     // Mapeo de clases para cada campo
