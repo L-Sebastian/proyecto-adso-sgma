@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', function () {
             return res.text();
         })
         .then(function (html) {
-            /* outerHTML reemplaza el main completo con el componente */
             const temp = document.createElement('div');
             temp.innerHTML = html;
             container.replaceWith(temp.firstElementChild);
@@ -17,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(function (err) {
             console.error('Error cargando register-content:', err);
-            initRegisterContent(); /* intentar con DOM existente */
+            initRegisterContent();
         });
 });
 
@@ -33,14 +32,15 @@ function initRegisterContent() {
     const inputAddress    = document.querySelector('.inputAddress');
     const inputTelefono   = document.querySelector('.inputTelefono');
     const inputPassword   = document.querySelector('.inputPassword');
-    const formHelp        = document.querySelector('.formHelp');
 
     if (!form) return;
+
+    /* ── Inicializar toast ── */
+    if (typeof ToastModule !== 'undefined') ToastModule.init();
 
     /* ── Envío del formulario ── */
     form.addEventListener('submit', function (e) {
         e.preventDefault();
-        clearHelp();
 
         const firstName  = inputFirstName  ? inputFirstName.value.trim()  : '';
         const secondName = inputSecondName ? inputSecondName.value.trim() : '';
@@ -52,56 +52,57 @@ function initRegisterContent() {
         const telefono   = inputTelefono   ? inputTelefono.value.trim()   : '';
         const password   = inputPassword   ? inputPassword.value          : '';
 
-        /* ── Validaciones ── */
+        /* ── Validaciones con toast ── */
         if (!firstName) {
-            return setHelp('El primer nombre es obligatorio.', 'error');
+            return toast('El primer nombre es obligatorio.', 'error');
         }
         if (!firstLast) {
-            return setHelp('El primer apellido es obligatorio.', 'error');
+            return toast('El primer apellido es obligatorio.', 'error');
         }
         if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            return setHelp('Ingresa un correo electrónico válido.', 'error');
+            return toast('Ingresa un correo electrónico válido.', 'error');
         }
         if (!depto) {
-            return setHelp('Selecciona un departamento.', 'error');
+            return toast('Selecciona un departamento.', 'error');
         }
         if (!address) {
-            return setHelp('La direccion es obligatoria .', 'error');
+            return toast('La dirección es obligatoria.', 'error');
         }
         if (!telefono || !/^[0-9]{7,10}$/.test(telefono)) {
-            return setHelp('El teléfono debe tener entre 7 y 10 dígitos.', 'error');
+            return toast('El teléfono debe tener entre 7 y 10 dígitos.', 'error');
         }
         if (!password || password.length < 6) {
-            return setHelp('La contraseña debe tener al menos 6 caracteres.', 'error');
+            return toast('La contraseña debe tener al menos 6 caracteres.', 'error');
         }
 
-        /* ── Guardar solo datos del perfil personal ── */
+        /* ── Guardar perfil en localStorage ── */
         localStorage.setItem('profile_firstName',      firstName);
         localStorage.setItem('profile_secondName',     secondName);
         localStorage.setItem('profile_firstLastName',  firstLast);
         localStorage.setItem('profile_secondLastName', secondLast);
         localStorage.setItem('profile_email',          email);
         localStorage.setItem('profile_departamento',   depto);
-        localStorage.setItem('profile_address',      address);
+        localStorage.setItem('profile_address',        address);
         localStorage.setItem('profile_telefono',       telefono);
 
-        setHelp('¡Cuenta creada! Redirigiendo...', 'success');
+        toast('¡Cuenta creada exitosamente! Redirigiendo...', 'success', 1500);
 
         setTimeout(function () {
-            window.location.href = '/frontend/public/views/views_login.html';
-        }, 1200);
+            window.location.href = '/frontend/public/views/login.html';
+        }, 1500);
     });
 
-    /* ── Helpers ── */
-    function setHelp(msg, type) {
-        if (!formHelp) return;
-        formHelp.textContent = msg;
-        formHelp.className = 'register__form-help formHelp ' + (type || '');
-    }
-
-    function clearHelp() {
-        if (!formHelp) return;
-        formHelp.textContent = '';
-        formHelp.className = 'register__form-help formHelp';
+    /* ── Helper: usa ToastModule si existe, si no usa formHelp ── */
+    function toast(msg, type, duration) {
+        if (typeof ToastModule !== 'undefined') {
+            ToastModule.show(msg, type, duration || 3000);
+        } else {
+            /* Fallback al formHelp inline */
+            const formHelp = document.querySelector('.formHelp');
+            if (formHelp) {
+                formHelp.textContent = msg;
+                formHelp.className = 'register__form-help formHelp ' + (type || '');
+            }
+        }
     }
 }
