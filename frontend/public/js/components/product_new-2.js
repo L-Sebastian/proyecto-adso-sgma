@@ -97,7 +97,7 @@ function renderMyGrid(myGrid) {
     if (nuevos.length > 0) {
         myGrid.innerHTML = nuevos.map(function (p) { return buildCard(p, true); }).join('');
     } else {
-        myGrid.innerHTML = '<p style="text-align:center;color:#666;padding:24px;grid-column:1/-1;">Aún no has publicado productos nuevos.</p>';
+        myGrid.innerHTML = '<p style="text-align:center;color:#666;padding:24px;grid-column:1/-1;font-size:1.6rem">Aún no has publicado productos nuevos.</p>';
     }
 }
 

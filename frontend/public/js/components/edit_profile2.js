@@ -3,52 +3,54 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!bodyContainer) return;
 
     Promise.all([
-        fetch('/frontend/public/views/components/edit_profile2.html').then(function (r) {
+        fetch('/frontend/public/views/components/edit_profile2.html').then(r => {
             if (!r.ok) throw new Error('Error cargando edit_profile2.html');
             return r.text();
         }),
-        fetch('/frontend/public/views/components/modal_confirm.html').then(function (r) {
+        fetch('/frontend/public/views/components/modal_confirm.html').then(r => {
             if (!r.ok) throw new Error('Error cargando modal_confirm.html');
             return r.text();
         })
     ])
-    .then(function (resultados) {
-        bodyContainer.innerHTML = resultados[0];
+    .then(([profileHtml, modalHtml]) => {
+        bodyContainer.innerHTML = profileHtml;
 
-        // Insertar modal al final del body
         const modalWrapper = document.createElement('div');
-        modalWrapper.innerHTML = resultados[1];
+        modalWrapper.innerHTML = modalHtml;
         document.body.appendChild(modalWrapper);
 
         initProfileEdit();
     })
-    .catch(function (error) {
-        console.error('Error cargando componentes:', error);
-    });
+    .catch(error => console.error('Error cargando componentes:', error));
 });
 
 function initProfileEdit() {
-    console.log('initProfileEdit ejecutado');
+    // ===== ELEMENTOS DEL DOM =====
+    const elements = {
+        // Avatar
+        photoInput: document.querySelector('.photoInput'),
+        avatarImg: document.querySelector('.avatarImg'),  
+        avatarSvg: document.querySelector('.avatarSvg'), 
+        nameDisplay: document.querySelector('.profileName'),
+        
+        // Botones
+        btnVolver: document.querySelector('.btnvolver'), 
+        btnGuardar: document.querySelector('.btnGuardar'),
+        
+        // Modal
+        modal: document.querySelector('.modalConfirmarSalida'),
+        modalSi: document.querySelector('.modalSi'),
+        modalNo: document.querySelector('.modalNo')
+    };
 
-    const photoInput = document.querySelector('.photoInput');
-    const avatarImg = document.querySelector('.avatarImgProfile');
-    const avatarSvg = document.querySelector('.avatarSvgProfile');
-    const nameDisplay = document.querySelector('.profileNameProfile');
-    const btnVolver = document.querySelector('.btnVolver');
-    const btnGuardar = document.querySelector('.btnGuardar');
-
-    // Modal
-    const modal = document.querySelector('.modalConfirmarSalida');
-    const modalSi = document.querySelector('.modalSi');
-    const modalNo = document.querySelector('.modalNo');
-
+    // Verificar elementos críticos
     console.log('Elementos encontrados:', {
-        btnVolver: !!btnVolver,
-        modal: !!modal,
-        modalSi: !!modalSi,
-        modalNo: !!modalNo
+        avatarImg: !!elements.avatarImg,
+        btnVolver: !!elements.btnVolver,
+        modal: !!elements.modal
     });
 
+    // ===== CAMPOS DEL FORMULARIO =====
     const FIELDS = [
         { key: 'firstName',      cls: '.inputFirstName'      },
         { key: 'secondName',     cls: '.inputSecondName'     },
@@ -58,29 +60,30 @@ function initProfileEdit() {
         { key: 'departamento',   cls: '.selectDepartamento'  },
         { key: 'address',        cls: '.inputAddress'        },
         { key: 'telefono',       cls: '.inputTelefono'       },
-        { key: 'password',       cls: '.inputPassword'       }
+        { key: 'password',       cls: '.inputPassword'       }  
     ];
 
-    /* ── Restaurar foto guardada ── */
-    const savedPhoto = localStorage.getItem('profilePhoto');
-    if (savedPhoto) {
-        if (avatarImg) { 
-            avatarImg.src = savedPhoto; 
-            avatarImg.style.display = 'block'; 
-        }
-        if (avatarSvg) { 
-            avatarSvg.style.display = 'none'; 
+    // ===== FUNCIONES PRINCIPALES =====
+    
+    /** Restaurar foto de perfil */
+    function restaurarFoto() {
+        const savedPhoto = localStorage.getItem('profilePhoto');
+        if (savedPhoto && elements.avatarImg && elements.avatarSvg) {
+            elements.avatarImg.src = savedPhoto;
+            elements.avatarImg.style.display = 'block';
+            elements.avatarSvg.style.display = 'none';
         }
     }
 
-    /* ── Restaurar datos guardados en los campos ── */
-    FIELDS.forEach(function (field) {
-        const saved = localStorage.getItem('profile_' + field.key);
-        if (saved !== null) {
-            const el = document.querySelector(field.cls);
-            if (el) {
+    /** Restaurar datos de los campos */
+    function restaurarDatos() {
+        FIELDS.forEach(field => {
+            const saved = localStorage.getItem('profile_' + field.key);
+            if (saved !== null) {
+                const el = document.querySelector(field.cls);
+                if (!el) return;
+                
                 if (el.tagName === 'SELECT') {
-                    // Para selects
                     for (let i = 0; i < el.options.length; i++) {
                         if (el.options[i].value === saved) {
                             el.selectedIndex = i;
@@ -91,141 +94,159 @@ function initProfileEdit() {
                     el.value = saved;
                 }
             }
-        }
-    });
+        });
+    }
 
-    /* ── Guardar valores originales para detectar cambios ── */
+    /** Guardar valores originales */
     const valoresOriginales = {};
-    FIELDS.forEach(function (field) {
-        const el = document.querySelector(field.cls);
-        valoresOriginales[field.key] = el ? el.value : '';
-    });
+    function guardarValoresOriginales() {
+        FIELDS.forEach(field => {
+            const el = document.querySelector(field.cls);
+            valoresOriginales[field.key] = el ? el.value : '';
+        });
+    }
 
-    /* ── Función para detectar cambios ── */
+    /** Detectar cambios */
     function huboCambios() {
-        return FIELDS.some(function (field) {
+        return FIELDS.some(field => {
             const el = document.querySelector(field.cls);
             return el && el.value !== valoresOriginales[field.key];
         });
     }
 
-    /* ── Función para guardar datos ── */
+    /** Guardar datos en localStorage */
     function guardarDatos() {
-        console.log('Guardando datos...');
-        FIELDS.forEach(function (field) {
+        FIELDS.forEach(field => {
             const el = document.querySelector(field.cls);
             if (el) {
                 localStorage.setItem('profile_' + field.key, el.value);
             }
         });
         
-        // Actualizar valores originales después de guardar
-        FIELDS.forEach(function (field) {
-            const el = document.querySelector(field.cls);
-            valoresOriginales[field.key] = el ? el.value : '';
-        });
+        // Actualizar valores originales
+        guardarValoresOriginales();
         
         if (typeof window.aplicarDatosPerfil === 'function') {
             window.aplicarDatosPerfil();
         }
+        
+        console.log(' Datos guardados');
     }
 
-    /* ── Actualizar nombre en tiempo real ── */
+    /** Actualizar nombre mostrado */
     function updateName() {
-        if (!nameDisplay) return;
+        if (!elements.nameDisplay) return;
+        
         const first = document.querySelector('.inputFirstName')?.value.trim() || '';
         const second = document.querySelector('.inputSecondName')?.value.trim() || '';
         const last1 = document.querySelector('.inputFirstLastName')?.value.trim() || '';
         const last2 = document.querySelector('.inputSecondLastName')?.value.trim() || '';
-        const line1 = [first, second].filter(Boolean).join(' ');
-        const line2 = [last1, last2].filter(Boolean).join(' ');
-        nameDisplay.innerHTML = line1 + (line2 ? '<br>' + line2 : '');
+        
+        const nombres = [first, second].filter(Boolean).join(' ');
+        const apellidos = [last1, last2].filter(Boolean).join(' ');
+        
+        elements.nameDisplay.innerHTML = apellidos 
+            ? nombres + '<br>' + apellidos 
+            : nombres;
     }
 
-    // Event listeners para actualizar nombre
-    ['.inputFirstName', '.inputSecondName', '.inputFirstLastName', '.inputSecondLastName']
-        .forEach(function (cls) {
+    /** Configurar actualización en tiempo real */
+    function configurarActualizacionNombre() {
+        const inputs = [
+            '.inputFirstName',
+            '.inputSecondName',
+            '.inputFirstLastName',
+            '.inputSecondLastName'
+        ];
+        
+        inputs.forEach(cls => {
             const el = document.querySelector(cls);
             if (el) el.addEventListener('input', updateName);
         });
+    }
 
-    updateName();
-
-    /* ── Subir foto ── */
-    if (photoInput) {
-        photoInput.addEventListener('change', function () {
+    /** Configurar carga de foto */
+    function configurarFoto() {
+        if (!elements.photoInput || !elements.avatarImg) return;
+        
+        elements.photoInput.addEventListener('change', function() {
             const file = this.files[0];
             if (!file) return;
+            
             const reader = new FileReader();
-            reader.onload = function (e) {
+            reader.onload = e => {
                 const dataURL = e.target.result;
-                if (avatarImg) { 
-                    avatarImg.src = dataURL; 
-                    avatarImg.style.display = 'block'; 
-                }
-                if (avatarSvg) avatarSvg.style.display = 'none';
+                elements.avatarImg.src = dataURL;
+                elements.avatarImg.style.display = 'block';
+                if (elements.avatarSvg) elements.avatarSvg.style.display = 'none';
                 localStorage.setItem('profilePhoto', dataURL);
-                if (typeof window.aplicarDatosPerfil === 'function') {
-                    window.aplicarDatosPerfil();
-                }
             };
             reader.readAsDataURL(file);
         });
     }
 
-    /* ── Botón Volver con modal ── */
-    if (btnVolver && modal) {
-        btnVolver.addEventListener('click', function(e) {
-            e.preventDefault();
-            console.log('Botón Volver clickeado');
-            
-            if (huboCambios()) {
-                console.log('Hay cambios, mostrando modal');
-                modal.style.display = 'flex';
-            } else {
-                console.log('Sin cambios, redirigiendo');
+    /** Configurar modal */
+    function configurarModal() {
+        if (!elements.modal) return;
+        
+        // Mostrar modal
+        window.mostrarModal = () => elements.modal.style.display = 'flex';
+        window.ocultarModal = () => elements.modal.style.display = 'none';
+        
+        // Cerrar al hacer clic fuera
+        elements.modal.addEventListener('click', e => {
+            if (e.target === elements.modal) window.ocultarModal();
+        });
+    }
+
+    /** Configurar botones */
+    function configurarBotones() {
+        // Botón Volver
+        if (elements.btnVolver) {
+            elements.btnVolver.addEventListener('click', () => {
+                if (huboCambios()) {
+                    window.mostrarModal();
+                } else {
+                    window.location.href = '/frontend/public/views/views_edit_profile.html';
+                }
+            });
+        }
+
+        // Botón Guardar
+        if (elements.btnGuardar) {
+            elements.btnGuardar.addEventListener('click', () => {
+                guardarDatos();
                 window.location.href = '/frontend/public/views/views_edit_profile.html';
-            }
-        });
-    } else {
-        console.error('Faltan elementos:', { btnVolver: !!btnVolver, modal: !!modal });
+            });
+        }
+
+        // Modal Sí
+        if (elements.modalSi) {
+            elements.modalSi.addEventListener('click', () => {
+                guardarDatos();
+                window.ocultarModal();
+                window.location.href = '/frontend/public/views/views_edit_profile.html';
+            });
+        }
+
+        // Modal No
+        if (elements.modalNo) {
+            elements.modalNo.addEventListener('click', () => {
+                window.ocultarModal();
+                window.location.href = '/frontend/public/views/views_edit_profile.html';
+            });
+        }
     }
 
-    /* ── Botón Sí del modal ── */
-    if (modalSi && modal) {
-        modalSi.addEventListener('click', function() {
-            console.log('Modal Sí clickeado');
-            guardarDatos();
-            modal.style.display = 'none';
-            window.location.href = '/frontend/public/views/views_edit_profile.html';
-        });
-    }
-
-    /* ── Botón No del modal ── */
-    if (modalNo && modal) {
-        modalNo.addEventListener('click', function() {
-            console.log('Modal No clickeado');
-            modal.style.display = 'none';
-            window.location.href = '/frontend/public/views/views_edit_profile.html';
-        });
-    }
-
-    /* ── Cerrar modal al hacer clic fuera ── */
-    if (modal) {
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                console.log('Clic fuera del modal');
-                modal.style.display = 'none';
-            }
-        });
-    }
-
-    /* ── Botón Guardar ── */
-    if (btnGuardar) {
-        btnGuardar.addEventListener('click', function() {
-            console.log('Botón Guardar clickeado');
-            guardarDatos();
-            window.location.href = '/frontend/public/views/views_edit_profile.html';
-        });
-    }
+    // ===== INICIALIZACIÓN =====
+    restaurarFoto();
+    restaurarDatos();
+    guardarValoresOriginales();
+    updateName();
+    configurarActualizacionNombre();
+    configurarFoto();
+    configurarModal();
+    configurarBotones();
+    
+    console.log(' Edit Profile 2 inicializado');
 }

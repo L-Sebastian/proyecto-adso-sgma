@@ -4,9 +4,11 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    min-height: calc(100vh - 56px);
+    /* min-height: calc(100vh - 56px); */
     /* Fondo de respaldo para espacios vacíos en móvil */
     background: linear-gradient(135deg, #2c5f7f 0%, #1e4a61 100%);
+    height: calc(100vh - 56px);
+    overflow: hidden;
 }
 
 @media (min-width: 1024px) {
@@ -22,10 +24,11 @@
         url('/frontend/public/assets/img/4.png') center/cover no-repeat;
     display: flex;
     align-items: flex-end;
-    padding: 5px;
+    /* padding: 5px; */
     color: var(--white);
     position: relative;
     min-height: 220px;
+
 }
 
 @media (min-width: 1024px) {
@@ -79,7 +82,7 @@
 /* ==================== SECCIÓN FORMULARIO (derecha) ==================== */
 .recovery-section-recover {
     background: linear-gradient(135deg, #2c5f7f 0%, #1e4a61 100%);
-    padding: 4rem 2.5rem;
+    /* padding: 4rem 2.5rem; */
     display: flex;
     flex-direction: column;
     justify-content: center;

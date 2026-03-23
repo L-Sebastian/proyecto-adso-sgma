@@ -175,7 +175,10 @@
     background-color: rgba(103, 103, 103, 0.65);
     border-radius: 0.9375rem;
     padding: var(--spacing-lg);
+    
+
 }
+
 
 .form-row-edit-profile-user {
     display: grid;
@@ -206,7 +209,6 @@
     /* padding: var(--spacing-xs) var(--spacing-md); */
     border-radius: var(--button-radius);
     height: 48px;
-    background: rgba(255, 255, 255, 0.3);
     color: var(--black);
     font-family: var(--font-family-base);
     font-size: 1.6rem;
@@ -217,12 +219,12 @@
 
 .form-input-edit-profile-user:hover { 
     border-color: var(--primary-secundary-400); 
-    background: rgba(255, 255, 255, 0.3); 
+    /*background: rgba(255, 255, 255, 0.3); */
 }
 
 .form-input-edit-profile-user:focus { 
     outline: none; 
-    background: rgba(255, 255, 255, 0.3); 
+   /* background: rgba(255, 255, 255, 0.3);*/ 
     box-shadow: var(--focus-ring); 
 }
 
@@ -247,7 +249,6 @@
     padding: var(--spacing-sm) var(--spacing-md);
     border-radius: var(--button-radius);
     height: 48px;
-    background: rgba(255, 255, 255, 0.7);
     color: var(--black);
     font-family: var(--font-family-base);
     font-size: 1.6rem;
@@ -258,7 +259,6 @@
 
 .profile__form-select:hover { 
     border-color: var(--primary-secundary-400); 
-    background: rgba(255, 255, 255, 0.85); 
 }
 
 .profile__form-select:focus { 

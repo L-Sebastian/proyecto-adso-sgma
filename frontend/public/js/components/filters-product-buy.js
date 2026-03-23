@@ -83,7 +83,7 @@ function renderFiltrados(tipo) {
 
     grid.innerHTML = filtrados.length > 0
         ? filtrados.map(buildFilterCard).join('')
-        : '<p style="text-align:center;color:#666;padding:40px;grid-column:1/-1;">No hay productos en esta categoría.</p>';
+        : '<p style="text-align:center;color:#666;padding:40px;grid-column:1/-1;font-size:1.6rem;">No hay productos en esta categoría.</p>';
 }
 
 function buildFilterCard(p) {

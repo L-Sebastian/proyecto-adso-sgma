@@ -45,7 +45,7 @@ function attachLoginHandlers() {
         let hasError = false;
 
         if (!validateEmail(emailEl.value)) {
-            setFieldError(emailEl, 'Introduce un correo válido.');
+            setFieldError(emailEl,   'Introduce un correo válido.');
             hasError = true;
         }
         if (passEl.value.trim().length < 6) {

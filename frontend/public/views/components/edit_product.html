@@ -1,98 +1,82 @@
-<div class="ep-page">
-    <div class="ep-wrapper">
 
-        <!-- Imagen -->
-        <div class="ep-image-section">
-            <div class="ep-image-container">
 
-                <label class="ep-avatar epAvatarContainer epBtnCambiarFoto">
-                    <input type="file" class="epPhotoInput" accept="image/*" style="display:none;">
-                    <img class="epAvatarImg" src="" alt="Foto producto"
-                         style="width:100%;height:100%;object-fit:cover;border-radius:12px;display:none;">
-                    <svg class="epAvatarSvg" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5"
-                         style="width:60px;height:60px;">
-                        <rect x="3" y="3" width="18" height="18" rx="3"/>
-                        <circle cx="8.5" cy="8.5" r="1.5"/>
-                        <path d="M21 15l-5-5L5 21"/>
-                    </svg>
-                </label>
+<div class="profile-container">
+    <div class="profile-grid">
 
-                <div class="ep-img-buttons">
-                    <button class="ep-btn ep-btn-danger epBtnEliminarFoto" type="button">Eliminar Foto</button>
-                </div>
+        <!-- Left Column -->
+        <div class="profile-left">
 
+            <label class="ep-avatar epAvatarContainer epBtnCambiarFoto">
+                 <input type="file" class="epPhotoInput" accept="image/*" style="display:none;">
+                <img class="epAvatarImg" src="" alt="Foto producto"
+                     style="width:100%;height:100%;object-fit:cover;border-radius:12px;display:none;">
+                <svg class="epAvatarSvg" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5"
+                     style="width:60px;height:60px;">
+                    <rect x="3" y="3" width="18" height="18" rx="3"/>
+                     <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <path d="M21 15l-5-5L5 21"/>
+                </svg>
+            </label>
+
+            <div class="ep-img-buttons">
+                    <button class="ep-btn ep-btn-danger epBtnEliminarFoto" type="button">Eliminar</button>
+                    <button class="ep-btn ep-btn-danger epBtnSubirFoto" type="button">Subir Foto</button>
             </div>
         </div>
 
-        <!-- Formulario -->
+        <!-- Right Column - solo lectura -->
         <div class="ep-form-section">
-            <h2 class="ep-title">Editar Producto</h2>
+        <!-- <h2 class="ep-title">Editar Producto</h2> -->
 
-            <form class="editProductForm">
-                <div class="ep-form-grid">
+        <form class="editProductForm">
+        <div class="profile-right-user">
 
-                    <label class="ep-label">Nombre Producto
-                        <input type="text" class="ep-input epNombre">
-                    </label>
-                    <label class="ep-label">Tipo de producto
-                        <select class="ep-select epTipo">
-                            <option value="fruta">Fruta</option>
-                            <option value="verdura">Verdura</option>
-                            <option value="carnes">Carne</option>
-                            <option value="fertilizantes">Fertilizante</option>
-                        </select>
-                    </label>
-                    <label class="ep-label">Peso
-                        <input type="number" class="ep-input epPeso">
-                    </label>
-                    <label class="ep-label">Tipo de peso
-                        <select class="ep-select epTipoPeso">
-                            <option value="kilos">Kilos</option>
-                            <option value="gramos">Gramos</option>
-                            <option value="libras">Libras</option>
-                            <option value="toneladas">Toneladas</option>
-                        </select>
-                    </label>
-                    <label class="ep-label">Precio
-                        <input type="text" class="ep-input epPrecio">
-                    </label>
-                    <label class="ep-label">Descuento
-                        <select class="ep-select epDescuento">
-                            <option value="no">No aplica</option>
-                            <option value="10">10%</option>
-                            <option value="15">15%</option>
-                            <option value="20">20%</option>
-                        </select>
-                    </label>
-                    <label class="ep-label">Nombre Finca
-                        <input type="text" class="ep-input epFinca">
-                    </label>
-                    <label class="ep-label">Stock
-                        <input type="number" class="ep-input epStock">
-                    </label>
-                    <label class="ep-label">Dirección Finca
-                        <input type="text" class="ep-input epDireccion">
-                    </label>
-                    <label class="ep-label">Tipo de Envío
-                        <select class="ep-select epTipoEnvio">
-                            <option value="domicilio">Domicilio</option>
-                            <option value="recogida">Recogida en Finca</option>
-                            <option value="transporte">Transporte Propio</option>
-                            <option value="mensajeria">Mensajería</option>
-                        </select>
-                    </label>
-                    <label class="ep-label ep-full-width">Descripción
-                        <textarea class="ep-textarea epDescripcion" rows="3"></textarea>
-                    </label>
+            <div class="form-row-edit-profile-user">
 
-                </div>
+                <label class="ep-label">Nombre Producto
+                    <input type="text" class="ep-input epNombre">
+                </label>
+                <label class="ep-label">Tipo de producto
+                    <select class="ep-select epTipo">
+                       <option value="fruta">Fruta</option>
+                        <option value="verdura">Verdura</option>
+                        <option value="carnes">Carne</option>
+                        <option value="fertilizantes">Fertilizante</option>
+                    </select>
+                </label>
 
-                <div class="ep-btn-row">
-                    <button type="button" class="ep-btn ep-btn-secondary epBtnVolver">Volver</button>
-                    <button type="submit" class="ep-btn ep-btn-primary">Guardar Cambios</button>
-                </div>
+            </div>
 
-            </form>
+
+            <div class="form-row-edit-profile-user">
+
+                <label class="ep-label">Peso
+                    <input type="number" class="ep-input epPeso">
+                </label>
+                <label class="ep-label">Tipo de peso
+                    <select class="ep-select epTipoPeso">
+                        <option value="kilos">Kilos</option>
+                        <option value="gramos">Gramos</option>
+                        <option value="libras">Libras</option>
+                        <option value="toneladas">Toneladas</option>
+                    </select>
+                </label>
+                
+                <label class="ep-label">Precio
+                    <input type="text" class="ep-input epPrecio">
+                </label>
+                <label class="ep-label">Descuento
+                    <select class="ep-select epDescuento">
+                        <option value="no">No aplica</option>
+                        <option value="10">10%</option>
+                        <option value="15">15%</option>
+                        <option value="20">20%</option>
+                    </select>
+                </label>
+            </div>
+            <div class="from-actions-profile">
+                <button class="btn-profile2 btn-save-profile btnSiguiente">Siguiente</button>
+            </div>
         </div>
 
     </div>

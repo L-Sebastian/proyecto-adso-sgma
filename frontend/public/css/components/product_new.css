@@ -11,23 +11,14 @@
 }
 
 /* ── Layout fix: footer siempre al fondo, nunca encima ── */
-
-
-
 .main-content {
     flex: 1 0 auto;
 }
-
-
 
 /* ── HEADER ── */
 .product-vevo-header {
     text-align: center;
     margin-bottom: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 16px;
 }
 
 .product-vevo-main-title {
@@ -36,25 +27,6 @@
     color: #1a4a6b;
     margin: 0;
     letter-spacing: 0.01em;
-}
-
-.product-vevo-create-btn {
-    background: #10b981;
-    color: white;
-    border: none;
-    width: 160px;
-    height: 40px;
-    padding: 8px 20px;
-    border-radius: 6px;
-    font-size: 1.6rem;
-    /* font-weight: 600; */
-    cursor: pointer;
-    transition: background 0.2s, transform 0.15s;
-}
-
-.product-vevo-create-btn:hover {
-    background: #059669;
-    transform: translateY(-1px);
 }
 
 /* ── SECCIÓN ── */
@@ -89,6 +61,7 @@
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    position: relative;
 }
 
 .product-vevo-card:hover {
@@ -155,8 +128,6 @@
     background: #10b981;
     color: white;
     border: none;
-    width: 150px;
-    height: 40px;
     padding: 7px 16px;
     border-radius: 6px;
     font-size: 1.6rem;
@@ -174,60 +145,76 @@
     background: #059669; 
 }
 
-/* ── BOTÓN REGRESAR ── */
-.product-vevo-back-btn {
+/* =====================================================
+   BOTONES FLOTANTES (REDONDO Y POSICIONADOS)
+===================================================== */
+.product-vevo-floating-buttons {
     position: fixed;
     bottom: 32px;
     right: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    z-index: 100;
+}
+
+/* Botón Crear Producto - Redondo con + */
+.product-vevo-create-btn {
     width: 62px;
     height: 62px;
     background: #10b981;
     border-radius: 50%;
     border: none;
     color: white;
-    font-size: 1.6rem;
+    font-size: 3.2rem;
+    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 4px 14px rgba(16,185,129,0.4);
-    transition: background 0.2s, transform 0.15s;
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+    transition: all 0.2s ease;
     z-index: 100;
 }
 
-.product-vevo-back-btn:hover { 
-    background: #059669; 
-    transform: translateY(-2px); 
+.product-vevo-create-btn:hover {
+    background: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
 }
 
-/* ── RESPONSIVE ── */
-@media (max-width: 1024px) {
-    .product-vevo-grid { 
-        grid-template-columns: repeat(3, 1fr); 
-    }
+.product-vevo-create-btn:active {
+    transform: translateY(1px);
 }
 
-@media (max-width: 768px) {
-    .product-vevo-page { 
-        padding: 32px 20px 60px; 
-    }
-
-    .product-vevo-grid { 
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 16px; 
-    }
-
-    .product-vevo-main-title { 
-        font-size: 3.2rem; 
-    }
+/* Botón Regresar - Redondo con flecha */
+.product-vevo-back-btn {
+    width: 62px;
+    height: 62px;
+    background: #10b981;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+    transition: all 0.2s ease;
+    z-index: 100;
 }
 
-@media (max-width: 480px) {
-    .product-vevo-grid { 
-        grid-template-columns: 1fr; 
-    }
-
+.product-vevo-back-btn:hover {
+    background: #059669;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
 }
+
+.product-vevo-back-btn:active {
+    transform: translateY(1px);
+}
+
 /* ── BOTONES EDITAR / DESHABILITAR ── */
 .pn-card-actions {
     display: flex;
@@ -275,10 +262,6 @@
 }
 
 /* ── BOTÓN ELIMINAR ── */
-.product-vevo-card { 
-    position: relative; 
-}
-
 .pn-btn-delete {
     position: absolute;
     top: 8px;
@@ -303,4 +286,48 @@
 
 .pn-btn-delete:hover svg { 
     stroke: white; 
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 1024px) {
+    .product-vevo-grid { 
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+@media (max-width: 768px) {
+    .product-vevo-page { 
+        padding: 32px 20px 80px; 
+    }
+
+    .product-vevo-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 16px; 
+    }
+
+    .product-vevo-main-title { 
+        font-size: 2.8rem; 
+    }
+    
+    .product-vevo-create-btn,
+    .product-vevo-back-btn {
+        width: 52px;
+        height: 52px;
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-vevo-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .product-vevo-create-btn,
+    .product-vevo-back-btn {
+        width: 48px;
+        height: 48px;
+        font-size: 2.4rem;
+    }
 }

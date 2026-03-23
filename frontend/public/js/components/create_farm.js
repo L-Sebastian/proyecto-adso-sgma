@@ -19,36 +19,60 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function initCreateFarm() {
 
-    var photoInput      = document.querySelector('.fpPhotoInput');
-    var btnEliminarFoto = document.querySelector('.fpBtnEliminarFoto');
-    var avatarImg       = document.querySelector('.fpAvatarImg');
-    var avatarSvg       = document.querySelector('.fpAvatarSvg');
-    var btnVolver       = document.querySelector('.fpBtnVolver');
-    var form            = document.querySelector('.fpForm');
+    /* ── Referencias DOM — clases del HTML actual (prefijo fpEd-) ── */
+    var photoInput      = document.querySelector('.fpEdPhotoInput');
+    var btnEliminarFoto = document.querySelector('.fpEdBtnEliminarFoto');
+    var avatarImg       = document.querySelector('.fpEdAvatarImg');
+    var avatarSvg       = document.querySelector('.fpEdAvatarSvg');
+    var btnVolver       = document.querySelector('.fpEdBtnVolver');
+    var form            = document.querySelector('.fpEdForm');
 
     if (!form) return;
 
     var foto = '';
 
-    var FIELDS = ['fpFinca','fpProduccion','fpDepartamento','fpDireccion','fpDescripcion'];
+    /* ── Campos que se guardan/restauran (clases del HTML) ── */
+    var FIELDS = [
+        'fpEdFinca',
+        'fpEdProduccion',
+        'fpEdDepartamento',
+        'fpEdDireccion',
+        'fpEdDescripcion'
+    ];
 
-    /* ── Cargar datos del perfil y bloquear campos ── */
-    var firstName    = localStorage.getItem('profile_firstName')      || '';
-    var secondName   = localStorage.getItem('profile_secondName')     || '';
-    var lastName1    = localStorage.getItem('profile_firstLastName')  || '';
-    var lastName2    = localStorage.getItem('profile_secondLastName') || '';
-    var email        = localStorage.getItem('profile_email')          || '';
+    /* ── Cargar datos del perfil desde localStorage y bloquear campos ── */
+    var firstName  = localStorage.getItem('profile_firstName')      || '';
+    var secondName = localStorage.getItem('profile_secondName')     || '';
+    var lastName1  = localStorage.getItem('profile_firstLastName')  || '';
+    var lastName2  = localStorage.getItem('profile_secondLastName') || '';
+    var email      = localStorage.getItem('profile_email')          || '';
 
     var nombreCompleto   = [firstName, secondName].filter(Boolean).join(' ');
     var apellidoCompleto = [lastName1, lastName2].filter(Boolean).join(' ');
 
-    var elNombre   = document.querySelector('.fpNombre');
-    var elApellido = document.querySelector('.fpApellido');
-    var elCorreo   = document.querySelector('.fpCorreoElectronico');
+    /* nombre: el HTML usa .inputFirstName para el primer campo del propietario */
+    var elNombre   = document.querySelector('.inputFirstName');
+    var elApellido = document.querySelector('.fpEdApellido');
+    var elCorreo   = document.querySelector('.fpEdCorreoElectronico');
 
-    if (elNombre)   { elNombre.value   = nombreCompleto;   elNombre.setAttribute('readonly', true);   elNombre.style.background   = '#f3f4f6'; elNombre.style.cursor = 'not-allowed'; }
-    if (elApellido) { elApellido.value = apellidoCompleto; elApellido.setAttribute('readonly', true); elApellido.style.background = '#f3f4f6'; elApellido.style.cursor = 'not-allowed'; }
-    if (elCorreo)   { elCorreo.value   = email;            elCorreo.setAttribute('readonly', true);   elCorreo.style.background   = '#f3f4f6'; elCorreo.style.cursor = 'not-allowed'; }
+    if (elNombre) {
+        elNombre.value = nombreCompleto;
+        elNombre.setAttribute('readonly', true);
+        elNombre.style.background = '#f3f4f6';
+        elNombre.style.cursor = 'not-allowed';
+    }
+    if (elApellido) {
+        elApellido.value = apellidoCompleto;
+        elApellido.setAttribute('readonly', true);
+        elApellido.style.background = '#f3f4f6';
+        elApellido.style.cursor = 'not-allowed';
+    }
+    if (elCorreo) {
+        elCorreo.value = email;
+        elCorreo.setAttribute('readonly', true);
+        elCorreo.style.background = '#f3f4f6';
+        elCorreo.style.cursor = 'not-allowed';
+    }
 
     /* ── Restaurar foto ── */
     var savedPhoto = localStorage.getItem('cf_foto');
@@ -61,26 +85,26 @@ function initCreateFarm() {
 
     /* ── Restaurar galería ── */
     var galeriaGuardada = [];
-    try { galeriaGuardada = JSON.parse(localStorage.getItem('cf_galeria')) || []; } catch(e) {}
+    try { galeriaGuardada = JSON.parse(localStorage.getItem('cf_galeria')) || []; } catch (e) {}
     galeriaGuardada.forEach(function (dataURL, i) {
         if (dataURL) cfSetSlotImage(i, dataURL);
     });
 
     /* ── Restaurar campos ── */
-    FIELDS.forEach(function (id) {
-        var saved = localStorage.getItem('cf_' + id);
+    FIELDS.forEach(function (cls) {
+        var saved = localStorage.getItem('cf_' + cls);
         if (saved !== null) {
-            var el = document.querySelector('.' + id);
+            var el = document.querySelector('.' + cls);
             if (el) el.value = saved;
         }
     });
 
     /* ── Guardar campos en tiempo real ── */
-    FIELDS.forEach(function (id) {
-        var el = document.querySelector('.' + id);
+    FIELDS.forEach(function (cls) {
+        var el = document.querySelector('.' + cls);
         if (el) {
             el.addEventListener('input', function () {
-                localStorage.setItem('cf_' + id, el.value);
+                localStorage.setItem('cf_' + cls, el.value);
             });
         }
     });
@@ -114,8 +138,8 @@ function initCreateFarm() {
         });
     }
 
-    /* ── Galería ── */
-    document.querySelectorAll('.fp-gallery-input').forEach(function (input) {
+    /* ── Galería — clase del HTML: fpEd-gallery-input ── */
+    document.querySelectorAll('.fpEd-gallery-input').forEach(function (input) {
         input.addEventListener('change', function () {
             var slot = parseInt(input.dataset.slot);
             var file = input.files[0];
@@ -136,66 +160,74 @@ function initCreateFarm() {
         });
     }
 
-    /* ── Guardar ── */
+    /* ── Guardar — evento submit en el form ── */
     form.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        var fincaInput = document.querySelector('.fpFinca');
+        /* Validar nombre de finca obligatorio */
+        var fincaInput = document.querySelector('.fpEdFinca');
         if (!fincaInput || fincaInput.value.trim() === '') {
-            fincaInput.classList.add('fp-error');
-            fincaInput.focus();
+            if (fincaInput) {
+                fincaInput.classList.add('fpEd-error');
+                fincaInput.focus();
+            }
             return;
         }
-        fincaInput.classList.remove('fp-error');
+        fincaInput.classList.remove('fpEd-error');
 
+        /* Leer galería guardada */
         var galeria = [];
-        try { galeria = JSON.parse(localStorage.getItem('cf_galeria')) || []; } catch(e) {}
+        try { galeria = JSON.parse(localStorage.getItem('cf_galeria')) || []; } catch (e) {}
 
+        /* Construir objeto finca */
         var finca = {
             id:             'finca-' + Date.now(),
             nombre:         nombreCompleto,
             apellido:       apellidoCompleto,
             correo:         email,
-            nombreFinca:    document.querySelector('.fpFinca').value.trim(),
-            tipoProduccion: document.querySelector('.fpProduccion').value,
-            departamento:   document.querySelector('.fpDepartamento').value,
-            direccion:      document.querySelector('.fpDireccion').value.trim(),
-            descripcion:    document.querySelector('.fpDescripcion').value.trim(),
+            nombreFinca:    document.querySelector('.fpEdFinca')         ? document.querySelector('.fpEdFinca').value.trim()        : '',
+            tipoProduccion: document.querySelector('.fpEdProduccion')    ? document.querySelector('.fpEdProduccion').value           : '',
+            departamento:   document.querySelector('.fpEdDepartamento')  ? document.querySelector('.fpEdDepartamento').value         : '',
+            direccion:      document.querySelector('.fpEdDireccion')     ? document.querySelector('.fpEdDireccion').value.trim()     : '',
+            descripcion:    document.querySelector('.fpEdDescripcion')   ? document.querySelector('.fpEdDescripcion').value.trim()   : '',
             foto:           foto,
             galeria:        galeria,
             fechaCreacion:  new Date().toISOString()
         };
 
+        /* Guardar en misFincas */
         var fincas = [];
         try { fincas = JSON.parse(localStorage.getItem('misFincas')) || []; } catch (e) {}
         fincas.push(finca);
         localStorage.setItem('misFincas', JSON.stringify(fincas));
 
-        FIELDS.forEach(function (id) { localStorage.removeItem('cf_' + id); });
+        /* Limpiar temporales */
+        FIELDS.forEach(function (cls) { localStorage.removeItem('cf_' + cls); });
         localStorage.removeItem('cf_foto');
         localStorage.removeItem('cf_galeria');
 
         cfMostrarToast('✓ Finca creada exitosamente');
         setTimeout(function () {
-            window.location.href = '/frontend/public/views/views_farm_new2.html';
+            window.location.href = '/frontend/public/views/views_farm_new.html';
         }, 1600);
     });
 }
 
+/* ── Helper: poner imagen en slot (clases fpEdSlot) ── */
 function cfSetSlotImage(slot, dataURL) {
-    var label = document.querySelector('.fpSlot[data-slot="' + slot + '"]');
+    var label = document.querySelector('.fpEdSlot[data-slot="' + slot + '"]');
     if (!label) return;
-    label.querySelectorAll('.fp-gallery-preview, .fp-gallery-remove').forEach(function (el) { el.remove(); });
+    label.querySelectorAll('.fpEd-gallery-preview, .fpEd-gallery-remove').forEach(function (el) { el.remove(); });
     label.classList.add('has-image');
-    var plusEl = label.querySelector('.fp-gallery-plus');
+    var plusEl = label.querySelector('.fpEd-gallery-plus');
     if (plusEl) plusEl.style.display = 'none';
     var img = document.createElement('img');
     img.src = dataURL;
-    img.className = 'fp-gallery-preview';
+    img.className = 'fpEd-gallery-preview';
     label.appendChild(img);
     var btn = document.createElement('button');
     btn.type = 'button';
-    btn.className = 'fp-gallery-remove';
+    btn.className = 'fpEd-gallery-remove';
     btn.innerHTML = '×';
     btn.addEventListener('click', function (e) {
         e.preventDefault(); e.stopPropagation();
@@ -204,27 +236,30 @@ function cfSetSlotImage(slot, dataURL) {
     label.appendChild(btn);
 }
 
+/* ── Helper: limpiar slot ── */
 function cfClearSlot(slot) {
-    var label = document.querySelector('.fpSlot[data-slot="' + slot + '"]');
+    var label = document.querySelector('.fpEdSlot[data-slot="' + slot + '"]');
     if (!label) return;
-    label.querySelectorAll('.fp-gallery-preview, .fp-gallery-remove').forEach(function (el) { el.remove(); });
+    label.querySelectorAll('.fpEd-gallery-preview, .fpEd-gallery-remove').forEach(function (el) { el.remove(); });
     label.classList.remove('has-image');
-    var plusEl = label.querySelector('.fp-gallery-plus');
+    var plusEl = label.querySelector('.fpEd-gallery-plus');
     if (plusEl) plusEl.style.display = '';
-    var input = label.querySelector('.fp-gallery-input');
+    var input = label.querySelector('.fpEd-gallery-input');
     if (input) input.value = '';
 }
 
+/* ── Helper: guardar galería ── */
 function cfSaveGallery() {
     var galeria = [];
     for (var i = 0; i < 4; i++) {
-        var label = document.querySelector('.fpSlot[data-slot="' + i + '"]');
-        var img = label ? label.querySelector('.fp-gallery-preview') : null;
+        var label = document.querySelector('.fpEdSlot[data-slot="' + i + '"]');
+        var img = label ? label.querySelector('.fpEd-gallery-preview') : null;
         galeria.push(img ? img.src : '');
     }
     localStorage.setItem('cf_galeria', JSON.stringify(galeria));
 }
 
+/* ── Helper: toast ── */
 function cfMostrarToast(msg) {
     var toast = document.createElement('div');
     toast.textContent = msg;

@@ -71,14 +71,14 @@ function initEditFarm() {
         }
     }
 
-    setVal('.fpEdNombre',            finca.nombre        || '');
+    setVal('.fpEdNombre',            finca.nombre         || '');
     setVal('.fpEdApellido',          finca.apellido       || '');
     setVal('.fpEdCorreoElectronico', finca.correo         || '');
     setVal('.fpEdFinca',             finca.nombreFinca    || '');
     setVal('.fpEdDireccion',         finca.direccion      || '');
     setVal('.fpEdDescripcion',       finca.descripcion    || '');
-    setSelect('.fpEdProduccion',     finca.tipoProduccion || 'frutas');
-    setSelect('.fpEdDepartamento',   finca.departamento   || 'risaralda');
+    setSelect('.fpEdProduccion',     finca.tipoProduccion || '');
+    setSelect('.fpEdDepartamento',   finca.departamento   || '');
 
     /* ── Foto — label nativo, solo leer archivo ── */
     if (photoInput) {

@@ -57,7 +57,7 @@
 
 .ep-img-buttons {
     display: flex;
-    flex-direction: column;
+    align-items: center;
     gap: 8px;
     width: 100%;
 }
@@ -84,6 +84,15 @@
 
 .ep-full-width {
     grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    font-size: 1.2rem;
+    font-weight: var(--fw-bold);
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: default;
 }
 
 /* label es ahora el grid item y flex container */
@@ -93,7 +102,7 @@
     gap: 6px;
     font-size: 1.2rem;
     font-weight: 600;
-    color: #374151;
+    color: var(--white);
     cursor: default;
 }
 
@@ -102,7 +111,20 @@
 .ep-textarea {
     padding: 9px 12px;
     border: 1.5px solid #d1d5db;
-    border-radius: 8px;
+    border-radius: 1875rem;
+    font-size: 1.6rem;
+    color: #111;
+    background-color: rgba(255, 255, 255, 0.7);;
+    transition: border-color 0.2s;
+    box-sizing: border-box;
+    width: 100%;
+    font-family: var(--font-family-base);
+}
+
+.ep-textarea1 {
+        padding: 9px 12px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 1rem;
     font-size: 1.6rem;
     color: #111;
     transition: border-color 0.2s;
@@ -156,11 +178,13 @@
 .ep-btn-secondary:hover { background: #e5e7eb; }
 
 .ep-btn-danger {
-    background: #fee2e2;
-    color: #dc2626;
-    border: 1.5px solid #fca5a5;
+    background: var(--primary-600);
+    color: var(--white);
+    border: none;
+    width: 150px;
+    height: 48px;
 }
-.ep-btn-danger:hover { background: #fecaca; }
+.ep-btn-danger:hover { background: var(--primary-500); }
 
 /* ── TOAST ── */
 .ep-toast {

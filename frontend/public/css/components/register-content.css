@@ -24,20 +24,37 @@
     margin: 0;
 }
 
-.register__content__left__user {
-    color: var(--white);
-    flex: 1;
-    background-color: var(--primary-secundary-700);
-    align-items: center;
-    justify-content: center;
-    text-align: left;
-    padding: 2rem;
-    height: 100%;
-    align-content: center;
-}
-
 @media (width : 768px) {
     .register__content__right{
         
     }
+}
+
+@media (max-width: 768px) {
+  /* Contenedor general */
+  .register__content {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Ocultar imagen en móvil */
+  .register__content__right {
+    display: none;
+  }
+
+  /* Cambiar inputs a columna */
+  .form__register__form-grup {
+    display: grid;
+    grid-template-columns: 1fr;  /* UNA sola columna */
+    width: 90%;
+    margin: 0 auto;
+    gap: 1rem;  /* espacio entre inputs */
+  }
+
+  /* Opcional: ajustar título */
+  .form__register__title {
+    font-size: 24px;
+  }
 }

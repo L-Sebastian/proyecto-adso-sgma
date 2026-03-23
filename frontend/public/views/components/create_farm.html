@@ -1,14 +1,14 @@
-<div class="fp-page">
-    <div class="fp-wrapper">
+<div class="fpEd-page">
+    <div class="fpEd-wrapper">
 
-        <!-- Columna izquierda: foto principal + galería -->
-        <div class="fp-image-section">
+        <!-- Columna izquierda: foto + galería -->
+        <div class="fpEd-image-section">
 
-            <label class="fp-avatar fpAvatarContainer fpBtnCambiarFoto">
-                <input type="file" class="fpPhotoInput" accept="image/*" style="display:none;">
-                <img class="fpAvatarImg" src="" alt="Foto finca"
+            <label class="fpEd-avatar fpEdAvatarContainer fpEdBtnCambiarFoto">
+                <input type="file" class="fpEdPhotoInput" accept="image/*" style="display:none;">
+                <img class="fpEdAvatarImg" src="" alt="Foto finca"
                      style="width:100%;height:100%;object-fit:cover;border-radius:12px;display:none;">
-                <svg class="fpAvatarSvg" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5"
+                <svg class="fpEdAvatarSvg" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5"
                      style="width:60px;height:60px;">
                     <rect x="3" y="3" width="18" height="18" rx="3"/>
                     <circle cx="8.5" cy="8.5" r="1.5"/>
@@ -16,83 +16,84 @@
                 </svg>
             </label>
 
-            <div class="fp-img-buttons">
-                <button class="fp-btn fp-btn-danger fpBtnEliminarFoto" type="button">Eliminar Foto</button>
+            <div class="fpEd-img-buttons">
+                <button class="fpEd-btn fpEd-btn-danger fpEdBtnsubirFoto" type="button">Subir Foto</button>
+                <button class="fpEd-btn fpEd-btn-danger fpEdBtnEliminarFoto" type="button">Eliminar Foto</button>
             </div>
 
-            <!-- Galería 4 imágenes -->
-            <div class="fp-gallery-section">
-                <p class="fp-gallery-label">Galería de fotos <span>(máx. 4)</span></p>
-                <div class="fp-gallery-grid fpGalleryGrid">
+            <div class="fpEd-gallery-section">
+                <p class="fpEd-gallery-label">Galería de fotos <span>(máx. 4)</span></p>
+                <div class="fpEd-gallery-grid">
 
-                    <label class="fp-gallery-slot fpSlot fpSlot0" data-slot="0">
-                        <input type="file" accept="image/*" class="fp-gallery-input" data-slot="0" style="display:none;">
-                        <span class="fp-gallery-plus">+</span>
+                    <label class="fpEd-gallery-slot fpEdSlot fpEdSlot0" data-slot="0">
+                        <input type="file" accept="image/*" class="fpEd-gallery-input" data-slot="0" style="display:none;">
+                        <span class="fpEd-gallery-plus">+</span>
                     </label>
-                    <label class="fp-gallery-slot fpSlot fpSlot1" data-slot="1">
-                        <input type="file" accept="image/*" class="fp-gallery-input" data-slot="1" style="display:none;">
-                        <span class="fp-gallery-plus">+</span>
+                    <label class="fpEd-gallery-slot fpEdSlot fpEdSlot1" data-slot="1">
+                        <input type="file" accept="image/*" class="fpEd-gallery-input" data-slot="1" style="display:none;">
+                        <span class="fpEd-gallery-plus">+</span>
                     </label>
-                    <label class="fp-gallery-slot fpSlot fpSlot2" data-slot="2">
-                        <input type="file" accept="image/*" class="fp-gallery-input" data-slot="2" style="display:none;">
-                        <span class="fp-gallery-plus">+</span>
+                    <label class="fpEd-gallery-slot fpEdSlot fpEdSlot2" data-slot="2">
+                        <input type="file" accept="image/*" class="fpEd-gallery-input" data-slot="2" style="display:none;">
+                        <span class="fpEd-gallery-plus">+</span>
                     </label>
-                    <label class="fp-gallery-slot fpSlot fpSlot3" data-slot="3">
-                        <input type="file" accept="image/*" class="fp-gallery-input" data-slot="3" style="display:none;">
-                        <span class="fp-gallery-plus">+</span>
+                    <label class="fpEd-gallery-slot fpEdSlot fpEdSlot3" data-slot="3">
+                        <input type="file" accept="image/*" class="fpEd-gallery-input" data-slot="3" style="display:none;">
+                        <span class="fpEd-gallery-plus">+</span>
                     </label>
 
                 </div>
             </div>
-
         </div>
 
-        <!-- Columna derecha: título + formulario -->
-        <div class="fp-form-section">
-            <h2 class="fp-title">Crear finca</h2>
+        <!-- Columna derecha: formulario -->
+        <div class="fpEd-form-section">
+            <h2 class="fpEd-title">Crear finca</h2>
 
-            <form class="fpForm">
-                <div class="fp-form-grid">
+            <form class="fpEdForm">
+                <div class="fpEd-form-grid">
 
-                    <label class="fp-label">Nombre propietario
-                        <input type="text" class="fp-input fpNombre">
+                    <label class="label-edit-profile-user">Nombre propietario
+                        <input type="text" name="firstName"
+                            class="form-input-edit-profile-user inputFirstName" value="Juan">
                     </label>
-                    <label class="fp-label">Apellido Propietario
-                        <input type="text" class="fp-input fpApellido">
+                    <label class="label-edit-profile-user">Apellido propietario
+                        <input type="text" name="apellido"
+                            class="form-input-edit-profile-user fpEdApellido">
                     </label>
-                    <label class="fp-label fp-full-width">Correo electrónico
-                        <input type="text" class="fp-input fpCorreoElectronico">
+                    <label class="fpEd-label fpEd-full-width">Correo electrónico
+                        <input type="text" class="fpEd-input fpEdCorreoElectronico">
                     </label>
-                    <label class="fp-label">Nombre Finca
-                        <input type="text" class="fp-input fpFinca">
+                    <label class="fpEd-label">Nombre Finca
+                        <input type="text" class="fpEd-input fpEdFinca">
                     </label>
-                    <label class="fp-label">Tipo de producción
-                        <select class="fp-select fpProduccion">
+                    <label class="fpEd-label">Tipo de producción
+                        <select class="fpEd-select fpEdProduccion">
                             <option value="frutas">Frutas</option>
                             <option value="verduras">Verduras</option>
                             <option value="carnes">Carnes</option>
                             <option value="mixto">Mixto</option>
                         </select>
                     </label>
-                    <label class="fp-label">Departamento
-                        <select class="fp-select fpDepartamento">
+                    <label class="fpEd-label">Departamento
+                        <select class="fpEd-select fpEdDepartamento">
                             <option value="risaralda">Risaralda</option>
                             <option value="caldas">Caldas</option>
                             <option value="quindio">Quindío</option>
                         </select>
                     </label>
-                    <label class="fp-label">Dirección Finca
-                        <input type="text" class="fp-input fpDireccion">
+                    <label class="fpEd-label">Dirección Finca
+                        <input type="text" class="fpEd-input fpEdDireccion">
                     </label>
-                    <label class="fp-label fp-full-width">Descripción
-                        <textarea class="fp-textarea fpDescripcion" rows="3"></textarea>
+                    <label class="fpEd-label fpEd-full-width">Descripción
+                        <textarea class="fpEd-textarea fpEdDescripcion" rows="3"></textarea>
                     </label>
 
                 </div>
 
-                <div class="fp-btn-row">
-                    <button type="button" class="fp-btn fp-btn-secondary fpBtnVolver">Volver</button>
-                    <button type="submit" class="fp-btn fp-btn-primary">Guardar Cambios</button>
+                <div class="fpEd-btn-row">
+                    <button type="button" class="fpEd-btn fpEd-btn-secondary fpEdBtnVolver">Volver</button>
+                    <button type="submit" class="fpEd-btn fpEd-btn-primary fpEdBtnGuardar">Guardar Cambios</button>
                 </div>
             </form>
         </div>

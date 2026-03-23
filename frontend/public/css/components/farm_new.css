@@ -62,7 +62,7 @@
 /* ── GRILLA ── */
 .finca-vevo-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
     max-width: 1200px;
     margin: 0 auto;
@@ -79,6 +79,8 @@
     transition: transform 0.2s, box-shadow 0.2s;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     position: relative;
+    min-width: 350px;
+    width: 100%;
 }
 .finca-vevo-card:hover {
     transform: translateY(-4px);
@@ -108,7 +110,7 @@
     padding: 14px 16px 16px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 8px;
     text-align: center;
 }
 .finca-vevo-card-name {
@@ -139,9 +141,10 @@
 /* ── BOTONES EDITAR / DESHABILITAR ── */
 .finca-vevo-card-actions {
     display: flex;
-    gap: 6px;
+    gap: 8px;
     margin-top: 8px;
-    padding: 0 16px 16px;
+    /* padding: 0 16px 16px; */
+    /* margin: 0 auto; */
 }
 
 .fn-btn-edit,
@@ -159,6 +162,8 @@
     gap: 4px;
     transition: background 0.2s, transform 0.15s;
     white-space: nowrap;
+    min-width: 150px;
+    height: 40px;
 }
 
 .fn-btn-edit {
@@ -241,6 +246,10 @@
     .finca-vevo-grid  { 
         grid-template-columns: repeat(2, 1fr); 
         gap: 16px; 
+    }
+
+    .finca-vevo-card-actions {
+        display: grid;
     }
 
     .finca-vevo-main-title { 

@@ -261,7 +261,7 @@
 .register__form-help.error {
     color: #e74c3c;
     background: rgba(231, 76, 60, 0.1);
-    font-size: 1.2rem;
+    font-size: 1.6rem;
 }
 
 .register__form-help.success {

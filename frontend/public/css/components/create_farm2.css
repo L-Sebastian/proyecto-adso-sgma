@@ -1,0 +1,77 @@
+/* ============================================
+   GALERÍA DE FOTOS PARA FINCA
+   ============================================ */
+.fp-gallery-section {
+    width: 100%;
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+.fp-gallery-label {
+    font-size: 1.4rem;
+    color: white;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.fp-gallery-label span {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    font-weight: normal;
+}
+
+.fp-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    width: 100%;
+}
+
+.fp-gallery-slot {
+    aspect-ratio: 1;
+    background: rgba(255, 255, 255, 0.15);
+    border: 2px dashed rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.fp-gallery-slot:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: var(--primary-600);
+    transform: scale(1.02);
+}
+
+.fp-gallery-plus {
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.fp-gallery-slot:hover .fp-gallery-plus {
+    color: var(--primary-600);
+    transform: scale(1.1);
+}
+
+.fp-gallery-slot img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .fp-gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

@@ -193,6 +193,7 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);
+    padding: 1.1rem;
 }
 
 /* label es ahora el grid item y flex container */
@@ -220,6 +221,7 @@
     /* font-family: var(--font-family-base); */
     font-size: 1.6rem;
     transition: all var(--transition-md) ease;
+    min-width: 300px;
 }
 
 .form-input-create::placeholder {
@@ -268,6 +270,7 @@
     cursor: pointer;
     transition: all var(--transition-md) ease;
     /* appearance: none; */
+
 }
 
 .form-select-create:hover {
@@ -378,7 +381,8 @@
 /* lg — 1024px: layout horizontal imagen + formulario */
 @media (min-width: 1024px) {
     .content-wrapper-create {
-        grid-template-columns: 280px 1fr;
+        grid-template-columns: 280px 1fr; 
+        padding: 8.0rem;
     }
 
     .image-section-create {

@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-
+    /* BUG CORREGIDO: buscaba .register e insertaba register.html que contiene
+       <main class="register"> → doble anidamiento.
+       Ahora inserta en el contenedor padre .main-content */
     var wrapper = document.querySelector('.register');
 
     if (wrapper) {

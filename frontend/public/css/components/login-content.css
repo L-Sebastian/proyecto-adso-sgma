@@ -1,24 +1,25 @@
-body{
-    
-}
+
 .login__content {
     display: flex;  
     flex: 100%;
     overflow: hidden;
-    overflow-y: hidden;
+
     
 }
 
 .login__content__right__login{
+    padding: 2.4rem;
     flex: 100%;
     display: flex;
     background: linear-gradient(to right, rgba(30,74,97,0) 70%, var(--primary-secundary-900) 100%), url(/frontend/public/assets/img/3.png);
-    background-repeat: none;
-    min-height: 50rem;
+    background-repeat: no-repeat;
+    /* min-height: 50rem; */
     background-size: cover;
     object-fit: contain;
-    height: 300px;
+    /* height: 300px; */
     width: auto;
+    height: 61.1rem;
+
     
     
 }
@@ -116,13 +117,53 @@ body{
     
 }
 
-@media (width : 768px) {
+@media (max-width: 768px) {
     .login__content{
-        /* flex-direction: column;
-        grid-template-columns: 350px 1fr; */
-    
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--primary-secundary-700);
     }
 
+    .login__content__right__login{
+        display: none;
+    }
+
+    .login__content__right__login{
+        flex: none;
+        width: 100%;
+        max-width: 400px;
+        padding: 2rem 1rem;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+
+    .form__login__form__user {
+        padding: 2rem 1rem;
+    }
+
+    .form__login__form-grup-input {
+        width: 100%;
+        max-width: 100%;
+        
+    }
+
+    .form__login__form-button,
+    .form__login__form-row-button a,
+    .form__login__form-row-button button {
+        width: 100%;
+        max-width: 100%;
+        margin: 0.5rem 0;
+        min-width: 300px;
+    }
+    .form__login__form-row-button {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    /* */
+    
     .login__content__left{
         flex-direction: column;
         grid-template-columns: 350px 1fr;
@@ -140,13 +181,14 @@ body{
 
 .login__content{
     /* display: flex; */
-    height: 100vh; /* pantalla completa */
+    /* height: 100vh; pantalla completa */
 }
 .login__content__right {
     flex: 70%;
     
     background: linear-gradient(to right, rgba(30,74,97,0) 70%, var(--primary-secundary-900) 100%), url(/frontend/public/assets/img/DOÑA\ GLORIA.png);
-    min-height: 20%;
+    /* min-height: 20%; */
+    height: 100%;
     background-size: cover;
 }
 
