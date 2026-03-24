@@ -119,7 +119,7 @@ function initEditFarm() {
     /* ── Volver ── */
     if (btnVolver) {
         btnVolver.addEventListener('click', function () {
-            window.location.href = '/frontend/public/views/views_farm_new2.html';
+            window.location.href = '/frontend/public/views/views_farm_new.html';
         });
     }
 
@@ -160,7 +160,7 @@ function initEditFarm() {
 
             efMostrarToast('✓ Cambios guardados');
             setTimeout(function () {
-                window.location.href = '/frontend/public/views/views_farm_new2.html';
+                window.location.href = '/frontend/public/views/views_farm_new.html';
             }, 1600);
         });
     }

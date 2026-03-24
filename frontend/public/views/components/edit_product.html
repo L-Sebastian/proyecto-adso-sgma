@@ -1,83 +1,99 @@
 
+    <div class="fpEd-wrapper">
 
-<div class="profile-container">
-    <div class="profile-grid">
+        <!-- Columna izquierda: foto -->
+        <div class="fpEd-image-section">
 
-        <!-- Left Column -->
-        <div class="profile-left">
-
-            <label class="ep-avatar epAvatarContainer epBtnCambiarFoto">
-                 <input type="file" class="epPhotoInput" accept="image/*" style="display:none;">
-                <img class="epAvatarImg" src="" alt="Foto producto"
-                     style="width:100%;height:100%;object-fit:cover;border-radius:12px;display:none;">
-                <svg class="epAvatarSvg" viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.5"
-                     style="width:60px;height:60px;">
-                    <rect x="3" y="3" width="18" height="18" rx="3"/>
-                     <circle cx="8.5" cy="8.5" r="1.5"/>
-                    <path d="M21 15l-5-5L5 21"/>
+            <label class="product-avatar-create avatarContainer">
+                <input type="file" class="photoInput" accept="image/*" style="display:none;">
+                <img class="avatarImgProduct" src="" alt="Foto de producto"
+                     style="display:none; width:100%; height:100%; object-fit:cover; border-radius:14px;">
+                <svg class="avatarSvgProduct avatar-icon"
+                     version="1.0" xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 392.000000 392.000000"
+                     preserveAspectRatio="xMidYMid meet">
+                    <g transform="translate(0.000000,392.000000) scale(0.100000,-0.100000)"
+                       fill="currentColor" stroke="none">
+                        <path d="M1767 2911 c-52 -34 -78 -95 -92 -213 l-6 -57 -57 -6 c-170 -19 -215 -35 -233 -82 -29 -77 85 -143 247 -143 l41 0 12 -58 c22 -115 114 -208 228 -233 145 -33 304 77 334 231 l11 57 77 6 c106 9 150 24 189 63 28 28 33 39 28 62 -14 59 -53 75 -242 97 l-52 7 -11 71 c-16 106 -28 142 -60 176 -37 40 -70 46 -153 31 -55 -11 -82 -11 -127 -2 -78 16 -101 15 -134 -7z"/>
+                    </g>
                 </svg>
             </label>
 
-            <div class="ep-img-buttons">
-                    <button class="ep-btn ep-btn-danger epBtnEliminarFoto" type="button">Eliminar</button>
-                    <button class="ep-btn ep-btn-danger epBtnSubirFoto" type="button">Subir Foto</button>
+            <div class="fpEd-img-buttons">
+                <button class="fpEd-btn fpEd-btn-secondary btn-change-photo" type="button">Subir foto</button>
+                <button class="fpEd-btn fpEd-btn-danger fpEdBtnEliminarFoto" type="button">Eliminar Foto</button>
             </div>
+
         </div>
 
-        <!-- Right Column - solo lectura -->
-        <div class="ep-form-section">
-        <!-- <h2 class="ep-title">Editar Producto</h2> -->
+        <!-- Columna derecha: formulario -->
+        <div class="fpEd-form-section">
+            <h2 class="fpEd-title">Crear Producto</h2>
 
-        <form class="editProductForm">
-        <div class="profile-right-user">
+            <form class="fpEdForm">
+                <div class="fpEd-form-grid">
 
-            <div class="form-row-edit-profile-user">
+                    <label class="fpEd-label">Nombre Producto
+                        <input type="text" class="fpEd-input inputNombreProducto" placeholder="Ej: Guanábana">
+                    </label>
+                    <label class="fpEd-label">Tipo de Producto
+                        <select class="fpEd-select selectTipoProducto">
+                            <option value="fruta">Fruta</option>
+                            <option value="verdura">Verdura</option>
+                            <option value="carne">Carne</option>
+                            <option value="fertilizante">Fertilizante</option>
+                        </select>
+                    </label>
+                    <label class="fpEd-label">Peso
+                        <input type="number" class="fpEd-input inputPesoProducto" placeholder="Ej: 2">
+                    </label>
+                    <label class="fpEd-label">Tipo de Peso
+                        <select class="fpEd-select selectTipoPeso">
+                            <option value="kilos">Kilos</option>
+                            <option value="gramos">Gramos</option>
+                            <option value="libras">Libras</option>
+                            <option value="toneladas">Toneladas</option>
+                        </select>
+                    </label>
+                    <label class="fpEd-label">Precio
+                        <input type="text" class="fpEd-input inputPrecioProducto" placeholder="Ej: 10000">
+                    </label>
+                    <label class="fpEd-label">Descuento
+                        <select class="fpEd-select selectDescuento">
+                            <option value="no">No aplica</option>
+                            <option value="10">10%</option>
+                            <option value="15">15%</option>
+                            <option value="20">20%</option>
+                        </select>
+                    </label>
+                    <label class="fpEd-label">Nombre Finca
+                        <input type="text" class="fpEd-input inputNombreFinca" placeholder="Ej: Finca El Porvenir">
+                    </label>
+                    <label class="fpEd-label">Stock
+                        <input type="number" class="fpEd-input inputStock" placeholder="Ej: 10">
+                    </label>
+                    <label class="fpEd-label">Dirección Finca
+                        <input type="text" class="fpEd-input inputDireccionFinca" placeholder="Ej: Vereda La Esperanza">
+                    </label>
+                    <label class="fpEd-label">Tipo de Envío
+                        <select class="fpEd-select selectTipoEnvio">
+                            <option value="domicilio">Domicilio</option>
+                            <option value="recogida">Recogida en finca</option>
+                            <option value="transporte">Transporte propio</option>
+                            <option value="mensajeria">Mensajería</option>
+                        </select>
+                    </label>
+                    <label class="fpEd-label fpEd-full-width">Descripción
+                        <textarea class="fpEd-textarea inputDescripcion" rows="3" placeholder="Describe el producto..."></textarea>
+                    </label>
 
-                <label class="ep-label">Nombre Producto
-                    <input type="text" class="ep-input epNombre">
-                </label>
-                <label class="ep-label">Tipo de producto
-                    <select class="ep-select epTipo">
-                       <option value="fruta">Fruta</option>
-                        <option value="verdura">Verdura</option>
-                        <option value="carnes">Carne</option>
-                        <option value="fertilizantes">Fertilizante</option>
-                    </select>
-                </label>
+                </div>
 
-            </div>
-
-
-            <div class="form-row-edit-profile-user">
-
-                <label class="ep-label">Peso
-                    <input type="number" class="ep-input epPeso">
-                </label>
-                <label class="ep-label">Tipo de peso
-                    <select class="ep-select epTipoPeso">
-                        <option value="kilos">Kilos</option>
-                        <option value="gramos">Gramos</option>
-                        <option value="libras">Libras</option>
-                        <option value="toneladas">Toneladas</option>
-                    </select>
-                </label>
-                
-                <label class="ep-label">Precio
-                    <input type="text" class="ep-input epPrecio">
-                </label>
-                <label class="ep-label">Descuento
-                    <select class="ep-select epDescuento">
-                        <option value="no">No aplica</option>
-                        <option value="10">10%</option>
-                        <option value="15">15%</option>
-                        <option value="20">20%</option>
-                    </select>
-                </label>
-            </div>
-            <div class="from-actions-profile">
-                <button class="btn-profile2 btn-save-profile btnSiguiente">Siguiente</button>
-            </div>
+                <div class="fpEd-btn-row">
+                    <button type="button" class="fpEd-btn fpEd-btn-secondary fpEdBtnVolver">Volver</button>
+                    <button type="submit" class="fpEd-btn fpEd-btn-primary">Guardar Cambios</button>
+                </div>
+            </form>
         </div>
 
     </div>
-</div>
