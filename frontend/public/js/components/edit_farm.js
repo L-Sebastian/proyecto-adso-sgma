@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function initEditFarm() {
 
-    var params  = new URLSearchParams(window.location.search);
+    var params = new URLSearchParams(window.location.search);
     var fincaId = params.get('id');
 
     if (!fincaId) {
@@ -28,7 +28,7 @@ function initEditFarm() {
     }
 
     var misFincas = [];
-    try { misFincas = JSON.parse(localStorage.getItem('misFincas')) || []; } catch (e) {}
+    try { misFincas = JSON.parse(localStorage.getItem('misFincas')) || []; } catch (e) { }
 
     var finca = misFincas.find(function (f) { return f.id === fincaId; });
     if (!finca) {
@@ -37,12 +37,13 @@ function initEditFarm() {
     }
 
     /* ── Referencias DOM ── */
-    var avatarImg       = document.querySelector('.fpEdAvatarImg');
-    var avatarSvg       = document.querySelector('.fpEdAvatarSvg');
-    var photoInput      = document.querySelector('.fpEdPhotoInput');
+    var avatarImg = document.querySelector('.fpEdAvatarImg');
+    var avatarSvg = document.querySelector('.fpEdAvatarSvg');
+    var photoInput = document.querySelector('.fpEdPhotoInput');
+    var btnSubirFoto = document.querySelector('.fpEdBtnsubirFoto');
     var btnEliminarFoto = document.querySelector('.fpEdBtnEliminarFoto');
-    var form            = document.querySelector('.fpEdForm');
-    var btnVolver       = document.querySelector('.fpEdBtnVolver');
+    var form = document.querySelector('.fpEdForm');
+    var btnVolver = document.querySelector('.fpEdBtnVolver');
 
     var foto = finca.foto || '';
 
@@ -71,14 +72,14 @@ function initEditFarm() {
         }
     }
 
-    setVal('.fpEdNombre',            finca.nombre         || '');
-    setVal('.fpEdApellido',          finca.apellido       || '');
-    setVal('.fpEdCorreoElectronico', finca.correo         || '');
-    setVal('.fpEdFinca',             finca.nombreFinca    || '');
-    setVal('.fpEdDireccion',         finca.direccion      || '');
-    setVal('.fpEdDescripcion',       finca.descripcion    || '');
-    setSelect('.fpEdProduccion',     finca.tipoProduccion || '');
-    setSelect('.fpEdDepartamento',   finca.departamento   || '');
+    setVal('.fpEdNombre', finca.nombre || '');
+    setVal('.fpEdApellido', finca.apellido || '');
+    setVal('.fpEdCorreoElectronico', finca.correo || '');
+    setVal('.fpEdFinca', finca.nombreFinca || '');
+    setVal('.fpEdDireccion', finca.direccion || '');
+    setVal('.fpEdDescripcion', finca.descripcion || '');
+    setSelect('.fpEdProduccion', finca.tipoProduccion || '');
+    setSelect('.fpEdDepartamento', finca.departamento || '');
 
     /* ── Foto — label nativo, solo leer archivo ── */
     if (photoInput) {
@@ -92,6 +93,15 @@ function initEditFarm() {
                 if (avatarSvg) avatarSvg.style.display = 'none';
             };
             reader.readAsDataURL(file);
+        });
+    }
+
+    /* ── Foto — botón Subir Foto ── */
+    if (btnSubirFoto) {
+        btnSubirFoto.addEventListener('click', function () {
+            if (photoInput) {
+                photoInput.click();
+            }
         });
     }
 
@@ -139,20 +149,20 @@ function initEditFarm() {
             var galeriaActualizada = [];
             for (var i = 0; i < 4; i++) {
                 var label = document.querySelector('.fpEdSlot[data-slot="' + i + '"]');
-                var img   = label ? label.querySelector('.fpEd-gallery-preview') : null;
+                var img = label ? label.querySelector('.fpEd-gallery-preview') : null;
                 galeriaActualizada.push(img ? img.src : '');
             }
 
-            finca.nombre         = document.querySelector('.fpEdNombre').value.trim();
-            finca.apellido       = document.querySelector('.fpEdApellido').value.trim();
-            finca.correo         = document.querySelector('.fpEdCorreoElectronico').value.trim();
-            finca.nombreFinca    = document.querySelector('.fpEdFinca').value.trim();
+            finca.nombre = document.querySelector('.fpEdNombre').value.trim();
+            finca.apellido = document.querySelector('.fpEdApellido').value.trim();
+            finca.correo = document.querySelector('.fpEdCorreoElectronico').value.trim();
+            finca.nombreFinca = document.querySelector('.fpEdFinca').value.trim();
             finca.tipoProduccion = document.querySelector('.fpEdProduccion').value;
-            finca.departamento   = document.querySelector('.fpEdDepartamento').value;
-            finca.direccion      = document.querySelector('.fpEdDireccion').value.trim();
-            finca.descripcion    = document.querySelector('.fpEdDescripcion').value.trim();
-            finca.foto           = foto;
-            finca.galeria        = galeriaActualizada;
+            finca.departamento = document.querySelector('.fpEdDepartamento').value;
+            finca.direccion = document.querySelector('.fpEdDireccion').value.trim();
+            finca.descripcion = document.querySelector('.fpEdDescripcion').value.trim();
+            finca.foto = foto;
+            finca.galeria = galeriaActualizada;
 
             var idx = misFincas.findIndex(function (f) { return f.id === fincaId; });
             if (idx !== -1) misFincas[idx] = finca;

@@ -1,14 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    const container = document.querySelector('.main-content');
+    console.log('1. DOMContentLoaded disparado');
+    const container = document.querySelector('.main-contentPro');
+    console.log('2. Container encontrado:', container);
     if (!container) {
-        console.error('No se encontró .main-contentPro');
+        console.error('ERROR: No se encontró .main-contentPro');
         return;
     }
 
-    container.classList.add('product-vevo-page');
-
-    fetch('/frontend/public/views/components/product_new.html')
+    fetch('/frontend/public/views/components/product_admin.html')
         .then(function (res) {
             if (!res.ok) throw new Error('Error ' + res.status);
             return res.text();
@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 });
 
+// ✅ CORREGIDO: Ahora se llama UNA_HORA_MS
 const UNA_HORA_MS = 60 * 60 * 1000;
 
 const productosBase = [
@@ -49,7 +50,7 @@ function clasificar() {
     const nuevos = [], maduros = [];
     todos.forEach(function (p) {
         const edad = ahora - (p.fechaCreacion ? new Date(p.fechaCreacion).getTime() : 0);
-        (edad >= UNA_HORA_MS ? maduros : nuevos).push(p);
+        (edad >= UNA_HORA_MS ? maduros : nuevos).push(p);  // ✅ Ahora UNA_HORA_MS está definida
     });
     return { nuevos: nuevos, maduros: maduros };
 }
@@ -61,6 +62,13 @@ function buildCard(p, esMio) {
     const finca  = p.finca   || p.vendor || '';
     const foto   = p.foto    || p.img   || '';
     const activo = p.activo !== false;
+
+    // Obtener nombre del propietario desde localStorage
+    const firstName  = localStorage.getItem('profile_firstName')      || '';
+    const secondName = localStorage.getItem('profile_secondName')     || '';
+    const lastName1  = localStorage.getItem('profile_firstLastName')  || '';
+    const lastName2  = localStorage.getItem('profile_secondLastName') || '';
+    const propietario = [firstName, secondName, lastName1, lastName2].filter(Boolean).join(' ') || 'Vendedor';
 
     const deleteBtn = esMio
         ? '<button class="pn-btn-delete" data-id="' + p.id + '" title="Eliminar">' + iconTrash + '</button>'
@@ -76,7 +84,7 @@ function buildCard(p, esMio) {
         +   '<span class="product-vevo-card-price">$' + Number(precio).toLocaleString('es-CO')
         +     '<span class="product-vevo-card-price-unit">' + unidad + '</span></span>'
         +   '<span class="product-vevo-card-vendor">Vendido por: <strong>' + finca + '</strong></span>'
-        // +   '<span class="product-vevo-card-owner">👤 Propietario: <strong>' + propietario + '</strong></span>'
+        +   '<span class="product-vevo-card-owner">👤 Propietario: <strong>' + propietario + '</strong></span>'
         +   '<div class="pn-card-actions">'
         +     '<button class="pn-btn-edit" data-id="' + p.id + '">' + iconEdit + ' Editar</button>'
         +     '<button class="pn-btn-disable' + (activo ? '' : ' disabled') + '" data-id="' + p.id + '">'
@@ -91,7 +99,6 @@ function renderGrid(grid) {
     const c     = clasificar();
     let todos = productosBase.concat(c.maduros);
 
-    /* Mis productos nuevos activos primero */
     const misNuevos = c.nuevos.filter(function (p) { return p.activo !== false; });
 
     let html = '';
@@ -100,7 +107,6 @@ function renderGrid(grid) {
         html += misNuevos.map(function (p) { return buildCard(p, true); }).join('');
     }
 
-    /* Productos base + maduros — ocultar los deshabilitados */
     html += todos
         .filter(function (p) { return p.activo !== false; })
         .map(function (p) {
@@ -119,17 +125,19 @@ function renderGrid(grid) {
 }
 
 function initProductNew() {
-
-    const grid    = document.querySelector('.productGrid');
+    const grid = document.querySelector('.productGrid');
     const btnCrear = document.querySelector('.btnCrearProducto');
-    const btnBack  = document.querySelector('.btnGoBack');
+    const btnBack = document.querySelector('.btnGoBackFinca'); 
 
-    if (!grid) return;
+    if (!grid) {
+        console.error('No se encontró .productGrid');
+        return;
+    }
 
+    console.log('Grid encontrado, renderizando productos...');
     renderGrid(grid);
     programarMovimiento(function () { renderGrid(grid); });
 
-    /* ── Delegación de eventos ── */
     grid.addEventListener('click', function (e) {
         const btnEdit    = e.target.closest('.pn-btn-edit');
         const btnDisable = e.target.closest('.pn-btn-disable');
@@ -163,7 +171,6 @@ function initProductNew() {
             btnDisable.classList.toggle('disabled', !prod.activo);
 
         } else if (card) {
-            /* Click en la card → ir al detalle del producto */
             let id = card.dataset.id;
             window.location.href = '/frontend/public/views/views_shopping_pineapple.html?id=' + id;
         }
@@ -174,7 +181,7 @@ function initProductNew() {
     });
 
     if (btnBack) btnBack.addEventListener('click', function () { window.history.back(); 
-        window.location.href = '/frontend/public/views/index_seller.html';
+        window.location.href = '/frontend/public/views/index_admin.html';
     });
 }
 
@@ -183,7 +190,7 @@ function programarMovimiento(callback) {
     let ahora = Date.now();
     const tiempos = todos
         .filter(function (p) {
-            return ahora - (p.fechaCreacion ? new Date(p.fechaCreacion).getTime() : 0) < UNA_HORA_MS;
+            return ahora - (p.fechaCreacion ? new Date(p.fechaCreacion).getTime() : 0) < UNA_HORA_MS;  // ✅ Ahora funciona
         })
         .map(function (p) {
             return UNA_HORA_MS - (ahora - new Date(p.fechaCreacion).getTime());

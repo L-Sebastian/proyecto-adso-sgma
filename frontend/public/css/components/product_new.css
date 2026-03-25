@@ -124,6 +124,12 @@
     margin-bottom: 6px;
 }
 
+.product-vevo-card-owner {
+    font-size: 1.4rem;
+    color: #10b981;
+    margin-bottom: 6px;
+}
+
 .product-vevo-card-add-btn {
     background: #10b981;
     color: white;
