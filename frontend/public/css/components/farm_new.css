@@ -1,6 +1,5 @@
 /* =====================================================
-   FINCA NEW — vista única (espejo de product_new.css)
-   Sin reset *, sin body
+   FINCA NEW — sin reset *, sin body
 ===================================================== */
 
 .finca-vevo-page {
@@ -59,16 +58,16 @@
     margin: 0 0 32px 0;
 }
 
-/* ── GRILLA ── */
+/* ── GRILLA — auto-fit para que las cards se adapten solas ── */
 .finca-vevo-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 24px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* ── CARD ── */
+/* ── CARD — sin min-width fijo ── */
 .finca-vevo-card {
     background: white;
     border-radius: 12px;
@@ -79,8 +78,8 @@
     transition: transform 0.2s, box-shadow 0.2s;
     box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     position: relative;
-    min-width: 350px;
-    width: 100%;
+    width: 100%;             /* ocupa el ancho del grid cell */
+    box-sizing: border-box;
 }
 .finca-vevo-card:hover {
     transform: translateY(-4px);
@@ -96,6 +95,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 .finca-vevo-card-img {
     width: 100%;
@@ -103,7 +103,9 @@
     object-fit: cover;
     transition: transform 0.3s;
 }
-.finca-vevo-card:hover .finca-vevo-card-img { transform: scale(1.04); }
+.finca-vevo-card:hover .finca-vevo-card-img { 
+    transform: scale(1.04); 
+}
 
 /* ── BODY ── */
 .finca-vevo-card-body {
@@ -113,22 +115,25 @@
     gap: 8px;
     text-align: center;
 }
-.finca-vevo-card-name {
-    font-size: 1.6rem;
-    color: #555;
-    font-weight: 400;
+.finca-vevo-card-name     { 
+    font-size: 1.6rem; 
+    color: #555; 
+    font-weight: 400; 
 }
-.finca-vevo-card-tipo {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #111;
-    line-height: 1.2;
+
+.finca-vevo-card-tipo     { 
+    font-size: 2rem; 
+    font-weight: 800; 
+    color: #111; 
+    line-height: 1.2; 
 }
-.finca-vevo-card-location {
-    font-size: 1.6rem;
-    color: #666;
-    margin-bottom: 6px;
+
+.finca-vevo-card-location { 
+    font-size: 1.6rem; 
+    color: #666; 
+    margin-bottom: 6px; 
 }
+
 .finca-vevo-card-desc {
     font-size: 1.3rem;
     color: #999;
@@ -143,8 +148,7 @@
     display: flex;
     gap: 8px;
     margin-top: 8px;
-    /* padding: 0 16px 16px; */
-    /* margin: 0 auto; */
+    padding: 0 16px 16px;
 }
 
 .fn-btn-edit,
@@ -153,7 +157,7 @@
     border: none;
     padding: 7px 8px;
     border-radius: 6px;
-    font-size: 1.6rem;
+    font-size: 1.4rem;       /* un poco más pequeño para que quepa */
     font-weight: 700;
     cursor: pointer;
     display: flex;
@@ -162,21 +166,29 @@
     gap: 4px;
     transition: background 0.2s, transform 0.15s;
     white-space: nowrap;
-    min-width: 150px;
     height: 40px;
+    min-width: 0;            /* permite que flex los encoja si hace falta */
 }
 
-.fn-btn-edit {
-    background: #10b981;
-    color: white;
+.fn-btn-edit { 
+    background: #10b981; 
+    color: white; 
 }
-.fn-btn-edit:hover { background: #059669; transform: translateY(-1px); }
 
-.fn-btn-disable {
-    background: var(--primary-600);
-    color: white;
+.fn-btn-edit:hover { 
+    background: #059669; 
+    transform: translateY(-1px); 
 }
-.fn-btn-disable:hover { background: #153a56; transform: translateY(-1px); }
+
+.fn-btn-disable { 
+    background: var(--primary-600, #1a4a6b); 
+    color: white; 
+}
+
+.fn-btn-disable:hover { 
+    background: #153a56; 
+    transform: translateY(-1px); 
+}
 .fn-btn-disable.fn-disabled { background: #9ca3af; }
 .fn-btn-disable.fn-disabled:hover { background: #10b981; }
 
@@ -198,8 +210,14 @@
     z-index: 10;
     padding: 0;
 }
-.fn-btn-delete:hover { background: #ef4444; border-color: #ef4444; }
-.fn-btn-delete:hover svg { stroke: white; }
+.fn-btn-delete:hover { 
+    background: #ef4444; 
+    border-color: #ef4444; 
+}
+
+.fn-btn-delete:hover svg { 
+    stroke: white; 
+}
 
 /* ── EMPTY STATE ── */
 .finca-vevo-empty {
@@ -232,33 +250,45 @@
 .finca-vevo-back-btn:hover { background: #059669; transform: translateY(-2px); }
 
 /* ── RESPONSIVE ── */
-@media (max-width: 1024px) { 
-    .finca-vevo-grid { 
-        grid-template-columns: repeat(3, 1fr); 
-    } 
+
+/* Tablets grandes — 3 columnas ya las da auto-fill */
+@media (max-width: 1024px) {
+    .finca-vevo-page { padding: 40px 32px 80px; }
 }
 
+/* Tablets ── 2 columnas mínimo 240px */
 @media (max-width: 768px) {
-    .finca-vevo-page  { 
-        padding: 32px 20px 60px; 
+    .finca-vevo-page { padding: 32px 20px 60px; }
+
+    .finca-vevo-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 16px;
     }
 
-    .finca-vevo-grid  { 
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 16px; 
-    }
+    .finca-vevo-main-title { font-size: 2.4rem; }
 
-    .finca-vevo-card-actions {
-        display: grid;
-    }
+    /* Botones apilados verticalmente en pantallas medianas */
+    .finca-vevo-card-actions { flex-direction: column; }
 
-    .finca-vevo-main-title { 
-        font-size: 3.2rem; 
-    }
+    .fn-btn-edit,
+    .fn-btn-disable { width: 100%; }
 }
 
-@media (max-width: 480px) { 
-    .finca-vevo-grid { 
-        grid-template-columns: 1fr; 
-    } 
+/* Móviles — 1 columna */
+@media (max-width: 480px) {
+    .finca-vevo-page { padding: 24px 12px 60px; }
+
+    .finca-vevo-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .finca-vevo-card-img-box { height: 160px; }
+
+    .finca-vevo-back-btn {
+        bottom: 20px;
+        right: 16px;
+        width: 52px;
+        height: 52px;
+    }
 }

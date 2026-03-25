@@ -11,14 +11,18 @@
 }
 
 /* ── Layout fix: footer siempre al fondo, nunca encima ── */
-.main-content {
+/* .main-content {
     flex: 1 0 auto;
-}
+} */
 
 /* ── HEADER ── */
 .product-vevo-header {
     text-align: center;
     margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
 }
 
 .product-vevo-main-title {
@@ -42,10 +46,10 @@
     margin: 0 0 32px 0;
 }
 
-/* ── GRILLA ── */
+/* ── GRILLA — auto-fit para que las cards se adapten solas ── */
 .product-vevo-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 24px;
     max-width: 1200px;
     margin: 0 auto;
@@ -60,13 +64,14 @@
     flex-direction: column;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     position: relative;
+    width: 100%;
 }
 
 .product-vevo-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .product-vevo-card-img-box {
@@ -94,7 +99,7 @@
     padding: 14px 16px 16px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 8px;
     text-align: center;
 }
 
@@ -134,21 +139,19 @@
     background: #10b981;
     color: white;
     border: none;
-    padding: 7px 16px;
+    padding: 8px 20px;
     border-radius: 6px;
     font-size: 1.6rem;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-weight: 600;
     gap: 6px;
     cursor: pointer;
-    width: 100%;
+    width: 160px;
+    height: 40px;
     transition: background 0.2s;
 }
 
-.product-vevo-card-add-btn:hover { 
-    background: #059669; 
+.product-vevo-card-add-btn:hover {
+    background: #059669;
 }
 
 /* =====================================================
@@ -224,8 +227,9 @@
 /* ── BOTONES EDITAR / DESHABILITAR ── */
 .pn-card-actions {
     display: flex;
-    gap: 6px;
+    gap: 8px;
     margin-top: 8px;
+    padding: 0 16px 16px;
 }
 
 .pn-btn-edit,
@@ -234,7 +238,7 @@
     border: none;
     padding: 7px 8px;
     border-radius: 6px;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     font-weight: 700;
     cursor: pointer;
     display: flex;
@@ -243,28 +247,38 @@
     gap: 4px;
     transition: background 0.2s, transform 0.15s;
     white-space: nowrap;
+    height: 40px;
+    min-width: 0;
 }
 
 .pn-btn-edit {
     background: #10b981;
     color: white;
 }
-.pn-btn-edit:hover { 
-    background: #059669; 
-    transform: translateY(-1px); 
+
+.pn-btn-edit:hover {
+    background: #059669;
+    transform: translateY(-1px);
 }
 
 .pn-btn-disable {
-    background: #6b7280;
+    background: #1a4a6b;
     color: white;
 }
-.pn-btn-disable:hover { 
-    background: #4b5563; 
-    transform: translateY(-1px); 
+
+.pn-btn-disable:hover {
+    background: #153a56;
+    transform: translateY(-1px);
 }
 
-.pn-btn-disable.disabled { 
-    background: #9ca3af; 
+.pn-btn-disable.disabled {
+    background: var(--primary-600, #1a4a6b);
+    color: white;
+}
+
+.pn-btn-disable.disabled:hover {
+    background: #153a56; 
+    transform: translateY(-1px);
 }
 
 /* ── BOTÓN ELIMINAR ── */
@@ -285,55 +299,57 @@
     z-index: 10;
     padding: 0;
 }
-.pn-btn-delete:hover { 
-    background: #ef4444; 
-    border-color: #ef4444; 
+
+.pn-btn-delete:hover {
+    background: #ef4444;
+    border-color: #ef4444;
 }
 
-.pn-btn-delete:hover svg { 
-    stroke: white; 
+.pn-btn-delete:hover svg {
+    stroke: white;
 }
 
-/* =====================================================
-   RESPONSIVE
-===================================================== */
+/* ── RESPONSIVE ── */
+
+/* Tablets grandes — 3 columnas ya las da auto-fill */
 @media (max-width: 1024px) {
-    .product-vevo-grid { 
-        grid-template-columns: repeat(3, 1fr); 
-    }
+    .product-vevo-page { padding: 40px 32px 80px; }
 }
 
+/* Tablets ── 2 columnas mínimo 240px */
 @media (max-width: 768px) {
-    .product-vevo-page { 
-        padding: 32px 20px 80px; 
+    .product-vevo-page { padding: 32px 20px 60px; }
+
+    .product-vevo-grid {
+        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        gap: 16px;
     }
 
-    .product-vevo-grid { 
-        grid-template-columns: repeat(2, 1fr); 
-        gap: 16px; 
+    .product-vevo-main-title { font-size: 2.4rem; }
+
+    /* Botones apilados verticalmente en pantallas medianas */
+    .pn-card-actions { flex-direction: column; }
+
+    .pn-btn-edit,
+    .pn-btn-disable { width: 100%; }
+}
+
+/* Móviles — 1 columna */
+@media (max-width: 480px) {
+    .product-vevo-page { padding: 24px 12px 60px; }
+
+    .product-vevo-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
     }
 
-    .product-vevo-main-title { 
-        font-size: 2.8rem; 
-    }
-    
+    .product-vevo-card-img-box { height: 160px; }
+
     .product-vevo-create-btn,
     .product-vevo-back-btn {
+        bottom: 20px;
+        right: 16px;
         width: 52px;
         height: 52px;
-        font-size: 2.8rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .product-vevo-grid { 
-        grid-template-columns: 1fr; 
-    }
-    
-    .product-vevo-create-btn,
-    .product-vevo-back-btn {
-        width: 48px;
-        height: 48px;
-        font-size: 2.4rem;
     }
 }
