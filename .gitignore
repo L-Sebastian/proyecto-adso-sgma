@@ -1,0 +1,13 @@
+#python / Django
+backend_django/venv/
+backend_django/__pycache__/
+backend_django/db.sqlite3
+*.pyc
+
+# Node / Frontend
+node_modules/
+frontend/node_modules/
+.env
+
+# Varios
+.vscode/

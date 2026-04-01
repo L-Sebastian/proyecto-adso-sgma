@@ -1,0 +1,58 @@
+.hero__navbar{
+    text-align: center;
+    background-color: var();
+    float: right
+
+}
+img{
+    padding-left: 4.8rem;
+    margin-top: -3.4rem;
+}
+
+body{
+    
+    color: black;
+    
+}
+
+.hero__content {
+    background-color: silver;
+    font-family: sans-serif;
+}
+
+.hero__descript{
+    float: left;
+    text-align: ;
+    text-size-adjust: ;
+    
+        
+}
+
+.hero__content a{
+    text-decoration: none;
+    color: var(--white);
+
+
+}
+
+nav {
+    margin-top: -40px;
+    color: var(--white);
+    float: inline-start;
+    align-items: center;
+    justify-content: space-between;
+    display: flex -100rem;
+    cursor: pointer;
+    border: auto;
+
+    
+}
+
+nav a:hover {
+    color: seagreen;
+}
+h2 {
+    padding-top: 10px;
+}
+/*float: inline-start;
+Comando para probrar que arriba quede en transparente*/

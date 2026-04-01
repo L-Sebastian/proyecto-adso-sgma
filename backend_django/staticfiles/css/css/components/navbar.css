@@ -1,0 +1,163 @@
+.navbar__index{
+
+}
+.navbar__container{
+    background-color: var(--primary-secundary-700);
+    justify-content: space-between;
+    display: flex;   
+    
+}
+        
+.navbar__logo{
+    padding-left: 5rem;
+    display: flex;
+    justify-content: center;
+}
+
+
+.navbar__list{
+    gap: 24px;
+    display: flex;
+    padding-right: 3rem;
+    font-size: 1.6rem; 
+    list-style: none;  
+}
+
+.navbar__list li{
+    list-style: none;
+}
+
+.navbar__link{
+    margin: auto;
+}
+
+.navbar__link__ONE__index{
+    margin: 0 auto;
+}
+
+/* Avatar*/ 
+/* Este avatar es para los navbar navegables */
+.avatar-profile-navbar-avatar-profile-3 {
+    height: 40px;
+    width: 40px;
+    margin-right: 4.5rem;
+}
+/* Este es el avatar para los index */
+.avatar-profile-navbar-avatar-profile-4 {
+    height: 40px;
+    width: 40px;
+}
+.menu__inside {
+    position: absolute;
+    display: none;
+    list-style: none;
+    background-color: var(--primary-secundary-700);
+    margin: 0 auto;
+}
+
+.navbar__list li:hover .menu__inside{
+    display: block;
+            
+}
+.menu__inside li:hover {
+    background-color: var(--primary-secundary-900);
+    }
+.menu__inside li a{
+    display: block;
+    color: white;
+    list-style-type: none;
+    text-decoration: none;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.menu__inside__hidden{
+}
+
+.menu__inside__li{
+   
+}
+
+        
+        
+@media (max-width: 768px) {
+
+    .navbar__container {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    .navbar__logo {
+        padding-left: 0;
+        align-items: center;
+    }
+
+    .navbar__list {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 0;
+        
+    }
+
+    .navbar__link {
+        font-size: 1.4rem;
+    }
+
+    .navbar__link__ONE__index {
+        margin: 0 auto;
+        
+    }
+
+    .avatar-profile-navbar-avatar-profile-3{
+        margin: 0;
+        
+    }
+    /* Dropdown */
+    .menu__inside {
+        position: static;
+        width: 100%;
+        height: auto;
+        text-align: center;
+        
+           
+    }
+
+    .menu__inside li a {
+        padding: 1rem;
+        text-align: center;
+        width: 0%;
+        
+    }
+
+    .menu__inside__li{
+        margin: auto;
+        width: 0%;
+    }
+
+    .menu__inside__hidden {
+    
+    }
+}
+
+.search-bar {
+    
+}
+.search-bar input {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    width: 250px;
+    background-color: #9fffe0; /* color verde claro */
+    justify-content: center;
+    display: flex;
+    flex: 1;
+}
+
+.search-bar input::placeholder {
+    color: #333;
+}

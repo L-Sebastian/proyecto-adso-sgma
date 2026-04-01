@@ -1,0 +1,153 @@
+/* Para quitarle el espacio en blanco */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header{
+    background:  linear-gradient(to left, var(--primary-600) 2%, var(--primary-secundary-700) 25%);
+    /*alterar el padding aqui, tambien altera en el index*/
+    /* padding 25 en el componente */
+    /*padding: 15px;*/
+    padding: 1.5px;
+    color: white;
+    
+}
+
+.header__content {
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    margin-left: 3rem;
+    gap: 24px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    
+}
+
+.header__logo {
+    padding-right: 5rem;
+    margin-top: 0.2rem;
+
+    
+}
+.header__text {
+    /* Esta medida sive para la pantalla 100% de zoom*/ 
+    margin-right: 23rem;
+}
+
+
+.icon_one {
+    padding-left: ;
+}
+
+.icon_two { 
+    /*Espacio izquierdo, esto con la funcionalidad de estar separado con el icono y texto ezquierdo.*/ 
+    padding-left: rem;
+}
+
+/* Responsive */ 
+@media (max-width > 768px) {
+    .navbar-container{
+        flex-direction: column;
+        
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-right {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+    .navbar-left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+}
+/* Navbar */
+
+.navbar-container {
+    background-color: var(--primary-secundary-700);
+    padding: 2.5px;
+    
+}
+
+.navbar__title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: var(--fs-xs);
+    padding-left: 5rem;
+}
+
+.navbar__logo {
+    margin-left: 2.5rem;
+    
+    
+}
+
+.navbar__list{
+    display: flex;
+    justify-content: right;
+    padding-right: 10rem;
+    color: var(--white);
+    
+       
+}
+
+.navbar__link {
+    justify-content: space-between;
+    margin-top: -28px;
+    text-decoration: none;
+    color: var(--white);
+    padding-right: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* font-size: var(--fs-xxxs); */
+    
+
+    
+}
+
+.navbar__link__ONE {
+    text-decoration: none;
+    color: var(--white);
+    padding-right: 10px;
+    padding-left: 40px;
+    margin-top: -28px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+/* */
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #1f6f96;
+        width: 100%;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 15px;
+        border-top: 1px solid #fff;
+    }
+}

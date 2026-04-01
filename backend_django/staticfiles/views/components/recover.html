@@ -1,0 +1,28 @@
+<!-- Main Content -->
+<main class="main-content-recover">
+
+    <!-- Left Section - imagen -->
+    <section class="testimonial-section-recover" aria-hidden="true"></section>
+
+    <!-- Right Section - Recovery Form -->
+    <section class="recovery-section-recover" aria-labelledby="recoveryTitle">
+        <h2  class="recovery-title-recover">Recuperación de Cuenta</h2>
+
+        <!-- BUG CORREGIDO: se agregó id="recoveryForm" para que el JS pueda seleccionarlo -->
+        <form class="recovery-form-recover" novalidate>
+
+            <div class="form-group-recover">
+                <label for="email">Correo electrónico</label>
+                <input type="email" class="email"  name="email" placeholder="ejemplo@correo.com" required autocomplete="email" aria-required="true"/>
+            </div>
+
+
+            <!-- Mensaje de error/éxito -->
+            <div class="form-help-recover" aria-live="polite"></div>
+            
+            <button type="submit" class="submit-btn-recover">Enviar código</button>
+
+        </form>
+    </section>
+
+</main>

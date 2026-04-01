@@ -1,0 +1,31 @@
+.hero__content__two {
+    background-image: url(/frontend/img/Hero_prueba.jpg);
+    background-size: cover;
+    background-position: auto;
+    padding: 100px;
+   
+}
+
+.hero__text p{
+    color: var(--white);
+
+}
+
+.form__contact button {
+    background-color: #00cc66;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100px;
+    margin: 0 auto;
+}
+
+/* */ 
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}

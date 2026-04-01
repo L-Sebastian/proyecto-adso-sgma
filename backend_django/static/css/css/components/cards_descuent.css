@@ -1,0 +1,272 @@
+/* =============================
+   GENERAL
+============================= */
+
+/* =============================
+   CONTENEDOR PRINCIPAL
+============================= */
+.products-container-descuent {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-bottom: var(--spacing-xl);
+    background-color: var(--primary-200);
+    width: 100%;
+}
+
+/* =============================
+   HEADER
+============================= */
+.products-header-descuent {
+    text-align: center;
+    padding: var(--spacing-xl) var(--spacing-md) var(--spacing-md);
+}
+
+.products-header__title-descuent {
+    font-size: var(--fs-h1);
+    font-weight: var(--fw-bold);
+    color: var(--primary-secundary-900);
+    margin-bottom: var(--spacing-xs);
+}
+
+.products-header__subtitle-descuent {
+    font-size: var(--fs-body);
+    color: var(--primary-800);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* =============================
+   GRID — Mobile First
+============================= */
+.products-cards-container-descuent {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* =============================
+   CARD
+============================= */
+.discount-card {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+}
+
+/* =============================
+   IMAGEN
+============================= */
+.discount-card__image-container {
+    background-color: var(--white);
+    padding: 0;
+}
+
+.discount-card__image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    display: block;
+    background-color: var(--white);
+}
+
+/* =============================
+   INFO
+============================= */
+.discount-card__info {
+    background-color: var(--white);
+    padding: var(--spacing-md) var(--spacing-sm) var(--spacing-lg);
+    margin-top: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.discount-card__name {
+    margin: 0 0 var(--spacing-xs);
+    font-size: var(--fs-body);
+    color: var(--terciary-600);
+    font-weight: var(--fw-medium);
+}
+
+.discount-card__discount-info {
+    margin-bottom: var(--spacing-xs);
+}
+
+.discount-card__percentage {
+    color: var(--primary-800);
+    font-size: var(--fs-h5);
+    margin-right: var(--spacing-xs);
+}
+
+.discount-card__original-price {
+    font-size: var(--fs-h5);
+    color: var(--gray-200);
+    text-decoration: line-through;
+}
+
+/* PRECIO */
+.discount-card__final-price {
+    font-size: var(--fs-h2);
+    font-weight: var(--fw-bold);
+    color: var(--primary-secundary-800);
+    margin-bottom: var(--spacing-xs);
+}
+
+.discount-card__unit {
+    font-size: var(--fs-h5);
+    margin-left: 2px;
+    color: var(--primary-secundary-800);
+}
+
+/* Vendedor */
+.discount-card__vendor {
+    font-size: var(--fs-h5);
+    color: var(--primary-800);
+    margin-bottom: var(--spacing-md);
+}
+
+/* =============================
+   BOTÓN PRIMARIO
+============================= */
+.discount-card__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    /* font-family: var(--font-family-base); */
+    font-size: var(--fs-body);
+    font-weight: var(--fw-bold);
+    background-color: var(--primary-600);
+    color: var(--white);
+    border: none;
+    padding: var(--button-padding-y) var(--button-padding-x);
+    border-radius: var(--button-radius);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all var(--transition-md) ease;
+    margin-top: auto;
+}
+
+.discount-card__button:hover {
+    background-color: var(--primary-500);
+    transform: translateY(-0.1rem);
+    box-shadow: 0 6px 18px rgba(0, 193, 106, 0.2);
+}
+
+.discount-card__button:focus {
+    box-shadow: var(--focus-ring);
+    outline: none;
+}
+
+.discount-card__button:active {
+    transform: translateY(1px);
+    box-shadow: none;
+}
+
+.discount-card__button:disabled,
+.discount-card__button[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* =============================
+   BOTÓN SECUNDARIO
+============================= */
+.discount-card__button--secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    /* font-family: var(--font-family-base); */
+    font-size: var(--fs-body);
+    font-weight: var(--fw-bold);
+    background-color: transparent;
+    color: var(--primary-600);
+    border: 2px solid var(--primary-600);
+    padding: var(--button-padding-y) var(--button-padding-x);
+    border-radius: var(--button-radius);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all var(--transition-md) ease;
+}
+
+.discount-card__button--secondary:hover {
+    background-color: var(--primary-50);
+    transform: translateY(-0.1rem);
+}
+
+.discount-card__button--secondary:focus {
+    box-shadow: var(--focus-ring);
+    outline: none;
+}
+
+.discount-card__button--secondary:active {
+    transform: translateY(1px);
+}
+
+.discount-card__button--secondary:disabled,
+.discount-card__button--secondary[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* =============================
+   ÍCONO DEL CARRITO
+============================= */
+.discount-card__cart-icon {
+    width: 1.125rem;
+    height: 1.125rem;
+    filter: brightness(0) invert(1);
+    flex-shrink: 0;
+}
+
+/* =============================
+   RESPONSIVE — Mobile First
+============================= */
+
+/* sm — 640px: teléfonos grandes */
+@media (min-width: 640px) {
+    .products-cards-container-descuent {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* md — 768px: tablets */
+@media (min-width: 768px) {
+    .products-cards-container-descuent {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .products-header__title-descuent {
+        font-size: var(--fs-h1);
+    }
+}
+
+/* lg — 1024px: laptops */
+@media (min-width: 1024px) {
+    .products-cards-container-descuent {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* xl — 1280px: desktop */
+@media (min-width: 1280px) {
+    .products-cards-container-descuent {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* 2xl — 1536px: pantallas grandes */
+@media (min-width: 1536px) {
+    .products-container-descuent {
+        max-width: 1600px;
+    }
+}

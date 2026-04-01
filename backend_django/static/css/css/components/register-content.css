@@ -1,0 +1,60 @@
+.register__content{
+    display: flex;
+    flex: 100vh;
+}
+.register__content__right{
+    display: flex;
+    /* height: 100vh; */
+    flex: 100%;
+    background: linear-gradient(to right, rgba(30,74,97,0) 70%, var(--primary-secundary-900) 100%), url(/frontend/public/assets/img/5.png);
+    min-height: 50rem;
+    background-size: cover;
+    object-fit: cover;
+}
+
+.form__register__form-grup{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0 auto;
+}
+
+.form__register__title {
+    text-align: center;
+    font-size: 32px;
+    margin: 0;
+}
+
+@media (width : 768px) {
+    .register__content__right{
+        
+    }
+}
+
+@media (max-width: 768px) {
+  /* Contenedor general */
+  .register__content {
+    flex-direction: column;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Ocultar imagen en móvil */
+  .register__content__right {
+    display: none;
+  }
+
+  /* Cambiar inputs a columna */
+  .form__register__form-grup {
+    display: grid;
+    grid-template-columns: 1fr;  /* UNA sola columna */
+    width: 90%;
+    margin: 0 auto;
+    gap: 1rem;  /* espacio entre inputs */
+  }
+
+  /* Opcional: ajustar título */
+  .form__register__title {
+    font-size: 24px;
+  }
+}

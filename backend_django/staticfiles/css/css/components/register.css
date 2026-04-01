@@ -1,0 +1,372 @@
+/* ==================== RESET ==================== */
+
+
+
+/* ==================== BRANDBAR ==================== */
+.brandbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 28px;
+    background: var(--primary-secundary-700);
+    color: var(--white);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.15);
+}
+
+.brandbar__brand {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.brandbar__logo {
+    width: 46px;
+    height: 46px;
+    object-fit: contain;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px;
+}
+
+.brandbar__text {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* ==================== REGISTER LAYOUT ==================== */
+.register {
+    display: flex;
+    grid-template-columns:repeat(2, 1fr) ;
+    background-color: var(--primary-secundary-700);
+    margin: 0 auto;
+    flex: 100%;
+   
+    
+}
+
+/* @media (min-width: 1024px) {
+    .register {
+        flex-direction: row;
+    }
+} */
+
+/* ==================== IMAGEN IZQUIERDA ==================== */
+.register__image {
+    background:
+        linear-gradient(to right, rgba(30, 74, 97, 0) 30%, var(--primary-secundary-900) 100%),
+        url('/frontend/public/img/5.png') center/cover no-repeat; 
+
+    
+        /* position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start; */
+    
+}
+
+/* @media (min-width: 1024px) {
+    .register__image {
+        flex: 2;
+        
+    }
+} */
+
+/* ==================== FORMULARIO DERECHO ==================== */
+.register__form {
+    background-color: var(--primary-secundary-700);
+    padding: 48px 40px;
+    border-left: 4px solid rgba(255, 255, 255, 0.05);
+    /* box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.03); */
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.register__form__column__column{
+    display: grid;
+    grid-template-columns:  repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    gap: 24px;
+}
+/* @media (min-width: 1024px) {
+    .register__form {
+        flex: 1;
+    }
+} */
+
+/* ==================== TÍTULO ==================== */
+.register__title {
+    text-align: center;
+    margin-bottom: 28px;
+    font-size: 2.4rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+    color: var(--white);
+}
+
+/* ==================== CONTENEDOR DEL FORM ==================== */
+.register__form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 320px;
+}
+
+/* ==================== GRUPOS DE CAMPO ==================== */
+.register__form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    width: 100%;
+}
+
+.register__form label {
+    color: var(--white);
+    text-align: left;
+    font-weight: 500;
+    font-size: 1.2rem;
+    font-family: var(--font-family-base);
+}
+
+/* ==================== INPUTS Y SELECTS — 6 estados ==================== */
+.register__form-input,
+.register__form-select {
+    width: 100%; 
+    min-width: 320px;
+    height: 48px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 24px;
+    font-size: 1.6rem;
+    color: var(--gray-900);
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: box-shadow var(--transition-md), background var(--transition-fast), border var(--transition-fast);
+}
+
+.user-label{
+    color: var(--white);
+    text-align: left;
+    font-weight: 500;
+    font-size: 1.2rem;
+    font-family: var(--font-family-base);
+    gap: 0.8rem;
+    display: grid;
+
+}
+
+.user-input {
+    width: 100%; 
+    min-width: 300px;
+    max-width: 400px;
+    height: 48px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 24px;
+    font-size: 1.6rem;
+    color: var(--gray-900);
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: box-shadow var(--transition-md), background var(--transition-fast), border var(--transition-fast);
+    
+}
+
+.user-input-email{
+    width: 100%;
+    min-width: 400px;
+    height: 48px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 24px;
+    font-size: 1.6rem;
+    color: var(--gray-900);
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: box-shadow var(--transition-md), background var(--transition-fast), border var(--transition-fast);
+}
+
+.user-label-email{
+    color: var(--white);
+    text-align: left;
+    font-weight: 500;
+    font-size: 1.2rem;
+    font-family: var(--font-family-base);
+    gap: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+}
+
+.register__form__column__column{
+    gap: 14px;
+    padding-top: 14px;
+}
+
+/* Hover */
+.register__form-input:hover,
+.register__form-select:hover {
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+/* Focus */
+.register__form-select:focus,
+.register__form-input:focus {
+    box-shadow: 0 0 5px rgba(6, 193, 103, 0.8);
+    outline: 2px solid var(--primary-500);
+    background-color: var(--white);
+}
+
+/* Active */
+.register__form-input:active,
+.register__form-select:active {
+    outline: 2px solid var(--primary-700);
+}
+
+/* Disabled */
+.register__form-input:disabled,
+.register__form-select:disabled {
+    background: rgba(255, 255, 255, 0.3);
+    color: var(--gray-600);
+    cursor: not-allowed;
+}
+
+/* Error */
+.register__form-group.has-error .register__form-input,
+.register__form-group.has-error .register__form-select {
+    outline: 2px solid #e74c3c;
+    box-shadow: 0 0 0 0.18rem rgba(231, 76, 60, 0.12);
+}
+
+/* ==================== MENSAJES DE ERROR POR CAMPO ==================== */
+.register__field-help {
+    color: #e74c3c;
+    font-size: 0.8rem;
+    margin-top: 2px;
+}
+
+/* ==================== MENSAJE GENERAL DEL FORM ==================== */
+.register__form-help {
+    font-size: 0.875rem;
+    min-height: 1.2rem;
+    text-align: center;
+    border-radius: 0.375rem;
+    padding: 0.4rem 0.75rem;
+}
+
+.register__form-help.error {
+    color: #e74c3c;
+    background: rgba(231, 76, 60, 0.1);
+    font-size: 1.6rem;
+}
+
+.register__form-help.success {
+    color: #fff;
+    background: rgba(0, 193, 106, 0.25);
+}
+
+/* ==================== BOTÓN ==================== */
+/* BUG CORREGIDO: faltaba border-radius */
+.register__form-button {
+    margin-top: 12px;
+    margin: 0 auto;
+    
+    padding: 0 16px;
+    border: none;
+    width: 150px;
+    height: 40px;
+    border-radius: 7px;
+    background: var(--primary-600);
+    color: var(--white);
+    font-weight: 700;
+    font-size: 1.6rem;
+    cursor: pointer;
+    align-self: center;
+    min-width: 150px;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.register__form-button:hover {
+    transform: translateY(-2px);
+    background: var(--primary-700);
+}
+
+.register__form-button:focus {
+    outline: none;
+    box-shadow: var(--focus-ring);
+}
+
+.register__form-button:active {
+    transform: translateY(1px);
+}
+
+.register__form-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ==================== RESPONSIVE ==================== */
+/* @media (max-width: 768px) {
+    .brandbar {
+        padding: 10px 16px;
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+
+    .brandbar__text {
+        font-size: 18px;
+    }
+
+    .brandbar__logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .register__form {
+        padding: 30px 20px;
+    }
+
+    .register__title {
+        font-size: 20px;
+    }
+
+    .register__form-container {
+        max-width: 280px;
+        gap: 1rem;
+    }
+
+    .register__form-input,
+    .register__form-select {
+        font-size: 13px;
+    }
+} */
+
+/* @media (max-width: 480px) {
+    .brandbar__text {
+        font-size: 16px;
+    }
+
+    .register__title {
+        font-size: 18px;
+    }
+
+    .register__form-container {
+        max-width: 250px;
+    }
+
+    .register__form-input,
+    .register__form-select {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .register__form-button {
+        width: 100%;
+        padding: 10px;
+    }
+} */

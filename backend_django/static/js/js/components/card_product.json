@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "title": "FRUTAS",
+        "image": "/frontend/public/img/fruta.jpg",
+        "icon": "/frontend/public/img/logo_fruta.png",
+        "description": "Frutas frescas, jugosas y llenas de sabor. ¡Llévate lo mejor del campo!",
+        "link": "#"
+    },
+    {
+        "id": 2,
+        "title": "VERDURAS",
+        "image": "/frontend/public/img/verdura.jpg",
+        "icon": "/frontend/public/img/logo_verdura.png",
+        "description": "Verduras crujientes y nutritivas, recién cosechadas. ¡Elige natural, elige calidad!",
+        "link": "#"
+    },
+    {
+        "id": 3,
+        "title": "CARNES",
+        "image": "/frontend/public/img/carne.jpg",
+        "icon": "/frontend/public/img/logo_carne.png",
+        "description": "Carnes frescas, seguras y sabrosas. ¡Perfectas para tus mejores recetas!",
+        "link": "#"
+    },
+    {
+        "id": 4,
+        "title": "FERTILIZANTES Y PESTICIDAS",
+        "image": "/frontend/public/img/fertilizante.jpg",
+        "icon": "/frontend/public/img/logo_fertilizante.png",
+        "description": "Fertilizantes y pesticidas eficaces y sostenibles. ¡Impulsa cultivos sanos y productivos!",
+        "link": "#"
+    }
+]

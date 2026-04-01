@@ -1,0 +1,66 @@
+  /* ---------------------------- */
+        /* ===== 1. RESET GLOBAL ====== */
+        /* ---------------------------- */
+        
+
+        /* ---------------------------- */
+        /* ===== 2. HERO SECTION ====== */
+        /* ---------------------------- */
+        .hero-welcome {
+            display: flex;
+            height: 100vh;
+            /* overflow: hidden; */
+        }
+
+        /* Imagen solo a la izquierda */
+        .hero__producer-info-welcome {
+            flex: 2;
+            min-height: 100vh;
+            background: url("/frontend/public/img/img_welcome.jpg") center/cover no-repeat;
+        }
+
+        /* Fondo azul completo a la derecha */
+        .hero__welcome-welcome {
+            flex: 1;
+            background-color: var(--primary-secundary-700);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            color: var(--white);
+            padding: 2rem;
+            height: 100%;
+        }
+
+        /* Texto */
+        .hero__title-welcome {
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.3;
+            max-width: 80%;
+        }
+
+        /* ---------------------------- */
+        /* ===== 3. RESPONSIVE ======== */
+        /* ---------------------------- */
+        @media (max-width: 768px) {
+            .hero-welcome { 
+                flex-direction: column;
+            }
+
+            .hero__producer-info-welcome {
+                height: 40vh;
+                min-height: 40vh;
+            }
+
+            .hero__welcome-welcome {
+                height: 60vh;
+                text-align: center;
+                justify-content: center;
+            }
+
+            .hero__title-welcome {
+                font-size: 2rem;
+                max-width: 100%;
+            }
+        }

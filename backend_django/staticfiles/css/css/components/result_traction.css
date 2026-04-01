@@ -1,0 +1,231 @@
+.Ftbody {
+  margin: 0; /* Elimina márgenes por defecto del navegador */
+  font-family: 'Inter', sans-serif;
+  background-color: #f0f0f0;
+}
+
+.page-wrapper {
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    max-width: 760px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    justify-self: center;
+    margin: 0 auto;
+}
+
+.page-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+/* RECEIPT CARD */
+.receipt-card {
+    background-color: #e8f7f4;
+    border-radius: 12px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.receipt-header {
+    text-align: center;
+    padding: 24px 24px 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.sgma-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2aaa8a;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.approved-text {
+    font-size: 1.6rem;
+    color: #444;
+    font-weight: 400;
+}
+
+/* BODY */
+.receipt-body {
+    padding: 16px 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.field-group {
+    padding: 10px 0 6px;
+    position: relative;
+}
+
+.field-group label {
+    display: block;
+    font-size: 1.2rem;
+    color: #888;
+    margin-bottom: 3px;
+    text-transform: none;
+}
+
+.field-value {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #1a1a1a;
+    display: block;
+}
+
+.field-value.amount {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.divider {
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.10);
+    margin-top: 8px;
+}
+
+/* ROW layout */
+.field-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 10px 0 6px;
+    gap: 12px;
+}
+
+.field-row .field-group {
+    padding: 0;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.currency-tag {
+    font-size: 1.2rem;
+    color: #888;
+    text-align: right;
+    margin-top: 2px;
+}
+
+.ref-tag {
+    font-size: 9px;
+    color: #888;
+    text-align: right;
+    position: absolute;
+    right: 0;
+    bottom: 14px;
+}
+
+/* PSE badge */
+.payment-icon {
+    margin-top: 6px;
+    width: 5rem;
+    height: 5rem;
+}
+
+.pse-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a5276;
+    color: #fff;
+    font-size: 1.6rem;
+    font-weight: 700;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    letter-spacing: 0.5px;
+}
+
+/* BUTTONS */
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 4px;
+}
+
+.btn {
+    width: 150px;
+    height: 40px;
+    padding: 9px 26px;
+    border-radius: 6px;
+    font-size: 1.6rem;
+    /* font-weight: 600; */
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s, transform 0.1s;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 8rem
+}
+
+.btn:hover {
+    opacity: 0.88;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn-secondary {
+    background-color: #2aaa8a;
+    color: #fff;
+}
+
+.btn-primary {
+    background-color: #2aaa8a;
+    color: #fff;
+}
+/* ============================================
+   PRINT / PDF
+   ============================================ */
+@media print {
+    /* Ocultar todo lo que no es el recibo */
+    header, nav, footer,
+    .action-buttons {
+        display: none ;
+    }
+
+    body, .Ftbody {
+        background: white ;
+        margin: 0 ;
+        padding: 0 ;
+    }
+
+    .page-wrapper {
+        min-width: unset ;
+        width: 100% ;
+        padding: 0 ;
+        gap: 12px ;
+    }
+
+    .receipt-card {
+        box-shadow: none ;
+        border: 1px solid #ccc ;
+        break-inside: avoid;
+    }
+
+    .page-title {
+        font-size: 1.6rem ;
+    }
+
+    /* Forzar colores en print */
+    .sgma-logo      { color: #2aaa8a ; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .receipt-card   { background-color: #e8f7f4 ; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}

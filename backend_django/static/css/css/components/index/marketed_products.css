@@ -1,0 +1,110 @@
+.marketed_products {
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: #e0ffe5;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 24px;
+    max-width: 50%;
+}    
+   
+
+
+.products-types {
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.products-types__title {
+    font-size: 2rem;
+    color: #003366;
+    text-align: center;
+    
+}
+
+.products-types__subtitle {
+    color: #00a86b;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    text-align: center;
+
+}
+
+.products-types__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.products__card {
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background-color: #e0ffe5;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.products-card__image {
+    width: 100%;
+    height: auto;
+}
+
+.products-card__content {
+    padding: 1rem;
+}
+
+
+.products-card__icon img {
+    width: 24px;
+    height: 24px;
+}
+
+.products-card__title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 1rem 0 0.5rem;
+    text-align: center;
+
+}
+
+.products-card__description {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.products-card__button {
+    display: inline-block;
+    background-color: #00a86b;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.products-card__button:hover {
+    background-color: #007b50;
+}
+
+/* Frutas */
+
+body {
+    font-family: Arial, sans-serif;
+    
+}
+
+
+
+
+

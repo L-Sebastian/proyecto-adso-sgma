@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "title": "Diana Paola R.",
+        "icon1": "/frontend/public/img/vaca.jpg",
+        "icon2": "/frontend/public/img/dia_alimentation.jpg",
+        "description": "Día Mundial de la Alimentación",
+        "likes": 204
+    },
+    {
+        "id": 2,
+        "title": "Jose Quintana P.",
+        "icon1": "/frontend/public/img/vaca2.jpg",
+        "icon2": "/frontend/public/img/dia_agricultura.png",
+        "description": "Día Internacional de la agricultura",
+        "likes": 327
+    },
+    {
+        "id": 3,
+        "title": "Diana Paola R.",
+        "icon1": "/frontend/public/img/vaca.jpg",
+        "icon2": "/frontend/public/img/dia_suelo.png",
+        "description": "Día Mundial del Suelo",
+        "likes": 156
+    },
+    {
+        "id": 4,
+        "title": "Jose Quintana P.",
+        "icon1": "/frontend/public/img/vaca2.jpg",
+        "icon2": "/frontend/public/img/dia_agua.png",
+        "description": "Día Mundial del Agua",
+        "likes": 97
+    },
+    {
+        "id": 5,
+        "title": "Diana Paola R.",
+        "icon1": "/frontend/public/img/vaca.jpg",
+        "icon2": "/frontend/public/img/dia_arbol.png",
+        "description": "Día del Árbol",
+        "likes": 130
+    },
+    {
+        "id": 6,
+        "title": "Jose Quintana P.",
+        "icon1": "/frontend/public/img/vaca2.jpg",
+        "icon2": "/frontend/public/img/dia_medioambiente.png",
+        "description": "Día del Medio Ambiente",
+        "likes": 248
+    }
+]

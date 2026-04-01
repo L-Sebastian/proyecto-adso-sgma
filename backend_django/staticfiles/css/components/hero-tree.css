@@ -1,0 +1,96 @@
+/* .hero__content {
+    background-image: url(/frontend/img/blog_hero.png);
+    background-position: center;
+    background-size: cover;
+     */
+}
+
+.hero__title {
+    text-align: center;
+    font-size: var(--fs-md);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Aplicarla en variable */
+    color: var(--white);
+    background-color: rgba(0 0 0 / 25%); /* Aplicar los 2 colores */
+    padding: 10rem;
+    
+}
+
+@media (width > 768px) {
+    .hero__title {
+        width: auto;
+        text-align: center;
+    }
+    
+}
+
+/* Nuevo Hero */
+
+.community-hero {
+  position: relative;
+  background-image: url('/frontend/img/Hero_prueba.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 45rem; /* Altura completa de pantalla */
+  color: white;
+}
+
+.community-hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Cambiar color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.community-hero__content {
+  text-align: center;
+  max-width: 800px;
+}
+
+.community-hero__title {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.community-hero__description {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+}
+
+.community-hero__question {
+  font-size: 1.6rem;
+  margin-bottom: 25px;
+}
+
+.community-hero__buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.community-hero__button {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  background-color: var(--primary-600);
+  color: var(--white);
+  height: 4rem;
+  width: 150px;
+  font-size: 16px;
+}
+
+
+.community-hero__button:hover {
+  background-color: #019875;
+}
+

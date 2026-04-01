@@ -1,0 +1,35 @@
+[
+    {
+        "id":"diseño-web", 
+        "icon1": "/frontend/img/frutas.png",
+        "icon2": "",
+        "title": "Frutas",
+        "description":"Frutas frescas, jugosas y llenas de sabor. ¡Llévate lo mejor del campo!",
+        "button":"Ir a comprar"
+    },
+    {
+        "id":"desarrollo-movil", 
+        "icon1": "/frontend/img/verduras.png",
+        "icon2": "../assets/icons/icon2.svg",
+        "title": "Verduras",
+        "description":"Volvemos tus ideas realidad<br>El mejor diseño para tu sitio web",
+        "button":"Ir a comprar"
+    },
+    {
+        "id":"base-datos", 
+        "icon1": "/frontend/img/carnes.png",
+        "icon2": "../assets/icons/icon2.svg",
+        "title": "Carnes",
+        "description":"Volvemos tus ideas realidad<br>El mejor diseño para tu sitio web",
+        "button":"Ir a comprar"
+    },
+    {
+        "id":"base-datos", 
+        "icon1": "/frontend/img/fertilizantes.png",
+        "icon2": "../assets/icons/icon2.svg",
+        "title": "Fertilizantes y pesticidas",
+        "description":"Volvemos tus ideas realidad<br>El mejor diseño para tu sitio web",
+        "button":"Ir a comprar"
+    }
+
+]

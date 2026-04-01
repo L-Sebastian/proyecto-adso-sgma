@@ -1,0 +1,259 @@
+
+.login__content {
+    display: flex;  
+    flex: 100%;
+    overflow: hidden;
+
+    
+}
+
+.login__content__right__login{
+    padding: 2.4rem;
+    flex: 100%;
+    display: flex;
+    background: linear-gradient(to right, rgba(30,74,97,0) 70%, var(--primary-secundary-900) 100%), url(/frontend/public/assets/img/joven-vendedor-arreglando-productos-naturales-frescos-puesto-mercado-agricultores-usando-delantal-preparando-puesto-local-frutas-verduras-organicas-frescas-tienda-al-aire-libre-que-vende-productos-cultivados-local.avif);
+    background-repeat: no-repeat;
+    /* min-height: 50rem; */
+    background-size: cover;
+    object-fit: contain;
+    /* height: 300px; */
+    width: auto;
+    height: 61.1rem;
+
+    
+    
+}
+.login__content__left__user{
+    background-color: var(--primary-secundary-700);
+    color: var(--white);
+    padding: 2rem;
+    margin: 0px;
+    align-content: center;
+    
+        
+}
+.form__register__user{
+
+
+}
+
+/* Test*/ 
+
+.form__login{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: max-content;
+    padding: 12px;
+    margin: 0 auto; 
+    justify-content: center;
+    
+}
+
+.form__login__title{
+    text-align: center;
+    font-size: 3.4rem;
+}
+
+.form__login__form__user{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 4rem;   
+}
+
+.form__login__form-grup{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; 
+    gap: 1.6rem;      
+}
+
+.form__login__form-grup-label {
+    margin: 0 0 0 20px;
+    font-size: 1.2rem;
+}
+
+.form__login__form-grup-input{
+    height: 46px;
+    font-size: 1.6rem;
+    height: 4.8rem;
+    width: 30rem;
+    padding: 1.6rem;
+    border-radius: 2.5rem;
+    border:  none;
+}
+
+.form__login__form-button{
+    background-color: var(--primary-600);
+    width: 150px;
+    text-decoration: none;
+    font-size: 16px;
+    color: white;
+    /* padding: 0 16px; */
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    border: none;
+    margin: 0 auto;
+    /* font-family:Arial, Helvetica, sans-serif; */
+    text-align: center;
+}
+.form__login__form-button a{
+    text-decoration: none;
+    color: white;
+
+
+}
+
+.form__login__form-row-button{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 16px;
+    gap: 24px;
+    
+}
+
+@media (max-width: 768px) {
+    .login__content{
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--primary-secundary-700);
+    }
+
+    .login__content__right__login{
+        display: none;
+    }
+
+    .login__content__right__login{
+        flex: none;
+        width: 100%;
+        max-width: 400px;
+        padding: 2rem 1rem;
+        box-sizing: border-box;
+        margin: 0 auto;
+    }
+
+    .form__login__form__user {
+        padding: 2rem 1rem;
+    }
+
+    .form__login__form-grup-input {
+        width: 100%;
+        max-width: 100%;
+        
+    }
+
+    .form__login__form-button,
+    .form__login__form-row-button a,
+    .form__login__form-row-button button {
+        /* width: 100%; 
+        max-width: 100%; */
+        /* margin: 0.5rem 0; */
+        min-width: 300px;
+    }
+    .form__login__form-row-button {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    /* */
+    
+    .login__content__left{
+        flex-direction: column;
+        grid-template-columns: 350px 1fr;
+        
+    }
+
+    .main__content__change__password {
+        background: none;
+    }
+
+    .user-label{
+        
+    }
+}
+
+.login__content{
+    /* display: flex; */
+    /* height: 100vh; pantalla completa */
+}
+.login__content__right {
+    flex: 70%;
+    
+    background: linear-gradient(to right, rgba(30,74,97,0) 70%, var(--primary-secundary-900) 100%), url(/frontend/public/assets/img/DOÑA\ GLORIA.png);
+    /* min-height: 20%; */
+    height: 100%;
+    background-size: cover;
+}
+
+.login__content__left{
+    color: var(--white);
+    flex: 1;
+    background-color: var(--primary-secundary-700);
+
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    color: var(--white);
+    padding: rem;
+    height: 20%;
+    
+    
+    
+    
+    align-content: center;
+    
+    
+}
+
+
+/* VIEWS CHANGE PASSWORD */
+.main__content__change__password{
+    display: flex;
+    height: 61.1rem;
+    flex: 70%;
+    min-height: 50rem;
+    background-size: cover;
+    background-color: var(--primary-secundary-700);
+    
+}
+
+
+.register__content__left {
+    color: var(--white);
+    flex: 1;
+    background-color: var(--primary-secundary-700);
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    color: var(--white);
+    padding: 2rem;
+    height: 100%;
+    
+    
+    
+    
+    align-content: center;
+}
+
+.form__login__form-grup-password{
+    flex-direction: column;
+    gap: 0.8rem;
+    /* display: flex; */
+    padding: 5rem;
+    display: grid;
+    
+}
+
+
+
+/* VIEWS REGISTER */
+
+
+
